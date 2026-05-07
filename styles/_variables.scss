@@ -1,0 +1,61 @@
+:root {
+	--white: #ffffff;
+	--black: #000000;
+
+	--primary-300: #ffefa6;
+	--primary-400: #ffeb8e;
+	--primary-500: #f6cd14;
+	--primary-600: #fece6a;
+	--secondary-500: #c4124d;
+	--gray-500: #535359;
+	--gray-900: #1d1d1f;
+
+	// 0deg    /* снизу вверх */
+	// 90deg   /* слева направо */
+	// 180deg  /* сверху вниз */
+	// 270deg  /* справа налево */
+	--gradient-01: linear-gradient(90deg, #f6cd14 0%, #fece6a 100%);
+	--gradient-02: linear-gradient(
+		90deg,
+		rgba(255, 239, 166, 0.25) 0%,
+		rgba(246, 205, 20, 0.25) 100%
+	);
+
+	--border: 1px solid var(--gray-300);
+	--border-radius-sm: 10px;
+	--border-radius: 14px;
+	--border-radius-lg: 22px;
+	--border-radius-xl: 44px;
+	--border-radius-xxl: 80px;
+
+	// --shadow: 0 5px 0 0 var(--gray-300);
+	--overlay-shadow: rgba(0, 32, 50, 0.6);
+
+	--input-height: 52px;
+	--button-height: 48px;
+
+	--font-family-base:
+		'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		sans-serif;
+	--font-family-secondary: 'Manrope', 'Inter', sans-serif;
+
+	--container-width: 1410px;
+	--container-padding-x: 17px;
+
+	--transition-duration: 0.2s;
+
+	--section-margin-bottom: 50px;
+	--header-height: 88px;
+
+	@include mobile {
+		--section-margin-bottom: 30px;
+		--header-height: 34px;
+	}
+	// --section-padding-y: 70px;
+	// @include desktop {
+	// 	--section-padding-y: 50px;
+	// }
+	// @include mobile {
+	// 	--section-padding-y: 30px;
+	// }
+}

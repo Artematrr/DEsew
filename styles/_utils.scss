@@ -1,0 +1,52 @@
+.container {
+	max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+	width: auto;
+	margin-inline: auto;
+	padding-inline: var(--container-padding-x);
+}
+
+.section--margin-bottom {
+	margin-bottom: var(--section-margin-bottom);
+}
+
+.section--bg {
+	padding-block: 60px;
+	background-image: url('/images/bg.png');
+}
+
+.section--flex-column {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 30px;
+
+	@include mobile {
+		gap: 15px;
+	}
+}
+
+.visually-hidden {
+	@include visually-hidden;
+}
+
+.hidden-mobile {
+	@include mobile {
+		display: none !important;
+	}
+}
+
+.visible-mobile {
+	@include mobile-above {
+		display: none !important;
+	}
+}
+
+.full-width {
+	@include full-width;
+}
+
+.full-width-mobile {
+	@include mobile {
+		@include full-width;
+	}
+}

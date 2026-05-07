@@ -1,0 +1,73 @@
+body {
+	@include fluid-text(14, 16);
+
+	font-family: var(--font-family-base);
+	font-optical-sizing: auto;
+	font-weight: 400;
+	line-height: 1.35;
+	color: var(--black);
+	background-color: var(--white);
+}
+
+html {
+	scroll-padding-top: var(--header-height);
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+	transition-duration: var(--transition-duration);
+	transition-timing-function: ease-in-out;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+img,
+svg {
+	user-select: none;
+}
+
+h1,
+.h1 {
+	@include fluid-text(24, 34);
+
+	font-family: var(--font-family-base);
+	font-weight: 500;
+	line-height: 1.25;
+	color: var(--black);
+}
+
+h2,
+.h2 {
+	@include fluid-text(24, 48);
+
+	font-family: var(--font-family-base);
+	font-weight: 400;
+	line-height: 1.25;
+	color: var(--black);
+}
+
+h3,
+.h3 {
+	@include fluid-text(24, 34);
+
+	font-family: var(--font-family-base);
+	font-weight: 500;
+	line-height: 1.25;
+	color: var(--black);
+}
+
+h4,
+.h4 {
+	@include fluid-text(20, 24);
+
+	font-family: var(--font-family-base);
+	font-weight: 700;
+	line-height: 1.35;
+	color: var(--black);
+}
