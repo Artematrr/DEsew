@@ -15,13 +15,15 @@
 <body>
 	<header class="header js-header">
 		<div class="header__container container">
-			<a class="header__logo" href="/" aria-label="DEsew">
+			<a class="header__logo" href="#" aria-label="DEsew">
 				<img class="header__logo-image" src="/images/icons/logo-main.svg" alt="DEsew" width="77" height="17">
 			</a>
 
 			<nav class="header__nav" aria-label="Основная навигация">
 				<ul class="header__nav-list">
-					<li class="header__nav-item"><a class="header__nav-link" href="/">Главная</a></li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="#">Главная</a>
+					</li>
 					<li class="header__nav-item header__nav-item--catalog" data-dropdown>
 						<button class="header__nav-link header__nav-link--button" type="button" data-dropdown-toggle
 							aria-expanded="false">
@@ -42,7 +44,7 @@
 										<div class="header__catalog-column">
 											<h3 class="header__catalog-subtitle">Основные категории:</h3>
 											<ul class="header__catalog-list">
-												<li><a href="/pages/catalog.html">Швейные машины</a></li>
+												<li><a href="#">Швейные машины</a></li>
 												<li><a href="#">Оверлоки</a></li>
 												<li><a href="#">Коверлоки</a></li>
 												<li><a href="#">Швейно - вышивальные машины</a></li>
@@ -59,15 +61,26 @@
 								</div>
 
 								<img class="header__catalog-stitch" src="/images/00-header/header-stitch-02.svg"
-									width="570" height="172" alt="" aria-hidden="true">
+								width="570" height="172" alt=""
+									aria-hidden="true">
 							</div>
 						</div>
 					</li>
-					<li class="header__nav-item"><a class="header__nav-link" href="/pages/about.html">О бренде</a></li>
-					<li class="header__nav-item"><a class="header__nav-link" href="/pages/dealers.html">Где купить</a></li>
-					<li class="header__nav-item"><a class="header__nav-link" href="#">Сервис</a></li>
-					<li class="header__nav-item"><a class="header__nav-link" href="#">Блог</a></li>
-					<li class="header__nav-item"><a class="header__nav-link" href="/pages/contacts.html">Контакты</a></li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="#">О бренде</a>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="#">Где купить</a>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="#">Сервис</a>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="#">Блог</a>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="#">Контакты</a>
+					</li>
 				</ul>
 			</nav>
 
@@ -83,13 +96,17 @@
 				<a class="header__icon-button header__icon-button--mail" href="mailto:info@desew.ru" aria-label="Написать">
 					<img class="header__icon" src="/images/icons/mail.svg" alt="" width="32" height="24">
 				</a>
+
 				<a class="header__icon-button header__icon-button--compare" href="#compare" aria-label="Сравнение">
 					<img class="header__icon" src="/images/icons/compare.svg" alt="" width="28" height="21">
 				</a>
+
 				<span class="header__divider" aria-hidden="true"></span>
+
 				<a class="header__icon-button header__icon-button--phone" href="tel:+74952236659" aria-label="Позвонить">
 					<img class="header__icon" src="/images/icons/phone.svg" alt="" width="23" height="23">
 				</a>
+
 				<a class="header__phone" href="tel:+74952236659">+7 (495) 223-66-59</a>
 
 				<button class="header__burger js-menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false"
@@ -103,20 +120,48 @@
 			<div class="header__mobile-panel">
 				<nav class="header__mobile-nav js-mobile-menu-view" aria-label="Мобильная навигация">
 					<ul class="header__mobile-list">
-						<li><a class="header__mobile-link js-menu-close" href="/"><span>Главная</span><span
-									class="header__mobile-chevron" aria-hidden="true"></span></a></li>
-						<li><button class="header__mobile-link js-mobile-catalog-open" type="button"><span>Каталог</span><span
-									class="header__mobile-chevron" aria-hidden="true"></span></button></li>
-						<li><a class="header__mobile-link js-menu-close" href="/pages/about.html"><span>О бренде</span><span
-									class="header__mobile-chevron" aria-hidden="true"></span></a></li>
-						<li><a class="header__mobile-link js-menu-close" href="/pages/dealers.html"><span>Где купить</span><span
-									class="header__mobile-chevron" aria-hidden="true"></span></a></li>
-						<li><a class="header__mobile-link js-menu-close" href="#"><span>Сервис</span><span
-									class="header__mobile-chevron" aria-hidden="true"></span></a></li>
-						<li><a class="header__mobile-link js-menu-close" href="#"><span>Блог</span><span
-									class="header__mobile-chevron" aria-hidden="true"></span></a></li>
-						<li><a class="header__mobile-link js-menu-close" href="/pages/contacts.html"><span>Контакты</span><span
-									class="header__mobile-chevron" aria-hidden="true"></span></a></li>
+						<li>
+							<a class="header__mobile-link js-menu-close" href="#">
+								<span>Главная</span>
+								<span class="header__mobile-chevron" aria-hidden="true"></span>
+							</a>
+						</li>
+						<li>
+							<button class="header__mobile-link js-mobile-catalog-open" type="button">
+								<span>Каталог</span>
+								<span class="header__mobile-chevron" aria-hidden="true"></span>
+							</button>
+						</li>
+						<li>
+							<a class="header__mobile-link js-menu-close" href="#">
+								<span>О бренде</span>
+								<span class="header__mobile-chevron" aria-hidden="true"></span>
+							</a>
+						</li>
+						<li>
+							<a class="header__mobile-link js-menu-close" href="#">
+								<span>Где купить</span>
+								<span class="header__mobile-chevron" aria-hidden="true"></span>
+							</a>
+						</li>
+						<li>
+							<a class="header__mobile-link js-menu-close" href="#">
+								<span>Сервис</span>
+								<span class="header__mobile-chevron" aria-hidden="true"></span>
+							</a>
+						</li>
+						<li>
+							<a class="header__mobile-link js-menu-close" href="#">
+								<span>Блог</span>
+								<span class="header__mobile-chevron" aria-hidden="true"></span>
+							</a>
+						</li>
+						<li>
+							<a class="header__mobile-link js-menu-close" href="#">
+								<span>Контакты</span>
+								<span class="header__mobile-chevron" aria-hidden="true"></span>
+							</a>
+						</li>
 					</ul>
 				</nav>
 
@@ -127,7 +172,7 @@
 					<div class="header__mobile-catalog-group">
 						<h3 class="header__mobile-subtitle">Основные категории:</h3>
 						<ul class="header__mobile-catalog-list">
-							<li><a class="js-menu-close" href="/pages/catalog.html">Швейные машины</a></li>
+							<li><a class="js-menu-close" href="#">Швейные машины</a></li>
 							<li><a class="js-menu-close" href="#">Оверлоки</a></li>
 							<li><a class="js-menu-close" href="#">Коверлоки</a></li>
 							<li><a class="js-menu-close" href="#">Швейно - вышивальные машины</a></li>
@@ -161,9 +206,9 @@
 		<div class="product-page__container container">
 			<nav class="product-page__breadcrumbs breadcrumbs" aria-label="Хлебные крошки">
 				<ol class="breadcrumbs__list">
-					<li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/">Главная</a></li>
-					<li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/pages/catalog.html">Каталог</a></li>
-					<li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/pages/catalog.html">Швейные машины</a></li>
+					<li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Главная</a></li>
+					<li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Каталог</a></li>
+					<li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Швейные машины</a></li>
 					<li class="breadcrumbs__item"><span class="breadcrumbs__current">DESEW SmartStitch 500</span></li>
 				</ol>
 			</nav>
@@ -360,94 +405,108 @@
 			<div class="related-products__container container">
 				<div class="related-products__header">
 					<h2 class="related-products__title" id="related-products-title">Похожие товары</h2>
-					<a class="button-plate" href="/pages/catalog.html">Смотреть все</a>
+					<a class="button-plate" href="#">Смотреть все</a>
 				</div>
 
 				<div class="related-products__grid">
 					<article class="product-card">
-						<a class="product-card__image-link" href="/pages/product.html"><img class="product-card__image"
+						<a class="product-card__image-link" href="#"><img class="product-card__image"
 								src="/images/products/sewing-machine-01.jpg" alt="DESEW ProLine 8700"></a>
 						<div class="product-card__content">
 							<p class="product-card__label">популярное</p>
-							<h3 class="product-card__title"><a href="/pages/product.html">DESEW ProLine 8700</a></h3>
+							<h3 class="product-card__title"><a href="#">DESEW ProLine 8700</a></h3>
 							<p class="product-card__price">₽ 89 900</p>
-							<a class="product-card__link" href="/pages/product.html">Подробнее →</a>
+							<a class="product-card__link" href="#">Подробнее →</a>
 						</div>
 					</article>
 					<article class="product-card">
-						<a class="product-card__image-link" href="/pages/product.html"><img class="product-card__image"
+						<a class="product-card__image-link" href="#"><img class="product-card__image"
 								src="/images/products/sewing-machine-02.jpg" alt="DESEW Overlock X5"></a>
 						<div class="product-card__content">
 							<p class="product-card__label">новое</p>
-							<h3 class="product-card__title"><a href="/pages/product.html">DESEW Overlock X5</a></h3>
+							<h3 class="product-card__title"><a href="#">DESEW Overlock X5</a></h3>
 							<p class="product-card__price">₽ 64 500</p>
-							<a class="product-card__link" href="/pages/product.html">Подробнее →</a>
+							<a class="product-card__link" href="#">Подробнее →</a>
 						</div>
 					</article>
 					<article class="product-card">
-						<a class="product-card__image-link" href="/pages/product.html"><img class="product-card__image"
+						<a class="product-card__image-link" href="#"><img class="product-card__image"
 								src="/images/products/sewing-machine-05.jpg" alt="DESEW Embroidery E900"></a>
 						<div class="product-card__content">
 							<p class="product-card__label">популярное</p>
-							<h3 class="product-card__title"><a href="/pages/product.html">DESEW Embroidery E900</a></h3>
+							<h3 class="product-card__title"><a href="#">DESEW Embroidery E900</a></h3>
 							<p class="product-card__price">₽ 112 000</p>
-							<a class="product-card__link" href="/pages/product.html">Подробнее →</a>
+							<a class="product-card__link" href="#">Подробнее →</a>
 						</div>
 					</article>
 					<article class="product-card">
-						<a class="product-card__image-link" href="/pages/product.html"><img class="product-card__image"
+						<a class="product-card__image-link" href="#"><img class="product-card__image"
 								src="/images/products/sewing-machine-04.jpg" alt="DESEW SmartStitch 501"></a>
 						<div class="product-card__content">
 							<p class="product-card__label">скидка</p>
-							<h3 class="product-card__title"><a href="/pages/product.html">DESEW SmartStitch 501</a></h3>
+							<h3 class="product-card__title"><a href="#">DESEW SmartStitch 501</a></h3>
 							<p class="product-card__price">₽ 52 900</p>
-							<a class="product-card__link" href="/pages/product.html">Подробнее →</a>
+							<a class="product-card__link" href="#">Подробнее →</a>
 						</div>
 					</article>
 				</div>
 			</div>
 		</section>
 
-		<section class="support-form" aria-labelledby="support-form-title">
-			<div class="support-form__decor decor" aria-hidden="true">
-				<img class="decor__item decor-stitch support-form__stitch support-form__stitch--left"
+		<section class="question-feedback section" aria-labelledby="question-feedback-title">
+			<div class="question-feedback__decor decor" aria-hidden="true">
+				<img class="decor__item question-feedback__stitch question-feedback__stitch--left"
+					src="/images/08-article/article-stitch-02.svg" alt="">
+				<img class="decor__item question-feedback__stitch question-feedback__stitch--right"
 					src="/images/09-feedback/feedback-stitch-01.svg" alt="">
-				<img class="decor__item decor-stitch support-form__stitch support-form__stitch--right"
+				<img class="decor__item question-feedback__stitch question-feedback__stitch--bottom"
 					src="/images/09-feedback/feedback-stitch-02.svg" alt="">
 			</div>
-			<div class="support-form__container container">
-				<div class="support-form__content">
-					<header class="support-form__header">
-						<h2 class="support-form__title" id="support-form-title">Есть вопрос, отзыв или проблема?</h2>
-						<p class="support-form__subtitle">Оставьте сообщение — мы обязательно свяжемся с вами и поможем
+
+			<div class="question-feedback__container container">
+				<div class="question-feedback__content">
+					<header class="question-feedback__header">
+						<h2 class="question-feedback__title" id="question-feedback-title">Есть вопрос, отзыв или проблема?</h2>
+						<p class="question-feedback__subtitle">Оставьте сообщение — мы обязательно свяжемся с вами и поможем
 							решить вопрос</p>
 					</header>
 
-					<form class="support-form__form" action="/">
-						<label class="visually-hidden" for="support-name">Имя</label>
-						<input class="support-form__control support-form__field--full" id="support-name" type="text" name="name"
-							placeholder="Имя" autocomplete="name">
+					<form class="question-feedback__form" action="/">
+						<div class="question-feedback__field question-feedback__field--full">
+							<label class="visually-hidden" for="question-name">Имя</label>
+							<input class="question-feedback__control" id="question-name" type="text" name="name" placeholder="Имя"
+								autocomplete="name">
+						</div>
 
-						<label class="visually-hidden" for="support-phone">Телефон</label>
-						<input class="support-form__control" id="support-phone" type="tel" name="phone" placeholder="Телефон"
-							autocomplete="tel">
+						<div class="question-feedback__row">
+							<div class="question-feedback__field">
+								<label class="visually-hidden" for="question-phone">Телефон</label>
+								<input class="question-feedback__control" id="question-phone" type="tel" name="phone"
+									placeholder="Телефон" autocomplete="tel">
+							</div>
 
-						<label class="visually-hidden" for="support-email">Email</label>
-						<input class="support-form__control" id="support-email" type="email" name="email" placeholder="Email"
-							autocomplete="email">
+							<div class="question-feedback__field">
+								<label class="visually-hidden" for="question-email">Email</label>
+								<input class="question-feedback__control" id="question-email" type="email" name="email"
+									placeholder="Email" autocomplete="email">
+							</div>
+						</div>
 
-						<label class="visually-hidden" for="support-message">Сообщение</label>
-						<textarea class="support-form__control support-form__control--textarea support-form__field--full"
-							id="support-message" name="message" placeholder="Сообщение"></textarea>
+						<div class="question-feedback__field question-feedback__field--full">
+							<label class="visually-hidden" for="question-message">Сообщение</label>
+							<textarea class="question-feedback__control question-feedback__control--textarea" id="question-message"
+								name="message" placeholder="Сообщение"></textarea>
+						</div>
 
-						<button class="support-form__submit button" type="submit">Отправить</button>
-						<p class="support-form__privacy">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
+						<button class="question-feedback__submit button" type="submit">Отправить</button>
+
+						<p class="question-feedback__privacy">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
 					</form>
 				</div>
 
-				<div class="support-form__media" aria-hidden="true">
-					<img class="support-form__object" src="/images/09-feedback/feedback-object.png" alt="">
-					<img class="support-form__brand" src="/images/icons/logo-banner.svg" alt="">
+				<div class="question-feedback__media" aria-hidden="true">
+					<img class="question-feedback__object" src="/images/09-feedback/feedback-object.png" alt="">
+					<img class="question-feedback__brand" src="/images/09-feedback/feedback-bg-01.png" alt="">
 				</div>
 			</div>
 		</section>
@@ -494,12 +553,15 @@
 
 		<div class="footer__container container">
 			<div class="footer__brand">
-				<a class="footer__logo" href="/" aria-label="DEsew">
+				<a class="footer__logo" href="#" aria-label="DEsew">
 					<img class="footer__logo-image" src="/images/icons/logo-footer.svg" alt="" width="283" height="61">
 				</a>
+
 				<p class="footer__text">Швейное оборудование<br>для производства и мастерских</p>
 				<span class="footer__divider" aria-hidden="true"></span>
+
 				<button class="footer__callback" type="button" data-micromodal-trigger="feedback-modal">Заказать звонок</button>
+
 				<div class="footer__bottom">
 					<p class="footer__copyright">© DESEW 2026</p>
 					<a class="footer__policy" href="#">Политика конфиденциальности</a>
@@ -511,21 +573,23 @@
 					<div class="footer__column">
 						<h2 class="footer__column-title">Продукция</h2>
 						<ul class="footer__list">
-							<li><a class="footer__nav-link" href="/pages/catalog.html">Швейные машины</a></li>
+							<li><a class="footer__nav-link" href="#">Швейные машины</a></li>
 							<li><a class="footer__nav-link" href="#">Оверлоки</a></li>
 							<li><a class="footer__nav-link" href="#">Вышивальные машины</a></li>
 							<li><a class="footer__nav-link" href="#">Аксессуары</a></li>
 						</ul>
 					</div>
+
 					<div class="footer__column">
 						<h2 class="footer__column-title">Компания</h2>
 						<ul class="footer__list">
-							<li><a class="footer__nav-link" href="/pages/about.html">О компании</a></li>
-							<li><a class="footer__nav-link" href="/pages/dealers.html">Где купить</a></li>
+							<li><a class="footer__nav-link" href="#">О компании</a></li>
+							<li><a class="footer__nav-link" href="#">Где купить</a></li>
 							<li><a class="footer__nav-link" href="#">Новости</a></li>
-							<li><a class="footer__nav-link" href="/pages/contacts.html">Контакты</a></li>
+							<li><a class="footer__nav-link" href="#">Контакты</a></li>
 						</ul>
 					</div>
+
 					<div class="footer__column">
 						<h2 class="footer__column-title">Поддержка</h2>
 						<ul class="footer__list">
@@ -534,6 +598,7 @@
 							<li><a class="footer__nav-link" href="#">Сравнение товаров</a></li>
 						</ul>
 					</div>
+
 					<div class="footer__column footer__column--contacts">
 						<h2 class="footer__column-title">Контакты</h2>
 						<ul class="footer__list footer__list--contacts">
@@ -543,7 +608,19 @@
 									<span>+7 (495) 223-66-59</span>
 								</a>
 							</li>
-							<li><span class="footer__contact footer__contact--location"><span>Москва</span></span></li>
+							<li>
+								<span class="footer__contact footer__contact--location">
+									<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"
+										aria-hidden="true">
+										<path
+											d="M8.5 15.2C8.5 15.2 3.2 10.7 3.2 6.9C3.2 4 5.6 1.7 8.5 1.7C11.4 1.7 13.8 4 13.8 6.9C13.8 10.7 8.5 15.2 8.5 15.2Z"
+											stroke="#F6CD14" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+										<path d="M8.5 8.65C9.4665 8.65 10.25 7.8665 10.25 6.9C10.25 5.9335 9.4665 5.15 8.5 5.15C7.5335 5.15 6.75 5.9335 6.75 6.9C6.75 7.8665 7.5335 8.65 8.5 8.65Z"
+											stroke="#F6CD14" stroke-width="1.8" />
+									</svg>
+									<span>Москва</span>
+								</span>
+							</li>
 						</ul>
 					</div>
 				</nav>
@@ -551,6 +628,7 @@
 				<form class="footer__subscribe" action="/">
 					<h2 class="footer__subscribe-title">Будьте в курсе новинок и обновлений</h2>
 					<p class="footer__subscribe-text">Рассказываем о новых моделях, технологиях и обзорах</p>
+
 					<div class="footer__subscribe-row">
 						<label class="visually-hidden" for="footer-email">Ваш email</label>
 						<input class="footer__subscribe-input" id="footer-email" type="email" name="email" placeholder="Ваш email"
@@ -564,34 +642,42 @@
 
 	<div class="modal" id="feedback-modal" aria-hidden="true">
 		<button class="modal__overlay" type="button" data-micromodal-close aria-label="Закрыть окно"></button>
+
 		<div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="feedback-modal-title">
 			<button class="modal__close" type="button" data-micromodal-close aria-label="Закрыть окно"></button>
+
 			<h2 class="modal__title h3" id="feedback-modal-title">Обратная связь</h2>
 			<p class="modal__text">Оставьте сообщение, и команда DEsew свяжется с вами.</p>
+
 			<form class="form" action="/">
 				<div class="form__field">
 					<label class="form__label" for="feedback-name">Имя</label>
 					<input class="form__control" id="feedback-name" type="text" name="name" autocomplete="name">
 				</div>
+
 				<div class="form__row">
 					<div class="form__field">
 						<label class="form__label" for="feedback-phone">Телефон</label>
 						<input class="form__control" id="feedback-phone" type="tel" name="phone" autocomplete="tel">
 					</div>
+
 					<div class="form__field">
 						<label class="form__label" for="feedback-email">Email</label>
 						<input class="form__control" id="feedback-email" type="email" name="email" autocomplete="email">
 					</div>
 				</div>
+
 				<div class="form__field">
 					<label class="form__label" for="feedback-message">Сообщение</label>
 					<textarea class="form__control form__control--textarea" id="feedback-message" name="message"></textarea>
 				</div>
+
 				<label class="form__checkbox">
 					<input class="form__checkbox-input" type="checkbox" name="privacy" checked>
 					<span class="form__checkbox-control" aria-hidden="true"></span>
 					<span>Согласен на обработку персональных данных</span>
 				</label>
+
 				<div class="form__actions">
 					<button class="button" type="submit">Отправить</button>
 				</div>
