@@ -1,0 +1,41 @@
+.product-reviews {
+	display: grid;
+	gap: 24px;
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+	}
+
+	&__title {
+		font-size: clamp(28px, 3vw, 42px);
+		font-weight: 600;
+	}
+
+	&__empty {
+		padding: 42px;
+		color: var(--gray-500);
+		background-color: var(--white);
+		border-radius: var(--border-radius-lg);
+		box-shadow: var(--shadow-sm);
+	}
+
+	&__empty-title {
+		margin-bottom: 8px;
+		font-size: 24px;
+		font-weight: 700;
+		color: var(--black);
+	}
+
+	@include mobile {
+		&__header {
+			display: grid;
+		}
+
+		&__empty {
+			padding: 24px;
+		}
+	}
+}

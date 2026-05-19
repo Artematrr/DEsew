@@ -1,0 +1,101 @@
+.form {
+	display: grid;
+	gap: 22px;
+
+	&__row {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 24px;
+
+		@include mobile {
+			grid-template-columns: 1fr;
+			gap: 16px;
+		}
+	}
+
+	&__field {
+		display: grid;
+		gap: 8px;
+	}
+
+	&__label {
+		font-size: 14px;
+		font-weight: 500;
+		color: var(--gray-700);
+	}
+
+	&__control {
+		width: 100%;
+		min-height: var(--input-height);
+		padding: 18px 22px;
+		font: inherit;
+		color: var(--black);
+		background-color: var(--white);
+		border: var(--border);
+		border-radius: var(--border-radius-sm);
+		outline: none;
+		transition-property: border-color, box-shadow, background-color;
+
+		&:focus {
+			border-color: var(--black);
+			box-shadow: 0 0 0 3px var(--focus-ring-color);
+		}
+
+		&--textarea {
+			min-height: 120px;
+			resize: vertical;
+		}
+	}
+
+	&__caption {
+		font-size: 13px;
+		line-height: 1.35;
+		color: var(--gray-500);
+	}
+
+	&__checkbox {
+		display: grid;
+		grid-template-columns: 20px 1fr;
+		align-items: start;
+		gap: 10px;
+		font-size: 13px;
+		line-height: 1.35;
+		color: var(--gray-500);
+		cursor: pointer;
+	}
+
+	&__checkbox-input {
+		@include visually-hidden;
+
+		&:checked + .form__checkbox-control {
+			background-image:
+				url('/images/icons/checkbox-check.svg'),
+				url('/images/icons/checkbox-box.svg');
+		}
+
+		&:focus-visible + .form__checkbox-control {
+			outline: 2px solid var(--black);
+			outline-offset: 3px;
+		}
+	}
+
+	&__checkbox-control {
+		@include square(20px);
+
+		background-image: url('/images/icons/checkbox-box.svg');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+	}
+
+	&__actions {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+
+		@include mobile {
+			flex-direction: column;
+			align-items: stretch;
+		}
+	}
+}

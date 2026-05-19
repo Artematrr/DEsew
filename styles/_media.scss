@@ -38,13 +38,13 @@ $mobile-s: 480px;
 }
 
 @mixin tablet-s-above {
-	@media (min-width: $tablet-above) {
+	@media (min-width: $tablet-s-above) {
 		@content;
 	}
 }
 
 @mixin tablet-s {
-	@media (max-width: $tablet) {
+	@media (max-width: $tablet-s) {
 		@content;
 	}
 }

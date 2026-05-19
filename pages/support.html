@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Поддержка и сервис DEsew — гарантийное обслуживание и помощь специалистов">
+	<title>Поддержка и сервис — DEsew</title>
+
+	<link rel="stylesheet" href="/styles/css/jquery-ui.min.css">
+	<link rel="stylesheet" href="/styles/css/swiper-bundle.min.css">
+	<link rel="stylesheet" href="/styles/css/styles.css">
+</head>
+
+<body>
+	<header class="header js-header">
+		<div class="header__container container">
+			<a class="header__logo" href="#" aria-label="DEsew">
+				<img class="header__logo-image" src="/images/icons/logo-main.svg" alt="DEsew" width="77" height="17">
+			</a>
+			<nav class="header__nav" aria-label="Основная навигация">
+				<ul class="header__nav-list">
+					<li class="header__nav-item"><a class="header__nav-link" href="#">Главная</a></li>
+					<li class="header__nav-item"><a class="header__nav-link" href="#">Каталог</a></li>
+					<li class="header__nav-item"><a class="header__nav-link" href="#">О бренде</a></li>
+					<li class="header__nav-item"><a class="header__nav-link" href="#">Где купить</a></li>
+					<li class="header__nav-item"><a class="header__nav-link" href="#">Сервис</a></li>
+					<li class="header__nav-item"><a class="header__nav-link" href="#">Блог</a></li>
+					<li class="header__nav-item"><a class="header__nav-link" href="#">Контакты</a></li>
+				</ul>
+			</nav>
+			<div class="header__actions">
+				<form class="header__search js-search" action="#" role="search">
+					<button class="header__search-button js-search-toggle" type="button" aria-label="Открыть поиск">
+						<img class="header__search-icon" src="/images/icons/search.svg" alt="" width="22" height="21">
+					</button>
+					<input class="header__search-input js-search-input" type="search" name="search" placeholder="Поиск"
+						aria-label="Поиск по сайту">
+				</form>
+				<a class="header__icon-button header__icon-button--mail" href="#" aria-label="Написать">
+					<img class="header__icon" src="/images/icons/mail.svg" alt="" width="32" height="24">
+				</a>
+				<a class="header__icon-button header__icon-button--compare" href="#" aria-label="Сравнение">
+					<img class="header__icon" src="/images/icons/compare.svg" alt="" width="28" height="21">
+				</a>
+				<span class="header__divider" aria-hidden="true"></span>
+				<a class="header__icon-button header__icon-button--phone" href="#" aria-label="Позвонить">
+					<img class="header__icon" src="/images/icons/phone.svg" alt="" width="23" height="23">
+				</a>
+				<a class="header__phone" href="#">+7 (495) 223-66-59</a>
+				<button class="header__burger js-menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false"
+					aria-label="Открыть меню"><span></span></button>
+			</div>
+		</div>
+		<div class="header__mobile js-mobile-menu" id="mobile-menu" aria-hidden="true">
+			<div class="header__mobile-panel">
+				<nav class="header__mobile-nav js-mobile-menu-view" aria-label="Мобильная навигация">
+					<ul class="header__mobile-list">
+						<li><a class="header__mobile-link js-menu-close" href="#"><span>Главная</span><span
+									class="header__mobile-chevron" aria-hidden="true"></span></a></li>
+						<li><a class="header__mobile-link js-menu-close" href="#"><span>Каталог</span><span
+									class="header__mobile-chevron" aria-hidden="true"></span></a></li>
+						<li><a class="header__mobile-link js-menu-close" href="#"><span>О бренде</span><span
+									class="header__mobile-chevron" aria-hidden="true"></span></a></li>
+						<li><a class="header__mobile-link js-menu-close" href="#"><span>Где купить</span><span
+									class="header__mobile-chevron" aria-hidden="true"></span></a></li>
+						<li><a class="header__mobile-link js-menu-close" href="#"><span>Контакты</span><span
+									class="header__mobile-chevron" aria-hidden="true"></span></a></li>
+					</ul>
+				</nav>
+				<img class="header__mobile-banner" src="/images/icons/logo-banner.svg" alt="" aria-hidden="true">
+			</div>
+		</div>
+	</header>
+
+	<main class="main support-page" id="main">
+		<div class="support-page__decor decor" aria-hidden="true">
+			<img class="decor__item decor-stitch decor__item--mobile-hidden support-page__stitch support-page__stitch--left"
+				src="/images/07-support/support-stitch-01.svg" alt="">
+			<img class="decor__item decor-stitch decor__item--mobile-hidden support-page__stitch support-page__stitch--right"
+				src="/images/07-support/support-stitch-02.svg" alt="">
+			<img class="decor__item decor-button decor__item--mobile-hidden support-page__button support-page__button--left"
+				src="/images/07-support/support-button-01.png" alt="">
+		</div>
+
+		<div class="support-page__container container">
+			<nav class="support-page__breadcrumbs breadcrumbs" aria-label="Хлебные крошки">
+				<ol class="breadcrumbs__list">
+					<li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Главная</a></li>
+					<li class="breadcrumbs__item"><span class="breadcrumbs__current">Поддержка и сервис</span></li>
+				</ol>
+			</nav>
+		</div>
+
+		<section class="support-hero" aria-labelledby="support-title">
+			<div class="support-hero__container container">
+				<div class="support-hero__content">
+					<h1 class="support-hero__title" id="support-title">Поддержка и сервис</h1>
+					<p class="support-hero__subtitle">Гарантийное обслуживание и помощь специалистов DESEW</p>
+				</div>
+				<div class="support-hero__media">
+					<!-- TODO: заменить на точное изображение оператора из макета, если ассет появится локально. -->
+					<img class="support-hero__image" src="/images/09-feedback/feedback-object.png"
+						alt="Сервисная поддержка DEsew">
+					<p class="support-hero__note">Поможем подобрать решение, разобраться с настройками и получить сервисную помощь.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="support-features" aria-label="Преимущества поддержки DEsew">
+			<div class="support-features__container container">
+				<div class="support-features__grid">
+					<article class="support-features__card">
+						<img class="support-features__icon" src="/images/07-support/support-01.svg" alt="" aria-hidden="true">
+						<h2 class="support-features__title">Гарантия до 2 лет</h2>
+						<p class="support-features__text">1–2 года гарантии на все оборудование</p>
+					</article>
+					<article class="support-features__card">
+						<img class="support-features__icon" src="/images/07-support/support-02.svg" alt="" aria-hidden="true">
+						<h2 class="support-features__title">Официальный сервис</h2>
+						<p class="support-features__text">Сервисное обслуживание по всей стране</p>
+					</article>
+					<article class="support-features__card">
+						<img class="support-features__icon" src="/images/07-support/support-03.svg" alt="" aria-hidden="true">
+						<h2 class="support-features__title">Консультация специалистов</h2>
+						<p class="support-features__text">Консультации специалистов, помощь 24/7</p>
+					</article>
+					<article class="support-features__card">
+						<img class="support-features__icon" src="/images/07-support/support-04.svg" alt="" aria-hidden="true">
+						<h2 class="support-features__title">Широкая география</h2>
+						<p class="support-features__text">Работаем по всей стране</p>
+					</article>
+				</div>
+				<div class="support-features__visual" aria-hidden="true">
+					<img class="support-features__image" src="/images/05-equipment-features/equipment-features-object.png" alt="">
+				</div>
+			</div>
+		</section>
+
+		<section class="support-banner" aria-label="Телефон сервиса">
+			<div class="support-banner__container container">
+				<div class="support-banner__icon" aria-hidden="true">
+					<img src="/images/icons/phone-small-primary.svg" alt="">
+				</div>
+				<div class="support-banner__content">
+					<a class="support-banner__phone" href="#">+7 (495) 223-66-59</a>
+					<p class="support-banner__label">Бесплатно по России</p>
+				</div>
+				<a class="support-banner__link button button--secondary" href="#">Связаться с сервисом</a>
+			</div>
+		</section>
+
+		<section class="brand-section brand-section--support" aria-labelledby="support-brand-title">
+			<div class="brand-section__container container">
+				<div class="brand-section__content">
+					<h2 class="brand-section__title" id="support-brand-title"><span>DE</span><span>sew</span></h2>
+					<p>это надежное оборудование, рассчитанное на длительную и стабильную работу. Мы уделяем особое внимание
+						качеству сборки, точности механизмов и долговечности каждой модели. В случае необходимости вы всегда
+						можете получить консультацию и поддержку специалистов.</p>
+				</div>
+				<div class="brand-section__visual" aria-hidden="true">
+					<img class="brand-section__image" src="/images/products/sewing-machine-05.jpg" alt="">
+				</div>
+			</div>
+		</section>
+
+		<section class="support-form support-form--compact" aria-labelledby="support-form-title">
+			<div class="support-form__decor" aria-hidden="true">
+				<img class="support-form__stitch support-form__stitch--left" src="/images/09-feedback/feedback-stitch-01.svg"
+					alt="">
+				<img class="support-form__stitch support-form__stitch--right" src="/images/09-feedback/feedback-stitch-02.svg"
+					alt="">
+			</div>
+			<div class="support-form__container container">
+				<div class="support-form__content">
+					<header class="support-form__header">
+						<h2 class="support-form__title" id="support-form-title">Есть вопрос, отзыв или проблема?</h2>
+						<p class="support-form__subtitle">Оставьте сообщение — мы обязательно свяжемся с вами и поможем решить
+							вопрос</p>
+					</header>
+					<form class="support-form__form js-static-form" action="#">
+						<input class="support-form__control support-form__field--full" type="text" name="name" placeholder="Имя">
+						<input class="support-form__control" type="tel" name="phone" placeholder="Телефон">
+						<input class="support-form__control" type="email" name="email" placeholder="Email">
+						<textarea class="support-form__control support-form__control--textarea support-form__field--full"
+							name="message" placeholder="Сообщение"></textarea>
+						<button class="support-form__submit button" type="submit">Отправить</button>
+						<p class="support-form__privacy">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
+					</form>
+				</div>
+				<div class="support-form__media" aria-hidden="true">
+					<img class="support-form__object" src="/images/09-feedback/feedback-object.png" alt="">
+					<img class="support-form__brand" src="/images/09-feedback/feedback-bg-01.png" alt="">
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="footer__decor" aria-hidden="true">
+			<img class="footer__stitch footer__stitch--left" src="/images/99-footer/footer-stitch-01.svg" alt="">
+			<img class="footer__stitch footer__stitch--right" src="/images/99-footer/footer-stitch-02.svg" alt="">
+		</div>
+		<div class="footer__container container">
+			<div class="footer__brand">
+				<a class="footer__logo" href="#" aria-label="DEsew">
+					<img class="footer__logo-image" src="/images/icons/logo-footer.svg" alt="" width="283" height="61">
+				</a>
+				<p class="footer__text">Швейное оборудование<br>для производства и мастерских</p>
+				<span class="footer__divider" aria-hidden="true"></span>
+				<div class="footer__bottom">
+					<p class="footer__copyright">© DESEW 2026</p>
+					<a class="footer__policy" href="#">Политика конфиденциальности</a>
+				</div>
+			</div>
+			<div class="footer__content">
+				<nav class="footer__columns" aria-label="Навигация в подвале">
+					<div class="footer__column">
+						<h2 class="footer__column-title">Продукция</h2>
+						<ul class="footer__list">
+							<li><a class="footer__nav-link" href="#">Швейные машины</a></li>
+							<li><a class="footer__nav-link" href="#">Оверлоки</a></li>
+							<li><a class="footer__nav-link" href="#">Аксессуары</a></li>
+						</ul>
+					</div>
+					<div class="footer__column">
+						<h2 class="footer__column-title">Компания</h2>
+						<ul class="footer__list">
+							<li><a class="footer__nav-link" href="#">О компании</a></li>
+							<li><a class="footer__nav-link" href="#">Где купить</a></li>
+							<li><a class="footer__nav-link" href="#">Контакты</a></li>
+						</ul>
+					</div>
+					<div class="footer__column footer__column--contacts">
+						<h2 class="footer__column-title">Контакты</h2>
+						<a class="footer__contact footer__contact--phone" href="#">
+							<img src="/images/icons/phone-small-primary.svg" alt="" aria-hidden="true">
+							<span>+7 (495) 223-66-59</span>
+						</a>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</footer>
+
+	<script src="/scripts/jquery-3.7.1.min.js"></script>
+	<script src="/scripts/jquery-ui.min.js"></script>
+	<script src="/scripts/jquery.mask.min.js"></script>
+	<script src="/scripts/micromodal.min.js"></script>
+	<script src="/scripts/swiper-bundle.min.js"></script>
+	<script src="/scripts/main.js"></script>
+</body>
+
+</html>

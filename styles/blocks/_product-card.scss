@@ -1,0 +1,106 @@
+.product-card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	padding: 58px 26px 28px;
+	color: var(--black);
+	background-color: var(--white);
+	border: 1px solid rgba(0, 0, 0, 0.04);
+	border-radius: var(--border-radius);
+	box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+	transition-property: box-shadow, translate;
+
+	@include hover {
+		box-shadow: 0 28px 44px rgba(196, 18, 77, 0.18);
+		translate: 0 -2px;
+	}
+
+	&__image-link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 230px;
+		margin-bottom: 54px;
+		background-color: var(--white);
+	}
+
+	&__image {
+		width: min(100%, 245px);
+		max-height: 245px;
+		object-fit: contain;
+	}
+
+	&__content {
+		display: grid;
+		gap: 8px;
+		margin-top: auto;
+	}
+
+	&__label {
+		font-size: 10px;
+		font-weight: 700;
+		line-height: 1.2;
+		text-transform: lowercase;
+		color: var(--primary-500);
+	}
+
+	&__title {
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 1.15;
+	}
+
+	&__price {
+		font-size: 14px;
+		font-weight: 400;
+	}
+
+	&__link {
+		justify-self: start;
+		margin-top: 20px;
+		font-size: 13px;
+		font-weight: 400;
+		color: var(--black);
+
+		@include hover {
+			color: var(--primary-600);
+		}
+	}
+
+	@include desktop {
+		padding-top: 42px;
+
+		&__image-link {
+			height: 208px;
+			margin-bottom: 42px;
+		}
+	}
+
+	@include tablet-s {
+		padding: 42px 24px 26px;
+
+		&__image-link {
+			height: 220px;
+			margin-bottom: 44px;
+		}
+	}
+
+	@include mobile {
+		padding: 48px 22px 24px;
+		border-radius: var(--border-radius);
+
+		&__image-link {
+			height: 218px;
+			margin-bottom: 44px;
+		}
+	}
+
+	@include mobile-s {
+		padding-inline: 18px;
+
+		&__image-link {
+			height: 180px;
+		}
+	}
+}

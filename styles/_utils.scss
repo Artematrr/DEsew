@@ -1,17 +1,22 @@
 .container {
 	max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+	// width: 100%;
 	width: auto;
 	margin-inline: auto;
 	padding-inline: var(--container-padding-x);
+}
+
+.section {
+	position: relative;
+	margin-bottom: var(--section-margin-bottom);
 }
 
 .section--margin-bottom {
 	margin-bottom: var(--section-margin-bottom);
 }
 
-.section--bg {
-	padding-block: 60px;
-	background-image: url('/images/bg.png');
+.section--padding-y {
+	padding-block: var(--section-padding-y);
 }
 
 .section--flex-column {
@@ -22,6 +27,21 @@
 
 	@include mobile {
 		gap: 15px;
+	}
+}
+
+.section__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	gap: 24px;
+	margin-bottom: 36px;
+
+	@include mobile {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 16px;
+		margin-bottom: 24px;
 	}
 }
 

@@ -1,0 +1,87 @@
+.slider {
+	position: relative;
+
+	&__swiper {
+		overflow: hidden;
+	}
+
+	&__controls {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+		margin-top: 28px;
+	}
+
+	&__buttons {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	&__button {
+		@include reset-button;
+		@include flex-center;
+		@include square(44px);
+
+		color: var(--black);
+		background-color: var(--white);
+		border: var(--border);
+		border-radius: 50%;
+
+		@include hover {
+			background-color: var(--primary-500);
+			border-color: var(--black);
+		}
+
+		&.swiper-button-disabled {
+			opacity: 0.35;
+			pointer-events: none;
+		}
+	}
+
+	&__pagination {
+		position: static;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		width: auto;
+
+		.swiper-pagination-bullet {
+			width: 9px;
+			height: 9px;
+			margin: 0;
+			opacity: 1;
+			background-color: var(--gray-300);
+			border-radius: 50%;
+			transition-property: width, height, background-color;
+		}
+
+		.swiper-pagination-bullet-active {
+			width: 21px;
+			height: 21px;
+			background-color: var(--primary-500);
+		}
+	}
+}
+
+.slider-dots {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+
+	&__button {
+		@include reset-button;
+		@include square(9px);
+
+		border-radius: 50%;
+		background-color: var(--gray-300);
+
+		&.is-active {
+			@include square(21px);
+
+			background-color: var(--primary-500);
+		}
+	}
+}

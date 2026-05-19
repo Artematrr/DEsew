@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Где купить DEsew — официальные дилеры и маркетплейсы">
+	<title>Где купить — DEsew</title>
+
+	<link rel="stylesheet" href="/styles/css/jquery-ui.min.css">
+	<link rel="stylesheet" href="/styles/css/swiper-bundle.min.css">
+	<link rel="stylesheet" href="/styles/css/styles.css">
+</head>
+
+<body>
+	<header class="header js-header">
+		<div class="header__container container">
+			<a class="header__logo" href="/" aria-label="DEsew">
+				<img class="header__logo-image" src="/images/icons/logo-main.svg" alt="DEsew" width="77" height="17">
+			</a>
+			<nav class="header__nav" aria-label="Основная навигация">
+				<ul class="header__nav-list">
+					<li class="header__nav-item"><a class="header__nav-link" href="/">Главная</a></li>
+					<li class="header__nav-item"><a class="header__nav-link" href="/pages/catalog.html">Каталог</a></li>
+					<li class="header__nav-item"><a class="header__nav-link" href="/pages/about.html">О бренде</a></li>
+					<li class="header__nav-item"><a class="header__nav-link" href="/pages/dealers.html">Где купить</a></li>
+					<li class="header__nav-item"><a class="header__nav-link" href="#">Сервис</a></li>
+					<li class="header__nav-item"><a class="header__nav-link" href="#">Блог</a></li>
+					<li class="header__nav-item"><a class="header__nav-link" href="/pages/contacts.html">Контакты</a></li>
+				</ul>
+			</nav>
+			<div class="header__actions">
+				<form class="header__search js-search" action="/" role="search">
+					<button class="header__search-button js-search-toggle" type="button" aria-label="Открыть поиск">
+						<img class="header__search-icon" src="/images/icons/search.svg" alt="" width="22" height="21">
+					</button>
+					<input class="header__search-input js-search-input" type="search" name="search" placeholder="Поиск"
+						aria-label="Поиск по сайту">
+				</form>
+				<a class="header__icon-button header__icon-button--mail" href="mailto:info@desew.ru" aria-label="Написать">
+					<img class="header__icon" src="/images/icons/mail.svg" alt="" width="32" height="24">
+				</a>
+				<a class="header__icon-button header__icon-button--compare" href="#compare" aria-label="Сравнение">
+					<img class="header__icon" src="/images/icons/compare.svg" alt="" width="28" height="21">
+				</a>
+				<span class="header__divider" aria-hidden="true"></span>
+				<a class="header__icon-button header__icon-button--phone" href="tel:+74952236659" aria-label="Позвонить">
+					<img class="header__icon" src="/images/icons/phone.svg" alt="" width="23" height="23">
+				</a>
+				<a class="header__phone" href="tel:+74952236659">+7 (495) 223-66-59</a>
+				<button class="header__burger js-menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false"
+					aria-label="Открыть меню"><span></span></button>
+			</div>
+		</div>
+		<div class="header__mobile js-mobile-menu" id="mobile-menu" aria-hidden="true">
+			<div class="header__mobile-panel">
+				<nav class="header__mobile-nav js-mobile-menu-view" aria-label="Мобильная навигация">
+					<ul class="header__mobile-list">
+						<li><a class="header__mobile-link js-menu-close" href="/"><span>Главная</span><span
+									class="header__mobile-chevron" aria-hidden="true"></span></a></li>
+						<li><a class="header__mobile-link js-menu-close" href="/pages/catalog.html"><span>Каталог</span><span
+									class="header__mobile-chevron" aria-hidden="true"></span></a></li>
+						<li><a class="header__mobile-link js-menu-close" href="/pages/about.html"><span>О бренде</span><span
+									class="header__mobile-chevron" aria-hidden="true"></span></a></li>
+						<li><a class="header__mobile-link js-menu-close" href="/pages/dealers.html"><span>Где купить</span><span
+									class="header__mobile-chevron" aria-hidden="true"></span></a></li>
+						<li><a class="header__mobile-link js-menu-close" href="/pages/contacts.html"><span>Контакты</span><span
+									class="header__mobile-chevron" aria-hidden="true"></span></a></li>
+					</ul>
+				</nav>
+				<img class="header__mobile-banner" src="/images/icons/logo-banner.svg" alt="" aria-hidden="true">
+			</div>
+		</div>
+	</header>
+
+	<main class="main dealers-page" id="main">
+		<div class="dealers-page__decor decor" aria-hidden="true">
+			<img class="decor__item decor-stitch dealers-page__stitch dealers-page__stitch--top"
+				src="/images/20-map-page/map-page-stitch-01.svg" alt="">
+		</div>
+
+		<div class="dealers-page__container container">
+			<nav class="dealers-page__breadcrumbs breadcrumbs" aria-label="Хлебные крошки">
+				<ol class="breadcrumbs__list">
+					<li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/">Главная</a></li>
+					<li class="breadcrumbs__item"><span class="breadcrumbs__current">Где купить</span></li>
+				</ol>
+			</nav>
+		</div>
+
+		<section class="dealers dealers--page" aria-labelledby="dealers-title">
+			<div class="dealers__container container">
+				<header class="dealers__header">
+					<h1 class="dealers__title" id="dealers-title">Где купить?</h1>
+					<p class="dealers__subtitle">Официальные дилеры DESEW в России</p>
+				</header>
+				<div class="dealers__layout">
+					<div class="dealers__map">
+						<img class="dealers__map-image" src="/images/06-dealers/dealers-map-placeholder.jpg"
+							alt="Карта официальных дилеров DEsew">
+					</div>
+					<div class="dealers__panel">
+						<div class="dealers__city-dropdown" data-dropdown>
+							<button class="dealers__city" type="button" data-dropdown-toggle aria-expanded="false">
+								<span data-dropdown-label>Москва</span>
+								<span aria-hidden="true">⌄</span>
+							</button>
+							<ul class="dealers__city-list" role="listbox" aria-label="Выберите город">
+								<li><button class="dealers__city-option is-active" type="button" data-dropdown-option
+										data-dropdown-value="Москва" role="option" aria-selected="true">Москва</button></li>
+								<li><button class="dealers__city-option" type="button" data-dropdown-option
+										data-dropdown-value="Санкт-Петербург" role="option" aria-selected="false">Санкт-Петербург</button></li>
+							</ul>
+						</div>
+						<div class="dealers__shops-scroll">
+							<div class="dealers__shops">
+								<article class="dealers__shop js-dealer-card is-active">
+									<div class="dealers__shop-content">
+										<h2 class="dealers__shop-title">Москва, ТЦ «Европейский»</h2>
+										<p class="dealers__shop-address">Пл. Киевского вокзала, 2</p>
+										<div class="dealers__shop-meta">
+											<a class="dealers__shop-phone" href="tel:+74952236659">+7 (495) 223-66-59</a>
+											<span class="dealers__shop-time">Пн–Вс: 10:00–20:00</span>
+										</div>
+										<a class="dealers__route" href="#">Построить маршрут</a>
+									</div>
+									<img class="dealers__shop-image" src="/images/06-dealers/dealers-shop-01.jpg"
+										alt="Дилер DEsew в ТЦ Европейский">
+								</article>
+								<article class="dealers__shop js-dealer-card">
+									<div class="dealers__shop-content">
+										<h2 class="dealers__shop-title">Москва, ТЦ «Ривьера»</h2>
+										<p class="dealers__shop-address">ул. Ленинская, 25</p>
+										<div class="dealers__shop-meta">
+											<a class="dealers__shop-phone" href="tel:+74952236659">+7 (495) 223-66-59</a>
+											<span class="dealers__shop-time">Пн–Вс: 10:00–20:00</span>
+										</div>
+										<a class="dealers__route" href="#">Построить маршрут</a>
+									</div>
+									<img class="dealers__shop-image" src="/images/06-dealers/dealers-shop-02.jpg"
+										alt="Дилер DEsew в ТЦ Ривьера">
+								</article>
+								<article class="dealers__shop js-dealer-card">
+									<div class="dealers__shop-content">
+										<h2 class="dealers__shop-title">Москва, ТЦ «Афимолл»</h2>
+										<p class="dealers__shop-address">пр-т Мира, 15</p>
+										<div class="dealers__shop-meta">
+											<a class="dealers__shop-phone" href="tel:+74952236659">+7 (495) 223-66-59</a>
+											<span class="dealers__shop-time">Пн–Вс: 10:00–20:00</span>
+										</div>
+										<a class="dealers__route" href="#">Построить маршрут</a>
+									</div>
+									<img class="dealers__shop-image" src="/images/06-dealers/dealers-shop-03.jpg"
+										alt="Дилер DEsew в ТЦ Афимолл">
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="marketplaces" aria-labelledby="dealers-marketplaces-title">
+			<div class="marketplaces__container container">
+				<header class="marketplaces__header">
+					<h2 class="marketplaces__title" id="dealers-marketplaces-title">Доступно на Маркетплейсах</h2>
+				</header>
+				<ul class="marketplaces__grid" aria-label="Маркетплейсы">
+					<li class="marketplaces__item"><img src="/images/16-marketplaces/ozon.png" alt="Ozon"></li>
+					<li class="marketplaces__item"><img src="/images/16-marketplaces/wildberries.png" alt="Wildberries"></li>
+					<li class="marketplaces__item"><img src="/images/16-marketplaces/dns.png" alt="DNS"></li>
+					<li class="marketplaces__item"><img src="/images/16-marketplaces/yandex-market.png" alt="Яндекс Маркет"></li>
+					<li class="marketplaces__item"><img src="/images/16-marketplaces/citilink.png" alt="Ситилинк"></li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="brand-section" aria-labelledby="brand-section-title">
+			<div class="brand-section__container container">
+				<div class="brand-section__content">
+					<h2 class="brand-section__title" id="brand-section-title"><span>DE</span><span>sew</span></h2>
+					<p><b>DESEW</b> — бренд высокоточного швейного оборудования, созданный для стабильной работы и высокой точности.</p>
+					<p>Мы разрабатываем технику для производства и мастерских, где важны надежность, скорость и качество результата.</p>
+				</div>
+				<div class="brand-section__visual" aria-hidden="true">
+					<img class="brand-section__image" src="/images/products/sewing-machine-05.jpg" alt="">
+				</div>
+			</div>
+		</section>
+
+		<section class="support-form support-form--compact" aria-labelledby="dealers-support-title">
+			<div class="support-form__container container">
+				<div class="support-form__content">
+					<header class="support-form__header">
+						<h2 class="support-form__title" id="dealers-support-title">Есть вопрос, отзыв или проблема?</h2>
+						<p class="support-form__subtitle">Оставьте сообщение — мы обязательно свяжемся с вами и поможем решить вопрос</p>
+					</header>
+					<form class="support-form__form js-static-form" action="/">
+						<input class="support-form__control support-form__field--full" type="text" name="name" placeholder="Имя">
+						<input class="support-form__control" type="tel" name="phone" placeholder="Телефон">
+						<input class="support-form__control" type="email" name="email" placeholder="Email">
+						<textarea class="support-form__control support-form__control--textarea support-form__field--full"
+							name="message" placeholder="Сообщение"></textarea>
+						<button class="support-form__submit button" type="submit">Отправить</button>
+						<p class="support-form__privacy">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
+					</form>
+				</div>
+				<div class="support-form__media" aria-hidden="true">
+					<img class="support-form__object" src="/images/09-feedback/feedback-object.png" alt="">
+					<img class="support-form__brand" src="/images/09-feedback/feedback-bg-01.png" alt="">
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer" id="contacts">
+		<div class="footer__container container">
+			<div class="footer__brand">
+				<a class="footer__logo" href="/" aria-label="DEsew">
+					<img class="footer__logo-image" src="/images/icons/logo-footer.svg" alt="" width="283" height="61">
+				</a>
+				<p class="footer__text">Швейное оборудование<br>для производства и мастерских</p>
+				<span class="footer__divider" aria-hidden="true"></span>
+				<div class="footer__bottom">
+					<p class="footer__copyright">© DESEW 2026</p>
+					<a class="footer__policy" href="#">Политика конфиденциальности</a>
+				</div>
+			</div>
+			<div class="footer__content">
+				<nav class="footer__columns" aria-label="Навигация в подвале">
+					<div class="footer__column">
+						<h2 class="footer__column-title">Продукция</h2>
+						<ul class="footer__list">
+							<li><a class="footer__nav-link" href="/pages/catalog.html">Швейные машины</a></li>
+							<li><a class="footer__nav-link" href="#">Оверлоки</a></li>
+							<li><a class="footer__nav-link" href="#">Аксессуары</a></li>
+						</ul>
+					</div>
+					<div class="footer__column">
+						<h2 class="footer__column-title">Компания</h2>
+						<ul class="footer__list">
+							<li><a class="footer__nav-link" href="/pages/about.html">О компании</a></li>
+							<li><a class="footer__nav-link" href="/pages/dealers.html">Где купить</a></li>
+							<li><a class="footer__nav-link" href="/pages/contacts.html">Контакты</a></li>
+						</ul>
+					</div>
+					<div class="footer__column footer__column--contacts">
+						<h2 class="footer__column-title">Контакты</h2>
+						<a class="footer__contact footer__contact--phone" href="tel:+74952236659">
+							<img src="/images/icons/phone-small-primary.svg" alt="" aria-hidden="true">
+							<span>+7 (495) 223-66-59</span>
+						</a>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</footer>
+
+	<script src="/scripts/jquery-3.7.1.min.js"></script>
+	<script src="/scripts/jquery-ui.min.js"></script>
+	<script src="/scripts/jquery.mask.min.js"></script>
+	<script src="/scripts/micromodal.min.js"></script>
+	<script src="/scripts/swiper-bundle.min.js"></script>
+	<script src="/scripts/main.js"></script>
+</body>
+
+</html>

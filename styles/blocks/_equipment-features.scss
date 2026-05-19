@@ -1,0 +1,306 @@
+.equipment-features {
+	position: relative;
+	min-height: 780px;
+	margin-bottom: 0;
+	overflow: hidden;
+	color: var(--white);
+	background-color: var(--black);
+
+	&__bg {
+		@include visual-frame-layer;
+
+		z-index: 0;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	&__decor {
+		@include visual-frame-layer;
+
+		z-index: var(--z-index-decor);
+		overflow: visible;
+	}
+
+	&__line {
+		top: 0;
+		left: 12px;
+		width: calc(100% - 24px);
+		height: 1px;
+	}
+
+	&__button {
+		pointer-events: none;
+	}
+
+	&__button--large {
+		top: -26px;
+		left: 420px;
+		width: 79px;
+	}
+
+	&__button--small {
+		top: -10px;
+		left: 490px;
+		width: 41px;
+	}
+
+	&__stitch--center {
+		left: 50%;
+		bottom: 110px;
+		width: 690px;
+		opacity: 0.8;
+		transform: translateX(-50%);
+	}
+
+	&__container {
+		@include visual-frame-block;
+
+		position: relative;
+		z-index: var(--z-index-base);
+		min-height: inherit;
+	}
+
+	&__title {
+		position: absolute;
+		top: 44px;
+		right: 0;
+		left: 0;
+		z-index: 3;
+		font-size: 34px;
+		font-weight: 700;
+		line-height: 1.1;
+		text-align: center;
+		color: var(--primary-500);
+	}
+
+	&__object {
+		position: absolute;
+		z-index: 2;
+		left: 50%;
+		bottom: 48px;
+		width: min(48vw, 865px);
+		height: auto;
+		object-fit: contain;
+		transform: translateX(-50%);
+	}
+
+	&__item {
+		position: absolute;
+		z-index: 3;
+		width: 315px;
+		color: var(--white);
+	}
+
+	&__item--power {
+		top: 168px;
+		left: 360px;
+	}
+
+	&__item--control {
+		top: 168px;
+		right: 350px;
+	}
+
+	&__item--construction {
+		left: 360px;
+		bottom: 168px;
+	}
+
+	&__item--durability {
+		right: 350px;
+		bottom: 168px;
+	}
+
+	&__icon {
+		@include square(68px);
+
+		margin-bottom: 16px;
+		object-fit: contain;
+	}
+
+	&__item-title {
+		margin-bottom: 10px;
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 1.2;
+	}
+
+	&__text {
+		font-size: 15px;
+		line-height: 1.25;
+		color: rgba(255, 255, 255, 0.78);
+	}
+
+	@include desktop {
+		&__button--large {
+			left: 300px;
+		}
+
+		&__button--small {
+			left: 370px;
+		}
+
+		&__item--power,
+		&__item--construction {
+			left: 220px;
+		}
+
+		&__item--control,
+		&__item--durability {
+			right: 210px;
+		}
+
+		&__object {
+			width: min(58vw, 780px);
+		}
+	}
+
+	@include tablet-s {
+		min-height: 670px;
+
+		&__title {
+			top: 34px;
+			font-size: 28px;
+		}
+
+		&__object {
+			bottom: 52px;
+			width: min(76vw, 650px);
+		}
+
+		&__item {
+			width: 245px;
+		}
+
+		&__item--power,
+		&__item--construction {
+			left: 42px;
+		}
+
+		&__item--control,
+		&__item--durability {
+			right: 36px;
+		}
+
+		&__item--power,
+		&__item--control {
+			top: 124px;
+		}
+
+		&__item--construction,
+		&__item--durability {
+			bottom: 104px;
+		}
+
+		&__text {
+			font-size: 13px;
+		}
+	}
+
+	@include mobile {
+		min-height: 536px;
+
+		&__title {
+			top: 24px;
+			padding-inline: 18px;
+			font-size: 22px;
+		}
+
+		&__button--large {
+			top: -17px;
+			left: 200px;
+			width: 46px;
+		}
+
+		&__button--small {
+			top: -8px;
+			left: 240px;
+			width: 24px;
+		}
+
+		&__object {
+			bottom: 92px;
+			width: 62vw;
+			min-width: 360px;
+		}
+
+		&__stitch--center {
+			bottom: 92px;
+			width: 420px;
+		}
+
+		&__item {
+			width: 190px;
+		}
+
+		&__item--power,
+		&__item--construction {
+			left: 54px;
+		}
+
+		&__item--control,
+		&__item--durability {
+			right: 42px;
+		}
+
+		&__item--power,
+		&__item--control {
+			top: 96px;
+		}
+
+		&__item--construction,
+		&__item--durability {
+			bottom: 76px;
+		}
+
+		&__icon {
+			@include square(54px);
+
+			margin-bottom: 8px;
+		}
+
+		&__item-title {
+			margin-bottom: 6px;
+			font-size: 12px;
+		}
+
+		&__text {
+			font-size: 10px;
+			line-height: 1.2;
+		}
+	}
+
+	@include mobile-s {
+		min-height: 620px;
+
+		&__object {
+			bottom: 210px;
+			min-width: 330px;
+		}
+
+		&__item {
+			width: calc(50% - 22px);
+		}
+
+		&__item--power,
+		&__item--construction {
+			left: 18px;
+		}
+
+		&__item--control,
+		&__item--durability {
+			right: 18px;
+		}
+
+		&__item--power,
+		&__item--control {
+			top: 90px;
+		}
+
+		&__item--construction,
+		&__item--durability {
+			bottom: 42px;
+		}
+	}
+}

@@ -1,0 +1,32 @@
+.breadcrumbs {
+	font-size: 14px;
+	color: var(--gray-500);
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 8px;
+	}
+
+	&__item {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+
+		&:not(:last-child)::after {
+			content: '/';
+			color: var(--gray-300);
+		}
+	}
+
+	&__link {
+		@include hover {
+			color: var(--black);
+		}
+	}
+
+	&__current {
+		color: var(--black);
+	}
+}

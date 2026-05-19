@@ -1,0 +1,273 @@
+.catalog-filter {
+	display: grid;
+	gap: 20px;
+	padding: 22px 14px 0;
+	background-color: var(--white);
+	border: 1px solid rgba(0, 0, 0, 0.04);
+	border-radius: 20px;
+	box-shadow: 0 18px 36px rgba(0, 0, 0, 0.08);
+
+	&__mobile-header {
+		display: none;
+	}
+
+	&__close {
+		display: none;
+	}
+
+	&__group {
+		display: grid;
+		gap: 13px;
+	}
+
+	&__group.is-expanded &__body {
+		display: grid;
+	}
+
+	&__legend,
+	&__group-toggle {
+		font-size: 14px;
+		font-weight: 800;
+		line-height: 1.12;
+		color: var(--black);
+	}
+
+	&__range-title {
+		font-size: 12px;
+		font-weight: 700;
+		line-height: 1.2;
+		color: var(--black);
+	}
+
+	&__group-toggle {
+		@include reset-button;
+
+		display: inline-flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
+		width: 100%;
+		text-align: left;
+		transition-property: color;
+
+		&::after {
+			content: '';
+			width: 9px;
+			height: 9px;
+			flex-shrink: 0;
+			border-right: 2px solid var(--primary-500);
+			border-bottom: 2px solid var(--primary-500);
+			rotate: 45deg;
+			translate: 0 -3px;
+			transition-property: rotate, translate;
+			transition-duration: var(--transition-duration);
+		}
+
+		@include hover {
+			color: var(--primary-600);
+		}
+	}
+
+	&__group.is-expanded &__group-toggle::after {
+		rotate: 225deg;
+		translate: 0 3px;
+	}
+
+	&__body {
+		display: grid;
+		gap: 12px;
+	}
+
+	&__body--collapsed {
+		display: none;
+	}
+
+	&__group.is-expanded &__body--collapsed {
+		display: grid;
+	}
+
+	&__checkbox {
+		display: grid;
+		grid-template-columns: 20px 1fr;
+		align-items: center;
+		gap: 8px;
+		min-height: 20px;
+		font-size: 12px;
+		font-weight: 600;
+		line-height: 1.22;
+		color: var(--black);
+		cursor: pointer;
+	}
+
+	&__checkbox-input {
+		@include visually-hidden;
+
+		&:checked + .catalog-filter__checkbox-control {
+			background-image:
+				url('/images/icons/checkbox-check.svg'),
+				url('/images/icons/checkbox-box.svg');
+		}
+
+		&:focus-visible + .catalog-filter__checkbox-control {
+			outline: 2px solid var(--black);
+			outline-offset: 3px;
+		}
+	}
+
+	&__checkbox-control {
+		@include square(20px);
+
+		background-image: url('/images/icons/checkbox-box.svg');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+	}
+
+	&__ranges {
+		display: grid;
+		gap: 20px;
+	}
+
+	&__range {
+		display: grid;
+		gap: 9px;
+	}
+
+	&__scale {
+		display: flex;
+		justify-content: space-between;
+		gap: 12px;
+		font-size: 12px;
+		font-weight: 600;
+		color: var(--black);
+	}
+
+	&__range-slider {
+		height: 2px;
+		margin: 4px 5px 0;
+		background-color: var(--gray-700);
+		border: none;
+		border-radius: var(--border-radius-xs);
+
+		.ui-slider-range {
+			background-color: var(--primary-500);
+		}
+
+		.ui-slider-handle {
+			@include square(11px);
+
+			top: -5px;
+			margin-left: -5px;
+			background-color: var(--primary-500);
+			border: none;
+			border-radius: 50%;
+			box-shadow: 0 0 0 4px rgba(246, 205, 20, 0.2);
+			outline: none;
+		}
+	}
+
+	&__values {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 64px));
+		justify-content: space-between;
+		gap: 14px;
+	}
+
+	&__value {
+		display: grid;
+		gap: 4px;
+		font-size: 10px;
+		text-transform: lowercase;
+		color: var(--gray-500);
+	}
+
+	&__value-input {
+		width: 100%;
+		min-height: 30px;
+		padding: 6px 10px;
+		font-size: 12px;
+		font-weight: 600;
+		text-align: center;
+		color: var(--gray-400);
+		background-color: var(--white);
+		border: 1px dashed var(--primary-500);
+		border-radius: var(--border-radius-sm);
+		outline: none;
+	}
+
+	&__actions {
+		display: grid;
+		justify-items: center;
+		gap: 10px;
+		margin: 12px -4px -42px;
+	}
+
+	&__actions .button {
+		min-height: 54px;
+		width: min(100%, 180px);
+		font-size: 26px;
+		font-weight: 800;
+		border-color: transparent;
+		background:
+			linear-gradient(90deg, rgba(246, 205, 20, 0.18) 0%, rgba(255, 255, 255, 0.84) 100%);
+		box-shadow: 0 12px 24px rgba(246, 205, 20, 0.18);
+	}
+
+	&__actions .button--secondary {
+		min-height: auto;
+		padding: 0;
+		font-size: 20px;
+		color: var(--gray-400);
+		background: transparent;
+		border: none;
+		box-shadow: none;
+	}
+
+	@include tablet {
+		padding-inline: 18px;
+
+		&__legend,
+		&__group-toggle {
+			font-size: 22px;
+		}
+
+		&__checkbox {
+			grid-template-columns: 34px 1fr;
+			min-height: 34px;
+			font-size: 17px;
+		}
+
+		&__checkbox-control {
+			width: 34px;
+		}
+	}
+
+	@include tablet-s {
+		gap: 28px;
+		padding: 48px 28px 38px;
+		border-radius: 32px;
+
+		&__mobile-header {
+			display: none;
+		}
+
+		&__mobile-title {
+			font-size: 28px;
+			font-weight: 800;
+			line-height: 1.1;
+		}
+
+		&__close {
+			display: none;
+		}
+
+		&__actions {
+			display: grid;
+			margin-bottom: 0;
+		}
+
+		&__actions .button {
+			width: min(100%, 280px);
+		}
+	}
+}

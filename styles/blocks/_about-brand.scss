@@ -1,0 +1,171 @@
+.about-brand {
+	position: relative;
+	display: grid;
+	align-items: center;
+	min-height: 780px;
+	margin-bottom: var(--section-margin-bottom);
+	overflow: hidden;
+	color: var(--black);
+	background-color: var(--white);
+
+	&__image {
+		@include visual-frame-layer;
+
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	&__container {
+		position: relative;
+		z-index: var(--z-index-base);
+	}
+
+	&__card {
+		width: min(100%, 1163px);
+		min-height: 601px;
+		margin-inline: auto;
+		padding: 50px 48px 56px;
+		background: rgba(255, 255, 255, 0.34);
+		border: 1px solid rgba(255, 255, 255, 0.9);
+		border-radius: var(--border-radius-xl);
+		box-shadow: 0 28px 72px rgba(0, 0, 0, 0.05);
+		backdrop-filter: blur(10px);
+	}
+
+	&__eyebrow {
+		margin-bottom: 2px;
+		font-size: 31px;
+		font-weight: 700;
+		line-height: 1.05;
+	}
+
+	&__title {
+		margin-bottom: 18px;
+		font-size: 83px;
+		font-weight: 800;
+		line-height: 0.95;
+
+		span:last-child {
+			color: var(--primary-500);
+		}
+	}
+
+	&__text {
+		max-width: 560px;
+		margin-bottom: 54px;
+		font-size: 20px;
+		line-height: 1.15;
+
+		p:not(:last-child) {
+			margin-bottom: 26px;
+		}
+	}
+
+	&__button {
+		justify-content: space-between;
+		min-width: 226px;
+		min-height: 36px;
+		padding: 8px 0 8px 46px;
+		font-size: 17px;
+		color: var(--gray-700);
+		background: var(--gradient-01);
+		border: none;
+		border-radius: var(--border-radius-xs);
+
+		img {
+			width: 41px;
+			height: 41px;
+			margin-right: -41px;
+		}
+
+		@include hover {
+			color: var(--black);
+			background: var(--primary-400);
+		}
+	}
+
+	&--page {
+		margin-bottom: var(--section-margin-bottom);
+
+		.about-brand__card {
+			display: grid;
+			align-content: center;
+		}
+
+		.about-brand__text {
+			max-width: 1020px;
+			margin-bottom: 0;
+			font-size: clamp(24px, 2.5vw, 38px);
+			line-height: 1.18;
+		}
+	}
+
+	@include desktop {
+		min-height: 720px;
+
+		&__card {
+			width: min(100%, 1060px);
+			min-height: 560px;
+		}
+	}
+
+	@include tablet-s {
+		min-height: 620px;
+
+		&__card {
+			min-height: auto;
+			padding: 42px;
+		}
+
+		&__eyebrow {
+			font-size: 26px;
+		}
+
+		&__title {
+			font-size: 68px;
+		}
+
+		&__text {
+			max-width: 520px;
+			font-size: 18px;
+		}
+	}
+
+	@include mobile {
+		min-height: auto;
+		padding-block: 34px;
+
+		&__card {
+			padding: 28px 24px 34px;
+			border-radius: var(--border-radius-lg);
+		}
+
+		&__eyebrow {
+			font-size: 22px;
+		}
+
+		&__title {
+			font-size: 54px;
+		}
+
+		&__text {
+			margin-bottom: 32px;
+			font-size: 15px;
+
+			br {
+				display: none;
+			}
+
+			p:not(:last-child) {
+				margin-bottom: 18px;
+			}
+		}
+
+		&__button {
+			width: 100%;
+			min-width: 0;
+			padding-left: 24px;
+		}
+	}
+}

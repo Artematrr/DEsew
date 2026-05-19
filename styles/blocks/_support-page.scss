@@ -1,0 +1,164 @@
+.support-page {
+	position: relative;
+	overflow: hidden;
+	background-color: var(--white);
+
+	&__decor {
+		@include visual-frame-layer;
+
+		z-index: 0;
+	}
+
+	&__stitch {
+		opacity: 0.65;
+	}
+
+	&__stitch--left {
+		left: -250px;
+		top: 290px;
+		width: 1040px;
+	}
+
+	&__stitch--right {
+		right: -250px;
+		top: 250px;
+		width: 850px;
+	}
+
+	&__button {
+		width: 78px;
+	}
+
+	&__button--left {
+		left: 120px;
+		top: 870px;
+	}
+
+	&__container {
+		position: relative;
+		z-index: var(--z-index-base);
+	}
+
+	&__breadcrumbs {
+		padding-block: 48px 76px;
+	}
+
+	@include tablet {
+		&__breadcrumbs {
+			padding-block: 36px 54px;
+		}
+	}
+
+	@include mobile {
+		&__breadcrumbs {
+			padding-block: 22px 24px;
+		}
+	}
+}
+
+.support-hero {
+	position: relative;
+	z-index: var(--z-index-base);
+	margin-bottom: 92px;
+
+	&__container {
+		position: relative;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(420px, 640px);
+		gap: 34px;
+		align-items: end;
+	}
+
+	&__content {
+		display: grid;
+		gap: 34px;
+	}
+
+	&__title {
+		max-width: 720px;
+		font-size: clamp(54px, 4.8vw, 76px);
+		font-weight: 800;
+		line-height: 0.96;
+		text-transform: uppercase;
+		color: var(--primary-500);
+	}
+
+	&__subtitle {
+		max-width: 600px;
+		font-size: clamp(26px, 2.1vw, 40px);
+		line-height: 1.1;
+		color: var(--gray-500);
+	}
+
+	&__media {
+		position: relative;
+		align-self: center;
+		min-height: 430px;
+		overflow: hidden;
+		border-radius: 0 var(--border-radius-xl) var(--border-radius-xl) 0;
+		background:
+			linear-gradient(90deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0) 36%),
+			var(--gray-50);
+		box-shadow: inset 0 0 90px rgba(246, 205, 20, 0.16);
+	}
+
+	&__image {
+		position: absolute;
+		right: -80px;
+		bottom: -18px;
+		width: min(100%, 620px);
+		height: 100%;
+		object-fit: contain;
+		opacity: 0.92;
+	}
+
+	&__note {
+		position: absolute;
+		left: 28px;
+		bottom: 24px;
+		max-width: 300px;
+		font-size: 14px;
+		color: var(--gray-500);
+	}
+
+	@include tablet-s {
+		margin-bottom: 70px;
+
+		&__container {
+			grid-template-columns: 1fr;
+		}
+
+		&__media {
+			min-height: 320px;
+			border-radius: var(--border-radius-xl);
+		}
+
+		&__image {
+			right: 0;
+		}
+	}
+
+	@include mobile {
+		margin-bottom: 42px;
+
+		&__content {
+			gap: 18px;
+		}
+
+		&__title {
+			font-size: 32px;
+		}
+
+		&__subtitle {
+			font-size: 20px;
+		}
+
+		&__media {
+			min-height: 190px;
+		}
+
+		&__note {
+			display: none;
+		}
+	}
+}

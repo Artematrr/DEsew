@@ -1,0 +1,486 @@
+.dealers {
+	margin-bottom: 0;
+	padding-block: 54px 64px;
+	background-color: var(--white);
+
+	&__header {
+		margin-bottom: 24px;
+		text-align: center;
+	}
+
+	&__title {
+		margin-bottom: 2px;
+		font-size: 32px;
+		font-weight: 700;
+		line-height: 1.1;
+		color: var(--primary-500);
+	}
+
+	&__subtitle {
+		position: relative;
+		display: inline-block;
+		font-size: 14px;
+		color: var(--gray-500);
+
+		&::after {
+			content: '';
+			position: absolute;
+			left: 50%;
+			bottom: -10px;
+			width: 78px;
+			height: 3px;
+			background-color: var(--primary-500);
+			transform: translateX(-50%);
+		}
+	}
+
+	&__layout {
+		display: grid;
+		grid-template-columns: minmax(0, 807px) minmax(340px, 456px);
+		gap: 28px;
+		align-items: start;
+		justify-content: center;
+	}
+
+	&__map {
+		position: relative;
+		min-height: 510px;
+		overflow: hidden;
+		background-color: var(--gray-100);
+		box-shadow: var(--shadow-sm);
+	}
+
+	&__map-image {
+		width: 100%;
+		height: 100%;
+		min-height: inherit;
+		object-fit: cover;
+	}
+
+	&__panel {
+		position: relative;
+		display: grid;
+		gap: 12px;
+	}
+
+	&__city-dropdown {
+		position: relative;
+		z-index: var(--z-index-dropdown);
+
+		&.is-open {
+			.dealers__city {
+				border-radius: var(--border-radius-sm) var(--border-radius-sm) 0 0;
+
+				svg {
+					transform: scaleY(-1);
+				}
+			}
+
+			.dealers__city-list {
+				visibility: visible;
+				opacity: 1;
+				transform: translateY(0);
+				pointer-events: auto;
+			}
+		}
+	}
+
+	&__city {
+		@include reset-button;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		min-height: 38px;
+		padding: 6px 18px;
+		font-size: 20px;
+		font-weight: 700;
+		color: var(--gray-500);
+		background-color: var(--white);
+		border-radius: 0 0 var(--border-radius-sm) var(--border-radius-sm);
+		box-shadow: 0 5px 9px rgba(0, 0, 0, 0.18);
+		transition-property: border-radius, box-shadow;
+
+		svg {
+			color: var(--primary-500);
+			transition-property: transform;
+		}
+	}
+
+	&__city-list {
+		position: absolute;
+		top: 100%;
+		right: 0;
+		left: 0;
+		display: grid;
+		padding: 8px;
+		visibility: hidden;
+		opacity: 0;
+		background-color: var(--white);
+		border-top: 1px solid var(--gray-100);
+		border-radius: 0 0 var(--border-radius-sm) var(--border-radius-sm);
+		box-shadow: 0 14px 24px rgba(0, 0, 0, 0.14);
+		transform: translateY(-6px);
+		pointer-events: none;
+		transition-property: visibility, opacity, transform;
+	}
+
+	&__city-option {
+		@include reset-button;
+
+		width: 100%;
+		padding: 9px 10px;
+		font-size: 15px;
+		font-weight: 600;
+		line-height: 1.15;
+		text-align: left;
+		color: var(--gray-500);
+		border-radius: var(--border-radius-xs);
+		transition-property: color, background-color;
+
+		&.is-active {
+			color: var(--black);
+			background-color: var(--primary-100);
+		}
+
+		@include hover {
+			color: var(--black);
+			background-color: var(--gray-100);
+		}
+	}
+
+	&__shops-scroll {
+		max-height: 486px;
+		padding-right: 18px;
+		overflow-y: auto;
+	}
+
+	&__shops {
+		display: grid;
+		gap: 12px;
+	}
+
+	&__shop {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 128px;
+		gap: 14px;
+		align-items: center;
+		min-height: 156px;
+		padding: 20px 20px 18px;
+		background-color: var(--white);
+		border: 1px solid transparent;
+		border-radius: var(--border-radius);
+		box-shadow: 0 15px 28px rgba(0, 0, 0, 0.08);
+
+		&.is-active {
+			border-color: var(--primary-500);
+		}
+	}
+
+	&__shop-title {
+		margin-bottom: 4px;
+		font-size: 15px;
+		font-weight: 700;
+		line-height: 1.2;
+	}
+
+	&__shop-address {
+		margin-bottom: 22px;
+		font-size: 12px;
+		font-weight: 600;
+		color: var(--gray-700);
+	}
+
+	&__shop-meta {
+		display: flex;
+		align-items: center;
+		gap: 24px;
+		margin-bottom: 8px;
+		font-size: 12px;
+	}
+
+	&__shop-phone,
+	&__shop-time {
+		position: relative;
+		padding-left: 18px;
+		white-space: nowrap;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 12px;
+			aspect-ratio: 1;
+			border: 2px solid currentColor;
+			border-radius: 50%;
+			transform: translateY(-50%);
+		}
+	}
+
+	&__shop-phone {
+		color: var(--black);
+
+		&::before {
+			border-color: var(--primary-500);
+		}
+	}
+
+	&__route {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		min-height: 28px;
+		padding: 6px 36px 6px 14px;
+		font-size: 12px;
+		font-weight: 700;
+		color: var(--gray-500);
+		background:
+			linear-gradient(90deg, rgba(246, 205, 20, 0.25) 0%, rgba(254, 206, 106, 0.55) 100%);
+		border-radius: var(--border-radius-xs);
+
+		&::after {
+			content: '→';
+			position: absolute;
+			top: 50%;
+			right: -12px;
+			display: grid;
+			place-items: center;
+			width: 28px;
+			aspect-ratio: 1;
+			color: var(--white);
+			background: var(--gradient-01);
+			border-radius: 50%;
+			transform: translateY(-50%);
+		}
+	}
+
+	&__shop-image {
+		width: 128px;
+		height: 98px;
+		object-fit: cover;
+		border-radius: var(--border-radius-sm);
+	}
+
+	&__markets-wrap {
+		position: relative;
+		width: min(100%, 1200px);
+		margin: 16px auto 0;
+		padding-bottom: 24px;
+	}
+
+	&__markets-title {
+		margin-bottom: 8px;
+		font-size: 16px;
+		text-align: center;
+		color: var(--gray-500);
+	}
+
+	&__markets {
+		position: relative;
+		z-index: var(--z-index-base);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 28px;
+		min-height: 72px;
+		padding: 14px 42px;
+		background-color: var(--white);
+		border-radius: var(--border-radius-sm);
+		box-shadow: var(--shadow-sm);
+	}
+
+	&__markets img {
+		max-width: 180px;
+		max-height: 40px;
+		object-fit: contain;
+		filter: grayscale(1);
+		opacity: 0.72;
+	}
+
+	&__stitch {
+		position: absolute;
+		right: 24px;
+		bottom: 0;
+		left: 24px;
+		width: calc(100% - 48px);
+		height: 1px;
+		object-fit: cover;
+		pointer-events: none;
+	}
+
+	&--page {
+		padding-block: 42px 86px;
+
+		.dealers__header {
+			margin-bottom: 94px;
+		}
+
+		.dealers__title {
+			font-size: clamp(44px, 4.8vw, 64px);
+		}
+
+		.dealers__layout {
+			grid-template-columns: minmax(0, 820px) minmax(380px, 520px);
+			gap: 34px;
+		}
+
+		.dealers__map {
+			min-height: 520px;
+			border-radius: var(--border-radius-xl);
+		}
+
+		.dealers__city {
+			min-height: 56px;
+			padding-inline: 24px;
+			font-size: 28px;
+			border-radius: var(--border-radius-sm);
+		}
+	}
+
+	@include desktop {
+		&__layout {
+			grid-template-columns: minmax(0, 740px) minmax(330px, 420px);
+		}
+
+		&__shop {
+			grid-template-columns: minmax(0, 1fr) 112px;
+			padding-inline: 16px;
+		}
+
+		&__shop-meta {
+			gap: 12px;
+		}
+
+		&__shop-image {
+			width: 112px;
+		}
+	}
+
+	@include tablet-s {
+		&--page {
+			.dealers__header {
+				margin-bottom: 36px;
+			}
+
+			.dealers__layout {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		&__layout {
+			grid-template-columns: 1fr;
+			width: min(100%, 807px);
+			margin-inline: auto;
+		}
+
+		&__map {
+			min-height: auto;
+			aspect-ratio: 807 / 510;
+			border-radius: var(--border-radius-xl);
+		}
+
+		&__city {
+			border-radius: 0 0 var(--border-radius-sm) var(--border-radius-sm);
+		}
+
+		&__city-list {
+			z-index: var(--z-index-dropdown);
+		}
+
+		&__shops-scroll {
+			max-height: none;
+			padding: 12px 0 14px;
+			overflow-x: auto;
+			overflow-y: hidden;
+			scrollbar-color: var(--primary-500) transparent;
+		}
+
+		&__shops {
+			display: flex;
+			width: max-content;
+			padding-inline: 24px;
+		}
+
+		&__shop {
+			width: 292px;
+			min-height: 108px;
+			grid-template-columns: minmax(0, 1fr) 88px;
+			gap: 10px;
+			padding: 12px;
+		}
+
+		&__shop-title {
+			font-size: 10px;
+		}
+
+		&__shop-address,
+		&__shop-meta,
+		&__route {
+			font-size: 8px;
+		}
+
+		&__shop-address {
+			margin-bottom: 14px;
+		}
+
+		&__shop-meta {
+			gap: 8px;
+		}
+
+		&__shop-image {
+			width: 88px;
+			height: 68px;
+		}
+
+		&__markets {
+			gap: 18px;
+			padding-inline: 28px;
+		}
+	}
+
+	@include mobile {
+		padding-block: 40px 48px;
+
+		&--page {
+			padding-block: 28px 54px;
+
+			.dealers__title {
+				font-size: 40px;
+			}
+
+			.dealers__subtitle {
+				font-size: 13px;
+			}
+
+			.dealers__city {
+				min-height: 44px;
+				font-size: 20px;
+			}
+		}
+
+		&__title {
+			font-size: 30px;
+		}
+
+		&__map {
+			border-radius: var(--border-radius-lg);
+		}
+
+		&__markets {
+			gap: 14px;
+			justify-content: flex-start;
+			overflow-x: auto;
+		}
+
+		&__markets img {
+			max-width: 126px;
+		}
+	}
+
+	@include mobile-s {
+		&__shop {
+			width: 260px;
+		}
+	}
+}

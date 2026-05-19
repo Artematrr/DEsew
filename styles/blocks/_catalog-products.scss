@@ -1,0 +1,155 @@
+.catalog-products {
+	display: grid;
+	gap: 42px;
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 46px 34px;
+	}
+
+	&__pagination {
+		justify-self: center;
+	}
+
+	.product-card {
+		min-height: 372px;
+		padding: 48px 24px 24px;
+		border-radius: 16px;
+	}
+
+	.product-card__image-link {
+		height: 178px;
+		margin-bottom: 56px;
+	}
+
+	.product-card__image {
+		width: min(100%, 220px);
+		max-height: 178px;
+	}
+
+	.product-card__label {
+		font-size: 10px;
+		color: var(--primary-500);
+	}
+
+	.product-card__title {
+		font-size: 16px;
+	}
+
+	.product-card__price {
+		font-size: 14px;
+	}
+
+	.product-card__link {
+		margin-top: 22px;
+		font-size: 13px;
+	}
+
+	@include desktop {
+		&__grid {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 42px 24px;
+		}
+
+		.product-card {
+			min-height: 390px;
+			padding-inline: 22px;
+		}
+
+		.product-card__image-link {
+			height: 190px;
+			margin-bottom: 50px;
+		}
+	}
+
+	@include tablet-s {
+		&__grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 30px 20px;
+		}
+
+		.product-card {
+			min-height: 100%;
+			padding: 42px 24px 26px;
+			border-radius: var(--border-radius);
+		}
+
+		.product-card__image-link {
+			height: 220px;
+			margin-bottom: 44px;
+		}
+
+		.product-card__label {
+			font-size: 10px;
+		}
+
+		.product-card__title {
+			font-size: 16px;
+		}
+
+		.product-card__price {
+			font-size: 14px;
+		}
+
+		.product-card__link {
+			margin-top: 20px;
+			font-size: 13px;
+		}
+	}
+
+	@include mobile {
+		gap: 30px;
+
+		&__grid {
+			grid-template-columns: 1fr;
+			gap: 18px;
+		}
+
+		.product-card {
+			display: grid;
+			grid-template-columns: minmax(132px, 44%) minmax(0, 1fr);
+			gap: 22px;
+			min-height: 0;
+			padding: 22px;
+			border-radius: 26px;
+		}
+
+		.product-card__image-link {
+			height: 190px;
+			margin-bottom: 0;
+		}
+
+		.product-card__image {
+			width: 100%;
+			max-width: 280px;
+			max-height: 190px;
+		}
+
+		.product-card__content {
+			align-content: center;
+		}
+
+		.product-card__link {
+			margin-top: 8px;
+		}
+	}
+
+	@include mobile-s {
+		.product-card {
+			grid-template-columns: 108px minmax(0, 1fr);
+			gap: 14px;
+			padding: 14px;
+			border-radius: var(--border-radius);
+		}
+
+		.product-card__image-link {
+			height: 108px;
+		}
+
+		.product-card__image {
+			max-width: 108px;
+			max-height: 108px;
+		}
+	}
+}

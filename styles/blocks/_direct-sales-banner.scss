@@ -1,0 +1,88 @@
+.direct-sales-banner {
+	position: relative;
+	margin-bottom: 68px;
+
+	&__container {
+		display: grid;
+		grid-template-columns: 86px minmax(0, 1fr) auto;
+		gap: 28px;
+		align-items: center;
+		min-height: 150px;
+		padding: 28px 56px;
+		background: var(--gradient-02);
+		border-radius: var(--border-radius-lg);
+		box-shadow: var(--shadow-sm);
+	}
+
+	&__icon {
+		@include flex-center;
+		@include square(76px);
+
+		background-color: var(--white);
+		border-radius: 50%;
+		box-shadow: var(--shadow-sm);
+	}
+
+	&__icon img {
+		width: 42px;
+		height: 42px;
+		object-fit: contain;
+	}
+
+	&__title {
+		margin-bottom: 6px;
+		font-size: 28px;
+		font-weight: 800;
+	}
+
+	&__text {
+		max-width: 720px;
+		font-size: 18px;
+		color: var(--gray-500);
+	}
+
+	@include tablet-s {
+		&__container {
+			grid-template-columns: 64px minmax(0, 1fr);
+			padding: 24px;
+		}
+
+		&__button {
+			grid-column: 2;
+			justify-self: start;
+		}
+	}
+
+	@include mobile {
+		margin-bottom: 46px;
+
+		&__container {
+			grid-template-columns: 44px minmax(0, 1fr);
+			gap: 14px;
+			padding: 18px;
+			border-radius: var(--border-radius);
+		}
+
+		&__icon {
+			width: 42px;
+		}
+
+		&__icon img {
+			width: 24px;
+			height: 24px;
+		}
+
+		&__title {
+			font-size: 17px;
+		}
+
+		&__text {
+			font-size: 12px;
+		}
+
+		&__button {
+			grid-column: 1 / -1;
+			justify-self: center;
+		}
+	}
+}

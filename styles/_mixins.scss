@@ -4,14 +4,14 @@
 	font-size: clamp(#{$min}px, #{$max / $layoutWidth * 100}vw, #{$max}px);
 }
 
-// @mixin reset-link {
-//   color: inherit;
-//
-//   &,
-//   &:hover {
-//     text-decoration: none;
-//   }
-// }
+@mixin reset-link {
+  color: inherit;
+
+  &,
+  &:hover {
+    text-decoration: none;
+  }
+}
 
 @mixin reset-button {
 	padding: 0;
@@ -57,4 +57,23 @@
 
 @mixin full-width {
 	margin-inline: calc(var(--container-padding-x) * -1);
+}
+
+@mixin visual-frame($width: var(--visual-frame-width)) {
+	right: auto;
+	left: 50%;
+	width: min(100%, #{$width});
+	transform: translateX(-50%);
+}
+
+@mixin visual-frame-block($width: var(--visual-frame-width)) {
+	width: min(100%, #{$width});
+	margin-inline: auto;
+}
+
+@mixin visual-frame-layer($width: var(--visual-frame-width)) {
+	position: absolute;
+	inset-block: 0;
+
+	@include visual-frame($width);
 }

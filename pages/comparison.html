@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Сравнение моделей DEsew по ключевым характеристикам">
+	<title>Сравнение моделей DESEW — DEsew</title>
+
+	<link rel="stylesheet" href="/styles/css/jquery-ui.min.css">
+	<link rel="stylesheet" href="/styles/css/swiper-bundle.min.css">
+	<link rel="stylesheet" href="/styles/css/styles.css">
+</head>
+
+<body>
+	<header class="header js-header">
+		<div class="header__container container">
+			<a class="header__logo" href="#" aria-label="DEsew">
+				<img class="header__logo-image" src="/images/icons/logo-main.svg" alt="DEsew" width="77" height="17">
+			</a>
+			<nav class="header__nav" aria-label="Основная навигация">
+				<ul class="header__nav-list">
+					<li class="header__nav-item"><a class="header__nav-link" href="#">Главная</a></li>
+					<li class="header__nav-item"><a class="header__nav-link" href="#">Каталог</a></li>
+					<li class="header__nav-item"><a class="header__nav-link" href="#">О бренде</a></li>
+					<li class="header__nav-item"><a class="header__nav-link" href="#">Где купить</a></li>
+					<li class="header__nav-item"><a class="header__nav-link" href="#">Сервис</a></li>
+					<li class="header__nav-item"><a class="header__nav-link" href="#">Блог</a></li>
+					<li class="header__nav-item"><a class="header__nav-link" href="#">Контакты</a></li>
+				</ul>
+			</nav>
+			<div class="header__actions">
+				<form class="header__search js-search" action="#" role="search">
+					<button class="header__search-button js-search-toggle" type="button" aria-label="Открыть поиск">
+						<img class="header__search-icon" src="/images/icons/search.svg" alt="" width="22" height="21">
+					</button>
+					<input class="header__search-input js-search-input" type="search" name="search" placeholder="Поиск"
+						aria-label="Поиск по сайту">
+				</form>
+				<a class="header__icon-button header__icon-button--mail" href="#" aria-label="Написать">
+					<img class="header__icon" src="/images/icons/mail.svg" alt="" width="32" height="24">
+				</a>
+				<a class="header__icon-button header__icon-button--compare" href="#" aria-label="Сравнение">
+					<img class="header__icon" src="/images/icons/compare.svg" alt="" width="28" height="21">
+				</a>
+				<span class="header__divider" aria-hidden="true"></span>
+				<a class="header__icon-button header__icon-button--phone" href="#" aria-label="Позвонить">
+					<img class="header__icon" src="/images/icons/phone.svg" alt="" width="23" height="23">
+				</a>
+				<a class="header__phone" href="#">+7 (495) 223-66-59</a>
+				<button class="header__burger js-menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false"
+					aria-label="Открыть меню"><span></span></button>
+			</div>
+		</div>
+		<div class="header__mobile js-mobile-menu" id="mobile-menu" aria-hidden="true">
+			<div class="header__mobile-panel">
+				<nav class="header__mobile-nav js-mobile-menu-view" aria-label="Мобильная навигация">
+					<ul class="header__mobile-list">
+						<li><a class="header__mobile-link js-menu-close" href="#"><span>Главная</span><span
+									class="header__mobile-chevron" aria-hidden="true"></span></a></li>
+						<li><a class="header__mobile-link js-menu-close" href="#"><span>Каталог</span><span
+									class="header__mobile-chevron" aria-hidden="true"></span></a></li>
+						<li><a class="header__mobile-link js-menu-close" href="#"><span>О бренде</span><span
+									class="header__mobile-chevron" aria-hidden="true"></span></a></li>
+						<li><a class="header__mobile-link js-menu-close" href="#"><span>Где купить</span><span
+									class="header__mobile-chevron" aria-hidden="true"></span></a></li>
+						<li><a class="header__mobile-link js-menu-close" href="#"><span>Контакты</span><span
+									class="header__mobile-chevron" aria-hidden="true"></span></a></li>
+					</ul>
+				</nav>
+				<img class="header__mobile-banner" src="/images/icons/logo-banner.svg" alt="" aria-hidden="true">
+			</div>
+		</div>
+	</header>
+
+	<main class="main comparison-page" id="main">
+		<div class="comparison-page__decor decor" aria-hidden="true">
+			<img class="decor__item decor-stitch decor__item--mobile-hidden comparison-page__stitch comparison-page__stitch--left"
+				src="/images/21-comparison-page/comparison-page-stitch-01.svg" alt="">
+			<img class="decor__item decor-stitch decor__item--mobile-hidden comparison-page__stitch comparison-page__stitch--right"
+				src="/images/21-comparison-page/comparison-page-stitch-02.svg" alt="">
+			<img class="decor__item decor-stitch decor__item--mobile-hidden comparison-page__stitch comparison-page__stitch--bottom"
+				src="/images/21-comparison-page/comparison-page-stitch-03.svg" alt="">
+			<img class="decor__item decor-button decor__item--mobile-hidden comparison-page__button comparison-page__button--left"
+				src="/images/07-support/support-button-01.png" alt="">
+			<img class="decor__item decor-button decor__item--mobile-hidden comparison-page__button comparison-page__button--right"
+				src="/images/07-support/support-button-02.png" alt="">
+		</div>
+
+		<div class="comparison-page__container container">
+			<nav class="comparison-page__breadcrumbs breadcrumbs" aria-label="Хлебные крошки">
+				<ol class="breadcrumbs__list">
+					<li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Главная</a></li>
+					<li class="breadcrumbs__item"><span class="breadcrumbs__current">Сравнение моделей DESEW</span></li>
+				</ol>
+			</nav>
+		</div>
+
+		<header class="comparison-page__hero container">
+			<h1 class="comparison-page__title">Сравнение моделей DESEW</h1>
+			<p class="comparison-page__subtitle">Выберите модель и сравните ключевые характеристики</p>
+		</header>
+
+		<section class="comparison-products" aria-label="Сравниваемые модели">
+			<div class="comparison-products__grid container">
+				<div class="comparison-products__item">
+					<article class="product-card">
+						<a class="product-card__image-link" href="#">
+							<img class="product-card__image" src="/images/products/sewing-machine-03.jpg"
+								alt="DESEW Embroidery E900">
+						</a>
+						<div class="product-card__content">
+							<p class="product-card__label">популярное</p>
+							<h2 class="product-card__title"><a href="#">DESEW Embroidery E900</a></h2>
+							<p class="product-card__price">₽ 112 000</p>
+							<a class="product-card__link" href="#">Подробнее →</a>
+						</div>
+					</article>
+					<div class="comparison-products__select" data-dropdown>
+						<button class="comparison-products__select-button" type="button" data-dropdown-toggle aria-expanded="false">
+							<span data-dropdown-label>DESEW Embroidery E900</span>
+							<span class="comparison-products__select-arrow" aria-hidden="true">⌄</span>
+						</button>
+						<ul class="comparison-products__select-list" role="listbox">
+							<li><button class="comparison-products__select-option is-active" type="button" data-dropdown-option
+									data-dropdown-value="DESEW Embroidery E900" role="option" aria-selected="true">DESEW Embroidery
+									E900</button></li>
+							<li><button class="comparison-products__select-option" type="button" data-dropdown-option
+									data-dropdown-value="DESEW Overlock X5" role="option" aria-selected="false">DESEW Overlock X5</button></li>
+							<li><button class="comparison-products__select-option" type="button" data-dropdown-option
+									data-dropdown-value="DESEW SmartStitch 500" role="option" aria-selected="false">DESEW SmartStitch
+									500</button></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="comparison-products__item">
+					<article class="product-card">
+						<a class="product-card__image-link" href="#">
+							<img class="product-card__image" src="/images/products/sewing-machine-02.jpg" alt="DESEW Overlock X5">
+						</a>
+						<div class="product-card__content">
+							<p class="product-card__label">новинка</p>
+							<h2 class="product-card__title"><a href="#">DESEW Overlock X5</a></h2>
+							<p class="product-card__price">₽ 64 500</p>
+							<a class="product-card__link" href="#">Подробнее →</a>
+						</div>
+					</article>
+					<div class="comparison-products__select" data-dropdown>
+						<button class="comparison-products__select-button" type="button" data-dropdown-toggle aria-expanded="false">
+							<span data-dropdown-label>DESEW Overlock X5</span>
+							<span class="comparison-products__select-arrow" aria-hidden="true">⌄</span>
+						</button>
+						<ul class="comparison-products__select-list" role="listbox">
+							<li><button class="comparison-products__select-option" type="button" data-dropdown-option
+									data-dropdown-value="DESEW Embroidery E900" role="option" aria-selected="false">DESEW Embroidery
+									E900</button></li>
+							<li><button class="comparison-products__select-option is-active" type="button" data-dropdown-option
+									data-dropdown-value="DESEW Overlock X5" role="option" aria-selected="true">DESEW Overlock X5</button></li>
+							<li><button class="comparison-products__select-option" type="button" data-dropdown-option
+									data-dropdown-value="DESEW SmartStitch 500" role="option" aria-selected="false">DESEW SmartStitch
+									500</button></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="comparison-products__item">
+					<article class="product-card">
+						<a class="product-card__image-link" href="#">
+							<img class="product-card__image" src="/images/products/sewing-machine-04.jpg"
+								alt="DESEW SmartStitch 500">
+						</a>
+						<div class="product-card__content">
+							<p class="product-card__label">в наличии</p>
+							<h2 class="product-card__title"><a href="#">DESEW SmartStitch 500</a></h2>
+							<p class="product-card__price">₽ 52 900</p>
+							<a class="product-card__link" href="#">Подробнее →</a>
+						</div>
+					</article>
+					<div class="comparison-products__select" data-dropdown>
+						<button class="comparison-products__select-button" type="button" data-dropdown-toggle aria-expanded="false">
+							<span data-dropdown-label>DESEW SmartStitch 500</span>
+							<span class="comparison-products__select-arrow" aria-hidden="true">⌄</span>
+						</button>
+						<ul class="comparison-products__select-list" role="listbox">
+							<li><button class="comparison-products__select-option" type="button" data-dropdown-option
+									data-dropdown-value="DESEW Embroidery E900" role="option" aria-selected="false">DESEW Embroidery
+									E900</button></li>
+							<li><button class="comparison-products__select-option" type="button" data-dropdown-option
+									data-dropdown-value="DESEW Overlock X5" role="option" aria-selected="false">DESEW Overlock X5</button></li>
+							<li><button class="comparison-products__select-option is-active" type="button" data-dropdown-option
+									data-dropdown-value="DESEW SmartStitch 500" role="option" aria-selected="true">DESEW SmartStitch
+									500</button></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="comparison-section" aria-labelledby="comparison-main-title">
+			<div class="comparison-section__container container">
+				<h2 class="comparison-section__title" id="comparison-main-title">Основные характеристики</h2>
+				<div class="comparison-table">
+					<div class="comparison-table__row">
+						<div class="comparison-table__cell">
+							<p class="comparison-table__feature">Автоматическая петля<img class="comparison-table__icon"
+									src="/images/icons/feature-good.svg" alt=""></p>
+							<p class="comparison-table__feature">Полуавтоматическая петля<img class="comparison-table__icon"
+									src="/images/icons/feature-good.svg" alt=""></p>
+							<p class="comparison-table__feature">Декоративные строчки<img class="comparison-table__icon"
+									src="/images/icons/feature-good.svg" alt=""></p>
+							<p class="comparison-table__feature">Оверлочные строчки<img class="comparison-table__icon"
+									src="/images/icons/feature-good.svg" alt=""></p>
+							<p class="comparison-table__feature">ЖК-дисплей<img class="comparison-table__icon"
+									src="/images/icons/feature-good.svg" alt=""></p>
+							<p class="comparison-table__feature">Регулировка скорости<img class="comparison-table__icon"
+									src="/images/icons/feature-good.svg" alt=""></p>
+						</div>
+						<div class="comparison-table__cell">
+							<p class="comparison-table__feature">Автоматическая петля<img class="comparison-table__icon"
+									src="/images/icons/feature-good.svg" alt=""></p>
+							<p class="comparison-table__feature">Полуавтоматическая петля<img class="comparison-table__icon"
+									src="/images/icons/feature-good.svg" alt=""></p>
+							<p class="comparison-table__feature">Декоративные строчки<img class="comparison-table__icon"
+									src="/images/icons/feature-good.svg" alt=""></p>
+							<p class="comparison-table__feature">Оверлочные строчки<img class="comparison-table__icon"
+									src="/images/icons/feature-good.svg" alt=""></p>
+							<p class="comparison-table__feature">ЖК-дисплей<img class="comparison-table__icon"
+									src="/images/icons/feature-cross.svg" alt=""></p>
+							<p class="comparison-table__feature">Регулировка скорости<img class="comparison-table__icon"
+									src="/images/icons/feature-good.svg" alt=""></p>
+						</div>
+						<div class="comparison-table__cell">
+							<p class="comparison-table__feature">Автоматическая петля<img class="comparison-table__icon"
+									src="/images/icons/feature-good.svg" alt=""></p>
+							<p class="comparison-table__feature">Полуавтоматическая петля<img class="comparison-table__icon"
+									src="/images/icons/feature-good.svg" alt=""></p>
+							<p class="comparison-table__feature">Декоративные строчки<img class="comparison-table__icon"
+									src="/images/icons/feature-cross.svg" alt=""></p>
+							<p class="comparison-table__feature">Оверлочные строчки<img class="comparison-table__icon"
+									src="/images/icons/feature-good.svg" alt=""></p>
+							<p class="comparison-table__feature">ЖК-дисплей<img class="comparison-table__icon"
+									src="/images/icons/feature-good.svg" alt=""></p>
+							<p class="comparison-table__feature">Регулировка скорости<img class="comparison-table__icon"
+									src="/images/icons/feature-good.svg" alt=""></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="comparison-section" aria-labelledby="comparison-extra-title">
+			<div class="comparison-section__container container">
+				<h2 class="comparison-section__title" id="comparison-extra-title">Дополнительные функции</h2>
+				<div class="comparison-table">
+					<div class="comparison-table__row">
+						<div class="comparison-table__cell">
+							<p class="comparison-table__feature">Нитевдеватель<img class="comparison-table__icon"
+									src="/images/icons/feature-good.svg" alt=""></p>
+							<p class="comparison-table__feature">Автообрезка нити<img class="comparison-table__icon"
+									src="/images/icons/feature-good.svg" alt=""></p>
+						</div>
+						<div class="comparison-table__cell">
+							<p class="comparison-table__feature">Нитевдеватель<img class="comparison-table__icon"
+									src="/images/icons/feature-good.svg" alt=""></p>
+							<p class="comparison-table__feature">Автообрезка нити<img class="comparison-table__icon"
+									src="/images/icons/feature-cross.svg" alt=""></p>
+						</div>
+						<div class="comparison-table__cell">
+							<p class="comparison-table__feature">Нитевдеватель<img class="comparison-table__icon"
+									src="/images/icons/feature-cross.svg" alt=""></p>
+							<p class="comparison-table__feature">Автообрезка нити<img class="comparison-table__icon"
+									src="/images/icons/feature-cross.svg" alt=""></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="comparison-section" aria-labelledby="comparison-build-title">
+			<div class="comparison-section__container container">
+				<h2 class="comparison-section__title" id="comparison-build-title">Конструкция</h2>
+				<div class="comparison-table">
+					<div class="comparison-table__row">
+						<div class="comparison-table__cell">
+							<p class="comparison-table__model">DESEW Embroidery E900</p>
+							<p>Металлическая конструкция</p>
+							<p>Усиленная рама</p>
+							<p>Стабильная работа</p>
+						</div>
+						<div class="comparison-table__cell">
+							<p class="comparison-table__model">DESEW Overlock X5</p>
+							<p>Усиленный корпус</p>
+							<p>Надежная механика</p>
+							<p>Универсальное применение</p>
+						</div>
+						<div class="comparison-table__cell">
+							<p class="comparison-table__model">DESEW SmartStitch 500</p>
+							<p>Лёгкий корпус</p>
+							<p>Компактная конструкция</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="comparison-section" aria-labelledby="comparison-size-title">
+			<div class="comparison-section__container container">
+				<h2 class="comparison-section__title" id="comparison-size-title">Размеры и вес</h2>
+				<div class="comparison-table">
+					<div class="comparison-table__row">
+						<div class="comparison-table__cell">
+							<p class="comparison-table__model">DESEW Embroidery E900</p>
+							<p class="comparison-table__line"><span class="comparison-table__line-name">Вес</span><span
+									class="comparison-table__line-value">6 кг</span></p>
+							<p class="comparison-table__line"><span class="comparison-table__line-name">Рабочая зона</span><span
+									class="comparison-table__line-value">150 мм</span></p>
+						</div>
+						<div class="comparison-table__cell">
+							<p class="comparison-table__model">DESEW Overlock X5</p>
+							<p class="comparison-table__line"><span class="comparison-table__line-name">Вес</span><span
+									class="comparison-table__line-value">5.5 кг</span></p>
+							<p class="comparison-table__line"><span class="comparison-table__line-name">Рабочая зона</span><span
+									class="comparison-table__line-value">160 мм</span></p>
+						</div>
+						<div class="comparison-table__cell">
+							<p class="comparison-table__model">DESEW SmartStitch 500</p>
+							<p class="comparison-table__line"><span class="comparison-table__line-name">Вес</span><span
+									class="comparison-table__line-value">4.5 кг</span></p>
+							<p class="comparison-table__line"><span class="comparison-table__line-name">Рабочая зона</span><span
+									class="comparison-table__line-value">140 мм</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="support-form support-form--compact" aria-labelledby="comparison-support-title">
+			<div class="support-form__decor" aria-hidden="true">
+				<img class="support-form__stitch support-form__stitch--left" src="/images/09-feedback/feedback-stitch-01.svg"
+					alt="">
+				<img class="support-form__stitch support-form__stitch--right" src="/images/09-feedback/feedback-stitch-02.svg"
+					alt="">
+			</div>
+			<div class="support-form__container container">
+				<div class="support-form__content">
+					<header class="support-form__header">
+						<h2 class="support-form__title" id="comparison-support-title">Есть вопрос, отзыв или проблема?</h2>
+						<p class="support-form__subtitle">Оставьте сообщение — мы обязательно свяжемся с вами и поможем решить
+							вопрос</p>
+					</header>
+					<form class="support-form__form js-static-form" action="#">
+						<input class="support-form__control support-form__field--full" type="text" name="name" placeholder="Имя">
+						<input class="support-form__control" type="tel" name="phone" placeholder="Телефон">
+						<input class="support-form__control" type="email" name="email" placeholder="Email">
+						<textarea class="support-form__control support-form__control--textarea support-form__field--full"
+							name="message" placeholder="Сообщение"></textarea>
+						<button class="support-form__submit button" type="submit">Отправить</button>
+						<p class="support-form__privacy">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
+					</form>
+				</div>
+				<div class="support-form__media" aria-hidden="true">
+					<img class="support-form__object" src="/images/09-feedback/feedback-object.png" alt="">
+					<img class="support-form__brand" src="/images/09-feedback/feedback-bg-01.png" alt="">
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="footer__decor" aria-hidden="true">
+			<img class="footer__stitch footer__stitch--left" src="/images/99-footer/footer-stitch-01.svg" alt="">
+			<img class="footer__stitch footer__stitch--right" src="/images/99-footer/footer-stitch-02.svg" alt="">
+		</div>
+		<div class="footer__container container">
+			<div class="footer__brand">
+				<a class="footer__logo" href="#" aria-label="DEsew">
+					<img class="footer__logo-image" src="/images/icons/logo-footer.svg" alt="" width="283" height="61">
+				</a>
+				<p class="footer__text">Швейное оборудование<br>для производства и мастерских</p>
+				<span class="footer__divider" aria-hidden="true"></span>
+				<div class="footer__bottom">
+					<p class="footer__copyright">© DESEW 2026</p>
+					<a class="footer__policy" href="#">Политика конфиденциальности</a>
+				</div>
+			</div>
+			<div class="footer__content">
+				<nav class="footer__columns" aria-label="Навигация в подвале">
+					<div class="footer__column">
+						<h2 class="footer__column-title">Продукция</h2>
+						<ul class="footer__list">
+							<li><a class="footer__nav-link" href="#">Швейные машины</a></li>
+							<li><a class="footer__nav-link" href="#">Оверлоки</a></li>
+							<li><a class="footer__nav-link" href="#">Аксессуары</a></li>
+						</ul>
+					</div>
+					<div class="footer__column">
+						<h2 class="footer__column-title">Компания</h2>
+						<ul class="footer__list">
+							<li><a class="footer__nav-link" href="#">О компании</a></li>
+							<li><a class="footer__nav-link" href="#">Где купить</a></li>
+							<li><a class="footer__nav-link" href="#">Контакты</a></li>
+						</ul>
+					</div>
+					<div class="footer__column footer__column--contacts">
+						<h2 class="footer__column-title">Контакты</h2>
+						<a class="footer__contact footer__contact--phone" href="#">
+							<img src="/images/icons/phone-small-primary.svg" alt="" aria-hidden="true">
+							<span>+7 (495) 223-66-59</span>
+						</a>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</footer>
+
+	<script src="/scripts/jquery-3.7.1.min.js"></script>
+	<script src="/scripts/jquery-ui.min.js"></script>
+	<script src="/scripts/jquery.mask.min.js"></script>
+	<script src="/scripts/micromodal.min.js"></script>
+	<script src="/scripts/swiper-bundle.min.js"></script>
+	<script src="/scripts/main.js"></script>
+</body>
+
+</html>

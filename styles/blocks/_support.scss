@@ -1,0 +1,299 @@
+.support {
+	position: relative;
+	margin-bottom: var(--section-margin-bottom);
+	padding-block: 50px 86px;
+	overflow: hidden;
+	background-color: var(--white);
+
+	&__decor {
+		@include visual-frame-layer;
+
+		z-index: 0;
+		overflow: visible;
+	}
+
+	&__stitch {
+		pointer-events: none;
+	}
+
+	&__stitch--right {
+		right: -210px;
+		top: -10px;
+		width: 918px;
+		opacity: 0.75;
+	}
+
+	&__stitch--bottom {
+		left: -120px;
+		bottom: 8px;
+		width: 1052px;
+		opacity: 0.75;
+	}
+
+	&__button {
+		pointer-events: none;
+	}
+
+	&__button--large {
+		left: 22px;
+		bottom: 58px;
+		width: 108px;
+	}
+
+	&__button--small {
+		left: 116px;
+		bottom: 88px;
+		width: 66px;
+	}
+
+	&__container {
+		position: relative;
+		z-index: var(--z-index-base);
+		display: grid;
+		grid-template-columns: minmax(520px, 640px) minmax(420px, 1fr);
+		column-gap: 40px;
+		align-items: start;
+	}
+
+	&__header {
+		position: relative;
+		z-index: var(--z-index-base);
+		grid-column: 1;
+		margin-bottom: 42px;
+	}
+
+	&__title {
+		margin-bottom: 8px;
+		font-size: 31px;
+		font-weight: 700;
+		line-height: 1.08;
+		text-transform: uppercase;
+		color: var(--primary-500);
+	}
+
+	&__subtitle {
+		max-width: 360px;
+		font-size: 14px;
+		line-height: 1.25;
+		color: var(--gray-500);
+	}
+
+	&__grid {
+		position: relative;
+		z-index: var(--z-index-base);
+		grid-column: 1;
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 16px 18px;
+	}
+
+	&__card {
+		min-height: 176px;
+		padding: 22px 28px;
+		background-color: var(--white);
+		border-radius: var(--border-radius-sm);
+		box-shadow: var(--shadow-sm);
+	}
+
+	&__icon {
+		float: left;
+		width: 71px;
+		height: 78px;
+		margin: 0 18px 12px 0;
+		object-fit: contain;
+	}
+
+	&__card-title {
+		min-height: 68px;
+		margin-bottom: 20px;
+		font-size: 24px;
+		font-weight: 700;
+		line-height: 1.02;
+	}
+
+	&__card-text {
+		clear: both;
+		font-size: 15px;
+		line-height: 1.15;
+		color: var(--gray-500);
+	}
+
+	&__object {
+		grid-column: 2;
+		grid-row: 1 / span 2;
+		align-self: start;
+		justify-self: end;
+		width: min(100%, 644px);
+		margin-top: 0;
+		object-fit: contain;
+		border-radius: 0 var(--border-radius-xl) var(--border-radius-xl) 0;
+	}
+
+	&__cta {
+		position: relative;
+		z-index: var(--z-index-base);
+		grid-column: 2;
+		display: grid;
+		justify-items: start;
+		align-self: end;
+		gap: 14px;
+		margin-top: 30px;
+	}
+
+	&__phone {
+		font-size: 32px;
+		font-weight: 800;
+		line-height: 1.1;
+	}
+
+	&__link {
+		min-height: 54px;
+		padding-inline: 24px 58px;
+		font-size: 30px;
+		font-weight: 700;
+		color: var(--white);
+		background: var(--gradient-01);
+		border-radius: var(--border-radius);
+
+		.button-plate__arrow {
+			right: -58px;
+			width: 58px;
+		}
+	}
+
+	@include desktop {
+		&__container {
+			grid-template-columns: minmax(480px, 610px) minmax(360px, 1fr);
+		}
+
+		&__card-title {
+			font-size: 21px;
+		}
+
+		&__link {
+			font-size: 25px;
+		}
+	}
+
+	@include tablet-s {
+		&__container {
+			grid-template-columns: minmax(0, 1fr) 330px;
+			column-gap: 20px;
+		}
+
+		&__object {
+			width: 330px;
+			margin-top: 44px;
+		}
+
+		&__grid {
+			gap: 14px;
+		}
+
+		&__card {
+			padding: 20px 24px;
+		}
+
+		&__icon {
+			width: 62px;
+			height: 68px;
+			margin-right: 14px;
+		}
+
+		&__card-title {
+			font-size: 20px;
+		}
+
+		&__cta {
+			grid-column: 1 / -1;
+			justify-items: center;
+			margin-top: 28px;
+		}
+
+		&__phone {
+			display: none;
+		}
+	}
+
+	@include mobile {
+		padding-block: 44px 64px;
+
+		&__container {
+			grid-template-columns: 1fr;
+		}
+
+		&__header {
+			margin-bottom: 28px;
+		}
+
+		&__title {
+			font-size: 32px;
+		}
+
+		&__object {
+			position: absolute;
+			top: 28px;
+			right: 0;
+			z-index: 0;
+			width: 42%;
+			min-width: 240px;
+			opacity: 0.9;
+		}
+
+		&__grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		&__card {
+			min-height: 178px;
+			padding: 20px;
+		}
+
+		&__icon {
+			width: 62px;
+			height: 68px;
+			margin-right: 14px;
+		}
+
+		&__card-title {
+			font-size: 21px;
+		}
+
+		&__card-text {
+			font-size: 14px;
+		}
+
+		&__link {
+			min-height: 58px;
+			font-size: 28px;
+			border-radius: var(--border-radius);
+		}
+
+		&__button--large {
+			left: 0;
+			bottom: 34px;
+			width: 70px;
+		}
+
+		&__button--small {
+			left: 60px;
+			bottom: 54px;
+			width: 42px;
+		}
+	}
+
+	@include mobile-s {
+		&__grid {
+			grid-template-columns: 1fr;
+		}
+
+		&__object {
+			opacity: 0.35;
+		}
+
+		&__link {
+			width: calc(100% - 58px);
+			font-size: 21px;
+		}
+	}
+}

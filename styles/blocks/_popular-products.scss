@@ -1,0 +1,104 @@
+.popular-products {
+	margin-bottom: 0;
+	padding-block: 24px 86px;
+	background-color: var(--white);
+
+	&__container {
+		position: relative;
+	}
+
+	&__header {
+		display: grid;
+		justify-items: center;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	&__title {
+		margin-bottom: 6px;
+		font-size: 32px;
+		font-weight: 700;
+		line-height: 1.1;
+		color: var(--primary-500);
+	}
+
+	&__slider {
+		position: relative;
+	}
+
+	&__swiper {
+		overflow: hidden;
+		padding: 0 12px 48px;
+	}
+
+	&__wrapper {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 24px;
+	}
+
+	&__swiper.swiper-initialized &__wrapper {
+		display: flex;
+		gap: 0;
+	}
+
+	&__pagination {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 6px;
+
+		.swiper-pagination-bullet {
+			width: 20px;
+			height: 2px;
+			margin: 0;
+			opacity: 1;
+			background-color: var(--gray-700);
+			border-radius: var(--border-radius-xxl);
+			transition-property: width, height, background-color;
+		}
+
+		.swiper-pagination-bullet-active {
+			width: 28px;
+			height: 5px;
+			background-color: var(--primary-500);
+		}
+	}
+
+	@include tablet-s {
+		padding-block: 34px 62px;
+
+		&__wrapper {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 56px 24px;
+		}
+
+		&__swiper {
+			padding-inline: 22px;
+		}
+
+		&__pagination {
+			display: none;
+		}
+	}
+
+	@include mobile {
+		&__title {
+			font-size: 30px;
+		}
+
+		&__swiper {
+			padding-inline: 0;
+		}
+	}
+
+	@include mobile-s {
+		&__wrapper {
+			grid-template-columns: 1fr;
+		}
+	}
+}
