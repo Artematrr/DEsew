@@ -1,7 +1,7 @@
 .support {
 	position: relative;
 	margin-bottom: var(--section-margin-bottom);
-	padding-block: 50px 86px;
+	padding-block: 72px 78px;
 	overflow: hidden;
 	background-color: var(--white);
 
@@ -17,16 +17,16 @@
 	}
 
 	&__stitch--right {
-		right: -210px;
-		top: -10px;
-		width: 918px;
+		right: -22px;
+		top: -62px;
+		width: 510px;
 		opacity: 0.75;
 	}
 
 	&__stitch--bottom {
-		left: -120px;
-		bottom: 8px;
-		width: 1052px;
+		left: -42px;
+		bottom: 14px;
+		width: 1120px;
 		opacity: 0.75;
 	}
 
@@ -35,31 +35,32 @@
 	}
 
 	&__button--large {
-		left: 22px;
-		bottom: 58px;
-		width: 108px;
+		left: calc(50% - 560px);
+		bottom: 100px;
+		width: 60px;
 	}
 
 	&__button--small {
-		left: 116px;
-		bottom: 88px;
-		width: 66px;
+		left: calc(50% - 506px);
+		bottom: 112px;
+		width: 42px;
 	}
 
 	&__container {
 		position: relative;
 		z-index: var(--z-index-base);
 		display: grid;
-		grid-template-columns: minmax(520px, 640px) minmax(420px, 1fr);
-		column-gap: 40px;
+		grid-template-columns: 520px minmax(0, 585px);
+		column-gap: 28px;
 		align-items: start;
+		max-width: calc(1128px + var(--container-padding-x) * 2);
 	}
 
 	&__header {
 		position: relative;
 		z-index: var(--z-index-base);
 		grid-column: 1;
-		margin-bottom: 42px;
+		margin-bottom: 36px;
 	}
 
 	&__title {
@@ -84,12 +85,12 @@
 		grid-column: 1;
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 16px 18px;
+		gap: 14px;
 	}
 
 	&__card {
-		min-height: 176px;
-		padding: 22px 28px;
+		min-height: 164px;
+		padding: 22px 24px;
 		background-color: var(--white);
 		border-radius: var(--border-radius-sm);
 		box-shadow: var(--shadow-sm);
@@ -104,9 +105,9 @@
 	}
 
 	&__card-title {
-		min-height: 68px;
-		margin-bottom: 20px;
-		font-size: 24px;
+		min-height: 62px;
+		margin-bottom: 16px;
+		font-size: 22px;
 		font-weight: 700;
 		line-height: 1.02;
 	}
@@ -118,15 +119,30 @@
 		color: var(--gray-500);
 	}
 
-	&__object {
+	&__media {
 		grid-column: 2;
 		grid-row: 1 / span 2;
+		position: relative;
 		align-self: start;
 		justify-self: end;
-		width: min(100%, 644px);
-		margin-top: 0;
-		object-fit: contain;
+		width: min(100%, 585px);
+		min-height: 285px;
+		margin-top: -22px;
+		overflow: hidden;
+		background:
+			linear-gradient(90deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.45) 62%, rgba(255, 255, 255, 0.84) 100%),
+			url('/images/03-about-brand/about-brand-bg.jpg') center / cover no-repeat;
 		border-radius: 0 var(--border-radius-xl) var(--border-radius-xl) 0;
+	}
+
+	&__object {
+		position: absolute;
+		right: 18px;
+		bottom: -42px;
+		width: 430px;
+		max-width: none;
+		object-fit: contain;
+		filter: saturate(0.8) brightness(1.08);
 	}
 
 	&__cta {
@@ -137,7 +153,7 @@
 		justify-items: start;
 		align-self: end;
 		gap: 14px;
-		margin-top: 30px;
+		margin-top: 32px;
 	}
 
 	&__phone {
@@ -149,7 +165,7 @@
 	&__link {
 		min-height: 54px;
 		padding-inline: 24px 58px;
-		font-size: 30px;
+		font-size: 28px;
 		font-weight: 700;
 		color: var(--white);
 		background: var(--gradient-01);
@@ -181,9 +197,16 @@
 			column-gap: 20px;
 		}
 
-		&__object {
+		&__media {
 			width: 330px;
-			margin-top: 44px;
+			min-height: 250px;
+			margin-top: 32px;
+		}
+
+		&__object {
+			right: -44px;
+			bottom: -20px;
+			width: 330px;
 		}
 
 		&__grid {
@@ -231,13 +254,20 @@
 		}
 
 		&__object {
+			right: -42px;
+			bottom: -24px;
+			width: 300px;
+			opacity: 0.9;
+		}
+
+		&__media {
 			position: absolute;
 			top: 28px;
 			right: 0;
 			z-index: 0;
 			width: 42%;
 			min-width: 240px;
-			opacity: 0.9;
+			min-height: 220px;
 		}
 
 		&__grid {

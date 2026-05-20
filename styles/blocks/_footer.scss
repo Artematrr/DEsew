@@ -1,6 +1,6 @@
 .footer {
 	position: relative;
-	padding-block: 124px 118px;
+	padding-block: 86px 76px;
 	overflow: hidden;
 	color: var(--white);
 	background:
@@ -11,9 +11,9 @@
 		position: relative;
 		z-index: var(--z-index-base);
 		display: grid;
-		grid-template-columns: 392px minmax(0, 1fr);
-		gap: 74px;
-		max-width: calc(1188px + var(--container-padding-x) * 2);
+		grid-template-columns: 270px minmax(0, 1fr);
+		gap: 78px;
+		max-width: calc(1068px + var(--container-padding-x) * 2);
 	}
 
 	&__brand {
@@ -24,8 +24,8 @@
 
 	&__logo {
 		display: inline-flex;
-		width: 283px;
-		margin-bottom: 26px;
+		width: 220px;
+		margin-bottom: 18px;
 	}
 
 	&__logo-image {
@@ -35,18 +35,18 @@
 	}
 
 	&__text {
-		max-width: 286px;
-		margin-bottom: 20px;
-		font-size: 17px;
+		max-width: 220px;
+		margin-bottom: 16px;
+		font-size: 12px;
 		line-height: 1.2;
 		color: var(--text-inverse-muted);
 	}
 
 	&__divider {
-		width: 390px;
+		width: 270px;
 		max-width: 100%;
 		height: 1px;
-		margin-bottom: 20px;
+		margin-bottom: 18px;
 		background-image: linear-gradient(90deg, var(--text-inverse-muted) 0 10px, transparent 10px 22px);
 		background-repeat: repeat-x;
 		background-size: 22px 1px;
@@ -56,11 +56,11 @@
 	&__callback {
 		@include reset-button;
 
-		min-width: 260px;
-		min-height: 49px;
-		margin-bottom: 58px;
-		padding: 10px 22px;
-		font-size: 26px;
+		min-width: 204px;
+		min-height: 38px;
+		margin-bottom: 44px;
+		padding: 8px 18px;
+		font-size: 18px;
 		font-weight: 600;
 		line-height: 1.1;
 		color: var(--black);
@@ -81,19 +81,19 @@
 	&__bottom {
 		display: flex;
 		align-items: center;
-		gap: 26px;
+		gap: 24px;
 		margin-top: auto;
 		color: var(--text-inverse-muted);
 	}
 
 	&__copyright {
-		font-size: 25px;
+		font-size: 18px;
 		line-height: 1;
 		white-space: nowrap;
 	}
 
 	&__policy {
-		font-size: 16px;
+		font-size: 12px;
 		color: var(--text-inverse-muted);
 
 		@include hover {
@@ -104,19 +104,19 @@
 	&__content {
 		display: grid;
 		align-content: start;
-		gap: 26px;
+		gap: 24px;
 		padding-top: 4px;
 	}
 
 	&__columns {
 		display: grid;
-		grid-template-columns: 1.22fr 0.9fr 1.08fr 1fr;
-		gap: 32px;
+		grid-template-columns: 1.05fr 0.82fr 1.03fr 0.9fr;
+		gap: 34px;
 	}
 
 	&__column-title {
-		margin-bottom: 31px;
-		font-size: 26px;
+		margin-bottom: 18px;
+		font-size: 17px;
 		font-weight: 700;
 		line-height: 1;
 		color: var(--white);
@@ -129,7 +129,7 @@
 
 	&__nav-link,
 	&__contact {
-		font-size: 16px;
+		font-size: 12px;
 		line-height: 1.15;
 		color: var(--text-inverse-muted);
 
@@ -156,36 +156,36 @@
 	}
 
 	&__subscribe {
-		width: min(100%, 542px);
-		margin-left: 84px;
+		width: min(100%, 444px);
+		margin-left: 58px;
 	}
 
 	&__subscribe-title {
 		margin-bottom: 5px;
-		font-size: 29px;
+		font-size: 22px;
 		font-weight: 700;
 		line-height: 1.1;
 		color: var(--white);
 	}
 
 	&__subscribe-text {
-		margin-bottom: 19px;
-		font-size: 17px;
+		margin-bottom: 14px;
+		font-size: 12px;
 		line-height: 1.25;
 		color: var(--text-inverse-soft);
 	}
 
 	&__subscribe-row {
 		display: grid;
-		grid-template-columns: minmax(0, 298px) 233px;
+		grid-template-columns: minmax(0, 238px) 184px;
 		gap: 8px;
 	}
 
 	&__subscribe-input {
 		width: 100%;
-		min-height: 57px;
-		padding: 15px 24px;
-		font-size: 19px;
+		min-height: 38px;
+		padding: 10px 16px;
+		font-size: 13px;
 		font-weight: 600;
 		color: var(--black);
 		background-color: var(--white);
@@ -204,9 +204,9 @@
 	&__subscribe-button {
 		@include reset-button;
 
-		min-height: 57px;
-		padding: 12px 24px;
-		font-size: 25px;
+		min-height: 38px;
+		padding: 9px 20px;
+		font-size: 16px;
 		font-weight: 600;
 		line-height: 1.1;
 		color: var(--black);
@@ -233,26 +233,26 @@
 
 	&__decor--left {
 		left: 50%;
-		bottom: -88px;
-		width: 690px;
+		bottom: -118px;
+		width: 540px;
 		transform: translateX(-4%);
 	}
 
 	&__decor--right {
 		right: -38px;
-		bottom: -40px;
+		bottom: -62px;
 		top: auto;
-		width: 378px;
+		width: 320px;
 	}
 
 	@include desktop {
 		&__container {
-			grid-template-columns: 330px minmax(0, 1fr);
-			gap: 50px;
+			grid-template-columns: 260px minmax(0, 1fr);
+			gap: 54px;
 		}
 
 		&__logo {
-			width: 250px;
+			width: 210px;
 		}
 
 		&__columns {
@@ -260,11 +260,11 @@
 		}
 
 		&__column-title {
-			font-size: 23px;
+			font-size: 16px;
 		}
 
 		&__subscribe {
-			margin-left: 52px;
+			margin-left: 40px;
 		}
 	}
 

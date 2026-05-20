@@ -1,7 +1,7 @@
 .question-feedback {
 	position: relative;
 	margin-bottom: 0;
-	padding-block: 28px 0;
+	padding-block: 0;
 	overflow: hidden;
 	background-color: var(--white);
 
@@ -17,15 +17,15 @@
 	}
 
 	&__stitch--left {
-		left: -250px;
-		top: 18px;
-		width: 793px;
+		left: -120px;
+		top: 60px;
+		width: 520px;
 	}
 
 	&__stitch--right {
-		right: -212px;
-		top: 18px;
-		width: 918px;
+		right: -22px;
+		top: -18px;
+		width: 540px;
 	}
 
 	&__stitch--bottom {
@@ -38,34 +38,35 @@
 		position: relative;
 		z-index: var(--z-index-base);
 		display: grid;
-		grid-template-columns: minmax(0, 1030px) minmax(360px, 1fr);
+		grid-template-columns: minmax(0, 675px) minmax(420px, 1fr);
+		column-gap: 82px;
 		align-items: end;
-		min-height: 626px;
-		max-width: calc(1640px + var(--container-padding-x) * 2);
+		min-height: 470px;
+		max-width: calc(1210px + var(--container-padding-x) * 2);
 	}
 
 	&__content {
 		position: relative;
 		z-index: var(--z-index-base);
 		align-self: start;
-		padding-top: 78px;
+		padding-top: 38px;
 	}
 
 	&__header {
-		max-width: 930px;
-		margin-bottom: 42px;
+		max-width: 650px;
+		margin-bottom: 34px;
 	}
 
 	&__title {
 		margin-bottom: 4px;
-		font-size: 38px;
+		font-size: 29px;
 		font-weight: 700;
 		line-height: 1.08;
 	}
 
 	&__subtitle {
 		max-width: 790px;
-		font-size: 24px;
+		font-size: 18px;
 		line-height: 1.25;
 		color: var(--gray-500);
 	}
@@ -73,8 +74,8 @@
 	&__form {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 26px 24px;
-		max-width: 954px;
+		gap: 16px 16px;
+		max-width: 675px;
 	}
 
 	&__field--full {
@@ -85,21 +86,21 @@
 		grid-column: 1 / -1;
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 24px;
+		gap: 16px;
 	}
 
 	&__control {
 		width: 100%;
-		min-height: 70px;
-		padding: 18px 22px;
-		font-size: 24px;
+		min-height: 50px;
+		padding: 13px 16px;
+		font-size: 16px;
 		font-weight: 500;
 		line-height: 1.15;
 		color: var(--black);
 		background-color: var(--white);
 		border: none;
 		border-radius: var(--border-radius-sm);
-		box-shadow: 0 7px 18px rgba(0, 0, 0, 0.22);
+		box-shadow: 0 6px 15px rgba(0, 0, 0, 0.22);
 		outline: none;
 		transition-property: box-shadow, transform;
 
@@ -109,12 +110,12 @@
 
 		&:focus {
 			box-shadow:
-				0 7px 18px rgba(0, 0, 0, 0.22),
+				0 6px 15px rgba(0, 0, 0, 0.22),
 				0 0 0 3px var(--focus-ring-color);
 		}
 
 		&--textarea {
-			min-height: 118px;
+			min-height: 84px;
 			resize: vertical;
 		}
 	}
@@ -122,10 +123,10 @@
 	&__submit {
 		grid-column: 1 / -1;
 		justify-self: center;
-		width: min(100%, 468px);
-		min-height: 48px;
-		padding-block: 10px;
-		font-size: 24px;
+		width: min(100%, 330px);
+		min-height: 33px;
+		padding-block: 6px;
+		font-size: 16px;
 		font-weight: 500;
 		border: none;
 		border-radius: var(--border-radius-xs);
@@ -139,8 +140,9 @@
 	&__privacy {
 		position: relative;
 		grid-column: 1 / -1;
-		padding-left: 22px;
-		font-size: 18px;
+		justify-self: center;
+		padding-left: 14px;
+		font-size: 12px;
 		font-weight: 500;
 		line-height: 1.25;
 		color: var(--gray-400);
@@ -150,7 +152,7 @@
 			position: absolute;
 			top: 0.26em;
 			left: 0;
-			width: 14px;
+			width: 8px;
 			aspect-ratio: 1;
 			border: 1px solid currentColor;
 			border-radius: 50%;
@@ -159,25 +161,25 @@
 
 	&__media {
 		position: relative;
-		min-height: 420px;
+		min-height: 330px;
 		pointer-events: none;
 	}
 
 	&__object {
 		position: absolute;
 		right: -18px;
-		bottom: 38px;
+		bottom: 72px;
 		z-index: var(--z-index-base);
-		width: 644px;
+		width: 420px;
 		max-width: none;
 		object-fit: contain;
 	}
 
 	&__brand {
 		position: absolute;
-		right: -228px;
+		right: -238px;
 		bottom: -2px;
-		width: 1010px;
+		width: 720px;
 		max-width: none;
 		object-fit: contain;
 		opacity: 0.68;
@@ -185,33 +187,35 @@
 
 	@include desktop {
 		&__container {
-			grid-template-columns: minmax(0, 820px) minmax(320px, 1fr);
-			min-height: 580px;
+			grid-template-columns: minmax(0, 675px) minmax(340px, 1fr);
+			column-gap: 56px;
+			min-height: 450px;
 		}
 
 		&__content {
-			padding-top: 62px;
+			padding-top: 34px;
 		}
 
 		&__title {
-			font-size: 34px;
+			font-size: 28px;
 		}
 
 		&__subtitle {
-			font-size: 21px;
+			font-size: 17px;
 		}
 
 		&__form {
-			max-width: 780px;
+			max-width: 675px;
 		}
 
 		&__object {
-			width: 560px;
+			bottom: 72px;
+			width: 390px;
 		}
 
 		&__brand {
-			right: -284px;
-			width: 900px;
+			right: -260px;
+			width: 680px;
 		}
 	}
 

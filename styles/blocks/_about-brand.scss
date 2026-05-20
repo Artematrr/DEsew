@@ -3,6 +3,7 @@
 	display: grid;
 	align-items: center;
 	min-height: 780px;
+	margin-top: 12px;
 	margin-bottom: var(--section-margin-bottom);
 	overflow: hidden;
 	color: var(--black);
@@ -134,6 +135,7 @@
 
 	@include mobile {
 		min-height: auto;
+		margin-top: 0;
 		padding-block: 34px;
 
 		&__card {

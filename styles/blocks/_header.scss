@@ -9,6 +9,10 @@
 		background-color: var(--white);
 	}
 
+	&:has(.header__nav-item--catalog.is-open) + .main {
+		filter: blur(8px);
+	}
+
 	&__container {
 		display: flex;
 		align-items: center;
@@ -229,7 +233,7 @@
 		right: 0;
 		left: 0;
 		z-index: var(--z-index-dropdown);
-		padding-block: 12px 160px;
+		padding-block: 18px 170px;
 		overflow: hidden;
 		background-color: var(--white);
 		box-shadow: var(--shadow-header);
@@ -292,7 +296,7 @@
 	&__catalog-stitch {
 		position: absolute;
 		right: -366px;
-		bottom: -160px;
+		bottom: -145px;
 		pointer-events: none;
 	}
 
@@ -383,7 +387,7 @@
 	&__mobile-panel {
 		position: relative;
 		min-height: 100%;
-		padding: 28px 24px 170px;
+		padding: 32px 32px 170px;
 		overflow: hidden auto;
 		background-color: var(--white);
 	}
@@ -417,7 +421,7 @@
 
 	&__mobile-catalog {
 		display: none;
-		padding-top: 2px;
+		padding-top: 3px;
 	}
 
 	&__mobile.is-catalog-open &__mobile-nav {
@@ -432,7 +436,7 @@
 		@include reset-button;
 
 		position: relative;
-		margin-bottom: 16px;
+		margin-bottom: 28px;
 		padding-left: 18px;
 		font-size: 20px;
 		color: var(--gray-500);
@@ -452,28 +456,35 @@
 	}
 
 	&__mobile-title {
-		margin-bottom: 28px;
+		margin-bottom: 30px;
 		font-size: 48px;
 		font-weight: 700;
 		line-height: 1.05;
 	}
 
 	&__mobile-catalog-group {
-		margin-bottom: 58px;
+		max-width: 620px;
+		margin: 0 auto 62px;
 	}
 
 	&__mobile-subtitle {
-		margin-bottom: 8px;
+		margin-bottom: 10px;
 		font-size: 30px;
 		font-weight: 700;
 		line-height: 1.2;
 	}
 
-	&__mobile-catalog-list {
+	ul.header__mobile-catalog-list {
 		list-style: disc;
 		padding-left: 42px;
 		font-size: 30px;
-		line-height: 1.55;
+		line-height: 1.48;
+	}
+
+	&__mobile-catalog-list a {
+		@include hover {
+			color: var(--primary-600);
+		}
 	}
 
 	&__mobile-banner {
@@ -501,6 +512,10 @@
 	}
 
 	@include tablet {
+		&:has(.header__nav-item--catalog.is-open) + .main {
+			filter: none;
+		}
+
 		&__container {
 			grid-template-columns: auto 1fr;
 			gap: 18px;
@@ -592,7 +607,7 @@
 		}
 
 		&__mobile-panel {
-			padding: 28px 24px 154px;
+			padding: 28px 32px 154px;
 		}
 
 		&__mobile-link {
@@ -641,6 +656,11 @@
 
 		&__mobile-panel {
 			padding-inline: 16px;
+		}
+
+		&__mobile-catalog-group {
+			max-width: 100%;
+			margin-inline: 0;
 		}
 
 		&__mobile-link {

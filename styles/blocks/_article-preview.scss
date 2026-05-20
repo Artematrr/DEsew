@@ -1,7 +1,7 @@
 .article-preview {
 	position: relative;
 	margin-bottom: 0;
-	padding-block: 62px 54px;
+	padding-block: 50px 76px;
 	overflow: hidden;
 	background-color: var(--white);
 
@@ -17,40 +17,40 @@
 	}
 
 	&__stitch--left {
-		top: 56px;
-		left: -26px;
-		width: 732px;
+		top: 62px;
+		left: -18px;
+		width: 620px;
 	}
 
 	&__stitch--middle {
-		top: 214px;
-		left: 878px;
-		width: 793px;
+		top: 142px;
+		left: 780px;
+		width: 690px;
 	}
 
 	&__stitch--right {
-		right: -34px;
-		top: 154px;
-		width: 839px;
+		right: -52px;
+		top: 190px;
+		width: 740px;
 	}
 
 	&__button-decor {
-		right: 180px;
-		top: 382px;
-		width: 66px;
+		right: 128px;
+		top: 390px;
+		width: 56px;
 	}
 
 	&__container {
 		position: relative;
 		z-index: var(--z-index-base);
-		max-width: calc(1178px + var(--container-padding-x) * 2);
+		max-width: calc(1060px + var(--container-padding-x) * 2);
 	}
 
 	&__header {
 		position: relative;
 		display: grid;
 		justify-items: center;
-		margin-bottom: 22px;
+		margin-bottom: 18px;
 		text-align: center;
 	}
 
@@ -81,9 +81,9 @@
 
 	&__grid {
 		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 368px));
+		grid-template-columns: repeat(3, minmax(0, 294px));
 		justify-content: center;
-		gap: 30px;
+		gap: 28px;
 	}
 
 	&__card {
@@ -92,7 +92,7 @@
 
 	&__image-link {
 		display: block;
-		margin-bottom: 12px;
+		margin-bottom: 10px;
 		overflow: hidden;
 		border-radius: var(--border-radius-lg);
 	}
@@ -100,7 +100,7 @@
 	&__image {
 		display: block;
 		width: 100%;
-		aspect-ratio: 1;
+		aspect-ratio: 1.04 / 1;
 		object-fit: cover;
 		transition: transform var(--transition-duration-long) ease;
 	}
@@ -115,15 +115,15 @@
 
 	&__card-title {
 		margin-bottom: 3px;
-		font-size: 17px;
+		font-size: 14px;
 		font-weight: 700;
 		line-height: 1.05;
 	}
 
 	&__text {
-		max-width: 240px;
+		max-width: 230px;
 		margin-bottom: 6px;
-		font-size: 11px;
+		font-size: 10px;
 		line-height: 1.12;
 		color: var(--gray-300);
 	}
@@ -131,7 +131,7 @@
 	&__link {
 		display: inline-flex;
 		align-items: center;
-		font-size: 16px;
+		font-size: 14px;
 		font-weight: 500;
 		line-height: 1.1;
 		color: var(--primary-500);
