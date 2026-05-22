@@ -36,7 +36,7 @@ body {
 
 	&::-webkit-scrollbar-thumb {
 		background-color: var(--primary-500);
-		border-radius: var(--border-radius-xs)
+		border-radius: var(--border-radius-xs);
 	}
 
 	&::-webkit-scrollbar-thumb:hover {
@@ -50,7 +50,7 @@ input,
 textarea,
 svg * {
 	transition-duration: var(--transition-duration);
-	transition-timing-function: ease-in-out;
+	transition-timing-function: var(--transition-timing-function);
 }
 
 a {

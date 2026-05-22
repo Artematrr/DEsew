@@ -54,6 +54,9 @@
 		text-align: center;
 	}
 
+	&__heading {
+	}
+
 	&__title {
 		margin-bottom: 3px;
 		font-size: 36px;
@@ -88,6 +91,9 @@
 
 	&__card {
 		min-width: 0;
+	}
+
+	&__card-content {
 	}
 
 	&__image-link {

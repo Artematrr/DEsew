@@ -13,6 +13,10 @@
 		filter: blur(8px);
 	}
 
+	&:has(.header__mobile.is-open) {
+		background-color: var(--white);
+	}
+
 	&__container {
 		display: flex;
 		align-items: center;
@@ -35,11 +39,17 @@
 		object-fit: contain;
 	}
 
+	&__nav {
+		display: flex;
+		flex-grow: 1;
+	}
+
 	&__nav-list {
 		display: flex;
 		align-items: center;
-		justify-content: center;
+		justify-content: space-between;
 		gap: 28px;
+		flex-grow: 1;
 		font-size: 12px;
 	}
 
@@ -47,34 +57,20 @@
 		position: relative;
 	}
 
+	&__nav-item--catalog {
+	}
+
 	&__nav-link {
 		position: relative;
 		display: inline-flex;
 		align-items: center;
-		gap: 5px;
+		gap: 3px;
 		min-height: 36px;
 		font-weight: 400;
 		transition-property: color;
 
-		// &::after {
-		// 	content: '';
-		// 	position: absolute;
-		// 	right: 0;
-		// 	bottom: 4px;
-		// 	left: 0;
-		// 	height: 2px;
-		// 	background-color: var(--primary-500);
-		// 	scale: 0 1;
-		// 	transform-origin: left center;
-		// 	transition: scale var(--transition-duration) ease;
-		// }
-
 		@include hover {
 			color: var(--primary-500);
-
-			// &::after {
-			// 	scale: 1;
-			// }
 		}
 	}
 
@@ -111,15 +107,15 @@
 		transform-origin: center;
 		transition-property: transform;
 		transition-duration: var(--transition-duration);
-		transition-timing-function: ease-in-out;
+		transition-timing-function: var(--transition-timing-function);
 	}
 
 	&__mobile-chevron {
 		@include square(8px);
 
 		display: inline-block;
-		border-right: 2px solid var(--primary-500);
-		border-bottom: 2px solid var(--primary-500);
+		border-right: 3px solid var(--primary-500);
+		border-bottom: 3px solid var(--primary-500);
 		rotate: 45deg;
 		translate: 0 -2px;
 	}
@@ -128,7 +124,11 @@
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
-		gap: 14px;
+		gap: 18px;
+	}
+
+	&__actions-inner {
+		display: contents;
 	}
 
 	&__search {
@@ -136,9 +136,9 @@
 		display: flex;
 		align-items: center;
 		width: 164px;
-		min-height: 40px;
+		height: 38px;
 		background-color: var(--white);
-		border: 1px solid transparent;
+		border: var(--border);
 		border-radius: var(--border-radius-sm);
 		box-shadow:
 			1px 2px 5px 0 rgba(147, 72, 120, 0.1),
@@ -146,7 +146,6 @@
 			13px 17px 13px 0 rgba(147, 72, 120, 0.05),
 			23px 30px 15px 0 rgba(147, 72, 120, 0.01),
 			36px 46px 16px 0 rgba(147, 72, 120, 0);
-		background: #fff;
 		transition-property: border-color, box-shadow;
 
 		&.is-open,
@@ -164,14 +163,13 @@
 	}
 
 	&__search-icon {
-		@include square(22px);
 	}
 
 	&__search-input {
 		width: 100%;
 		min-width: 0;
 		margin-left: 15px;
-		padding: 0 12px 0 0;
+		padding: 0 15px 0 0;
 		font-size: 12px;
 		background-color: transparent;
 		border: none;
@@ -186,45 +184,56 @@
 	&__burger {
 		@include reset-button;
 		@include flex-center;
-		@include square(38px);
+		@include square(28px);
 
 		flex-shrink: 0;
-		border-radius: 50%;
-		transition-property: background-color;
-
-		@include hover {
-			background-color: var(--primary-100);
-		}
 	}
 
 	&__icon {
-		// max-width: 24px;
-		// max-height: 24px;
+		max-width: 28px;
+		max-height: 28px;
 		object-fit: contain;
 	}
 
-	.header__icon-button--mail .header__icon {
-		max-width: 38px;
-		max-height: 38px;
+	&__icon-button--mail {
+		@include hover {
+			* {
+				stroke: var(--primary-300);
+			}
+		}
+	}
+
+	&__icon-button--compare {
+		@include hover {
+			* {
+				fill: var(--primary-300);
+			}
+		}
 	}
 
 	&__divider {
-		width: 2px;
+		width: 1px;
 		height: 50px;
-		margin-inline: 6px 4px;
-		background-image: linear-gradient(
-			to bottom,
-			var(--gray-400) 0 3px,
-			transparent 3px 7px
-		);
-		background-size: 1px 7px;
-		opacity: 0.8;
+		overflow: hidden;
+
+		img {
+			object-fit: contain;
+		}
 	}
 
 	&__phone {
+		display: flex;
+		align-items: center;
+		gap: 28px;
 		font-size: 12px;
 		font-weight: 600;
 		white-space: nowrap;
+
+		@include hover {
+			.header__icon * {
+				stroke: var(--primary-500);
+			}
+		}
 	}
 
 	&__catalog {
@@ -255,7 +264,6 @@
 	}
 
 	&__catalog-content {
-		// max-width: 780px;
 	}
 
 	&__catalog-title {
@@ -268,9 +276,12 @@
 	&__catalog-grid {
 		display: grid;
 		grid-template-columns: repeat(2, 360px);
-		gap: 20px;
+		gap: 10px;
 		font-size: 20px;
 		line-height: 1.52;
+	}
+
+	&__catalog-column {
 	}
 
 	&__catalog-subtitle {
@@ -296,15 +307,7 @@
 	&__catalog-stitch {
 		position: absolute;
 		right: -366px;
-		bottom: -145px;
-		pointer-events: none;
-	}
-
-	&__catalog-button {
-		position: absolute;
-		right: 145px;
-		bottom: 86px;
-		width: 54px;
+		bottom: -165px;
 		pointer-events: none;
 	}
 
@@ -329,7 +332,7 @@
 			transform-origin: center;
 			transition-property: transform, opacity, background-color;
 			transition-duration: var(--transition-duration);
-			transition-timing-function: ease-in-out;
+			transition-timing-function: var(--transition-timing-function);
 		}
 
 		&::before,
@@ -387,7 +390,7 @@
 	&__mobile-panel {
 		position: relative;
 		min-height: 100%;
-		padding: 32px 32px 170px;
+		padding: 16px 25px;
 		overflow: hidden auto;
 		background-color: var(--white);
 	}
@@ -397,6 +400,11 @@
 		gap: 14px;
 	}
 
+	&__mobile-nav {
+		position: relative;
+		z-index: 1;
+	}
+
 	&__mobile-link {
 		@include reset-button;
 
@@ -404,12 +412,10 @@
 		justify-content: space-between;
 		align-items: center;
 		width: 100%;
-		min-height: 72px;
-		padding: 14px 20px 14px 28px;
-		font-size: 36px;
-		font-weight: 600;
-		line-height: 1.1;
-		text-align: left;
+		min-height: 60px;
+		padding: 7px 25px;
+		font-size: 30px;
+		font-weight: 700;
 		background-color: var(--white);
 		border-radius: var(--border-radius);
 		box-shadow: var(--shadow-sm);
@@ -422,6 +428,7 @@
 	&__mobile-catalog {
 		display: none;
 		padding-top: 3px;
+		z-index: 2;
 	}
 
 	&__mobile.is-catalog-open &__mobile-nav {
@@ -436,9 +443,9 @@
 		@include reset-button;
 
 		position: relative;
-		margin-bottom: 28px;
-		padding-left: 18px;
-		font-size: 20px;
+		margin-bottom: 18px;
+		padding-left: 12px;
+		font-size: 18px;
 		color: var(--gray-500);
 
 		&::before {
@@ -446,8 +453,8 @@
 			position: absolute;
 			top: 50%;
 			left: 2px;
-			width: 9px;
-			height: 9px;
+			width: 8px;
+			height: 8px;
 			border-left: 2px solid currentColor;
 			border-bottom: 2px solid currentColor;
 			rotate: 45deg;
@@ -456,15 +463,15 @@
 	}
 
 	&__mobile-title {
-		margin-bottom: 30px;
 		font-size: 48px;
 		font-weight: 700;
-		line-height: 1.05;
+		line-height: 1.25;
+		margin-bottom: 12px;
 	}
 
 	&__mobile-catalog-group {
-		max-width: 620px;
-		margin: 0 auto 62px;
+		margin-left: 36px;
+		margin-bottom: 35px;
 	}
 
 	&__mobile-subtitle {
@@ -474,9 +481,12 @@
 		line-height: 1.2;
 	}
 
+	&__mobile-catalog-list {
+	}
+
 	ul.header__mobile-catalog-list {
 		list-style: disc;
-		padding-left: 42px;
+		padding-left: 30px;
 		font-size: 30px;
 		line-height: 1.48;
 	}
@@ -487,27 +497,27 @@
 		}
 	}
 
-	&__mobile-banner {
+	&__mobile-banner-wrapper {
+		overflow: hidden;
 		position: absolute;
-		right: -8px;
-		bottom: -18px;
-		width: min(620px, 100vw);
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 0;
+	}
+
+	&__mobile-banner {
+		position: relative;
+		bottom: -6vw;
+		left: -4%;
+		width: 104vw;
 		max-width: none;
-		opacity: 0.18;
 		pointer-events: none;
 	}
 
 	@include desktop {
-		&__container {
-			gap: 18px;
-		}
-
-		&__nav-list {
-			gap: 18px;
-		}
-
-		&__actions {
-			gap: 10px;
+		&__phone-text {
+			display: none;
 		}
 	}
 
@@ -516,19 +526,43 @@
 			filter: none;
 		}
 
-		&__container {
-			grid-template-columns: auto 1fr;
-			gap: 18px;
+		&__actions {
+			display: contents;
+		}
+
+		&__actions-inner {
+			display: flex;
+			align-items: center;
+			gap: 28px;
 		}
 
 		&__nav,
-		&__phone,
 		&__catalog {
 			display: none;
 		}
 
-		&__actions {
-			justify-self: end;
+		&__icon-button--mail {
+			order: 0;
+		}
+
+		&__icon-button--compare {
+			order: 1;
+		}
+
+		&__divider {
+			order: 3;
+		}
+
+		&__phone {
+			order: 2;
+		}
+
+		&__burger {
+			order: 4;
+		}
+
+		&__search {
+			width: 400px;
 		}
 
 		&__mobile {
@@ -542,47 +576,37 @@
 
 	@include mobile {
 		&__container {
-			display: flex;
-			min-height: var(--header-height);
-			gap: 9px;
+			gap: 8px;
 		}
 
 		&__logo {
-			width: 115px;
+			width: 74px;
 		}
 
-		&__actions {
-			flex: 1;
-			gap: 6px;
-			min-width: 0;
+		&__actions-inner {
+			gap: 12px;
 		}
 
 		&__search {
-			width: 164px;
-			height: 38px;
-			border-radius: var(--border-radius-xs);
-
-			&.is-open {
-				border-color: var(--primary-500);
-			}
+			width: 160px;
+			height: 28px;
 		}
 
 		&__search-button {
-			@include square(26px);
+			@include square(28px);
 		}
 
 		&__search-icon {
-			@include square(22px);
+			@include square(18px);
 		}
 
 		&__search-input {
-			padding-right: 8px;
-			font-size: 12px;
-			margin-left: 0px;
+			padding-right: 5px;
+			margin-left: 8px;
 		}
 
 		&__icon-button {
-			@include square(24px);
+			@include square(17px);
 		}
 
 		&__icon {
@@ -591,89 +615,45 @@
 		}
 
 		&__divider {
-			height: 26px;
-			margin-inline: 2px;
+			height: 20px;
 		}
 
 		&__burger {
-			@include square(38px);
+			@include square(28px);
 
 			&::before,
 			&::after,
 			span {
-				width: 30px;
+				width: 22px;
 				height: 3px;
 			}
 		}
 
 		&__mobile-panel {
-			padding: 28px 32px 154px;
 		}
 
 		&__mobile-link {
-			min-height: 58px;
-			padding: 10px 14px 10px 26px;
-			font-size: 28px;
-		}
-
-		&__mobile-title {
-			font-size: 48px;
-		}
-
-		&__mobile-subtitle,
-		&__mobile-catalog-list {
-			font-size: 29px;
-		}
-	}
-
-	@include mobile-s {
-		&__container {
-			padding-inline: 12px;
-			gap: 5px;
-		}
-
-		&__logo {
-			width: 100px;
-		}
-
-		&__search {
-			width: 92px;
-		}
-
-		&__icon-button {
-			@include square(22px);
-		}
-
-		&__burger {
-			@include square(34px);
-
-			&::before,
-			&::after,
-			span {
-				width: 27px;
-			}
-		}
-
-		&__mobile-panel {
-			padding-inline: 16px;
-		}
-
-		&__mobile-catalog-group {
-			max-width: 100%;
-			margin-inline: 0;
-		}
-
-		&__mobile-link {
+			min-height: 40px;
 			font-size: 25px;
 		}
 
 		&__mobile-title {
-			font-size: 42px;
+			font-size: 32px;
 		}
 
 		&__mobile-subtitle,
 		&__mobile-catalog-list {
-			font-size: 24px;
+			font-size: 20px;
+		}
+
+		ul.header__mobile-catalog-list {
+			font-size: 20px;
+		}
+	}
+
+	@include mobile-s {
+		&__search {
+			display: none;
 		}
 	}
 }

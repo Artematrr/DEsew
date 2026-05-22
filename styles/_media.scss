@@ -10,8 +10,8 @@ $tablet-s: 992px;
 $mobile-above: 768px;
 $mobile: 767px;
 
-$mobile-s-above: 481px;
-$mobile-s: 480px;
+$mobile-s-above: 375px;
+$mobile-s: 375px;
 
 @mixin desktop-above {
 	@media (min-width: $desktop-above) {

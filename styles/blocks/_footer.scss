@@ -114,6 +114,12 @@
 		gap: 34px;
 	}
 
+	&__column {
+	}
+
+	&__column--contacts {
+	}
+
 	&__column-title {
 		margin-bottom: 18px;
 		font-size: 17px;
@@ -153,6 +159,12 @@
 			height: 17px;
 			object-fit: contain;
 		}
+	}
+
+	&__contact--phone {
+	}
+
+	&__contact--location {
 	}
 
 	&__subscribe {
