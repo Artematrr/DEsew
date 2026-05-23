@@ -1,7 +1,7 @@
 .decor {
 	position: absolute;
 	inset: 0;
-	z-index: var(--z-index-decor);
+	z-index: 2;
 	overflow: hidden;
 	pointer-events: none;
 
@@ -14,11 +14,11 @@
 	}
 
 	&__item--stitch {
-		opacity: 0.9;
+		// opacity: 0.9;
 	}
 
 	&__item--muted {
-		opacity: 0.45;
+		// opacity: 0.45;
 	}
 
 	@include mobile {

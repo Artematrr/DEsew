@@ -326,28 +326,28 @@
 			<div class="category-preview__container">
 				<h2 class="visually-hidden" id="category-preview-title">Основные категории</h2>
 				<div class="category-preview__grid">
-					<article class="category-card category-card--machines">
-						<img class="category-card__image" src="/images/02-category-preview/category-preview-02.jpg"
+					<article class="category-preview__card category-preview__card--machines">
+						<img class="category-preview__card-image" src="/images/02-category-preview/category-preview-02.jpg"
 							alt="Швейные машины DEsew">
-						<div class="category-card__content">
-							<h3 class="category-card__title">Швейные машины</h3>
-							<p class="category-card__text">Для дома, ателье и серьёзных задач</p>
-							<div class="category-card__actions">
-								<a class="button button--sm" href="#popular-products">Подробнее</a>
-								<a class="button button--secondary button--sm" href="#">Купить</a>
+						<div class="category-preview__card-content">
+							<h3 class="category-preview__card-title">Швейные машины</h3>
+							<p class="category-preview__card-text">Для дома, ателье и серьёзных задач</p>
+							<div class="category-preview__card-actions">
+								<a class="button" href="#popular-products">Подробнее</a>
+								<a class="button button--secondary button--outline" href="#">Купить</a>
 							</div>
 						</div>
 					</article>
 
-					<article class="category-card category-card--accessories">
-						<img class="category-card__image" src="/images/02-category-preview/category-preview-01.jpg"
+					<article class="category-preview__card category-preview__card--accessories">
+						<img class="category-preview__card-image" src="/images/02-category-preview/category-preview-01.jpg"
 							alt="Аксессуары для швейной техники">
-						<div class="category-card__content">
-							<h3 class="category-card__title">Аксессуары</h3>
-							<p class="category-card__text">Лапки, иглы, нити и всё для работы</p>
-							<div class="category-card__actions">
-								<a class="button button--sm" href="#popular-products">Подробнее</a>
-								<a class="button button--secondary button--sm" href="#">Купить</a>
+						<div class="category-preview__card-content">
+							<h3 class="category-preview__card-title">Аксессуары</h3>
+							<p class="category-preview__card-text">Лапки, иглы, нити и всё для работы</p>
+							<div class="category-preview__card-actions">
+								<a class="button" href="#popular-products">Подробнее</a>
+								<a class="button button--secondary button--outline" href="#">Купить</a>
 							</div>
 						</div>
 					</article>
@@ -357,13 +357,12 @@
 
 		<section class="about-brand section" id="about" aria-labelledby="about-brand-title">
 			<img class="about-brand__image" src="/images/03-about-brand/about-brand-bg.jpg" alt="">
-
-			<div class="about-brand__container container">
+			<div class="about-brand__container">
 				<div class="about-brand__card">
 					<p class="about-brand__eyebrow">О компании</p>
-					<h2 class="about-brand__title" id="about-brand-title">
-						<span>DE</span><span>sew</span>
-					</h2>
+					<div class="about-brand__logo">
+						<img src="/images/icons/logo-main.svg" alt="DEsew" width="317" height="68">
+					</div>
 					<div class="about-brand__text">
 						<p><b>DESEW</b> — бренд надёжного швейного оборудования, созданный для стабильной работы и высокой
 							точности.</p>
@@ -371,9 +370,33 @@
 							результата. Оборудование DESEW сочетает современные технологии,<br> продуманную конструкцию и длительный
 							срок службы.</p>
 					</div>
-					<a class="about-brand__button button" href="#">
+					<a class="about-brand__button button-plate" href="#">
 						<span>Подробнее</span>
-						<img src="/images/03-about-brand/about-brand-more.svg" alt="" aria-hidden="true">
+						<svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g filter="url(#filter0_d_2856_7)">
+								<path fill-rule="evenodd" clip-rule="evenodd"
+									d="M20.4658 1C30.6831 1 38.9658 9.28273 38.9658 19.5C38.9658 29.7173 30.6831 38 20.4658 38C10.6214 38 2.57427 30.3106 2 20.6104H2.50488C3.11792 20.6104 3.61523 20.113 3.61523 19.5C3.61523 18.887 3.11792 18.3896 2.50488 18.3896H2C2.57427 8.68938 10.6214 1 20.4658 1ZM18.4414 11.6514C18.0079 11.2179 17.3046 11.2179 16.8711 11.6514C16.438 12.0848 16.438 12.7873 16.8711 13.2207L22.1738 18.5244C21.827 18.7121 21.5908 19.0779 21.5908 19.5C21.5908 19.9221 21.827 20.2879 22.1738 20.4756L16.8711 25.7793C16.438 26.2127 16.438 26.9152 16.8711 27.3486C17.3046 27.7821 18.0079 27.7821 18.4414 27.3486L25.5049 20.2852C25.9384 19.8517 25.9384 19.1483 25.5049 18.7148L18.4414 11.6514ZM6.54395 18.3896C5.93098 18.3897 5.43457 18.887 5.43457 19.5C5.43457 20.113 5.93098 20.6103 6.54395 20.6104H10.583C11.196 20.6104 11.6934 20.113 11.6934 19.5C11.6934 18.887 11.196 18.3896 10.583 18.3896H6.54395ZM14.6221 18.3896C14.0092 18.3898 13.5127 18.8871 13.5127 19.5C13.5127 20.1129 14.0092 20.6102 14.6221 20.6104H18.6611C19.2742 20.6104 19.7715 20.113 19.7715 19.5C19.7715 18.887 19.2742 18.3896 18.6611 18.3896H14.6221Z"
+									fill="url(#paint0_linear_2856_7)" fill-opacity="1" />
+							</g>
+							<defs>
+								<filter id="filter0_d_2856_7" x="0" y="0" width="40.9648" height="41" filterUnits="userSpaceOnUse"
+									color-interpolation-filters="sRGB">
+									<feFlood flood-opacity="0" result="BackgroundImageFix" />
+									<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+										result="hardAlpha" />
+									<feOffset dy="1" />
+									<feGaussianBlur stdDeviation="1" />
+									<feColorMatrix type="matrix" values="0 0 0 0 0.760784 0 0 0 0 0.698039 0 0 0 0 0 0 0 0 0.1 0" />
+									<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2856_7" />
+									<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2856_7" result="shape" />
+								</filter>
+								<linearGradient id="paint0_linear_2856_7" x1="38.966" y1="19.5" x2="2" y2="19.5"
+									gradientUnits="userSpaceOnUse">
+									<stop stop-color="#F6CD14" />
+									<stop offset="1" stop-color="#FECE6A" />
+								</linearGradient>
+							</defs>
+						</svg>
 					</a>
 				</div>
 			</div>

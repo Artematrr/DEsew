@@ -20,6 +20,10 @@
 		pointer-events: none;
 	}
 
+	@include tablet-s {
+		margin-bottom: 0;
+	}
+
 	&__slider {
 		@include visual-frame-layer;
 
@@ -30,7 +34,7 @@
 	&__decor {
 		@include visual-frame-layer;
 
-		z-index: 1;
+		z-index: var(--z-index-base);
 	}
 
 	&__stitch {
@@ -53,15 +57,19 @@
 
 	&__container {
 		position: relative;
-		z-index: 1;
+		z-index: var(--z-index-base);
 		display: grid;
-		grid-template-columns: 136px minmax(430px, 520px);
+		grid-template-columns: 136px 520px;
 		align-items: start;
 		column-gap: 14px;
 		max-width: var(--visual-frame-width);
 		min-height: inherit;
 		padding-block: 96px 96px;
 		padding-left: 220px;
+
+		@include tablet-s {
+			grid-template-columns: 54px 300px;
+		}
 	}
 
 	&__content {
@@ -70,10 +78,15 @@
 
 	&__content-text {
 		max-width: 390px;
+
+		@include mobile {
+			max-width: 200px;
+		}
 	}
 
 	&__title {
-		font-size: 56px;
+		@include fluid-text(30, 56);
+
 		font-weight: 800;
 		line-height: 0.91;
 		text-transform: uppercase;
@@ -82,17 +95,27 @@
 		span {
 			display: block;
 		}
+
+		@include tablet-s {
+			margin-bottom: 0px;
+		}
 	}
 
 	&__brand {
-		font-size: 104px;
+		@include fluid-text(52, 104);
+
 		color: var(--primary-500);
 		text-transform: none;
 		padding-top: 10px;
+
+		@include tablet-s {
+			padding-top: 0px;
+		}
 	}
 
 	&__text {
-		font-size: 24px;
+		@include fluid-text(12, 24);
+
 		font-weight: 300;
 		color: var(--gray-350);
 	}
@@ -115,223 +138,58 @@
 
 	&__stats {
 		position: relative;
-		z-index: 1;
+		z-index: var(--z-index-base);
 	}
 
 	&__pagination {
 		position: absolute;
-		z-index: 1;
+		z-index: var(--z-index-base);
 		bottom: 15px;
 		left: 50%;
 		transform: translateX(-50%);
 	}
 
-	// @include desktop {
-	// 	&__container {
-	// 		grid-template-columns: 124px minmax(380px, 470px);
-	// 		column-gap: 20px;
-	// 		padding-inline: clamp(58px, 7.8vw, 120px) var(--container-padding-x);
-	// 		padding-block: 84px 86px;
-	// 	}
+	@include desktop {
+		&__container {
+			column-gap: 14px;
+			padding-left: 20px;
+		}
 
-	// 	&__title {
-	// 		font-size: clamp(48px, 4vw, 64px);
-	// 	}
+		&__actions {
+			margin-top: 80px;
+			flex-wrap: wrap;
+		}
+	}
 
-	// 	&__brand {
-	// 		font-size: clamp(72px, 6vw, 96px);
-	// 	}
+	@include tablet-s {
+		min-height: 188px;
 
-	// 	&__text {
-	// 		max-width: 360px;
-	// 		font-size: 22px;
-	// 	}
+		&__container {
+			padding-block: 31px 38px;
+		}
 
-	// 	&__actions {
-	// 		margin-top: 84px;
-	// 	}
+		&__slide-image {
+			object-position: 64% center;
+		}
 
-	// 	.button {
-	// 		min-width: 248px;
-	// 		font-size: 21px;
-	// 	}
-	// }
+		&__actions {
+			margin-top: 5px;
+		}
 
-	// @include tablet {
-	// 	min-height: 430px;
+		.button {
+			font-size: 12px;
+			min-width: 148px;
+			min-height: 30px;
+			padding: 8px 14px;
+		}
 
-	// 	&__slide-image {
-	// 		object-position: 64% center;
-	// 	}
-
-	// 	&__container {
-	// 		grid-template-columns: 108px minmax(0, 430px);
-	// 		column-gap: 18px;
-	// 		align-items: center;
-	// 		padding-block: 50px;
-	// 		padding-inline: var(--container-padding-x);
-	// 	}
-
-	// 	&__title {
-	// 		font-size: 40px;
-	// 	}
-
-	// 	&__brand {
-	// 		font-size: 62px;
-	// 	}
-
-	// 	&__text {
-	// 		max-width: 320px;
-	// 		font-size: 19px;
-	// 	}
-
-	// 	&__actions {
-	// 		margin-top: 34px;
-	// 	}
-
-	// 	.button {
-	// 		min-width: 198px;
-	// 		min-height: 54px;
-	// 		font-size: 17px;
-	// 	}
-
-	// 	&__stitch {
-	// 		left: -150px;
-	// 		bottom: 115px;
-	// 		width: 430px;
-	// 	}
-	// }
-
-	// @include tablet-s {
-	// 	min-height: 430px;
-
-	// 	&__slide-image {
-	// 		object-position: 64% center;
-	// 	}
-
-	// 	&__container {
-	// 		grid-template-columns: 108px minmax(0, 430px);
-	// 		column-gap: 18px;
-	// 		align-items: center;
-	// 		padding-block: 50px 50px;
-	// 		padding-inline: var(--container-padding-x);
-	// 	}
-
-	// 	&__title {
-	// 		font-size: 40px;
-	// 	}
-
-	// 	&__brand {
-	// 		font-size: 62px;
-	// 	}
-
-	// 	&__text {
-	// 		max-width: 320px;
-	// 		font-size: 19px;
-	// 	}
-
-	// 	&__actions {
-	// 		margin-top: 34px;
-	// 	}
-
-	// 	.button {
-	// 		min-width: 198px;
-	// 		min-height: 54px;
-	// 		font-size: 17px;
-	// 	}
-
-	// 	&__stitch {
-	// 		left: -150px;
-	// 		bottom: 115px;
-	// 		width: 430px;
-	// 	}
-	// }
-
-	// @include mobile {
-	// 	min-height: 330px;
-
-	// 	&::after {
-	// 		background: linear-gradient(
-	// 			90deg,
-	// 			rgba(255, 255, 255, 0.9) 0%,
-	// 			rgba(255, 255, 255, 0.68) 42%,
-	// 			rgba(255, 255, 255, 0.1) 82%
-	// 		);
-	// 	}
-
-	// 	&__slide-image {
-	// 		object-position: 62% center;
-	// 	}
-
-	// 	&__container {
-	// 		grid-template-columns: 58px minmax(0, 250px);
-	// 		column-gap: 10px;
-	// 		align-items: start;
-	// 		padding-block: 38px 38px;
-	// 	}
-
-	// 	&__title {
-	// 		margin-bottom: 6px;
-	// 		font-size: clamp(26px, 8vw, 38px);
-	// 		line-height: 1.03;
-	// 	}
-
-	// 	&__brand {
-	// 		margin-top: 2px;
-	// 		font-size: clamp(42px, 13vw, 58px);
-	// 	}
-
-	// 	&__text {
-	// 		max-width: 210px;
-	// 		font-size: 12px;
-	// 		line-height: 1.25;
-	// 	}
-
-	// 	&__actions {
-	// 		display: flex;
-	// 		flex-wrap: nowrap;
-	// 		gap: 4px;
-	// 		margin-top: 24px;
-	// 	}
-
-	// 	.button {
-	// 		width: auto;
-	// 		min-width: 104px;
-	// 		min-height: 28px;
-	// 		padding: 7px 12px;
-	// 		font-size: 10px;
-	// 		border-radius: var(--border-radius-xs);
-	// 	}
-
-	// 	&__pagination {
-	// 		bottom: 12px;
-	// 	}
-
-	// 	&__stitch {
-	// 		left: -92px;
-	// 		bottom: 58px;
-	// 		width: 210px;
-	// 		opacity: 0.7;
-	// 	}
-	// }
-
-	// @include mobile-s {
-	// 	min-height: 316px;
-
-	// 	&__container {
-	// 		grid-template-columns: 54px minmax(0, 1fr);
-	// 		padding-block: 34px 34px;
-	// 	}
-
-	// 	&__actions {
-	// 		margin-top: 20px;
-	// 	}
-
-	// 	.button {
-	// 		min-width: 96px;
-	// 		padding-inline: 9px;
-	// 	}
-	// }
+		&__stitch {
+			left: -2px;
+			bottom: 58px;
+			width: 210px;
+			opacity: 0.7;
+		}
+	}
 }
 
 .hero-stats {
@@ -363,10 +221,11 @@
 			left: 6px;
 			bottom: 0;
 			height: 2px;
-			width: 118px;
+			width: 100%;
 			background-image: url('/images/01-hero/hero-stitch-02.svg');
 			background-repeat: no-repeat;
 			background-position: center;
+			background-size: contain;
 		}
 	}
 
@@ -394,33 +253,17 @@
 	}
 
 	@include tablet-s {
-		width: 108px;
-		min-height: 500px;
-
-		&__icon {
-			@include square(28px);
-		}
-
-		&__value {
-			b,
-			span {
-				font-size: 18px;
-			}
-		}
-	}
-
-	@include mobile {
-		width: 58px;
-		min-height: 190px;
-		padding: 7px 4px;
-		border-radius: var(--border-radius-xs);
+		width: 54px;
+		min-height: 118px;
+		border-radius: 3px;
 
 		&__item {
 			gap: 3px;
-			padding-block: 4px 7px;
+			padding-block: 5px;
+			min-height: 30px;
 
 			&:not(:last-child)::after {
-				border-bottom-width: 1px;
+				width: 42px;
 			}
 		}
 
@@ -429,12 +272,9 @@
 		}
 
 		&__value {
-			b {
-				font-size: 10px;
-			}
-
+			b,
 			span {
-				font-size: 9px;
+				font-size: 8px;
 			}
 		}
 	}
@@ -465,5 +305,9 @@
 			max-height: 21px;
 			object-fit: contain;
 		}
+	}
+
+	@include tablet-s {
+		display: none;
 	}
 }

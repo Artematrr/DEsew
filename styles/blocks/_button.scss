@@ -15,6 +15,8 @@
 	border-radius: var(--border-radius);
 	box-shadow: none;
 	transition-property: color, background, border-color, box-shadow, transform;
+	transition-duration: var(--transition-duration);
+	transition-timing-function: var(--transition-timing-function);
 
 	@include hover {
 		background: var(--primary-300);
@@ -60,93 +62,89 @@
 			color: var(--primary-500);
 		}
 	}
-
-	// &--icon {
-	// 	@include square(var(--button-height));
-
-	// 	padding: 0;
-	// 	border-radius: 50%;
-	// }
-
-	// &--sm {
-	// 	min-height: var(--button-height-sm);
-	// 	padding: 10px 20px;
-	// 	font-size: 14px;
-	// }
-
-	// &--wide {
-	// 	width: 100%;
-	// }
-
-	// &__icon {
-	// 	@include square(20px);
-
-	// 	flex-shrink: 0;
-	// }
-
-	@include mobile {
-		width: 100%;
-		padding-inline: 20px;
-
-		// &--icon,
-		// &--ghost {
-		// 	width: auto;
-		// }
-	}
 }
 
 .button-plate {
 	@include reset-link;
 	@include flex-center(true);
 
-	position: relative;
-	min-height: 36px;
-	padding: 8px 56px;
-	font-size: 17px;
-	font-weight: 600;
-	line-height: 1.1;
-	color: var(--gray-500);
-	background: linear-gradient(
+	--button-plate-arrow-size: 37px;
+	--button-plate-arrow-offset: 3px;
+	--button-plate-arrow-from: rgba(246, 205, 20, 0.25);
+	--button-plate-arrow-to: rgba(254, 206, 106, 0.25);
+	--button-plate-color: linear-gradient(
 		90deg,
-		rgba(246, 205, 20, 0.2) 0%,
-		rgba(254, 206, 106, 0.42) 100%
+		var(--button-plate-arrow-from) 0%,
+		var(--button-plate-arrow-to) 100%
 	);
-	border-radius: var(--border-radius-xs);
-	box-shadow: 0 18px 42px rgba(196, 18, 77, 0.14);
-	transition-property: color, background, box-shadow, transform;
+
+	gap: var(--button-plate-arrow-offset);
+	transition-duration: var(--transition-duration);
+	transition-timing-function: var(--transition-timing-function);
+
+	span {
+		@include flex-center(true);
+
+		position: relative;
+		min-height: 36px;
+		padding: 7px;
+		width: 191px;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 1.1;
+		color: var(--gray-500);
+		border-radius: var(--border-radius);
+		background: var(--button-plate-color);
+		box-shadow:
+			0 2px 4px 0 rgba(194, 178, 0, 0.05),
+			0 7px 7px 0 rgba(194, 178, 0, 0.04),
+			0 15px 9px 0 rgba(194, 178, 0, 0.03),
+			0 27px 11px 0 rgba(194, 178, 0, 0.01),
+			0 42px 12px 0 rgba(194, 178, 0, 0);
+		transition-property: color, background, box-shadow, transform;
+		transition-duration: var(--transition-duration);
+		transition-timing-function: var(--transition-timing-function);
+	}
+
+	svg {
+		position: relative;
+		width: var(--button-plate-arrow-size);
+		height: var(--button-plate-arrow-size);
+		right: 0px;
+		transition-property: right;
+		transition-duration: var(--transition-duration);
+		transition-timing-function: var(--transition-timing-function);
+	}
+
+	svg stop:first-child {
+		stop-color: var(--button-plate-arrow-from);
+		transition-property: stop-color, transform;
+	}
+
+	svg stop:last-child {
+		stop-color: var(--button-plate-arrow-to);
+		transition-property: stop-color, transform;
+	}
 
 	@include hover {
-		color: var(--black);
-		box-shadow: 0 20px 46px rgba(196, 18, 77, 0.2);
+		--button-plate-arrow-from: rgba(255, 209, 0, 0.6);
+		--button-plate-arrow-to: rgba(254, 206, 106, 0.6);
+
+		span {
+			box-shadow:
+				0 0 1px 0 rgba(255, 255, 255, 0.85),
+				0 0 1px 0 rgba(255, 255, 255, 0.5),
+				0 0 1px 0 rgba(255, 255, 255, 0.15),
+				0 0 1px 0 rgba(255, 255, 255, 0.02);
+		}
+
+		svg {
+			right: -5px;
+		}
 	}
 
 	&:active {
-		transform: translateY(1px);
-	}
-
-	&__arrow {
-		@include square(37px);
-
-		position: absolute;
-		top: 50%;
-		right: -30px;
-		color: var(--button-plate-arrow-color, var(--primary-500));
-		transform: translateY(-50%);
-	}
-
-	&__arrow-path {
-		fill: currentColor;
-		fill-opacity: var(--button-plate-arrow-opacity, 0.25);
-	}
-
-	&--light {
-		--button-plate-arrow-color: var(--white);
-		--button-plate-arrow-opacity: 0.72;
-	}
-
-	@include mobile {
-		min-height: 44px;
-		padding-inline: 42px;
-		font-size: 18px;
+		--button-plate-arrow-from: #f6cd14;
+		--button-plate-arrow-to: #fece6a;
 	}
 }

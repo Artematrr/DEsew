@@ -3,11 +3,10 @@
 	display: grid;
 	align-items: center;
 	min-height: 780px;
-	margin-top: 12px;
-	margin-bottom: var(--section-margin-bottom);
 	overflow: hidden;
-	color: var(--black);
 	background-color: var(--white);
+	padding-block: 90px;
+	margin-bottom: 18px;
 
 	&__image {
 		@include visual-frame-layer;
@@ -20,74 +19,72 @@
 	&__container {
 		position: relative;
 		z-index: var(--z-index-base);
+		padding-inline: var(--container-padding-x);
+		min-width: 0;
 	}
 
 	&__card {
-		width: min(100%, 1163px);
-		min-height: 601px;
+		width: 100%;
+		max-width: 1160px;
+		min-height: 600px;
 		margin-inline: auto;
-		padding: 50px 48px 56px;
-		background: rgba(255, 255, 255, 0.34);
-		border: 1px solid rgba(255, 255, 255, 0.9);
-		border-radius: var(--border-radius-xl);
-		box-shadow: 0 28px 72px rgba(0, 0, 0, 0.05);
-		backdrop-filter: blur(10px);
+		padding: 48px 50px;
+		background: rgba(255, 255, 255, 0.2);
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		border-radius: 37px;
+		backdrop-filter: blur(3px);
 	}
 
 	&__eyebrow {
-		margin-bottom: 2px;
-		font-size: 31px;
+		@include fluid-text(24, 36);
+
 		font-weight: 700;
-		line-height: 1.05;
+		margin-bottom: 2px;
 	}
 
-	&__title {
+	&__logo {
+		width: 317px;
 		margin-bottom: 18px;
-		font-size: 83px;
-		font-weight: 800;
-		line-height: 0.95;
-
-		span:last-child {
-			color: var(--primary-500);
-		}
 	}
 
 	&__text {
-		max-width: 560px;
+		@include fluid-text(14, 20);
+
+		max-width: 570px;
 		margin-bottom: 54px;
-		font-size: 20px;
 		line-height: 1.15;
 
 		p:not(:last-child) {
-			margin-bottom: 26px;
+			margin-bottom: 1em;
 		}
 	}
 
 	&__button {
+		--button-plate-arrow-from: rgba(246, 205, 20, 0.74);
+		--button-plate-arrow-to: rgba(254, 206, 106, 0.74);
+
 		justify-content: space-between;
 		min-width: 226px;
 		min-height: 36px;
-		padding: 8px 0 8px 46px;
-		font-size: 17px;
-		color: var(--gray-700);
-		background: var(--gradient-01);
-		border: none;
-		border-radius: var(--border-radius-xs);
-
-		img {
-			width: 41px;
-			height: 41px;
-			margin-right: -41px;
-		}
 
 		@include hover {
 			color: var(--black);
-			background: var(--primary-400);
+			--button-plate-arrow-from: rgba(246, 205, 20, 1);
+			--button-plate-arrow-to: rgba(254, 206, 106, 1);
+
+			span {
+				box-shadow:
+					0 2px 4px 0 rgba(194, 178, 0, 0.05),
+					0 7px 7px 0 rgba(194, 178, 0, 0.04),
+					0 15px 9px 0 rgba(194, 178, 0, 0.03),
+					0 27px 11px 0 rgba(194, 178, 0, 0.01),
+					0 42px 12px 0 rgba(194, 178, 0, 0);
+			}
 		}
 	}
 
 	&--page {
-		margin-bottom: var(--section-margin-bottom);
+		margin-bottom: 52px;
 
 		.about-brand__card {
 			display: grid;
@@ -95,79 +92,60 @@
 		}
 
 		.about-brand__text {
-			max-width: 1020px;
+			@include fluid-text(22, 36);
+
+			max-width: 1060px;
 			margin-bottom: 0;
-			font-size: clamp(24px, 2.5vw, 38px);
-			line-height: 1.18;
+			line-height: 1.2;
 		}
+	}
+
+	&__decor {
+		@include visual-frame-layer;
+
+		z-index: 1;
+		pointer-events: none;
+	}
+
+	&__stitch {
+		position: absolute;
+		bottom: 0;
+		left: -350px;
+		width: 790px;
 	}
 
 	@include desktop {
-		min-height: 720px;
-
-		&__card {
-			width: min(100%, 1060px);
-			min-height: 560px;
+		&__stitch {
+			left: -600px;
 		}
 	}
 
-	@include tablet-s {
-		min-height: 620px;
+	@include tablet {
+		padding: 40px 40px;
+		min-height: 520px;
 
 		&__card {
 			min-height: auto;
-			padding: 42px;
-		}
-
-		&__eyebrow {
-			font-size: 26px;
-		}
-
-		&__title {
-			font-size: 68px;
+			padding: 25px 20px 20px 20px;
+			border-radius: 7px;
 		}
 
 		&__text {
-			max-width: 520px;
-			font-size: 18px;
+			margin-bottom: 20px;
+		}
+
+		&__logo {
+			width: 220px;
+		}
+
+		&__stitch {
+			width: 320px;
+			left: -200px;
+			bottom: 100px;
 		}
 	}
 
-	@include mobile {
-		min-height: auto;
-		margin-top: 0;
-		padding-block: 34px;
-
-		&__card {
-			padding: 28px 24px 34px;
-			border-radius: var(--border-radius-lg);
-		}
-
-		&__eyebrow {
-			font-size: 22px;
-		}
-
-		&__title {
-			font-size: 54px;
-		}
-
-		&__text {
-			margin-bottom: 32px;
-			font-size: 15px;
-
-			br {
-				display: none;
-			}
-
-			p:not(:last-child) {
-				margin-bottom: 18px;
-			}
-		}
-
-		&__button {
-			width: 100%;
-			min-width: 0;
-			padding-left: 24px;
-		}
+	@include mobile-s {
+		padding: 40px 10px;
 	}
 }

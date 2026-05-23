@@ -19,15 +19,19 @@
 	--gray-700: #2f2f33;
 	--gray-900: #1d1d1f;
 
-	--success-500: #31a05f;
-	--danger-500: #c4124d;
+	--shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.08);
+	--shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+	--shadow-header: 0 4px 16px 0 rgba(196, 18, 77, 0.08);
 
-	--gradient-yellow: linear-gradient(90deg, #f6cd14 0%, #fece6a 100%);
-	--gradient-yellow-soft: linear-gradient(
-		90deg,
-		rgba(255, 239, 166, 0.25) 0%,
-		rgba(246, 205, 20, 0.25) 100%
-	);
+	--overlay-color: rgba(0, 0, 0, 0.56);
+	--overlay-shadow: rgba(0, 0, 0, 0.6);
+	--focus-ring-color: rgba(246, 205, 20, 0.28);
+	--header-background: rgba(255, 255, 255, 0.94);
+	--text-inverse-muted: rgba(255, 255, 255, 0.78);
+	--text-inverse-soft: rgba(255, 255, 255, 0.68);
+
+	--font-family-base: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--font-family-secondary: 'Manrope', sans-serif;
 
 	--border: 1px solid transparent;
 
@@ -38,35 +42,7 @@
 	--border-radius-xl: 32px;
 	--border-radius-xxl: 80px;
 
-	--shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.08);
-	--shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
-	--shadow-lg: 0 28px 70px rgba(0, 0, 0, 0.16);
-	--shadow-header: 0 4px 16px 0 rgba(196, 18, 77, 0.08);
-
-	--overlay-color: rgba(0, 0, 0, 0.56);
-	--overlay-light-color: rgba(255, 255, 255, 0.72);
-	--overlay-shadow: rgba(0, 0, 0, 0.6);
-	--focus-ring-color: rgba(246, 205, 20, 0.28);
-	--header-background: rgba(255, 255, 255, 0.94);
-	--header-border-color: rgba(0, 0, 0, 0.08);
-	--text-inverse-muted: rgba(255, 255, 255, 0.78);
-	--text-inverse-soft: rgba(255, 255, 255, 0.68);
-	--text-inverse-faint: rgba(255, 255, 255, 0.54);
-	--footer-border-color: rgba(255, 255, 255, 0.14);
-	--image-overlay-gradient: linear-gradient(
-		180deg,
-		rgba(0, 0, 0, 0.1) 0%,
-		rgba(0, 0, 0, 0.64) 100%
-	);
-
-	--input-height: 70px;
-	--button-height: 62px;
-	--button-height-sm: 44px;
-
-	--font-family-base: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-	--font-family-secondary: 'Manrope', sans-serif;
-
-	--container-width: 1410px;
+	--container-width: 1680px;
 	--container-padding-x: 24px;
 	--visual-frame-width: 1920px;
 
@@ -74,31 +50,27 @@
 	--transition-duration-long: 0.35s;
 	--transition-timing-function: ease-in-out;
 
-	--section-margin-bottom: 80px;
-	--section-padding-y: 80px;
+	--z-index-base: 1;
+	--z-index-dropdown: 4;
+	--z-index-header: 5;
+	--z-index-overlay: 6;
+	--z-index-modal: 7;
+
+	--input-height: 70px;
+	--button-height: 62px;
+	--button-height-sm: 44px;
+
 	--header-height: 88px;
 	--header-width: calc(1188px + var(--container-padding-x) * 2);
 
-	--z-index-negative: -1;
-	--z-index-base: 1;
-	--z-index-decor: 2;
-	--z-index-header: 5;
-	--z-index-dropdown: 4;
-	--z-index-overlay: 6;
-	--z-index-modal: 8;
-
 	@include tablet {
 		--container-padding-x: 20px;
-		--section-margin-bottom: 64px;
-		--section-padding-y: 64px;
 		--button-height: 34px;
 	}
 
 	@include mobile {
-		--container-padding-x: 17px;
+		--container-padding-x: 16px;
 		--input-height: 52px;
-		--section-margin-bottom: 48px;
-		--section-padding-y: 48px;
 		--header-height: 56px;
 	}
 }

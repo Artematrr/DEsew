@@ -3,93 +3,45 @@
 	overflow: hidden;
 	background-color: var(--white);
 
-	&__decor {
-		@include visual-frame-layer;
-
-		z-index: 0;
-		pointer-events: none;
-	}
-
-	&__stitch {
-		position: absolute;
-		top: 600px;
-		left: -180px;
-		width: 640px;
-		opacity: 0.62;
-	}
-
-	&__stitch--top {
-	}
-
-	&__button-decor {
-		position: absolute;
-		top: 1500px;
-		left: 160px;
-		width: 84px;
-	}
-
 	&__container {
 		position: relative;
 		z-index: var(--z-index-base);
 		padding-block: 36px 0;
 	}
 
-	&__breadcrumbs {
-		margin-bottom: 56px;
-	}
-
 	&__hero {
-		margin-bottom: 64px;
 		text-align: center;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		margin-bottom: 52px;
 	}
 
 	&__eyebrow {
-		margin-bottom: 4px;
 		font-size: 32px;
 		font-weight: 700;
 		color: var(--primary-500);
+		margin-bottom: 12px;
 	}
 
-	&__title {
-		font-size: clamp(70px, 8vw, 112px);
-		font-weight: 800;
-		line-height: 0.82;
-
-		span:last-child {
-			color: var(--primary-500);
-		}
+	&__logo {
+		margin-bottom: 12px;
 	}
 
 	&__subtitle {
-		margin-top: 18px;
-		font-size: 18px;
+		font-size: 16px;
+		font-weight: 300;
 		color: var(--gray-500);
 	}
 
 	@include mobile {
-		&__breadcrumbs {
-			margin-bottom: 16px;
-			font-size: 11px;
-		}
-
 		&__hero {
-			margin-bottom: 28px;
+			margin-bottom: 34px;
 		}
 
-		&__eyebrow {
-			font-size: 18px;
-		}
-
-		&__title {
-			font-size: 60px;
-		}
-
-		&__subtitle {
-			font-size: 13px;
-		}
-
-		&__button-decor {
-			display: none;
+		&__logo {
+			max-width: 280px;
+			margin-bottom: 12px;
 		}
 	}
 }

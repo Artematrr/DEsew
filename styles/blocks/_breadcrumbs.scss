@@ -1,12 +1,14 @@
 .breadcrumbs {
-	font-size: 14px;
-	color: var(--gray-500);
+	font-size: 12px;
+	line-height: 1.33;
+	font-weight: 700;
+	margin-block: 34px 55px;
 
 	&__list {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		gap: 8px;
+		gap: 11px;
 	}
 
 	&__item {
@@ -14,19 +16,24 @@
 		align-items: center;
 		gap: 8px;
 
+		&:not(:last-child) {
+			color: var(--gray-500);
+		}
+
 		&:not(:last-child)::after {
-			content: '/';
-			color: var(--gray-300);
+			content: '';
+			position: relative;
+			width: 5px;
+			height: 5px;
+			border-top: 1px solid var(--gray-500);
+			border-right: 1px solid var(--gray-500);
+			transform: rotate(45deg);
 		}
-	}
 
-	&__link {
-		@include hover {
-			color: var(--black);
+		li {
+			@include hover {
+				color: var(--black);
+			}
 		}
-	}
-
-	&__current {
-		color: var(--black);
 	}
 }

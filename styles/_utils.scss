@@ -1,6 +1,5 @@
 .container {
 	max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
-	// width: 100%;
 	width: auto;
 	margin-inline: auto;
 	padding-inline: var(--container-padding-x);
@@ -8,26 +7,7 @@
 
 .section {
 	position: relative;
-	margin-bottom: var(--section-margin-bottom);
-}
-
-.section--margin-bottom {
-	margin-bottom: var(--section-margin-bottom);
-}
-
-.section--padding-y {
-	padding-block: var(--section-padding-y);
-}
-
-.section--flex-column {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 30px;
-
-	@include mobile {
-		gap: 15px;
-	}
+	margin-bottom: 0px;
 }
 
 .section__header {
@@ -50,13 +30,13 @@
 }
 
 .hidden-mobile {
-	@include mobile {
+	@include tablet {
 		display: none !important;
 	}
 }
 
 .visible-mobile {
-	@include mobile-above {
+	@include tablet-above {
 		display: none !important;
 	}
 }

@@ -18,7 +18,7 @@
 	&__decor {
 		@include visual-frame-layer;
 
-		z-index: var(--z-index-decor);
+		z-index: 2;
 		overflow: visible;
 	}
 
