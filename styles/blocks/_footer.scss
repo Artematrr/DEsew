@@ -22,7 +22,7 @@
 
 	&__logo {
 		display: inline-flex;
-		width: 220px;
+		width: 263px;
 		margin-bottom: 26px;
 	}
 
@@ -61,7 +61,7 @@
 		width: 100%;
 		max-width: 256px;
 		min-height: 48px;
-		margin-bottom: 21px;
+		margin-bottom: 54px;
 		padding: 8px 18px;
 		font-weight: 600;
 		line-height: 1;
@@ -237,7 +237,10 @@
 		&__container {
 			grid-template-columns: 260px minmax(0, 1fr);
 			gap: 20px;
-			// margin-inline: 10px;
+		}
+
+		&__logo {
+			width: 220px;
 		}
 
 		&__divider {
@@ -250,6 +253,7 @@
 
 		&__container {
 			grid-template-columns: 220px minmax(0, 1fr);
+
 		}
 
 		&__logo {

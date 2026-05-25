@@ -10,6 +10,10 @@
 	pointer-events: none;
 	transition-property: opacity, visibility;
 
+	@include mobile {
+		padding: 12px;
+	}
+
 	&.is-open {
 		opacity: 1;
 		visibility: visible;
@@ -22,40 +26,45 @@
 		position: absolute;
 		inset: 0;
 		background-color: var(--overlay-color);
+		backdrop-filter: blur(7px);
 	}
 
 	&__dialog {
 		position: relative;
-		z-index: var(--z-index-base);
-		width: min(100%, 720px);
+		width: min(100%, 510px);
 		max-height: calc(100vh - 48px);
 		overflow-y: auto;
-		padding: 48px;
+		padding: 40px;
 		background-color: var(--white);
-		border-radius: var(--border-radius-lg);
-		box-shadow: 0 28px 70px rgba(0, 0, 0, 0.16);
+		border-radius: 20px;
+		box-shadow: 0 17px 40px rgba(0, 0, 0, 0.22);
+
+		@include mobile {
+			padding: 25px;
+			max-height: calc(100vh - 24px);
+		}
 	}
 
 	&__close {
 		@include reset-button;
 		@include flex-center;
-		@include square(44px);
+		@include square(20px);
 
 		position: absolute;
-		top: 18px;
-		right: 18px;
-		border: var(--border);
-		border-radius: 50%;
-		background-color: var(--white);
+		top: 19px;
+		right: 17px;
+		background-color: transparent;
 
 		&::before,
 		&::after {
 			content: '';
 			position: absolute;
-			width: 18px;
-			height: 2px;
-			background-color: var(--black);
+			width: 24px;
+			height: 4px;
+			background-color: var(--gray-350);
 			border-radius: 1px;
+			transition: background-color var(--transition-duration)
+				var(--transition-timing-function);
 		}
 
 		&::before {
@@ -67,28 +76,226 @@
 		}
 
 		@include hover {
-			background-color: var(--primary-500);
-			border-color: var(--black);
+			&::before,
+			&::after {
+				background-color: var(--primary-500);
+			}
 		}
 	}
 
 	&__title {
-		margin-bottom: 12px;
+		@include fluid-text(20, 37);
+
+		margin-bottom: 10px;
+		padding-right: 30px;
+		font-weight: 600;
+
+		@include mobile {
+			margin-bottom: 6px;
+		}
 	}
 
 	&__text {
-		max-width: 520px;
-		margin-bottom: 28px;
+		@include fluid-text(10, 16);
+
+		margin-bottom: 40px;
 		color: var(--gray-500);
+
+		@include mobile {
+			margin-bottom: 25px;
+		}
 	}
 
-	@include mobile {
-		padding: 12px;
+	&__form {
+		display: grid;
+	}
 
-		&__dialog {
-			max-height: calc(100vh - 24px);
-			padding: 56px 20px 24px;
-			border-radius: var(--border-radius);
+	&__options {
+		display: grid;
+		gap: 25px;
+		margin: 0;
+		padding: 0;
+		border: none;
+
+		@include mobile {
+			gap: 15px;
+		}
+	}
+
+	&__option {
+		@include fluid-text(15, 24);
+
+		display: grid;
+		grid-template-columns: 23px 1fr;
+		align-items: center;
+		gap: 14px;
+		min-height: 23px;
+		font-weight: 500;
+		color: var(--black);
+		cursor: pointer;
+		user-select: none;
+
+		@include mobile {
+			grid-template-columns: 15px 1fr;
+			min-height: 15px;
+			gap: 9px;
+		}
+	}
+
+	&__option-input {
+		@include visually-hidden;
+
+		&:checked + .modal__option-control {
+			border-color: var(--primary-500);
+
+			&::before {
+				opacity: 1;
+			}
+		}
+
+		&:focus-visible + .modal__option-control {
+			outline: 2px solid var(--black);
+			outline-offset: 3px;
+		}
+	}
+
+	&__option-control {
+		@include square(23px);
+
+		position: relative;
+		border: 1px solid var(--gray-500);
+		border-radius: 50%;
+		background-color: var(--white);
+		transition-property: border-color;
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 4px;
+			background-color: var(--primary-500);
+			border-radius: inherit;
+			opacity: 0;
+			transition-property: opacity;
+		}
+
+		@include mobile {
+			width: 15px;
+		}
+	}
+
+	&__divider {
+		height: 1px;
+		margin-block: 25px 17px;
+		background-image: linear-gradient(
+			90deg,
+			var(--gray-400) 0 8px,
+			transparent 8px 16px
+		);
+		background-size: 16px 1px;
+
+		@include mobile {
+			margin-block: 16px 10px;
+		}
+	}
+
+	&__field {
+		display: grid;
+		gap: 12px;
+
+		&:not(:last-of-type) {
+			margin-bottom: 12px;
+		}
+
+		@include mobile {
+			gap: 8px;
+
+			&:not(:last-of-type) {
+				margin-bottom: 8px;
+			}
+		}
+	}
+
+	&__label {
+		@include fluid-text(10, 16);
+
+		font-weight: 500;
+		color: var(--black);
+	}
+
+	&__control {
+		@include fluid-text(10, 14);
+
+		width: 100%;
+		min-height: 50px;
+		padding: 16px;
+		font: inherit;
+		font-weight: 600;
+		color: var(--black);
+		background-color: var(--white);
+		border: none;
+		border-radius: 9px;
+		box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.25);
+		outline: none;
+		transition: box-shadow var(--transition-duration)
+			var(--transition-timing-function);
+
+		&::placeholder {
+			color: var(--gray-500);
+			opacity: 1;
+		}
+
+		&:focus {
+			box-shadow:
+				inset 0 0 0 1px var(--primary-500),
+				0 4px 12px rgba(0, 0, 0, 0.16),
+				0 0 0 3px var(--focus-ring-color);
+		}
+
+		&--textarea {
+			min-height: 155px;
+			resize: vertical;
+
+			@include mobile {
+				min-height: 100px;
+			}
+		}
+
+		@include mobile {
+			border-radius: 6px;
+			box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.25);
+			padding: 10px;
+			min-height: 32px;
+		}
+	}
+
+	&__submit {
+		@include fluid-text(15, 24);
+
+		width: 100%;
+		min-height: 48px;
+		margin-top: 25px;
+		padding: 8px 12px;
+		font-weight: 600;
+		border-radius: 10px;
+
+		@include mobile {
+			margin-top: 16px;
+			border-radius: 6px;
+			padding: 5px 10px;
+			min-height: 30px;
+		}
+	}
+
+	&__caption {
+		@include fluid-text(8, 12);
+
+		margin-top: 11px;
+		font-weight: 500;
+		text-align: center;
+		color: var(--gray-350);
+
+		@include mobile {
+			margin-top: 7px;
 		}
 	}
 }

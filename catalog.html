@@ -859,41 +859,56 @@
 		<div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="feedback-modal-title">
 			<button class="modal__close" type="button" data-micromodal-close aria-label="Закрыть окно"></button>
 
-			<h2 class="modal__title h3" id="feedback-modal-title">Обратная связь</h2>
-			<p class="modal__text">Оставьте сообщение, и команда DEsew свяжется с вами.</p>
+			<h2 class="modal__title" id="feedback-modal-title">Связаться с сервисом</h2>
+			<p class="modal__text">Выберите, с чем мы можем помочь:</p>
 
-			<form class="form" action="/">
-				<div class="form__field">
-					<label class="form__label" for="feedback-name">Имя</label>
-					<input class="form__control" id="feedback-name" type="text" name="name" autocomplete="name">
+			<form class="modal__form js-static-form" action="/">
+				<fieldset class="modal__options">
+					<legend class="visually-hidden">Тип обращения</legend>
+					<label class="modal__option">
+						<input class="modal__option-input" type="radio" name="request-type" value="question" checked>
+						<span class="modal__option-control" aria-hidden="true"></span>
+						<span>Есть вопрос</span>
+					</label>
+					<label class="modal__option">
+						<input class="modal__option-input" type="radio" name="request-type" value="review">
+						<span class="modal__option-control" aria-hidden="true"></span>
+						<span>Оставить отзыв</span>
+					</label>
+					<label class="modal__option">
+						<input class="modal__option-input" type="radio" name="request-type" value="problem">
+						<span class="modal__option-control" aria-hidden="true"></span>
+						<span>Сообщить о проблеме</span>
+					</label>
+					<label class="modal__option">
+						<input class="modal__option-input" type="radio" name="request-type" value="call">
+						<span class="modal__option-control" aria-hidden="true"></span>
+						<span>Заказать звонок</span>
+					</label>
+				</fieldset>
+
+				<div class="modal__divider" aria-hidden="true"></div>
+
+				<div class="modal__field">
+					<label class="modal__label" for="feedback-name">Имя</label>
+					<input class="modal__control" id="feedback-name" type="text" name="name" placeholder="Введите ваше имя"
+						autocomplete="name">
 				</div>
 
-				<div class="form__row">
-					<div class="form__field">
-						<label class="form__label" for="feedback-phone">Телефон</label>
-						<input class="form__control" id="feedback-phone" type="tel" name="phone" autocomplete="tel">
-					</div>
-
-					<div class="form__field">
-						<label class="form__label" for="feedback-email">Email</label>
-						<input class="form__control" id="feedback-email" type="email" name="email" autocomplete="email">
-					</div>
+				<div class="modal__field">
+					<label class="modal__label" for="feedback-phone">Телефон</label>
+					<input class="modal__control" id="feedback-phone" type="tel" name="phone"
+						placeholder="Введите номер телефона" autocomplete="tel">
 				</div>
 
-				<div class="form__field">
-					<label class="form__label" for="feedback-message">Сообщение</label>
-					<textarea class="form__control form__control--textarea" id="feedback-message" name="message"></textarea>
+				<div class="modal__field">
+					<label class="modal__label" for="feedback-message">Комментарий</label>
+					<textarea class="modal__control modal__control--textarea" id="feedback-message" name="message"
+						placeholder="Опишите ваш вопрос"></textarea>
 				</div>
 
-				<label class="form__checkbox">
-					<input class="form__checkbox-input" type="checkbox" name="privacy" checked>
-					<span class="form__checkbox-control" aria-hidden="true"></span>
-					<span>Согласен на обработку персональных данных</span>
-				</label>
-
-				<div class="form__actions">
-					<button class="button" type="submit">Отправить</button>
-				</div>
+				<button class="modal__submit button" type="submit">Отправить</button>
+				<p class="modal__caption">Мы свяжемся с вами в ближайшее время</p>
 			</form>
 		</div>
 	</div>
