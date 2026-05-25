@@ -8,48 +8,73 @@
 	&__button {
 		@include reset-link;
 		@include flex-center(true);
-		@include square(42px);
 
-		font-size: 15px;
-		font-weight: 600;
-		color: var(--black);
-		background-color: var(--white);
-		border: 1px solid var(--gray-200);
+		border: 1px dashed var(--gray-500);
 		border-radius: 50%;
-		box-shadow: 0 10px 24px rgba(196, 18, 77, 0.08);
-		transition-property: color, background-color, border-color, transform;
+		transition-property:
+			color, background-color, border-color, box-shadow, transform;
 
 		@include hover {
-			background-color: var(--primary-500);
 			border-color: var(--primary-500);
+			color: var(--primary-500);
 		}
 	}
 
+	&__link {
+		@include square(23px);
+
+		font-size: 13px;
+		font-weight: 900;
+		line-height: 1;
+		color: var(--gray-500);
+		background-color: transparent;
+	}
+
 	&__link.is-active {
-		background-color: var(--primary-500);
+		width: 30px;
+		font-size: 17px;
+		color: var(--primary-500);
+		background-color: transparent;
 		border-color: var(--primary-500);
 		pointer-events: none;
+		box-shadow:
+			0 0 1px 0 rgba(246, 205, 20, 0.25),
+			0 2px 2px 0 rgba(246, 205, 20, 0.21),
+			0 4px 3px 0 rgba(246, 205, 20, 0.13),
+			0 8px 3px 0 rgba(246, 205, 20, 0.04),
+			0 12px 3px 0 rgba(246, 205, 20, 0);
 	}
 
 	&__button {
+		@include square(20px);
+
 		font-size: 0;
+		color: var(--white);
+		background-color: var(--gray-300);
+		border: none;
+
+		@include hover {
+			color: var(--white);
+			background-color: var(--primary-500);
+			box-shadow: 0 12px 24px rgba(246, 205, 20, 0.22);
+		}
 
 		&::before {
 			content: '';
-			width: 9px;
-			height: 9px;
+			width: 8px;
+			height: 8px;
 			border-top: 2px solid currentColor;
 			border-right: 2px solid currentColor;
 		}
 
 		&--prev::before {
 			rotate: 225deg;
-			translate: 2px 0;
+			translate: 1px 0;
 		}
 
 		&--next::before {
 			rotate: 45deg;
-			translate: -2px 0;
+			translate: -1px 0;
 		}
 	}
 
@@ -60,11 +85,22 @@
 	}
 
 	@include mobile {
-		gap: 8px;
+		gap: 12px;
 
-		&__link,
 		&__button {
-			width: 38px;
+			@include square(44px);
+		}
+
+		&__link {
+			@include square(50px);
+
+			font-size: 24px;
+		}
+
+		&__button::before {
+			width: 14px;
+			height: 14px;
+			border-width: 4px;
 		}
 	}
 }

@@ -157,17 +157,26 @@
 	}
 
 	&__scale {
-		display: flex;
-		justify-content: space-between;
-		gap: 12px;
+		display: none;
+	}
+
+	&__scale-value {
+		position: absolute;
+		top: calc(100% + 7px);
+		left: 50%;
+		min-width: 32px;
 		font-size: 12px;
 		font-weight: 500;
 		color: var(--black);
+		line-height: 1.2;
+		text-align: center;
+		pointer-events: none;
+		translate: -50% 0;
 	}
 
 	&__range-slider {
 		height: 1px;
-		margin: 4px 5px 0;
+		margin: 4px 5px 18px;
 		border: none !important;
 
 		.ui-slider-range {
@@ -214,6 +223,13 @@
 		border: 1px dashed var(--primary-500);
 		border-radius: var(--border-radius);
 		outline: none;
+		transition-property: border-color, color, box-shadow;
+
+		&:focus {
+			color: var(--black);
+			border-color: var(--primary-600);
+			box-shadow: 0 0 0 3px var(--focus-ring-color);
+		}
 	}
 
 	&__actions {

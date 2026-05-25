@@ -4908,16 +4908,24 @@ h4,
   gap: 15px;
 }
 .catalog-filter__scale {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
+  display: none;
+}
+.catalog-filter__scale-value {
+  position: absolute;
+  top: calc(100% + 7px);
+  left: 50%;
+  min-width: 32px;
   font-size: 12px;
   font-weight: 500;
   color: var(--black);
+  line-height: 1.2;
+  text-align: center;
+  pointer-events: none;
+  translate: -50% 0;
 }
 .catalog-filter__range-slider {
   height: 1px;
-  margin: 4px 5px 0;
+  margin: 4px 5px 18px;
   border: none !important;
 }
 .catalog-filter__range-slider .ui-slider-range {
@@ -4954,6 +4962,12 @@ h4,
   border: 1px dashed var(--primary-500);
   border-radius: var(--border-radius);
   outline: none;
+  transition-property: border-color, color, box-shadow;
+}
+.catalog-filter__value-input:focus {
+  color: var(--black);
+  border-color: var(--primary-600);
+  box-shadow: 0 0 0 3px var(--focus-ring-color);
 }
 .catalog-filter__actions {
   position: absolute;
@@ -5073,10 +5087,10 @@ h4,
   }
   .catalog-products .product-card {
     display: grid;
-    grid-template-columns: minmax(132px, 44%) minmax(0, 1fr);
-    gap: 22px;
+    grid-template-columns: minmax(181px, 50%) minmax(0, 1fr);
+    gap: 13px;
     min-height: 0;
-    padding: 22px;
+    padding: 8px;
     border-radius: 26px;
   }
   .catalog-products .product-card__image-link {
@@ -5089,7 +5103,7 @@ h4,
     max-height: 190px;
   }
   .catalog-products .product-card__content {
-    align-content: center;
+    justify-content: center;
   }
   .catalog-products .product-card__link {
     margin-top: 8px;
@@ -5127,51 +5141,76 @@ h4,
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 42px;
-  aspect-ratio: 1;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--black);
-  background-color: var(--white);
-  border: 1px solid var(--gray-200);
+  border: 1px dashed var(--gray-500);
   border-radius: 50%;
-  box-shadow: 0 10px 24px rgba(196, 18, 77, 0.08);
-  transition-property: color, background-color, border-color, transform;
+  transition-property: color, background-color, border-color, box-shadow, transform;
 }
 @media (hover: hover) {
   .pagination__link:hover, .pagination__button:hover {
-    background-color: var(--primary-500);
     border-color: var(--primary-500);
+    color: var(--primary-500);
   }
 }
 @media (hover: none) {
   .pagination__link:active, .pagination__button:active {
-    background-color: var(--primary-500);
     border-color: var(--primary-500);
+    color: var(--primary-500);
   }
 }
+.pagination__link {
+  width: 23px;
+  aspect-ratio: 1;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--gray-500);
+  background-color: transparent;
+}
 .pagination__link.is-active {
-  background-color: var(--primary-500);
+  width: 30px;
+  font-size: 17px;
+  color: var(--primary-500);
+  background-color: transparent;
   border-color: var(--primary-500);
   pointer-events: none;
+  box-shadow: 0 0 1px 0 rgba(246, 205, 20, 0.25), 0 2px 2px 0 rgba(246, 205, 20, 0.21), 0 4px 3px 0 rgba(246, 205, 20, 0.13), 0 8px 3px 0 rgba(246, 205, 20, 0.04), 0 12px 3px 0 rgba(246, 205, 20, 0);
 }
 .pagination__button {
+  width: 20px;
+  aspect-ratio: 1;
   font-size: 0;
+  color: var(--white);
+  background-color: var(--gray-300);
+  border: none;
+}
+@media (hover: hover) {
+  .pagination__button:hover {
+    color: var(--white);
+    background-color: var(--primary-500);
+    box-shadow: 0 12px 24px rgba(246, 205, 20, 0.22);
+  }
+}
+@media (hover: none) {
+  .pagination__button:active {
+    color: var(--white);
+    background-color: var(--primary-500);
+    box-shadow: 0 12px 24px rgba(246, 205, 20, 0.22);
+  }
 }
 .pagination__button::before {
   content: "";
-  width: 9px;
-  height: 9px;
+  width: 8px;
+  height: 8px;
   border-top: 2px solid currentColor;
   border-right: 2px solid currentColor;
 }
 .pagination__button--prev::before {
   rotate: 225deg;
-  translate: 2px 0;
+  translate: 1px 0;
 }
 .pagination__button--next::before {
   rotate: 45deg;
-  translate: -2px 0;
+  translate: -1px 0;
 }
 .pagination__ellipsis {
   min-width: 18px;
@@ -5180,10 +5219,21 @@ h4,
 }
 @media (max-width: 767px) {
   .pagination {
-    gap: 8px;
+    gap: 12px;
   }
-  .pagination__link, .pagination__button {
-    width: 38px;
+  .pagination__button {
+    width: 44px;
+    aspect-ratio: 1;
+  }
+  .pagination__link {
+    width: 50px;
+    aspect-ratio: 1;
+    font-size: 24px;
+  }
+  .pagination__button::before {
+    width: 14px;
+    height: 14px;
+    border-width: 4px;
   }
 }
 

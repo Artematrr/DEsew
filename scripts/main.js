@@ -237,6 +237,72 @@ document.addEventListener('DOMContentLoaded', () => {
 		return String(Math.round(number * 10) / 10).replace('.', ',')
 	}
 
+	const parseRangeValue = value => {
+		const normalizedValue = String(value).trim().replace(',', '.')
+
+		if (!/^-?\d+(\.\d+)?$/.test(normalizedValue)) {
+			return null
+		}
+
+		const number = Number(normalizedValue)
+
+		return Number.isFinite(number) ? number : null
+	}
+
+	const getStepPrecision = step => {
+		const stepString = String(step)
+		const decimals = stepString.includes('.') ? stepString.split('.')[1].length : 0
+
+		return decimals
+	}
+
+	const clampRangeValue = (value, min, max) => Math.min(Math.max(value, min), max)
+
+	const snapRangeValue = (value, min, step) => {
+		const precision = getStepPrecision(step)
+		const snappedValue = min + Math.round((value - min) / step) * step
+
+		return Number(snappedValue.toFixed(precision))
+	}
+
+	const updateRangeScale = (slider, values) => {
+		const labels = slider.querySelectorAll('.catalog-filter__scale-value')
+
+		if (labels.length < 2) {
+			return
+		}
+
+		labels[0].textContent = formatRangeValue(values[0])
+		labels[1].textContent = formatRangeValue(values[1])
+	}
+
+	const prepareRangeScale = (slider, values) => {
+		const scale = slider.querySelector('.catalog-filter__scale')
+		const handles = slider.querySelectorAll('.ui-slider-handle')
+
+		if (handles.length < 2) {
+			return
+		}
+
+		let labels = Array.from(slider.querySelectorAll('.catalog-filter__scale-value'))
+
+		if (labels.length < 2) {
+			const scaleLabels = Array.from(scale?.querySelectorAll('span') || [])
+			const fromLabel = scaleLabels[0] || document.createElement('span')
+			const toLabel = scaleLabels[scaleLabels.length - 1] || document.createElement('span')
+
+			labels = [fromLabel, toLabel]
+		}
+
+		labels[0].classList.add('catalog-filter__scale-value')
+		labels[1].classList.add('catalog-filter__scale-value')
+		handles[0].append(labels[0])
+		handles[1].append(labels[1])
+		scale?.remove()
+
+		updateRangeScale(slider, values)
+	}
+
 	const updateRangeFields = (slider, values) => {
 		const range = slider.closest('.catalog-filter__range')
 		const fromInput = range?.querySelector('.js-range-from')
@@ -249,6 +315,58 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (toInput) {
 			toInput.value = formatRangeValue(values[1])
 		}
+
+		updateRangeScale(slider, values)
+	}
+
+	const setRangeValueFromInput = (slider, input, handleIndex) => {
+		const value = parseRangeValue(input.value)
+
+		if (value === null || !window.jQuery || typeof window.jQuery.fn.slider !== 'function') {
+			return
+		}
+
+		const $slider = window.jQuery(slider)
+		const min = Number(slider.dataset.min)
+		const max = Number(slider.dataset.max)
+		const step = Number(slider.dataset.step || 1)
+		const values = $slider.slider('values')
+		const boundaryMin = handleIndex === 0 ? min : values[0]
+		const boundaryMax = handleIndex === 0 ? values[1] : max
+		const nextValue = clampRangeValue(snapRangeValue(value, min, step), boundaryMin, boundaryMax)
+
+		$slider.slider('values', handleIndex, nextValue)
+	}
+
+	const prepareRangeInputs = slider => {
+		const range = slider.closest('.catalog-filter__range')
+		const step = Number(slider.dataset.step || 1)
+		const inputs = [
+			range?.querySelector('.js-range-from'),
+			range?.querySelector('.js-range-to'),
+		]
+
+		inputs.forEach((input, handleIndex) => {
+			if (!input) {
+				return
+			}
+
+			input.removeAttribute('readonly')
+			input.setAttribute('inputmode', Number.isInteger(step) ? 'numeric' : 'decimal')
+
+			input.addEventListener('input', () => {
+				setRangeValueFromInput(slider, input, handleIndex)
+			})
+
+			input.addEventListener('change', () => {
+				setRangeValueFromInput(slider, input, handleIndex)
+				updateRangeFields(slider, window.jQuery(slider).slider('values'))
+			})
+
+			input.addEventListener('blur', () => {
+				updateRangeFields(slider, window.jQuery(slider).slider('values'))
+			})
+		})
 	}
 
 	if (window.jQuery && typeof window.jQuery.fn.slider === 'function') {
@@ -277,7 +395,9 @@ document.addEventListener('DOMContentLoaded', () => {
 				},
 			})
 
+			prepareRangeScale(slider, [from, to])
 			updateRangeFields(slider, [from, to])
+			prepareRangeInputs(slider)
 		})
 	}
 
