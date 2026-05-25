@@ -1,19 +1,17 @@
 .footer {
 	position: relative;
-	padding-block: 86px 76px;
+	padding-block: 130px 120px;
 	overflow: hidden;
 	color: var(--white);
-	background:
-		radial-gradient(circle at 18% 84%, rgba(255, 255, 255, 0.08), transparent 34%),
-		linear-gradient(90deg, #111 0%, #050505 100%);
+	background: linear-gradient(180deg, #000 0%, #1a1a1a 100%);
 
 	&__container {
 		position: relative;
-		z-index: var(--z-index-base);
+		z-index: 1;
 		display: grid;
-		grid-template-columns: 270px minmax(0, 1fr);
-		gap: 78px;
-		max-width: calc(1068px + var(--container-padding-x) * 2);
+		grid-template-columns: minmax(300px, 445px) minmax(0, 1fr);
+		gap: 0;
+		max-width: var(--header-width);
 	}
 
 	&__brand {
@@ -25,7 +23,7 @@
 	&__logo {
 		display: inline-flex;
 		width: 220px;
-		margin-bottom: 18px;
+		margin-bottom: 26px;
 	}
 
 	&__logo-image {
@@ -35,66 +33,57 @@
 	}
 
 	&__text {
-		max-width: 220px;
-		margin-bottom: 16px;
-		font-size: 12px;
+		@include fluid-text(10, 16);
+
+		max-width: 300px;
+		margin-bottom: 21px;
 		line-height: 1.2;
-		color: var(--text-inverse-muted);
+		color: var(--white);
 	}
 
 	&__divider {
-		width: 270px;
-		max-width: 100%;
+		width: 100%;
+		max-width: 380px;
 		height: 1px;
-		margin-bottom: 18px;
-		background-image: linear-gradient(90deg, var(--text-inverse-muted) 0 10px, transparent 10px 22px);
+		margin-bottom: 21px;
+		background-image: linear-gradient(
+			90deg,
+			var(--white) 0 10px,
+			transparent 10px 22px
+		);
 		background-repeat: repeat-x;
 		background-size: 22px 1px;
-		opacity: 0.9;
 	}
 
 	&__callback {
-		@include reset-button;
+		@include fluid-text(14, 24);
 
-		min-width: 204px;
-		min-height: 38px;
-		margin-bottom: 44px;
+		width: 100%;
+		max-width: 256px;
+		min-height: 48px;
+		margin-bottom: 21px;
 		padding: 8px 18px;
-		font-size: 18px;
 		font-weight: 600;
-		line-height: 1.1;
-		color: var(--black);
-		background-color: var(--primary-500);
-		border-radius: var(--border-radius-sm);
-		transition-property: color, background-color, transform;
-
-		@include hover {
-			color: var(--white);
-			background-color: var(--gray-900);
-		}
-
-		&:active {
-			transform: translateY(1px);
-		}
+		line-height: 1;
 	}
 
 	&__bottom {
 		display: flex;
 		align-items: center;
-		gap: 24px;
+		gap: 10px 24px;
 		margin-top: auto;
-		color: var(--text-inverse-muted);
 	}
 
 	&__copyright {
-		font-size: 18px;
+		@include fluid-text(12, 24);
+
+		font-weight: 300;
 		line-height: 1;
 		white-space: nowrap;
 	}
 
 	&__policy {
-		font-size: 12px;
-		color: var(--text-inverse-muted);
+		@include fluid-text(10, 16);
 
 		@include hover {
 			color: var(--primary-500);
@@ -104,40 +93,43 @@
 	&__content {
 		display: grid;
 		align-content: start;
-		gap: 24px;
-		padding-top: 4px;
+		gap: 21px;
 	}
 
 	&__columns {
 		display: grid;
-		grid-template-columns: 1.05fr 0.82fr 1.03fr 0.9fr;
-		gap: 34px;
+		grid-template-columns: 1fr 0.8fr 1fr 1.3fr;
+		gap: 30px;
 	}
 
 	&__column {
 	}
 
 	&__column--contacts {
+		white-space: nowrap;
 	}
 
 	&__column-title {
-		margin-bottom: 18px;
-		font-size: 17px;
+		@include fluid-text(16, 24);
+
+		margin-bottom: 24px;
+
 		font-weight: 700;
-		line-height: 1;
+		line-height: 1.2;
 		color: var(--white);
 	}
 
 	&__list {
 		display: grid;
-		gap: 6px;
 	}
 
 	&__nav-link,
-	&__contact {
-		font-size: 12px;
-		line-height: 1.15;
-		color: var(--text-inverse-muted);
+	&__contact,
+	&__location {
+		@include fluid-text(10, 16);
+
+		line-height: 1;
+		color: var(--white);
 
 		@include hover {
 			color: var(--primary-500);
@@ -151,12 +143,12 @@
 	&__contact {
 		display: inline-flex;
 		align-items: center;
-		gap: 9px;
+		gap: 5px;
 
 		img,
 		svg {
-			width: 17px;
-			height: 17px;
+			width: 15px;
+			height: 15px;
 			object-fit: contain;
 		}
 	}
@@ -165,171 +157,200 @@
 	}
 
 	&__contact--location {
+		img,
+		svg {
+			width: 14px;
+			height: 16px;
+		}
 	}
 
 	&__subscribe {
-		width: min(100%, 444px);
-		margin-left: 58px;
+		width: min(100%, 560px);
+		margin-inline: auto;
 	}
 
 	&__subscribe-title {
+		@include fluid-text(16, 28);
 		margin-bottom: 5px;
-		font-size: 22px;
-		font-weight: 700;
+
+		font-weight: 900;
 		line-height: 1.1;
 		color: var(--white);
 	}
 
 	&__subscribe-text {
-		margin-bottom: 14px;
-		font-size: 12px;
+		@include fluid-text(12, 17);
+		margin-bottom: 18px;
+		font-weight: 300;
 		line-height: 1.25;
-		color: var(--text-inverse-soft);
+		color: var(--gray-350);
 	}
 
 	&__subscribe-row {
 		display: grid;
-		grid-template-columns: minmax(0, 238px) 184px;
-		gap: 8px;
+		grid-template-columns: minmax(0, 292px) 230px;
+		gap: 7px;
 	}
 
 	&__subscribe-input {
+		@include fluid-text(12, 17);
+
 		width: 100%;
-		min-height: 38px;
-		padding: 10px 16px;
-		font-size: 13px;
+		padding: 16px 25px;
 		font-weight: 600;
 		color: var(--black);
 		background-color: var(--white);
-		border: none;
-		border-radius: var(--border-radius-xs);
-		box-shadow: 0 5px 10px rgba(246, 205, 20, 0.14);
+		border: 2px solid var(--white);
+		border-radius: var(--border-radius);
 		outline: none;
 
 		&:focus {
-			box-shadow:
-				0 5px 10px rgba(246, 205, 20, 0.14),
-				0 0 0 3px var(--focus-ring-color);
+			border-color: var(--primary-500);
+			box-shadow: 0 5px 10px rgba(246, 205, 20, 0.4);
 		}
 	}
 
 	&__subscribe-button {
 		@include reset-button;
+		@include fluid-text(12, 21);
 
-		min-height: 38px;
-		padding: 9px 20px;
-		font-size: 16px;
+		min-height: 55px;
+		padding: 10px 20px;
 		font-weight: 600;
 		line-height: 1.1;
 		color: var(--black);
 		background-color: var(--primary-500);
-		border-radius: var(--border-radius-xs);
-		transition-property: color, background-color, transform;
-
-		@include hover {
-			color: var(--white);
-			background-color: var(--gray-900);
-		}
-
-		&:active {
-			transform: translateY(1px);
-		}
 	}
 
 	&__decor {
+		@include visual-frame-layer;
+	}
+
+	&__decor--bottom {
 		position: absolute;
-		max-width: none;
-		pointer-events: none;
-		opacity: 0.68;
-	}
-
-	&__decor--left {
-		left: 50%;
-		bottom: -118px;
-		width: 540px;
-		transform: translateX(-4%);
-	}
-
-	&__decor--right {
-		right: -38px;
-		bottom: -62px;
-		top: auto;
-		width: 320px;
+		right: 0px;
+		bottom: -100px;
+		width: 1081px;
 	}
 
 	@include desktop {
 		&__container {
 			grid-template-columns: 260px minmax(0, 1fr);
-			gap: 54px;
+			gap: 20px;
+			// margin-inline: 10px;
 		}
 
-		&__logo {
+		&__divider {
 			width: 210px;
-		}
-
-		&__columns {
-			gap: 22px;
-		}
-
-		&__column-title {
-			font-size: 16px;
-		}
-
-		&__subscribe {
-			margin-left: 40px;
 		}
 	}
 
 	@include tablet {
-		padding-block: 84px 86px;
+		padding-block: 68px 52px;
 
 		&__container {
-			grid-template-columns: 1fr;
-			gap: 44px;
+			grid-template-columns: 220px minmax(0, 1fr);
+		}
+
+		&__logo {
+			width: 150px;
+			margin-bottom: 14px;
+		}
+
+		&__text,
+		&__divider {
+			margin-bottom: 13px;
 		}
 
 		&__callback {
-			margin-bottom: 34px;
-		}
-
-		&__columns {
-			grid-template-columns: repeat(4, minmax(0, 1fr));
-		}
-
-		&__subscribe {
-			margin-left: 0;
-		}
-	}
-
-	@include mobile {
-		padding-block: 62px 72px;
-
-		&__columns {
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-			gap: 28px 22px;
-		}
-
-		&__subscribe-row {
-			grid-template-columns: 1fr;
+			padding: 4px 12px;
+			width: max-content;
+			max-width: unset;
+			min-height: 26px;
+			margin-bottom: 20px;
+			border-radius: 3px;
 		}
 
 		&__bottom {
 			flex-wrap: wrap;
 		}
-	}
 
-	@include mobile-s {
-		&__logo {
-			width: 220px;
-		}
-
-		&__callback,
-		&__subscribe-button {
-			width: 100%;
+		&__content {
+			gap: 12px;
 		}
 
 		&__columns {
+			gap: 14px;
+		}
+
+		&__column-title {
+			margin-bottom: 12px;
+		}
+
+		&__list--contacts {
+			gap: 3px;
+		}
+
+		&__decor--bottom {
+			right: 550px;
+			bottom: -30px;
+			width: 390px;
+		}
+
+		&__subscribe {
+			width: min(100%, 350px);
+		}
+
+		&__subscribe-title {
+			margin-bottom: 2px;
+		}
+
+		&__subscribe-text {
+			margin-bottom: 10px;
+		}
+
+		&__subscribe-row {
+			grid-template-columns: minmax(0, 160px) 125px;
+		}
+
+		&__subscribe-button,
+		&__subscribe-input {
+			min-height: 30px;
+			height: 30px;
+			padding: 8px 14px;
+			border-radius: 3px;
+		}
+	}
+
+	@include mobile {
+		padding-block: 34px 26px;
+
+		&__container {
 			grid-template-columns: 1fr;
+			gap: 0px;
+		}
+
+		&__content,
+		&__brand {
+			display: contents;
+		}
+
+		&__bottom {
+			order: 1;
+		}
+
+		&__column-title {
+			margin-bottom: 2px;
+		}
+
+		&__columns {
+			grid-template-columns: 1fr 1fr;
+			margin-bottom: 20px;
+		}
+
+		&__subscribe {
+			margin-inline: unset;
+			margin-bottom: 20px;
 		}
 	}
 }
