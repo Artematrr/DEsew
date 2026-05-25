@@ -14,7 +14,7 @@
 	border: var(--border);
 	border-radius: var(--border-radius);
 	box-shadow: none;
-	transition-property: color, background, border-color, box-shadow, transform;
+	transition-property: all;
 	transition-duration: var(--transition-duration);
 	transition-timing-function: var(--transition-timing-function);
 
@@ -79,6 +79,7 @@
 	);
 
 	gap: var(--button-plate-arrow-offset);
+	transition-property: all;
 	transition-duration: var(--transition-duration);
 	transition-timing-function: var(--transition-timing-function);
 
@@ -101,7 +102,7 @@
 			0 15px 9px 0 rgba(194, 178, 0, 0.03),
 			0 27px 11px 0 rgba(194, 178, 0, 0.01),
 			0 42px 12px 0 rgba(194, 178, 0, 0);
-		transition-property: color, background, box-shadow, transform;
+		transition-property: all;
 		transition-duration: var(--transition-duration);
 		transition-timing-function: var(--transition-timing-function);
 	}
@@ -111,19 +112,24 @@
 		width: var(--button-plate-arrow-size);
 		height: var(--button-plate-arrow-size);
 		right: 0px;
-		transition-property: right;
+		border-radius: 50%;
+		transition-property: all;
 		transition-duration: var(--transition-duration);
 		transition-timing-function: var(--transition-timing-function);
 	}
 
 	svg stop:first-child {
 		stop-color: var(--button-plate-arrow-from);
-		transition-property: stop-color, transform;
+		transition-property: all;
+		transition-duration: var(--transition-duration);
+		transition-timing-function: var(--transition-timing-function);
 	}
 
 	svg stop:last-child {
 		stop-color: var(--button-plate-arrow-to);
-		transition-property: stop-color, transform;
+		transition-property: all;
+		transition-duration: var(--transition-duration);
+		transition-timing-function: var(--transition-timing-function);
 	}
 
 	@include hover {
@@ -140,6 +146,7 @@
 
 		svg {
 			right: -5px;
+			box-shadow: none;
 		}
 	}
 

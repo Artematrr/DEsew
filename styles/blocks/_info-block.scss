@@ -1,0 +1,70 @@
+.info-block {
+	position: relative;
+	margin-bottom: 0px;
+	overflow: hidden;
+
+	&__container {
+		position: relative;
+		min-height: 850px;
+		padding-block: 180px 74px;
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__content {
+	}
+
+	&__logo {
+		width: 317px;
+		margin-bottom: 18px;
+	}
+
+	&__text {
+		@include fluid-text(14, 20);
+
+		max-width: 570px;
+		line-height: 1.15;
+
+		p:not(:last-child) {
+			margin-bottom: 1em;
+		}
+	}
+
+	&__visual {
+		@include visual-frame-layer;
+
+		z-index: 1;
+	}
+
+	&__image {
+		position: relative;
+		right: -10%;
+		top: -40%;
+	}
+
+	@include tablet {
+		&__container {
+			min-height: auto;
+			padding-block: 60px 170px;
+			align-items: center;
+		}
+
+		&__logo {
+			width: 220px;
+		}
+
+		&__image {
+			right: calc(-50% + var(--offset-right-mob));
+			transform: translateX(-50%);
+			top: unset;
+			bottom: -20%;
+		}
+	}
+
+	@include mobile {
+		&__container {
+			padding-block: 30px 180px;
+		}
+	}
+}

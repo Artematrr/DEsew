@@ -4,14 +4,15 @@
 	font-weight: 700;
 	margin-block: 34px 55px;
 
-	&__list {
+	ul,
+	ol {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
 		gap: 11px;
 	}
 
-	&__item {
+	li {
 		display: inline-flex;
 		align-items: center;
 		gap: 8px;
@@ -30,10 +31,12 @@
 			transform: rotate(45deg);
 		}
 
-		li {
-			@include hover {
-				color: var(--black);
-			}
+		&:last-child {
+			pointer-events: none;
+		}
+
+		@include hover {
+			color: var(--black);
 		}
 	}
 }

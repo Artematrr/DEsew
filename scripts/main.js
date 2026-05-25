@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	const mobileCatalogClose = document.querySelector('.js-mobile-catalog-close')
 	const catalogFilter = document.querySelector('.js-catalog-filter')
 	const catalogFilterToggle = document.querySelector('.js-catalog-filter-toggle')
-	const catalogFilterOverlay = document.querySelector('.js-catalog-filter-overlay')
 	const catalogFilterCloseButtons = document.querySelectorAll('.js-catalog-filter-close')
 	const catalogFilterMedia = window.matchMedia('(max-width: 992px)')
 
@@ -91,7 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		catalogFilter.classList.add('is-open')
-		catalogFilterOverlay?.classList.add('is-open')
 		catalogFilter.removeAttribute('aria-hidden')
 		catalogFilterToggle.classList.add('is-active')
 		catalogFilterToggle.setAttribute('aria-expanded', 'true')
@@ -103,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		catalogFilter.classList.remove('is-open')
-		catalogFilterOverlay?.classList.remove('is-open')
 		if (catalogFilterMedia.matches) {
 			catalogFilter.setAttribute('aria-hidden', 'true')
 		} else {

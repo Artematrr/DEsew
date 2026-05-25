@@ -1,11 +1,11 @@
 .catalog-products {
 	display: grid;
-	gap: 42px;
+	gap: 54px;
 
 	&__grid {
 		display: grid;
 		grid-template-columns: repeat(4, minmax(0, 1fr));
-		gap: 46px 34px;
+		gap: 64px 54px;
 	}
 
 	&__pagination {
@@ -13,37 +13,27 @@
 	}
 
 	.product-card {
-		min-height: 372px;
-		padding: 48px 24px 24px;
-		border-radius: 16px;
-	}
-
-	.product-card__image-link {
-		height: 178px;
-		margin-bottom: 56px;
-	}
-
-	.product-card__image {
-		width: min(100%, 220px);
-		max-height: 178px;
+		min-height: 462px;
+		padding: 29px;
+		border-radius: 17px;
 	}
 
 	.product-card__label {
-		font-size: 10px;
-		color: var(--primary-500);
+		@include fluid-text(10, 11);
 	}
 
 	.product-card__title {
-		font-size: 16px;
+		@include fluid-text(14, 16);
 	}
 
 	.product-card__price {
-		font-size: 14px;
+		@include fluid-text(11, 13);
 	}
 
 	.product-card__link {
-		margin-top: 22px;
-		font-size: 13px;
+		@include fluid-text(11, 13);
+
+		// margin-top: 22px;
 	}
 
 	@include desktop {
@@ -54,13 +44,12 @@
 
 		.product-card {
 			min-height: 390px;
-			padding-inline: 22px;
 		}
 
-		.product-card__image-link {
-			height: 190px;
-			margin-bottom: 50px;
-		}
+		// .product-card__image-link {
+		// 	height: 190px;
+		// 	margin-bottom: 50px;
+		// }
 	}
 
 	@include tablet-s {
@@ -75,27 +64,27 @@
 			border-radius: var(--border-radius);
 		}
 
-		.product-card__image-link {
-			height: 220px;
-			margin-bottom: 44px;
-		}
+		// .product-card__image-link {
+		// 	height: 220px;
+		// 	margin-bottom: 44px;
+		// }
 
-		.product-card__label {
-			font-size: 10px;
-		}
+		// .product-card__label {
+		// 	font-size: 10px;
+		// }
 
-		.product-card__title {
-			font-size: 16px;
-		}
+		// .product-card__title {
+		// 	font-size: 16px;
+		// }
 
-		.product-card__price {
-			font-size: 14px;
-		}
+		// .product-card__price {
+		// 	font-size: 14px;
+		// }
 
-		.product-card__link {
-			margin-top: 20px;
-			font-size: 13px;
-		}
+		// .product-card__link {
+		// 	margin-top: 20px;
+		// 	font-size: 13px;
+		// }
 	}
 
 	@include mobile {

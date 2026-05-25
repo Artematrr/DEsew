@@ -1,23 +1,31 @@
 .catalog-filter {
 	display: grid;
 	gap: 20px;
-	padding: 22px 14px 0;
+	padding: 26px 12px 50px 12px;
 	background-color: var(--white);
-	border: 1px solid rgba(0, 0, 0, 0.04);
 	border-radius: 20px;
-	box-shadow: 0 18px 36px rgba(0, 0, 0, 0.08);
+	box-shadow:
+		0 26px 58px 0 rgba(0, 0, 0, 0.1),
+		0 105px 105px 0 rgba(0, 0, 0, 0.09),
+		0 235px 141px 0 rgba(0, 0, 0, 0.05),
+		0 417px 167px 0 rgba(0, 0, 0, 0.01),
+		0 652px 183px 0 rgba(0, 0, 0, 0);
 
-	&__mobile-header {
+	@include tablet {
 		display: none;
 	}
 
-	&__close {
-		display: none;
+	&__icon {
+		@include square(18px);
 	}
 
 	&__group {
 		display: grid;
-		gap: 13px;
+		margin-inline: 0;
+
+		&:not(.is-expanded) .catalog-filter__group-toggle {
+			margin-bottom: 0;
+		}
 	}
 
 	&__group.is-expanded &__body {
@@ -26,15 +34,18 @@
 
 	&__legend,
 	&__group-toggle {
-		font-size: 14px;
-		font-weight: 800;
+		font-size: 16px;
+		font-weight: 700;
 		line-height: 1.12;
 		color: var(--black);
+		margin-bottom: 20px;
+		padding-inline: 0;
+		user-select: none;
 	}
 
 	&__range-title {
 		font-size: 12px;
-		font-weight: 700;
+		font-weight: 500;
 		line-height: 1.2;
 		color: var(--black);
 	}
@@ -44,11 +55,12 @@
 
 		display: inline-flex;
 		align-items: center;
-		justify-content: space-between;
-		gap: 12px;
+		justify-content: flex-start;
+		gap: 5px;
 		width: 100%;
 		text-align: left;
 		transition-property: color;
+		margin-bottom: 15px;
 
 		&::after {
 			content: '';
@@ -75,7 +87,7 @@
 
 	&__body {
 		display: grid;
-		gap: 12px;
+		gap: 20px;
 	}
 
 	&__body--collapsed {
@@ -88,34 +100,45 @@
 
 	&__checkbox {
 		display: grid;
-		grid-template-columns: 20px 1fr;
+		grid-template-columns: 24px 1fr;
 		align-items: center;
 		gap: 8px;
-		min-height: 20px;
+		min-height: 24px;
 		font-size: 12px;
-		font-weight: 600;
+		font-weight: 500;
 		line-height: 1.22;
 		color: var(--black);
 		cursor: pointer;
+		user-select: none;
+
+		@include hover {
+			& .catalog-filter__checkbox-control {
+				background-image: url('/images/icons/checkbox-hovered.svg');
+			}
+			&
+				.catalog-filter__checkbox-input:checked
+				+ .catalog-filter__checkbox-control {
+				background-image: url('/images/icons/checkbox-checked.svg');
+			}
+		}
 	}
 
 	&__checkbox-input {
 		@include visually-hidden;
 
 		&:checked + .catalog-filter__checkbox-control {
-			background-image:
-				url('/images/icons/checkbox-check.svg'),
-				url('/images/icons/checkbox-box.svg');
+			background-image: url('/images/icons/checkbox-checked.svg');
 		}
 
 		&:focus-visible + .catalog-filter__checkbox-control {
-			outline: 2px solid var(--black);
+			outline: 2px solid var(--primary-500);
+			border-radius: 2px;
 			outline-offset: 3px;
 		}
 	}
 
 	&__checkbox-control {
-		@include square(20px);
+		@include square(24px);
 
 		background-image: url('/images/icons/checkbox-box.svg');
 		background-repeat: no-repeat;
@@ -130,7 +153,7 @@
 
 	&__range {
 		display: grid;
-		gap: 9px;
+		gap: 15px;
 	}
 
 	&__scale {
@@ -138,136 +161,106 @@
 		justify-content: space-between;
 		gap: 12px;
 		font-size: 12px;
-		font-weight: 600;
+		font-weight: 500;
 		color: var(--black);
 	}
 
 	&__range-slider {
-		height: 2px;
+		height: 1px;
 		margin: 4px 5px 0;
-		background-color: var(--gray-700);
-		border: none;
-		border-radius: var(--border-radius-xs);
+		border: none !important;
 
 		.ui-slider-range {
-			background-color: var(--primary-500);
+			background-color: var(--gray-700);
 		}
 
 		.ui-slider-handle {
-			@include square(11px);
+			width: 10px;
+			height: 10px;
 
 			top: -5px;
 			margin-left: -5px;
 			background-color: var(--primary-500);
 			border: none;
 			border-radius: 50%;
-			box-shadow: 0 0 0 4px rgba(246, 205, 20, 0.2);
 			outline: none;
+
+			&.ui-state-hover,
+			&.ui-state-active {
+				box-shadow: 0 0 0 4px rgba(246, 205, 20, 0.2);
+			}
 		}
 	}
 
 	&__values {
 		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 64px));
+		grid-template-columns: repeat(2, minmax(0, 74px));
 		justify-content: space-between;
 		gap: 14px;
 	}
 
 	&__value {
-		display: grid;
-		gap: 4px;
-		font-size: 10px;
-		text-transform: lowercase;
-		color: var(--gray-500);
 	}
 
 	&__value-input {
 		width: 100%;
 		min-height: 30px;
-		padding: 6px 10px;
-		font-size: 12px;
+		padding: 8px 10px;
 		font-weight: 600;
+		font-size: 12px;
+		color: var(--gray-350);
 		text-align: center;
-		color: var(--gray-400);
 		background-color: var(--white);
 		border: 1px dashed var(--primary-500);
-		border-radius: var(--border-radius-sm);
+		border-radius: var(--border-radius);
 		outline: none;
 	}
 
 	&__actions {
+		position: absolute;
+		width: 100%;
+		bottom: -40px;
 		display: grid;
 		justify-items: center;
-		gap: 10px;
-		margin: 12px -4px -42px;
+		gap: 7px;
+		user-select: none;
 	}
 
-	&__actions .button {
-		min-height: 54px;
-		width: min(100%, 180px);
-		font-size: 26px;
-		font-weight: 800;
-		border-color: transparent;
-		background:
-			linear-gradient(90deg, rgba(246, 205, 20, 0.18) 0%, rgba(255, 255, 255, 0.84) 100%);
-		box-shadow: 0 12px 24px rgba(246, 205, 20, 0.18);
+	&__actions-submit {
+		min-height: 40px;
+		width: min(100%, 195px);
+		font-size: 24px;
+		font-weight: 700;
+		background: linear-gradient(90deg, #e2dab1 0%, #e5dbc5 100%);
+		transition: background var(--transition-duration)
+			var(--transition-timing-function);
+
+		padding: 5px 10px;
+
+		@include hover {
+			background: linear-gradient(90deg, #f2e8b5 0%, #f6eacf 100%);
+		}
 	}
 
-	&__actions .button--secondary {
+	&__actions-reset {
 		min-height: auto;
 		padding: 0;
-		font-size: 20px;
-		color: var(--gray-400);
+		font-size: 12px;
+		font-weight: 500;
+		color: var(--white);
 		background: transparent;
 		border: none;
 		box-shadow: none;
-	}
 
-	@include tablet {
-		padding-inline: 18px;
-
-		&__legend,
-		&__group-toggle {
-			font-size: 22px;
+		@include hover {
+			background: transparent;
+			box-shadow: none;
+			color: var(--primary-300);
 		}
 
-		&__checkbox {
-			grid-template-columns: 34px 1fr;
-			min-height: 34px;
-			font-size: 17px;
-		}
-
-		&__checkbox-control {
-			width: 34px;
-		}
-	}
-
-	@include tablet-s {
-		gap: 28px;
-		padding: 48px 28px 38px;
-		border-radius: 32px;
-
-		&__mobile-header {
-			display: none;
-		}
-
-		&__mobile-title {
-			font-size: 28px;
-			font-weight: 800;
-			line-height: 1.1;
-		}
-
-		&__close {
-			display: none;
-		}
-
-		&__actions {
-			display: grid;
-			margin-bottom: 0;
-		}
-
-		&__actions .button {
-			width: min(100%, 280px);
+		&:active {
+			background: transparent;
+			color: var(--primary-300);
 		}
 	}
 }
