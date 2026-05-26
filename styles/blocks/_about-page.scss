@@ -17,28 +17,34 @@
 		margin-bottom: 52px;
 
 		@include mobile {
-			margin-bottom: 34px;
+			margin-bottom: 17px;
 		}
 	}
 
 	&__eyebrow {
-		font-size: 32px;
+		@include fluid-text(19, 32);
+
 		font-weight: 700;
 		color: var(--primary-500);
 		margin-bottom: 12px;
+
+		@include mobile {
+			margin-bottom: 7px;
+		}
 	}
 
 	&__logo {
 		margin-bottom: 12px;
 
 		@include mobile {
-			max-width: 280px;
-			margin-bottom: 12px;
+			max-width: 190px;
+			margin-bottom: 7px;
 		}
 	}
 
 	&__subtitle {
-		font-size: 16px;
+		@include fluid-text(10, 16);
+
 		font-weight: 300;
 		color: var(--gray-500);
 	}

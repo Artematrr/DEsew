@@ -1,8 +1,13 @@
 .breadcrumbs {
-	font-size: 12px;
+	@include fluid-text(8, 12);
+
 	line-height: 1.33;
 	font-weight: 700;
 	margin-block: 34px 55px;
+
+	@include mobile {
+		margin-block: 12px 24px;
+	}
 
 	ul,
 	ol {

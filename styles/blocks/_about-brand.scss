@@ -13,8 +13,9 @@
 		min-height: 520px;
 	}
 
-	@include mobile-s {
+	@include mobile {
 		padding: 40px 10px;
+				min-height: 320px;
 	}
 
 	&__image {
@@ -51,7 +52,7 @@
 	}
 
 	&__eyebrow {
-		@include fluid-text(24, 36);
+		@include fluid-text(12, 36);
 
 		font-weight: 700;
 		margin-bottom: 2px;
@@ -62,7 +63,7 @@
 		margin-bottom: 18px;
 
 		@include tablet {
-			width: 220px;
+			width: 120px;
 		}
 	}
 
@@ -109,13 +110,17 @@
 	&--page {
 		margin-bottom: 52px;
 
+		@include tablet {
+			margin-bottom: 10px;
+		}
+
 		.about-brand__card {
 			display: grid;
 			align-content: center;
 		}
 
 		.about-brand__text {
-			@include fluid-text(22, 36);
+			@include fluid-text(12, 36);
 
 			max-width: 1060px;
 			margin-bottom: 0;

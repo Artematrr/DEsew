@@ -1,16 +1,100 @@
 .work-steps {
 	position: relative;
-	margin-bottom: 0px;
+	margin-bottom: 200px;
+
+	@include tablet {
+		margin-bottom: 42px;
+	}
+
+	&__decor {
+		@include visual-frame-layer;
+	}
+
+	&__stitch {
+		position: absolute;
+		top: calc(50% + 50px);
+		z-index: 1;
+
+		&--left {
+			left: 0;
+		}
+
+		&--right {
+			right: 0;
+		}
+	}
+
+	&__button {
+		position: absolute;
+		z-index: 4;
+		scale: 1.5;
+
+		@include mobile-s {
+			scale: 1;
+		}
+
+		&--left {
+			top: -5px;
+			left: -5px;
+		}
+
+		&--right {
+			bottom: -15px;
+			right: -10px;
+		}
+	}
+
+	&__arrow {
+		position: absolute;
+		top: calc(50% - 45px);
+
+		@include tablet {
+			scale: 0.5;
+		}
+
+		@include mobile-s {
+			top: calc(50% - 15px);
+		}
+
+		&--first {
+			left: calc(30% - 6px);
+
+			@include tablet {
+				left: calc(30% - 12px);
+			}
+
+			@include mobile-s {
+				left: calc(30% - 25px);
+			}
+		}
+
+		&--second {
+			right: calc(30% - 6px);
+
+			@include tablet {
+				right: calc(30% - 15px);
+			}
+
+			@include mobile-s {
+				right: calc(30% - 25px);
+			}
+		}
+	}
 
 	&__container {
 		display: grid;
 		gap: 34px;
 		justify-items: center;
+
+		@include tablet {
+			gap: 10px;
+		}
 	}
 
 	&__title {
-		font-size: 34px;
-		font-weight: 800;
+		@include fluid-text(19, 32);
+
+		font-weight: 700;
 		color: var(--primary-500);
 		text-align: center;
 	}
@@ -19,17 +103,42 @@
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 300px));
 		gap: 54px;
+		position: relative;
+		z-index: 2;
+
+		@include tablet {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 20px;
+			z-index: 0;
+		}
 	}
 
 	&__card {
 		display: grid;
-		grid-template-rows: 220px auto 1fr;
+		grid-template-rows: 240px 1fr 70px;
 		min-height: 462px;
-		padding: 28px;
+		padding: 29px 29px 35px 29px;
 		background-color: var(--white);
-		border-radius: var(--border-radius);
-		box-shadow: var(--shadow-sm);
-		text-align: center;
+		border-radius: 17px;
+		box-shadow: 2px 4px 11px 0 rgba(0, 0, 0, 0.08);
+
+		@include desktop {
+			min-height: unset;
+		}
+
+		@include tablet {
+			grid-template-rows: 160px 1fr 48px;
+			padding: 10px 10px 15px 10px;
+		}
+
+		@include tablet-s {
+			grid-template-rows: 120px 1fr 58px;
+		}
+
+		@include mobile-s {
+			padding: 5px 5px 10px 5px;
+			grid-template-rows: 120px 1fr 30px;
+		}
 	}
 
 	&__image {
@@ -39,35 +148,18 @@
 	}
 
 	&__name {
-		margin-top: 22px;
-		font-size: 18px;
-		font-weight: 800;
+		@include fluid-text(10, 16);
+
+		font-weight: 700;
 		line-height: 1.15;
 	}
 
 	&__number {
+		@include fluid-text(32, 96);
 		align-self: end;
-		font-size: 92px;
 		font-weight: 800;
-		line-height: 0.9;
+		line-height: 0.8;
 		color: var(--primary-500);
-	}
-
-	@include tablet-s {
-		&__grid {
-			grid-template-columns: repeat(3, minmax(0, 1fr));
-			gap: 20px;
-		}
-	}
-
-	@include mobile {
-		&__grid {
-			grid-template-columns: 1fr;
-			width: min(100%, 280px);
-		}
-
-		&__card {
-			min-height: 0;
-		}
+		text-align: center;
 	}
 }

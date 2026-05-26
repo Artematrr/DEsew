@@ -260,21 +260,36 @@
 		</section>
 
 		<section class="work-steps" aria-labelledby="work-steps-title">
+			<div class="work-steps__decor decor">
+				<img class="work-steps__stitch work-steps__stitch--left hidden-mobile"
+					src="/images/18-work-steps/work-steps-stitch-01.svg" alt="" aria-hidden="true">
+				<img class="work-steps__stitch work-steps__stitch--right hidden-mobile"
+					src="/images/18-work-steps/work-steps-stitch-03.svg" alt="" aria-hidden="true">
+			</div>
+
 			<div class="work-steps__container container">
 				<h2 class="work-steps__title" id="work-steps-title">Как мы работаем</h2>
 				<div class="work-steps__grid">
 					<article class="work-steps__card">
-						<img class="work-steps__image" src="/images/18-work-process/work-process-01.jpg" alt="">
+						<img class="work-steps__button work-steps__button--left visible-mobile"
+							src="/images/18-work-steps/work-steps-button-01.svg" alt="" aria-hidden="true">
+						<img class="work-steps__image" src="/images/18-work-steps/work-steps-01.jpg" alt="">
 						<h3 class="work-steps__name">Вы выбираете оборудование</h3>
 						<p class="work-steps__number">1</p>
 					</article>
+					<img class="work-steps__arrow work-steps__arrow--first" src="/images/18-work-steps/work-steps-stitch-02.svg"
+						alt="" aria-hidden="true">
 					<article class="work-steps__card">
-						<img class="work-steps__image" src="/images/18-work-process/work-process-02.jpg" alt="">
+						<img class="work-steps__image" src="/images/18-work-steps/work-steps-02.jpg" alt="">
 						<h3 class="work-steps__name">Сравнивайте модели</h3>
 						<p class="work-steps__number">2</p>
 					</article>
+					<img class="work-steps__arrow work-steps__arrow--second" src="/images/18-work-steps/work-steps-stitch-02.svg"
+						alt="" aria-hidden="true">
 					<article class="work-steps__card">
-						<img class="work-steps__image" src="/images/18-work-process/work-process-03.jpg" alt="">
+						<img class="work-steps__button work-steps__button--right visible-mobile"
+							src="/images/18-work-steps/work-steps-button-02.svg" alt="" aria-hidden="true">
+						<img class="work-steps__image" src="/images/18-work-steps/work-steps-03.jpg" alt="">
 						<h3 class="work-steps__name">Покупайте удобным способом</h3>
 						<p class="work-steps__number">3</p>
 					</article>
@@ -282,28 +297,41 @@
 			</div>
 		</section>
 
-		<section class="brand-values" aria-labelledby="brand-values-title">
+		<section class="brand-values" aria-labelledby="brand-values-title"
+			style="--background-image: url('/images/19-brand-values/brand-values-bg.png')">
 			<div class="brand-values__container container">
 				<h2 class="visually-hidden" id="brand-values-title">Ценности DEsew</h2>
 				<div class="brand-values__grid">
 					<article class="brand-values__card">
-						<img class="brand-values__icon" src="/images/19-brand-values/brand-values-01.svg" alt="" aria-hidden="true">
-						<h3 class="brand-values__title">Надежность</h3>
+						<div class="brand-values__card-header">
+							<img class="brand-values__icon" src="/images/19-brand-values/brand-values-01.svg" alt=""
+								aria-hidden="true">
+							<h3 class="brand-values__title">Надежность</h3>
+						</div>
 						<p class="brand-values__text">стабильная работа при любой нагрузке</p>
 					</article>
 					<article class="brand-values__card">
-						<img class="brand-values__icon" src="/images/19-brand-values/brand-values-02.svg" alt="" aria-hidden="true">
-						<h3 class="brand-values__title">Точность</h3>
+						<div class="brand-values__card-header">
+							<img class="brand-values__icon" src="/images/19-brand-values/brand-values-02.svg" alt=""
+								aria-hidden="true">
+							<h3 class="brand-values__title">Точность</h3>
+						</div>
 						<p class="brand-values__text">аккуратная строчка и контроль</p>
 					</article>
 					<article class="brand-values__card">
-						<img class="brand-values__icon" src="/images/19-brand-values/brand-values-03.svg" alt="" aria-hidden="true">
-						<h3 class="brand-values__title">Технологии</h3>
+						<div class="brand-values__card-header">
+							<img class="brand-values__icon" src="/images/19-brand-values/brand-values-03.svg" alt=""
+								aria-hidden="true">
+							<h3 class="brand-values__title">Технологии</h3>
+						</div>
 						<p class="brand-values__text">современные решения</p>
 					</article>
 					<article class="brand-values__card">
-						<img class="brand-values__icon" src="/images/19-brand-values/brand-values-04.svg" alt="" aria-hidden="true">
-						<h3 class="brand-values__title">Долговечность</h3>
+						<div class="brand-values__card-header">
+							<img class="brand-values__icon" src="/images/19-brand-values/brand-values-04.svg" alt=""
+								aria-hidden="true">
+							<h3 class="brand-values__title">Долговечность</h3>
+						</div>
 						<p class="brand-values__text">рассчитано на годы работы</p>
 					</article>
 				</div>
@@ -313,11 +341,9 @@
 		<section class="question-feedback section" aria-labelledby="question-feedback-title">
 			<div class="question-feedback__decor decor" aria-hidden="true">
 				<img class="decor__item question-feedback__stitch question-feedback__stitch--left"
-					src="/images/08-article/article-stitch-02.svg" alt="">
+					src="/images/09-question-feedback/question-feedback-stitch-01.svg" alt="">
 				<img class="decor__item question-feedback__stitch question-feedback__stitch--right"
-					src="/images/09-feedback/feedback-stitch-01.svg" alt="">
-				<img class="decor__item question-feedback__stitch question-feedback__stitch--bottom"
-					src="/images/09-feedback/feedback-stitch-02.svg" alt="">
+					src="/images/09-question-feedback/question-feedback-stitch-02.svg" alt="">
 			</div>
 
 			<div class="question-feedback__container container">
@@ -352,18 +378,22 @@
 						<div class="question-feedback__field question-feedback__field--full">
 							<label class="visually-hidden" for="question-message">Сообщение</label>
 							<textarea class="question-feedback__control question-feedback__control--textarea" id="question-message"
-								name="message" placeholder="Сообщение"></textarea>
+								name="message" placeholder="Сообщение" rows="3"></textarea>
 						</div>
 
 						<button class="question-feedback__submit button" type="submit">Отправить</button>
 
-						<p class="question-feedback__privacy">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
+						<p class="question-feedback__privacy">
+							<img class="question-feedback__privacy-icon" src="/images/icons/time-gray.svg" alt="">
+							Нажимая кнопку, вы соглашаетесь с обработкой персональных данных
+						</p>
 					</form>
 				</div>
 
 				<div class="question-feedback__media" aria-hidden="true">
-					<img class="question-feedback__object" src="/images/09-feedback/feedback-object.png" alt="">
-					<img class="question-feedback__brand" src="/images/09-feedback/feedback-bg-01.png" alt="">
+					<img class="question-feedback__object" src="/images/09-question-feedback/question-feedback-object.png" alt="" width="644" height="429">
+					<img class="question-feedback__brand question-feedback__brand--desctop hidden-mobile" src="/images/09-question-feedback/question-feedback-bg-01.png" alt="" width="953" height="204">
+					<img class="question-feedback__brand question-feedback__brand--mobile visible-mobile" src="/images/09-question-feedback/question-feedback-bg-02.png" alt="" width="397" height="85">
 				</div>
 			</div>
 		</section>
