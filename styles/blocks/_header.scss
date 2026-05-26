@@ -11,6 +11,10 @@
 
 	&:has(.header__nav-item--catalog.is-open) + .main {
 		filter: blur(8px);
+
+		@include tablet {
+			filter: none;
+		}
 	}
 
 	&:has(.header__mobile.is-open) {
@@ -24,6 +28,10 @@
 		gap: 28px;
 		min-height: var(--header-height);
 		max-width: var(--header-width);
+
+		@include mobile {
+			gap: 8px;
+		}
 	}
 
 	&__logo {
@@ -31,6 +39,10 @@
 		align-items: center;
 		width: 78px;
 		flex-shrink: 0;
+
+		@include mobile {
+			width: 74px;
+		}
 	}
 
 	&__logo-image {
@@ -42,6 +54,10 @@
 	&__nav {
 		display: flex;
 		flex-grow: 1;
+
+		@include tablet {
+			display: none;
+		}
 	}
 
 	&__nav-list {
@@ -125,10 +141,24 @@
 		align-items: center;
 		justify-content: flex-end;
 		gap: 18px;
+
+		@include tablet {
+			display: contents;
+		}
 	}
 
 	&__actions-inner {
 		display: contents;
+
+		@include tablet {
+			display: flex;
+			align-items: center;
+			gap: 28px;
+		}
+
+		@include mobile {
+			gap: 12px;
+		}
 	}
 
 	&__search {
@@ -148,6 +178,19 @@
 			36px 46px 16px 0 rgba(147, 72, 120, 0);
 		transition-property: border-color, box-shadow;
 
+		@include tablet {
+			width: 400px;
+		}
+
+		@include mobile {
+			width: 160px;
+			height: 28px;
+		}
+
+		@include mobile-s {
+			display: none;
+		}
+
 		&.is-open,
 		&:focus-within {
 			border-color: var(--primary-500);
@@ -160,9 +203,16 @@
 		@include square(40px);
 
 		flex-shrink: 0;
+
+		@include mobile {
+			@include square(28px);
+		}
 	}
 
 	&__search-icon {
+		@include mobile {
+			@include square(18px);
+		}
 	}
 
 	&__search-input {
@@ -178,6 +228,11 @@
 		&:focus-visible {
 			margin-left: 0px;
 		}
+
+		@include mobile {
+			padding-right: 5px;
+			margin-left: 8px;
+		}
 	}
 
 	&__icon-button,
@@ -187,15 +242,28 @@
 		@include square(28px);
 
 		flex-shrink: 0;
+
+		@include mobile {
+			@include square(17px);
+		}
 	}
 
 	&__icon {
 		max-width: 28px;
 		max-height: 28px;
 		object-fit: contain;
+
+		@include mobile {
+			max-width: 22px;
+			max-height: 22px;
+		}
 	}
 
 	&__icon-button--mail {
+		@include tablet {
+			order: 0;
+		}
+
 		@include hover {
 			* {
 				stroke: var(--primary-300);
@@ -204,6 +272,10 @@
 	}
 
 	&__icon-button--compare {
+		@include tablet {
+			order: 1;
+		}
+
 		@include hover {
 			* {
 				fill: var(--primary-300);
@@ -215,6 +287,14 @@
 		width: 1px;
 		height: 50px;
 		overflow: hidden;
+
+		@include tablet {
+			order: 3;
+		}
+
+		@include mobile {
+			height: 20px;
+		}
 
 		img {
 			object-fit: contain;
@@ -228,6 +308,10 @@
 		font-size: 12px;
 		font-weight: 600;
 		white-space: nowrap;
+
+		@include tablet {
+			order: 2;
+		}
 
 		@include hover {
 			.header__icon * {
@@ -250,6 +334,10 @@
 		visibility: hidden;
 		pointer-events: none;
 		transition-property: opacity, visibility;
+
+		@include tablet {
+			display: none;
+		}
 	}
 
 	&__nav-item--catalog.is-open &__catalog {
@@ -318,6 +406,15 @@
 		color: var(--black);
 		transition-property: color, background-color;
 
+		@include tablet {
+			order: 4;
+			display: inline-flex;
+		}
+
+		@include mobile {
+			@include square(28px);
+		}
+
 		&::before,
 		&::after,
 		span {
@@ -333,6 +430,11 @@
 			transition-property: transform, opacity, background-color;
 			transition-duration: var(--transition-duration);
 			transition-timing-function: var(--transition-timing-function);
+
+			@include mobile {
+				width: 22px;
+				height: 3px;
+			}
 		}
 
 		&::before,
@@ -380,6 +482,10 @@
 		pointer-events: none;
 		transition-property: opacity, visibility;
 
+		@include tablet {
+			display: block;
+		}
+
 		&.is-open {
 			opacity: 1;
 			visibility: visible;
@@ -419,6 +525,11 @@
 		background-color: var(--white);
 		border-radius: var(--border-radius);
 		box-shadow: var(--shadow-sm);
+
+		@include mobile {
+			min-height: 40px;
+			font-size: 25px;
+		}
 	}
 
 	&__mobile-chevron {
@@ -467,6 +578,10 @@
 		font-weight: 700;
 		line-height: 1.25;
 		margin-bottom: 12px;
+
+		@include mobile {
+			font-size: 32px;
+		}
 	}
 
 	&__mobile-catalog-group {
@@ -479,9 +594,16 @@
 		font-size: 30px;
 		font-weight: 700;
 		line-height: 1.2;
+
+		@include mobile {
+			font-size: 20px;
+		}
 	}
 
 	&__mobile-catalog-list {
+		@include mobile {
+			font-size: 20px;
+		}
 	}
 
 	ul.header__mobile-catalog-list {
@@ -489,6 +611,10 @@
 		padding-left: 30px;
 		font-size: 30px;
 		line-height: 1.48;
+
+		@include mobile {
+			font-size: 20px;
+		}
 	}
 
 	&__mobile-catalog-list a {
@@ -515,144 +641,8 @@
 		pointer-events: none;
 	}
 
-	@include desktop {
-		&__phone-text {
-			display: none;
-		}
-	}
-
-	@include tablet {
-		&:has(.header__nav-item--catalog.is-open) + .main {
-			filter: none;
-		}
-
-		&__actions {
-			display: contents;
-		}
-
-		&__actions-inner {
-			display: flex;
-			align-items: center;
-			gap: 28px;
-		}
-
-		&__nav,
-		&__catalog {
-			display: none;
-		}
-
-		&__icon-button--mail {
-			order: 0;
-		}
-
-		&__icon-button--compare {
-			order: 1;
-		}
-
-		&__divider {
-			order: 3;
-		}
-
-		&__phone {
-			order: 2;
-		}
-
-		&__burger {
-			order: 4;
-		}
-
-		&__search {
-			width: 400px;
-		}
-
-		&__mobile {
-			display: block;
-		}
-
-		&__burger {
-			display: inline-flex;
-		}
-	}
-
-	@include mobile {
-		&__container {
-			gap: 8px;
-		}
-
-		&__logo {
-			width: 74px;
-		}
-
-		&__actions-inner {
-			gap: 12px;
-		}
-
-		&__search {
-			width: 160px;
-			height: 28px;
-		}
-
-		&__search-button {
-			@include square(28px);
-		}
-
-		&__search-icon {
-			@include square(18px);
-		}
-
-		&__search-input {
-			padding-right: 5px;
-			margin-left: 8px;
-		}
-
-		&__icon-button {
-			@include square(17px);
-		}
-
-		&__icon {
-			max-width: 22px;
-			max-height: 22px;
-		}
-
-		&__divider {
-			height: 20px;
-		}
-
-		&__burger {
-			@include square(28px);
-
-			&::before,
-			&::after,
-			span {
-				width: 22px;
-				height: 3px;
-			}
-		}
-
-		&__mobile-panel {
-		}
-
-		&__mobile-link {
-			min-height: 40px;
-			font-size: 25px;
-		}
-
-		&__mobile-title {
-			font-size: 32px;
-		}
-
-		&__mobile-subtitle,
-		&__mobile-catalog-list {
-			font-size: 20px;
-		}
-
-		ul.header__mobile-catalog-list {
-			font-size: 20px;
-		}
-	}
-
-	@include mobile-s {
-		&__search {
+	&__phone-text {
+		@include desktop {
 			display: none;
 		}
 	}

@@ -8,6 +8,15 @@
 	padding-block: 90px;
 	margin-bottom: 18px;
 
+	@include tablet {
+		padding: 40px 40px;
+		min-height: 520px;
+	}
+
+	@include mobile-s {
+		padding: 40px 10px;
+	}
+
 	&__image {
 		@include visual-frame-layer;
 
@@ -33,6 +42,12 @@
 		border: 1px solid rgba(255, 255, 255, 0.3);
 		border-radius: 37px;
 		backdrop-filter: blur(3px);
+
+		@include tablet {
+			min-height: auto;
+			padding: 25px 20px 20px 20px;
+			border-radius: 7px;
+		}
 	}
 
 	&__eyebrow {
@@ -45,6 +60,10 @@
 	&__logo {
 		width: 317px;
 		margin-bottom: 18px;
+
+		@include tablet {
+			width: 220px;
+		}
 	}
 
 	&__text {
@@ -53,6 +72,10 @@
 		max-width: 570px;
 		margin-bottom: 54px;
 		line-height: 1.15;
+
+		@include tablet {
+			margin-bottom: 20px;
+		}
 
 		p:not(:last-child) {
 			margin-bottom: 1em;
@@ -112,40 +135,15 @@
 		bottom: 0;
 		left: -350px;
 		width: 790px;
-	}
 
-	@include desktop {
-		&__stitch {
+		@include desktop {
 			left: -600px;
 		}
-	}
 
-	@include tablet {
-		padding: 40px 40px;
-		min-height: 520px;
-
-		&__card {
-			min-height: auto;
-			padding: 25px 20px 20px 20px;
-			border-radius: 7px;
-		}
-
-		&__text {
-			margin-bottom: 20px;
-		}
-
-		&__logo {
-			width: 220px;
-		}
-
-		&__stitch {
+		@include tablet {
 			width: 320px;
 			left: -200px;
 			bottom: 100px;
 		}
-	}
-
-	@include mobile-s {
-		padding: 40px 10px;
 	}
 }

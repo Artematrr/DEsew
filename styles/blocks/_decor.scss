@@ -21,8 +21,8 @@
 		// opacity: 0.45;
 	}
 
-	@include mobile {
-		&__item--mobile-hidden {
+	&__item--mobile-hidden {
+		@include mobile {
 			display: none;
 		}
 	}

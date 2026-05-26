@@ -54,6 +54,15 @@
 	}
 
 	&__wrapper {
+		@include tablet {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 50px 20px;
+		}
+
+		@include mobile-s {
+			gap: 20px 10px;
+		}
 	}
 
 	&__pagination {
@@ -87,24 +96,10 @@
 
 	.product-card {
 		min-height: 445px;
-	}
 
-	@include tablet {
-		&__wrapper {
-			display: grid;
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-			gap: 50px 20px;
-		}
-
-		.product-card {
+		@include tablet {
 			padding: 10px;
 			min-height: auto;
-		}
-	}
-
-	@include mobile-s {
-		&__wrapper {
-			gap: 20px 10px;
 		}
 	}
 }

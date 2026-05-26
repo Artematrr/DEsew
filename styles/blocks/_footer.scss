@@ -5,6 +5,14 @@
 	color: var(--white);
 	background: linear-gradient(180deg, #000 0%, #1a1a1a 100%);
 
+	@include tablet {
+		padding-block: 68px 52px;
+	}
+
+	@include mobile {
+		padding-block: 34px 26px;
+	}
+
 	&__container {
 		position: relative;
 		z-index: 1;
@@ -12,18 +20,45 @@
 		grid-template-columns: minmax(300px, 445px) minmax(0, 1fr);
 		gap: 0;
 		max-width: var(--header-width);
+
+		@include desktop {
+			grid-template-columns: 260px minmax(0, 1fr);
+			gap: 20px;
+		}
+
+		@include tablet {
+			grid-template-columns: 220px minmax(0, 1fr);
+		}
+
+		@include mobile {
+			grid-template-columns: 1fr;
+			gap: 0px;
+		}
 	}
 
 	&__brand {
 		display: grid;
 		align-content: start;
 		justify-items: start;
+
+		@include mobile {
+			display: contents;
+		}
 	}
 
 	&__logo {
 		display: inline-flex;
 		width: 263px;
 		margin-bottom: 26px;
+
+		@include desktop {
+			width: 220px;
+		}
+
+		@include tablet {
+			width: 150px;
+			margin-bottom: 14px;
+		}
 	}
 
 	&__logo-image {
@@ -39,6 +74,10 @@
 		margin-bottom: 21px;
 		line-height: 1.2;
 		color: var(--white);
+
+		@include tablet {
+			margin-bottom: 13px;
+		}
 	}
 
 	&__divider {
@@ -53,6 +92,14 @@
 		);
 		background-repeat: repeat-x;
 		background-size: 22px 1px;
+
+		@include desktop {
+			width: 210px;
+		}
+
+		@include tablet {
+			margin-bottom: 13px;
+		}
 	}
 
 	&__callback {
@@ -65,6 +112,15 @@
 		padding: 8px 18px;
 		font-weight: 600;
 		line-height: 1;
+
+		@include tablet {
+			padding: 4px 12px;
+			width: max-content;
+			max-width: unset;
+			min-height: 26px;
+			margin-bottom: 20px;
+			border-radius: 3px;
+		}
 	}
 
 	&__bottom {
@@ -72,6 +128,14 @@
 		align-items: center;
 		gap: 10px 24px;
 		margin-top: auto;
+
+		@include tablet {
+			flex-wrap: wrap;
+		}
+
+		@include mobile {
+			order: 1;
+		}
 	}
 
 	&__copyright {
@@ -94,12 +158,29 @@
 		display: grid;
 		align-content: start;
 		gap: 21px;
+
+		@include tablet {
+			gap: 12px;
+		}
+
+		@include mobile {
+			display: contents;
+		}
 	}
 
 	&__columns {
 		display: grid;
 		grid-template-columns: 1fr 0.8fr 1fr 1.3fr;
 		gap: 30px;
+
+		@include tablet {
+			gap: 14px;
+		}
+
+		@include mobile {
+			grid-template-columns: 1fr 1fr;
+			margin-bottom: 20px;
+		}
 	}
 
 	&__column {
@@ -117,6 +198,14 @@
 		font-weight: 700;
 		line-height: 1.2;
 		color: var(--white);
+
+		@include tablet {
+			margin-bottom: 12px;
+		}
+
+		@include mobile {
+			margin-bottom: 2px;
+		}
 	}
 
 	&__list {
@@ -138,6 +227,10 @@
 
 	&__list--contacts {
 		gap: 14px;
+
+		@include tablet {
+			gap: 3px;
+		}
 	}
 
 	&__contact {
@@ -167,6 +260,15 @@
 	&__subscribe {
 		width: min(100%, 560px);
 		margin-inline: auto;
+
+		@include tablet {
+			width: min(100%, 350px);
+		}
+
+		@include mobile {
+			margin-inline: unset;
+			margin-bottom: 20px;
+		}
 	}
 
 	&__subscribe-title {
@@ -176,6 +278,10 @@
 		font-weight: 900;
 		line-height: 1.1;
 		color: var(--white);
+
+		@include tablet {
+			margin-bottom: 2px;
+		}
 	}
 
 	&__subscribe-text {
@@ -184,12 +290,20 @@
 		font-weight: 300;
 		line-height: 1.25;
 		color: var(--gray-350);
+
+		@include tablet {
+			margin-bottom: 10px;
+		}
 	}
 
 	&__subscribe-row {
 		display: grid;
 		grid-template-columns: minmax(0, 292px) 230px;
 		gap: 7px;
+
+		@include tablet {
+			grid-template-columns: minmax(0, 160px) 125px;
+		}
 	}
 
 	&__subscribe-input {
@@ -208,6 +322,13 @@
 			border-color: var(--primary-500);
 			box-shadow: 0 5px 10px rgba(246, 205, 20, 0.4);
 		}
+
+		@include tablet {
+			min-height: 30px;
+			height: 30px;
+			padding: 8px 14px;
+			border-radius: 3px;
+		}
 	}
 
 	&__subscribe-button {
@@ -220,6 +341,13 @@
 		line-height: 1.1;
 		color: var(--black);
 		background-color: var(--primary-500);
+
+		@include tablet {
+			min-height: 30px;
+			height: 30px;
+			padding: 8px 14px;
+			border-radius: 3px;
+		}
 	}
 
 	&__decor {
@@ -231,130 +359,11 @@
 		right: 0px;
 		bottom: -100px;
 		width: 1081px;
-	}
 
-	@include desktop {
-		&__container {
-			grid-template-columns: 260px minmax(0, 1fr);
-			gap: 20px;
-		}
-
-		&__logo {
-			width: 220px;
-		}
-
-		&__divider {
-			width: 210px;
-		}
-	}
-
-	@include tablet {
-		padding-block: 68px 52px;
-
-		&__container {
-			grid-template-columns: 220px minmax(0, 1fr);
-
-		}
-
-		&__logo {
-			width: 150px;
-			margin-bottom: 14px;
-		}
-
-		&__text,
-		&__divider {
-			margin-bottom: 13px;
-		}
-
-		&__callback {
-			padding: 4px 12px;
-			width: max-content;
-			max-width: unset;
-			min-height: 26px;
-			margin-bottom: 20px;
-			border-radius: 3px;
-		}
-
-		&__bottom {
-			flex-wrap: wrap;
-		}
-
-		&__content {
-			gap: 12px;
-		}
-
-		&__columns {
-			gap: 14px;
-		}
-
-		&__column-title {
-			margin-bottom: 12px;
-		}
-
-		&__list--contacts {
-			gap: 3px;
-		}
-
-		&__decor--bottom {
+		@include tablet {
 			right: 550px;
 			bottom: -30px;
 			width: 390px;
-		}
-
-		&__subscribe {
-			width: min(100%, 350px);
-		}
-
-		&__subscribe-title {
-			margin-bottom: 2px;
-		}
-
-		&__subscribe-text {
-			margin-bottom: 10px;
-		}
-
-		&__subscribe-row {
-			grid-template-columns: minmax(0, 160px) 125px;
-		}
-
-		&__subscribe-button,
-		&__subscribe-input {
-			min-height: 30px;
-			height: 30px;
-			padding: 8px 14px;
-			border-radius: 3px;
-		}
-	}
-
-	@include mobile {
-		padding-block: 34px 26px;
-
-		&__container {
-			grid-template-columns: 1fr;
-			gap: 0px;
-		}
-
-		&__content,
-		&__brand {
-			display: contents;
-		}
-
-		&__bottom {
-			order: 1;
-		}
-
-		&__column-title {
-			margin-bottom: 2px;
-		}
-
-		&__columns {
-			grid-template-columns: 1fr 1fr;
-			margin-bottom: 20px;
-		}
-
-		&__subscribe {
-			margin-inline: unset;
-			margin-bottom: 20px;
 		}
 	}
 }

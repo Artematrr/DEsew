@@ -19,6 +19,12 @@
 		top: 0;
 		left: -165px;
 		width: 499px;
+
+		@include tablet {
+			scale: 0.3;
+			top: -65px;
+			left: 300px;
+		}
 	}
 
 	&__decor-stitch--right {
@@ -39,6 +45,14 @@
 		width: 415px;
 	}
 
+	&__decor-stitch--right,
+	&__decor-stitch--middle,
+	&__decor-stitch--bottom {
+		@include tablet {
+			display: none;
+		}
+	}
+
 	&__container {
 		position: relative;
 		z-index: 3;
@@ -46,6 +60,10 @@
 
 	&__header {
 		margin-bottom: 31px;
+
+		@include tablet {
+			margin-bottom: 24px;
+		}
 	}
 
 	&__title {
@@ -96,24 +114,18 @@
 		grid-template-columns: 264px minmax(0, 1fr);
 		align-items: start;
 		gap: 20px;
+
+		@include tablet {
+			grid-template-columns: 1fr;
+			justify-items: center;
+		}
 	}
 
 	&__filter {
 		position: sticky;
 		top: calc(var(--header-height) + 24px);
-	}
 
-	@include tablet {
-		&__header {
-			margin-bottom: 24px;
-		}
-
-		&__layout {
-			grid-template-columns: 1fr;
-			justify-items: center;
-		}
-
-		&__filter {
+		@include tablet {
 			position: static;
 			display: none;
 			width: 100%;
@@ -123,25 +135,17 @@
 			top: 100px;
 			width: 90%;
 		}
+	}
 
-		&__filter.is-open {
+	&__filter.is-open {
+		@include tablet {
 			display: grid;
 		}
+	}
 
-		.catalog-products {
+	.catalog-products {
+		@include tablet {
 			width: 100%;
-		}
-
-		&__decor-stitch--left {
-			scale: 0.3;
-			top: -65px;
-			left: 300px;
-		}
-
-		&__decor-stitch--right,
-		&__decor-stitch--middle,
-		&__decor-stitch--bottom {
-			display: none;
 		}
 	}
 }

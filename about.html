@@ -61,7 +61,7 @@
 									</div>
 								</div>
 
-								<img class="header__catalog-stitch" src="/images/00-header/header-stitch-01.svg" width="570"
+								<img class="header__catalog-stitch" src="/images/00-header/header-stitch-02.svg" width="570"
 									height="172" alt="" aria-hidden="true">
 							</div>
 						</div>
@@ -370,21 +370,19 @@
 	</main>
 
 	<footer class="footer" id="contacts">
-		<img class="footer__decor footer__decor--left" src="/images/99-footer/footer-stitch-01.svg" alt=""
-			aria-hidden="true">
-		<img class="footer__decor footer__decor--right" src="/images/99-footer/footer-stitch-02.svg" alt=""
-			aria-hidden="true">
+		<div class="footer__decor decor">
+			<img class=" footer__decor--bottom" src="/images/99-footer/footer-stitch-02.svg" alt="" aria-hidden="true">
+		</div>
 
 		<div class="footer__container container">
 			<div class="footer__brand">
 				<a class="footer__logo" href="#" aria-label="DEsew">
-					<img class="footer__logo-image" src="/images/icons/logo-footer.svg" alt="" width="283" height="61">
+					<img class="footer__logo-image" src="/images/icons/logo-footer.svg" alt="DEsew" width="283" height="61">
 				</a>
-
 				<p class="footer__text">Швейное оборудование<br>для производства и мастерских</p>
 				<span class="footer__divider" aria-hidden="true"></span>
-
-				<button class="footer__callback" type="button" data-micromodal-trigger="feedback-modal">Заказать звонок</button>
+				<button class="footer__callback button" type="button" data-micromodal-trigger="feedback-modal">Заказать
+					звонок</button>
 
 				<div class="footer__bottom">
 					<p class="footer__copyright">© DESEW 2026</p>
@@ -434,15 +432,7 @@
 							</li>
 							<li>
 								<span class="footer__contact footer__contact--location">
-									<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"
-										aria-hidden="true">
-										<path
-											d="M8.5 15.2C8.5 15.2 3.2 10.7 3.2 6.9C3.2 4 5.6 1.7 8.5 1.7C11.4 1.7 13.8 4 13.8 6.9C13.8 10.7 8.5 15.2 8.5 15.2Z"
-											stroke="#F6CD14" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-										<path
-											d="M8.5 8.65C9.4665 8.65 10.25 7.8665 10.25 6.9C10.25 5.9335 9.4665 5.15 8.5 5.15C7.5335 5.15 6.75 5.9335 6.75 6.9C6.75 7.8665 7.5335 8.65 8.5 8.65Z"
-											stroke="#F6CD14" stroke-width="1.8" />
-									</svg>
+									<img src="/images/icons/location-city.svg" alt="" aria-hidden="true">
 									<span>Москва</span>
 								</span>
 							</li>
@@ -458,7 +448,7 @@
 						<label class="visually-hidden" for="footer-email">Ваш email</label>
 						<input class="footer__subscribe-input" id="footer-email" type="email" name="email" placeholder="Ваш email"
 							autocomplete="email">
-						<button class="footer__subscribe-button" type="submit">Подписаться</button>
+						<button class="footer__subscribe-button button" type="submit">Подписаться</button>
 					</div>
 				</form>
 			</div>
@@ -471,41 +461,56 @@
 		<div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="feedback-modal-title">
 			<button class="modal__close" type="button" data-micromodal-close aria-label="Закрыть окно"></button>
 
-			<h2 class="modal__title h3" id="feedback-modal-title">Обратная связь</h2>
-			<p class="modal__text">Оставьте сообщение, и команда DEsew свяжется с вами.</p>
+			<h2 class="modal__title" id="feedback-modal-title">Связаться с сервисом</h2>
+			<p class="modal__text">Выберите, с чем мы можем помочь:</p>
 
-			<form class="form" action="/">
-				<div class="form__field">
-					<label class="form__label" for="feedback-name">Имя</label>
-					<input class="form__control" id="feedback-name" type="text" name="name" autocomplete="name">
+			<form class="modal__form js-static-form" action="/">
+				<fieldset class="modal__options">
+					<legend class="visually-hidden">Тип обращения</legend>
+					<label class="modal__option">
+						<input class="modal__option-input" type="radio" name="request-type" value="question" checked>
+						<span class="modal__option-control" aria-hidden="true"></span>
+						<span>Есть вопрос</span>
+					</label>
+					<label class="modal__option">
+						<input class="modal__option-input" type="radio" name="request-type" value="review">
+						<span class="modal__option-control" aria-hidden="true"></span>
+						<span>Оставить отзыв</span>
+					</label>
+					<label class="modal__option">
+						<input class="modal__option-input" type="radio" name="request-type" value="problem">
+						<span class="modal__option-control" aria-hidden="true"></span>
+						<span>Сообщить о проблеме</span>
+					</label>
+					<label class="modal__option">
+						<input class="modal__option-input" type="radio" name="request-type" value="call">
+						<span class="modal__option-control" aria-hidden="true"></span>
+						<span>Заказать звонок</span>
+					</label>
+				</fieldset>
+
+				<div class="modal__divider" aria-hidden="true"></div>
+
+				<div class="modal__field">
+					<label class="modal__label" for="feedback-name">Имя</label>
+					<input class="modal__control" id="feedback-name" type="text" name="name" placeholder="Введите ваше имя"
+						autocomplete="name">
 				</div>
 
-				<div class="form__row">
-					<div class="form__field">
-						<label class="form__label" for="feedback-phone">Телефон</label>
-						<input class="form__control" id="feedback-phone" type="tel" name="phone" autocomplete="tel">
-					</div>
-
-					<div class="form__field">
-						<label class="form__label" for="feedback-email">Email</label>
-						<input class="form__control" id="feedback-email" type="email" name="email" autocomplete="email">
-					</div>
+				<div class="modal__field">
+					<label class="modal__label" for="feedback-phone">Телефон</label>
+					<input class="modal__control" id="feedback-phone" type="tel" name="phone" placeholder="Введите номер телефона"
+						autocomplete="tel">
 				</div>
 
-				<div class="form__field">
-					<label class="form__label" for="feedback-message">Сообщение</label>
-					<textarea class="form__control form__control--textarea" id="feedback-message" name="message"></textarea>
+				<div class="modal__field">
+					<label class="modal__label" for="feedback-message">Комментарий</label>
+					<textarea class="modal__control modal__control--textarea" id="feedback-message" name="message"
+						placeholder="Опишите ваш вопрос"></textarea>
 				</div>
 
-				<label class="form__checkbox">
-					<input class="form__checkbox-input" type="checkbox" name="privacy" checked>
-					<span class="form__checkbox-control" aria-hidden="true"></span>
-					<span>Согласен на обработку персональных данных</span>
-				</label>
-
-				<div class="form__actions">
-					<button class="button" type="submit">Отправить</button>
-				</div>
+				<button class="modal__submit button" type="submit">Отправить</button>
+				<p class="modal__caption">Мы свяжемся с вами в ближайшее время</p>
 			</form>
 		</div>
 	</div>

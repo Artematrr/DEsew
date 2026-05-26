@@ -15,6 +15,10 @@
 		align-items: center;
 		flex-direction: column;
 		margin-bottom: 52px;
+
+		@include mobile {
+			margin-bottom: 34px;
+		}
 	}
 
 	&__eyebrow {
@@ -26,22 +30,16 @@
 
 	&__logo {
 		margin-bottom: 12px;
+
+		@include mobile {
+			max-width: 280px;
+			margin-bottom: 12px;
+		}
 	}
 
 	&__subtitle {
 		font-size: 16px;
 		font-weight: 300;
 		color: var(--gray-500);
-	}
-
-	@include mobile {
-		&__hero {
-			margin-bottom: 34px;
-		}
-
-		&__logo {
-			max-width: 280px;
-			margin-bottom: 12px;
-		}
 	}
 }
