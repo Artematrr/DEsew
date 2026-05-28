@@ -46,6 +46,7 @@
 		@include square(100px);
 		@include flex-center;
 
+		flex-shrink: 0;
 		background-color: var(--white);
 		border-radius: 50%;
 		box-shadow:
@@ -93,7 +94,7 @@
 	}
 
 	&__subtitle {
-		@include fluid-text(19, 40);
+		@include fluid-text(12, 32);
 		font-weight: 600;
 	}
 
@@ -101,6 +102,7 @@
 		@include fluid-text(10, 20);
 		font-weight: 300;
 		color: var(--gray-500);
+		max-width: 615px;
 	}
 
 	&__link {

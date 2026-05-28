@@ -14,7 +14,6 @@
 
 <body>
 	<header class="header js-header">
-		<h1 class="visually-hidden">Швейная техника DEsew</h1>
 		<div class="header__container container">
 			<a class="header__logo" href="#" aria-label="DEsew">
 				<img class="header__logo-image" src="/images/icons/logo-main.svg" alt="DEsew" width="77" height="17">
@@ -115,11 +114,9 @@
 								fill="#F6CD14" />
 						</svg>
 					</a>
-
 					<span class="header__divider">
 						<img src="images/00-header/header-stitch-01.svg" alt="">
 					</span>
-
 					<a class="header__phone" href="tel:+74952236659" aria-label="Позвонить">
 						<svg class="header__icon" width="23" height="23" viewBox="0 0 23 23" fill="none"
 							xmlns="http://www.w3.org/2000/svg">
@@ -131,7 +128,6 @@
 							+7 (495) 223-66-59
 						</span>
 					</a>
-
 					<button class="header__burger js-menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false"
 						aria-label="Открыть меню">
 						<span></span>
@@ -220,29 +216,29 @@
 	</header>
 
 	<main class="main contacts-page" id="main">
-		<div class="contacts-page__decor decor" aria-hidden="true">
-			<img class="decor__item decor-stitch contacts-page__stitch contacts-page__stitch--top"
-				src="/images/14-contacts-page/contacts-page-stitch-01.svg" alt="">
-			<img class="decor__item decor-stitch contacts-page__stitch contacts-page__stitch--bottom"
-				src="/images/14-contacts-page/contacts-page-stitch-02.svg" alt="">
-			<img class="decor__item decor-button contacts-page__button-decor"
-				src="/images/12-product-page/product-page-button.png" alt="">
-		</div>
+		<nav class="breadcrumbs container" aria-label="Хлебные крошки">
+			<ol class="">
+				<li><a href="#">Главная</a></li>
+				<li><a href="#">Контакты</a></li>
+			</ol>
+		</nav>
 
 		<div class="contacts-page__container container">
-			<nav class="contacts-page__breadcrumbs breadcrumbs" aria-label="Хлебные крошки">
-				<ol class="breadcrumbs__list">
-					<li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Главная</a></li>
-					<li class="breadcrumbs__item"><span class="breadcrumbs__current">Контакты</span></li>
-				</ol>
-			</nav>
+			<!-- <div class="contacts-page__decor decor" aria-hidden="true">
+				<img class="decor__item decor-stitch contacts-page__stitch contacts-page__stitch--top"
+					src="/images/14-contacts-page/contacts-page-stitch-01.svg" alt="">
+				<img class="decor__item decor-stitch contacts-page__stitch contacts-page__stitch--bottom"
+					src="/images/14-contacts-page/contacts-page-stitch-02.svg" alt="">
+				<img class="decor__item decor-button contacts-page__button-decor"
+					src="/images/12-product-page/product-page-button.png" alt="">
+			</div> -->
 
 			<header class="contacts-page__hero">
 				<div>
 					<h1 class="contacts-page__title">Контакты</h1>
 					<p class="contacts-page__subtitle">Свяжитесь с нами для консультации и поддержки</p>
 				</div>
-				<img class="contacts-page__hero-image" src="/images/14-contacts-page/contacts-page-object.png" alt=""
+				<img class="contacts-page__hero-image" src="/images/14-contacts-page/contacts-page-hero.png" alt=""
 					aria-hidden="true">
 			</header>
 
@@ -291,135 +287,34 @@
 						<label class="visually-hidden" for="contacts-message">Сообщение</label>
 						<textarea class="contacts-page__control contacts-page__control--textarea" id="contacts-message"
 							name="message" placeholder="Сообщение"></textarea>
+
+						<div class="contact-card__actions">
 						<button class="contacts-page__submit button" type="submit">Отправить</button>
-						<p class="contacts-page__form-note">Мы ответим в ближайшее время</p>
+						<p class="contacts-page__form-note">Мы ответим в ближайшее время</p></div>
 					</form>
 				</section>
 			</div>
 		</div>
 
-		<section class="dealers section" id="dealers" aria-labelledby="dealers-title">
-			<div class="dealers__container container">
-				<header class="dealers__header">
-					<h2 class="dealers__title" id="dealers-title">Где купить?</h2>
-					<p class="dealers__subtitle">Официальные дилеры DESEW в России</p>
-				</header>
-
-				<div class="dealers__layout">
-					<div class="dealers__map">
-						<img class="dealers__map-image" src="/images/06-dealers/dealers-map-placeholder.jpg"
-							alt="Карта дилеров DEsew">
+		<section class="info-panel container" aria-label="Телефон сервиса">
+			<div class="info-panel__container">
+				<div class="info-panel__right">
+					<div class="info-panel__icon" aria-hidden="true">
+						<img src="/images/icons/cart.svg" alt="">
 					</div>
-
-					<div class="dealers__panel">
-						<div class="dealers__city-dropdown" data-dropdown>
-							<button class="dealers__city" type="button" data-dropdown-toggle aria-expanded="false"
-								aria-controls="dealers-city-list">
-								<span data-dropdown-label>Москва</span>
-								<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"
-									aria-hidden="true">
-									<path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round" />
-								</svg>
-							</button>
-
-							<ul class="dealers__city-list" id="dealers-city-list" role="listbox" aria-label="Выберите город">
-								<li>
-									<button class="dealers__city-option is-active" type="button" data-dropdown-option
-										data-dropdown-value="Москва" role="option" aria-selected="true">Москва</button>
-								</li>
-								<li>
-									<button class="dealers__city-option" type="button" data-dropdown-option
-										data-dropdown-value="Санкт-Петербург" role="option" aria-selected="false">Санкт-Петербург</button>
-								</li>
-								<li>
-									<button class="dealers__city-option" type="button" data-dropdown-option data-dropdown-value="Казань"
-										role="option" aria-selected="false">Казань</button>
-								</li>
-								<li>
-									<button class="dealers__city-option" type="button" data-dropdown-option
-										data-dropdown-value="Екатеринбург" role="option" aria-selected="false">Екатеринбург</button>
-								</li>
-								<li>
-									<button class="dealers__city-option" type="button" data-dropdown-option
-										data-dropdown-value="Новосибирск" role="option" aria-selected="false">Новосибирск</button>
-								</li>
-							</ul>
-						</div>
-
-						<div class="dealers__shops-scroll">
-							<div class="dealers__shops">
-								<article class="dealers__shop is-active">
-									<div class="dealers__shop-content">
-										<h3 class="dealers__shop-title">Москва, ТЦ «Европейский»</h3>
-										<p class="dealers__shop-address">Пл. Киевского вокзала, 2</p>
-										<div class="dealers__shop-meta">
-											<a class="dealers__shop-phone" href="tel:+74952236659">+7 (495) 223-66-59</a>
-											<span class="dealers__shop-time">Пн–Вс: 10:00 – 20:00</span>
-										</div>
-										<a class="dealers__route" href="#">Построить маршрут</a>
-									</div>
-									<img class="dealers__shop-image" src="/images/06-dealers/dealers-shop-01.jpg"
-										alt="Магазин DEsew в ТЦ Европейский">
-								</article>
-
-								<article class="dealers__shop">
-									<div class="dealers__shop-content">
-										<h3 class="dealers__shop-title">Москва, ТЦ «Ривьера»</h3>
-										<p class="dealers__shop-address">ул. Ленинская, 25</p>
-										<div class="dealers__shop-meta">
-											<a class="dealers__shop-phone" href="tel:+74952236659">+7 (495) 223-66-59</a>
-											<span class="dealers__shop-time">Пн–Вс: 10:00 – 20:00</span>
-										</div>
-										<a class="dealers__route" href="#">Построить маршрут</a>
-									</div>
-									<img class="dealers__shop-image" src="/images/06-dealers/dealers-shop-02.jpg"
-										alt="Магазин DEsew в ТЦ Ривьера">
-								</article>
-
-								<article class="dealers__shop">
-									<div class="dealers__shop-content">
-										<h3 class="dealers__shop-title">Москва, ТЦ «Афимолл»</h3>
-										<p class="dealers__shop-address">пр-т Мира, 15</p>
-										<div class="dealers__shop-meta">
-											<a class="dealers__shop-phone" href="tel:+74952236659">+7 (495) 223-66-59</a>
-											<span class="dealers__shop-time">Пн–Вс: 10:00 – 20:00</span>
-										</div>
-										<a class="dealers__route" href="#">Построить маршрут</a>
-									</div>
-									<img class="dealers__shop-image" src="/images/06-dealers/dealers-shop-03.jpg"
-										alt="Магазин DEsew в ТЦ Афимолл">
-								</article>
-
-								<article class="dealers__shop">
-									<div class="dealers__shop-content">
-										<h3 class="dealers__shop-title">Москва, ТЦ «Метрополис»</h3>
-										<p class="dealers__shop-address">Ленинградское шоссе, 16А</p>
-										<div class="dealers__shop-meta">
-											<a class="dealers__shop-phone" href="tel:+74952236659">+7 (495) 223-66-59</a>
-											<span class="dealers__shop-time">Пн–Вс: 10:00 – 20:00</span>
-										</div>
-										<a class="dealers__route" href="#">Построить маршрут</a>
-									</div>
-									<img class="dealers__shop-image" src="/images/06-dealers/dealers-shop-04.jpg"
-										alt="Магазин DEsew в ТЦ Метрополис">
-								</article>
-							</div>
-						</div>
+					<div class="info-panel__content">
+						<p class="info-panel__subtitle">DESEW не осуществляет прямые продажи</p>
+						<p class="info-panel__label">Приобрести оборудование можно у официальных партнёров и на маркетплейсах.</p>
 					</div>
 				</div>
-
-				<div class="dealers__markets-wrap">
-					<p class="dealers__markets-title">Также доступно на:</p>
-					<ul class="dealers__markets" aria-label="Маркетплейсы">
-						<li><img src="/images/06-dealers/dealers-market-01.png" alt="Ozon"></li>
-						<li><img src="/images/06-dealers/dealers-market-02.png" alt="Wildberries"></li>
-						<li><img src="/images/06-dealers/dealers-market-03.png" alt="Яндекс Маркет"></li>
-						<li><img src="/images/06-dealers/dealers-market-04.png" alt="DNS"></li>
-						<li><img src="/images/06-dealers/dealers-market-05.png" alt="Ситилинк"></li>
-					</ul>
-					<img class="dealers__stitch" src="/images/06-dealers/dealers-stitch-01.svg" alt="" aria-hidden="true">
-				</div>
+				<a class="info-panel__link button-plate" href="#">
+					<span>Где купить?</span>
+					<svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd"
+							d="M22.0469 0C34.245 9.68955e-05 44.1338 9.88881 44.1338 22.0869C44.1337 34.2849 34.2449 44.1737 22.0469 44.1738C10.2937 44.1738 0.685458 34.9932 0 23.4121H0.601562C1.33337 23.4121 1.92663 22.8187 1.92676 22.0869C1.92676 21.355 1.33345 20.7617 0.601562 20.7617H0C0.685281 9.18048 10.2936 0 22.0469 0ZM19.6279 12.7158C19.1106 12.1985 18.2714 12.1988 17.7539 12.7158C17.2365 13.2334 17.2364 14.0733 17.7539 14.5908L24.083 20.9209C23.669 21.1451 23.3877 21.5831 23.3877 22.0869C23.3878 22.5907 23.6691 23.0288 24.083 23.2529L17.7539 29.583C17.2365 30.1005 17.2364 30.9405 17.7539 31.458C18.2714 31.9749 19.1106 31.9751 19.6279 31.458L28.0615 23.0244C28.579 22.5069 28.5789 21.6669 28.0615 21.1494L19.6279 12.7158ZM5.42383 20.7617C4.69194 20.7617 4.09863 21.355 4.09863 22.0869C4.09876 22.8187 4.69202 23.4121 5.42383 23.4121H10.2461C10.9779 23.4121 11.5712 22.8187 11.5713 22.0869C11.5713 21.355 10.978 20.7617 10.2461 20.7617H5.42383ZM15.0684 20.7617C14.3365 20.7617 13.7432 21.355 13.7432 22.0869C13.7433 22.8187 14.3366 23.4121 15.0684 23.4121H19.8906C20.6224 23.4121 21.2157 22.8187 21.2158 22.0869C21.2158 21.355 20.6225 20.7617 19.8906 20.7617H15.0684Z"
+							fill="white" fill-opacity="0.88" />
+					</svg>
+				</a>
 			</div>
 		</section>
 
