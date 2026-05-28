@@ -63,4 +63,57 @@
 			bottom: -20%;
 		}
 	}
+
+	&--big {
+		.info-block {
+			&__container {
+				min-height: 450px;
+				padding-block: 120px;
+
+				@include tablet {
+					min-height: auto;
+					padding-block: 30px;
+				}
+			}
+
+			&__content {
+				padding-left: 100px;
+
+				@include tablet {
+					padding-left: 0px;
+				}
+			}
+
+			&__text {
+				@include fluid-text(15, 32);
+
+				  max-width: 720px;
+			}
+
+			&__image {
+				right: -400px;
+				top: -40%;
+				object-fit: none;
+				width: 2767px;
+				height: 2494px;
+
+				@include desktop {
+					top: -60%;
+				}
+
+				@include tablet {
+					width: auto;
+					height: auto;
+					right: -50%;
+					top: 0;
+					transform: translateX(-50%);
+					object-fit: cover;
+				}
+
+				@include mobile {
+					top: 10%;
+				}
+			}
+		}
+	}
 }

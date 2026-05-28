@@ -12,6 +12,7 @@
 		@include visual-frame-layer;
 
 		z-index: 0;
+		overflow: visible;
 	}
 
 	&__stitch {
@@ -35,7 +36,6 @@
 			scale: 0.5;
 			right: calc(600px - 30vw);
 			bottom: -100px;
-
 		}
 	}
 

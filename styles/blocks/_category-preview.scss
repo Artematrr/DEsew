@@ -27,6 +27,7 @@
 		@include visual-frame-layer;
 
 		overflow: visible;
+		z-index: 2;
 
 		@include desktop {
 			display: none;

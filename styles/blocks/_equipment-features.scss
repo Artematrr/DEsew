@@ -1,10 +1,19 @@
 .equipment-features {
 	position: relative;
-	min-height: 760px;
-	margin-bottom: 0;
-	overflow: hidden;
+	min-height: 780px;
+	margin-bottom: 23px;
+	overflow: visible;
 	color: var(--white);
-	background-color: var(--black);
+
+	@include desktop {
+		min-height: 600px;
+	}
+
+	@include tablet {
+		min-height: 340px;
+		margin-bottom: 0px;
+		margin-bottom: 11px;
+	}
 
 	&__bg {
 		@include visual-frame-layer;
@@ -18,294 +27,173 @@
 	&__decor {
 		@include visual-frame-layer;
 
-		z-index: 2;
 		overflow: visible;
-	}
-
-	&__line {
-		top: 0;
-		left: 12px;
-		width: calc(100% - 24px);
-		height: 1px;
-	}
-
-	&__button {
-		pointer-events: none;
-	}
-
-	&__button--large {
-		top: -30px;
-		left: calc(50% - 520px);
-		width: 79px;
-	}
-
-	&__button--small {
-		top: -10px;
-		left: calc(50% - 452px);
-		width: 41px;
+		z-index: 2;
 	}
 
 	&__stitch {
-	}
+		top: 0;
+		left: 0;
+		width: calc(100% - 12px);
+		transform: translateY(-50%);
 
-	&__stitch--center {
-		left: 50%;
-		bottom: 132px;
-		width: 690px;
-		opacity: 0.8;
-		transform: translateX(-50%);
+		@include tablet {
+			width: 100%;
+			left: calc(200px - 40vw);
+			top: -28px;
+			scale: 0.3;
+		}
 	}
 
 	&__container {
-		@include visual-frame-block;
-
 		position: relative;
-		z-index: var(--z-index-base);
+		z-index: 1;
 		min-height: inherit;
-		max-width: 1338px;
-		margin-inline: auto;
+		padding-block-start: 40px;
+		max-width: 1240px;
+	}
+
+	&__header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 12px;
+		margin-bottom: 34px;
+
+		@include tablet {
+			gap: 2px;
+			margin-bottom: 10px;
+		}
 	}
 
 	&__title {
-		position: absolute;
-		top: 44px;
-		right: 0;
-		left: 0;
-		z-index: 3;
-		font-size: 34px;
+		@include fluid-text(16, 32);
+
 		font-weight: 700;
-		line-height: 1.1;
 		text-align: center;
 		color: var(--primary-500);
+		text-shadow: 0 4px 12px 0 rgba(246, 205, 20, 0.24);
+	}
+
+	&__subtitle {
+		@include fluid-text(8, 16);
+
+		font-weight: 300;
+		text-align: center;
+		color: var(--gray-300);
+		max-width: 350px;
 	}
 
 	&__object {
 		position: absolute;
-		z-index: 2;
-		left: 50%;
-		bottom: 72px;
-		width: 600px;
+		z-index: 1;
+		left: calc(50% - 30px);
+		top: calc(50% + 80px);
+		width: 852px;
 		height: auto;
 		object-fit: contain;
-		transform: translateX(-50%);
+		transform: translateX(-50%) translateY(-50%);
+		transform-origin: 0% 0%;
+
+		@include desktop {
+			top: calc(50% + 60px);
+			transform: scale(0.8) translateX(-50%) translateY(-50%);
+		}
+
+		@include tablet {
+			top: calc(50% + 40px);
+			left: calc(50% - 10px);
+			transform: scale(0.4) translateX(-50%) translateY(-50%);
+		}
 	}
 
 	&__item {
 		position: absolute;
-		z-index: 3;
-		width: 250px;
+		z-index: 2;
+		width: 275px;
 		color: var(--white);
+
+		@include tablet {
+			width: 180px;
+		}
+
+		@include mobile {
+			width: 120px;
+		}
 	}
 
-	&__item--power {
-		top: 192px;
-		left: 206px;
+	&__item--top-left {
+		top: 136px;
+		left: 30px;
 	}
 
-	&__item--control {
-		top: 194px;
-		right: 170px;
+	&__item--top-right {
+		top: 136px;
+		right: 0;
 	}
 
-	&__item--construction {
-		left: 206px;
-		bottom: 178px;
+	&__item--bottom-left {
+		left: 30px;
+		top: 370px;
 	}
 
-	&__item--durability {
-		right: 170px;
-		bottom: 172px;
+	&__item--bottom-right {
+		top: 370px;
+		right: 0;
+	}
+
+	@include tablet {
+		&__item--top-left,
+		&__item--bottom-left {
+			left: 20px;
+		}
+
+		&__item--top-right,
+		&__item--bottom-right {
+			right: 20px;
+		}
+
+		&__item--top-left,
+		&__item--top-right {
+			top: 80px;
+		}
+
+		&__item--bottom-left,
+		&__item--bottom-right {
+			top: 200px;
+		}
 	}
 
 	&__icon {
-		@include square(72px);
+		@include square(97px);
 
-		margin-bottom: 14px;
+		margin-bottom: 10px;
 		object-fit: contain;
+
+		@include tablet {
+			margin-bottom: 4px;
+			width: 27px;
+		}
 	}
 
 	&__item-title {
-		margin-bottom: 10px;
-		font-size: 18px;
+		@include fluid-text(8, 16);
+
 		font-weight: 700;
 		line-height: 1.2;
+		margin-bottom: 10px;
+		color: var(--white);
+
+		@include tablet {
+			margin-bottom: 4px;
+		}
 	}
 
-	&__text {
-		font-size: 14px;
+	&__item-text {
+		@include fluid-text(8, 15);
+
 		line-height: 1.25;
-		color: rgba(255, 255, 255, 0.78);
-	}
-
-	@include desktop {
-		&__button--large {
-			left: calc(50% - 470px);
-		}
-
-		&__button--small {
-			left: calc(50% - 404px);
-		}
-
-		&__item--power,
-		&__item--construction {
-			left: 120px;
-		}
-
-		&__item--control,
-		&__item--durability {
-			right: 110px;
-		}
-
-		&__object {
-			width: 560px;
-		}
-	}
-
-	@include tablet-s {
-		min-height: 670px;
-
-		&__title {
-			top: 34px;
-			font-size: 28px;
-		}
-
-		&__object {
-			bottom: 52px;
-			width: min(76vw, 650px);
-		}
-
-		&__item {
-			width: 245px;
-		}
-
-		&__item--power,
-		&__item--construction {
-			left: 42px;
-		}
-
-		&__item--control,
-		&__item--durability {
-			right: 36px;
-		}
-
-		&__item--power,
-		&__item--control {
-			top: 124px;
-		}
-
-		&__item--construction,
-		&__item--durability {
-			bottom: 104px;
-		}
-
-		&__text {
-			font-size: 13px;
-		}
-	}
-
-	@include mobile {
-		min-height: 536px;
-
-		&__title {
-			top: 24px;
-			padding-inline: 18px;
-			font-size: 22px;
-		}
-
-		&__button--large {
-			top: -17px;
-			left: 200px;
-			width: 46px;
-		}
-
-		&__button--small {
-			top: -8px;
-			left: 240px;
-			width: 24px;
-		}
-
-		&__object {
-			bottom: 92px;
-			width: 62vw;
-			min-width: 360px;
-		}
-
-		&__stitch--center {
-			bottom: 92px;
-			width: 420px;
-		}
-
-		&__item {
-			width: 190px;
-		}
-
-		&__item--power,
-		&__item--construction {
-			left: 54px;
-		}
-
-		&__item--control,
-		&__item--durability {
-			right: 42px;
-		}
-
-		&__item--power,
-		&__item--control {
-			top: 96px;
-		}
-
-		&__item--construction,
-		&__item--durability {
-			bottom: 76px;
-		}
-
-		&__icon {
-			@include square(54px);
-
-			margin-bottom: 8px;
-		}
-
-		&__item-title {
-			margin-bottom: 6px;
-			font-size: 12px;
-		}
-
-		&__text {
-			font-size: 10px;
-			line-height: 1.2;
-		}
-	}
-
-	@include mobile-s {
-		min-height: 620px;
-
-		&__object {
-			bottom: 210px;
-			min-width: 330px;
-		}
-
-		&__item {
-			width: calc(50% - 22px);
-		}
-
-		&__item--power,
-		&__item--construction {
-			left: 18px;
-		}
-
-		&__item--control,
-		&__item--durability {
-			right: 18px;
-		}
-
-		&__item--power,
-		&__item--control {
-			top: 90px;
-		}
-
-		&__item--construction,
-		&__item--durability {
-			bottom: 42px;
-		}
+		font-weight: 300;
+		color: var(--white);
 	}
 }

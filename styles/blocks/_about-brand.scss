@@ -15,7 +15,7 @@
 
 	@include mobile {
 		padding: 40px 10px;
-				min-height: 320px;
+		min-height: 320px;
 	}
 
 	&__image {
@@ -88,9 +88,12 @@
 		--button-plate-arrow-to: rgba(254, 206, 106, 0.74);
 
 		justify-content: space-between;
-		min-width: 226px;
-		min-height: 36px;
-
+		
+		span {
+			min-width: 226px;
+			min-height: 36px;
+		}
+		
 		@include hover {
 			color: var(--black);
 			--button-plate-arrow-from: rgba(246, 205, 20, 1);
