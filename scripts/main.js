@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			return
 		}
 
+		closeProductLightbox()
 		menu.classList.add('is-catalog-open')
 		mobileMenuView.setAttribute('aria-hidden', 'true')
 		mobileCatalogView.setAttribute('aria-hidden', 'false')
@@ -48,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			return
 		}
 
+		closeProductLightbox()
 		menu.classList.add('is-open')
 		menu.setAttribute('aria-hidden', 'false')
 		menuToggle.classList.add('is-active')
@@ -155,6 +157,18 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	})
 
+	const closeProductLightbox = () => {
+		const lightbox = document.querySelector('.js-product-lightbox')
+
+		if (!lightbox) {
+			return
+		}
+
+		lightbox.classList.remove('is-open')
+		lightbox.setAttribute('aria-hidden', 'true')
+		body.classList.remove('is-lock')
+	}
+
 	// Dropdowns
 	document.querySelectorAll('[data-dropdown]').forEach(dropdown => {
 		const toggle = dropdown.querySelector('[data-dropdown-toggle]')
@@ -168,6 +182,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			const isOpen = dropdown.classList.toggle('is-open')
 
 			toggle.setAttribute('aria-expanded', String(isOpen))
+
+			if (isOpen && dropdown.closest('.header')) {
+				closeProductLightbox()
+			}
 		})
 
 		dropdown.querySelectorAll('[data-dropdown-option]').forEach(option => {
@@ -559,13 +577,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		const closeLightbox = () => {
-			if (!lightbox) {
-				return
-			}
-
-			lightbox.classList.remove('is-open')
-			lightbox.setAttribute('aria-hidden', 'true')
-			body.classList.remove('is-lock')
+			closeProductLightbox()
 		}
 
 		thumbs.forEach((thumb, index) => {
@@ -683,6 +695,36 @@ document.addEventListener('DOMContentLoaded', () => {
 				pagination: {
 					el: slider.querySelector('.products__pagination'),
 					clickable: true,
+				},
+			})
+		})
+
+		document.querySelectorAll('.js-product-marketplaces-slider').forEach(slider => {
+			const swiperElement = slider.querySelector('.swiper')
+
+			if (!swiperElement || swiperElement.dataset.swiperInitialized) {
+				return
+			}
+
+			swiperElement.dataset.swiperInitialized = 'true'
+
+			new Swiper(swiperElement, {
+				slidesPerView: 3,
+				spaceBetween: 18,
+				speed: 450,
+				loop: true,
+				a11y: false,
+				navigation: {
+					prevEl: slider.querySelector('.product-marketplaces__button--prev'),
+					nextEl: slider.querySelector('.product-marketplaces__button--next'),
+				},
+				breakpoints: {
+					768: {
+						spaceBetween: 22,
+					},
+					1024: {
+						spaceBetween: 26,
+					},
 				},
 			})
 		})
