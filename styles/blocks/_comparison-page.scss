@@ -1,104 +1,95 @@
 .comparison-page {
-	position: relative;
-	overflow: hidden;
-	background-color: var(--white);
+	--comparison-inner-width: 1230px;
+
+	&__container {
+		position: relative;
+		max-width: calc(1390px + var(--container-padding-x) * 2);
+		padding-block: 22px 142px;
+
+		@include tablet {
+			padding-block: 0px 31px;
+		}
+	}
 
 	&__decor {
 		@include visual-frame-layer;
 
 		z-index: 0;
+		overflow: visible;
 	}
 
 	&__stitch {
 	}
 
 	&__stitch--left {
-		left: -290px;
-		top: 260px;
-		width: 760px;
-		opacity: 0.75;
+		left: -80px;
+		top: 100px;
+
+		@include tablet {
+			scale: 0.5;
+			transform: translateX(50%);
+			left: calc(50% - 630px);
+			top: -270px;
+		}
+		@include mobile-s {
+			scale: 0.3;
+			transform: translateX(50%);
+			left: calc(50% - 326px);
+			top: -345px;
+		}
 	}
 
 	&__stitch--right {
-		right: -240px;
-		top: 120px;
-		width: 880px;
-		opacity: 0.72;
-	}
+		right: -110px;
+		top: -90px;
 
-	&__stitch--bottom {
-		right: -180px;
-		bottom: 360px;
-		width: 760px;
-		opacity: 0.6;
-	}
-
-	&__button {
-		width: 74px;
-	}
-
-	&__button--left {
-		left: 145px;
-		top: 430px;
-	}
-
-	&__button--right {
-		right: 180px;
-		top: 390px;
-		filter: grayscale(1);
-	}
-
-	&__container {
-		position: relative;
-		z-index: var(--z-index-base);
-	}
-
-	&__breadcrumbs {
-		padding-block: 48px 68px;
+		@include tablet {
+			scale: 0.5;
+			transform: translateX(50%);
+			right: calc(50% - 500px);
+			top: -270px;
+		}
+		@include mobile-s {
+			scale: 0.3;
+			transform: translateX(50%);
+			right: calc(50% - 260px);
+			top: -355px;
+		}
 	}
 
 	&__hero {
 		position: relative;
-		z-index: var(--z-index-base);
-		margin-bottom: 48px;
+		z-index: 1;
+		margin-bottom: 38px;
 		text-align: center;
+
+		@include tablet {
+			margin-bottom: 7px;
+		}
 	}
 
 	&__title {
+		@include fluid-text(18, 48);
+
 		margin-bottom: 14px;
-		font-size: clamp(42px, 3.2vw, 58px);
-		font-weight: 800;
-		line-height: 1;
+		font-weight: 700;
+		line-height: 1.05;
 		color: var(--primary-500);
+
+		@include tablet {
+			margin-bottom: 5px;
+		}
 	}
 
 	&__subtitle {
-		font-size: 18px;
+		@include fluid-text(6, 16);
+
+		font-weight: 300;
 		color: var(--gray-500);
-	}
 
-	@include tablet {
-		&__breadcrumbs {
-			padding-block: 34px 42px;
-		}
-	}
-
-	@include mobile {
-		&__breadcrumbs {
-			padding-block: 22px 24px;
-		}
-
-		&__hero {
-			margin-bottom: 28px;
-			text-align: left;
-		}
-
-		&__title {
-			font-size: 30px;
-		}
-
-		&__subtitle {
-			font-size: 15px;
+		@include tablet {
+			margin-inline: auto;
+			max-width: 430px;
 		}
 	}
 }

@@ -1,0 +1,67 @@
+.dropdown {
+	position: relative;
+	z-index: var(--z-index-dropdown);
+
+	&__button {
+		@include reset-button;
+
+		width: 100%;
+		cursor: pointer;
+	}
+
+	&__label {
+		min-width: 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	&__arrow {
+		flex-shrink: 0;
+		transition-property: transform;
+		transition-duration: var(--transition-duration);
+		transition-timing-function: var(--transition-timing-function);
+	}
+
+	&.is-open &__arrow {
+		transform: scaleY(-1);
+	}
+
+	&__list {
+		position: absolute;
+		top: 100%;
+		right: 0;
+		left: 0;
+		z-index: var(--z-index-dropdown);
+		display: grid;
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+		transform: translateY(-6px);
+		transition-property: visibility, opacity, transform;
+		transition-duration: var(--transition-duration);
+		transition-timing-function: var(--transition-timing-function);
+	}
+
+	&.is-open &__list {
+		visibility: visible;
+		opacity: 1;
+		pointer-events: auto;
+		transform: translateY(0);
+	}
+
+	&__option {
+		@include reset-button;
+
+		width: 100%;
+		text-align: left;
+		cursor: pointer;
+		transition-property: color, background-color;
+		transition-duration: var(--transition-duration);
+		transition-timing-function: var(--transition-timing-function);
+
+		&.is-active {
+			background-color: var(--primary-100);
+		}
+	}
+}

@@ -569,36 +569,38 @@
 					</div>
 
 					<div class="dealers__panel">
-						<div class="dealers__city-dropdown" data-dropdown>
-							<button class="dealers__city" type="button" data-dropdown-toggle aria-expanded="false"
+							<div class="dealers__city-dropdown dropdown" data-dropdown>
+							<button class="dealers__city dropdown__button" type="button" data-dropdown-toggle aria-expanded="false"
 								aria-controls="dealers-city-list">
-								<span data-dropdown-label>Москва</span>
-								<svg width="19" height="11" viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<span class="dropdown__label" data-dropdown-label>Москва</span>
+								<svg class="dropdown__arrow" width="19" height="11" viewBox="0 0 19 11" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
 									<path
 										d="M9.0153 10.2958C9.18816 10.2973 9.35934 10.2621 9.51744 10.1926C9.67553 10.1231 9.81691 10.021 9.93214 9.89295L17.6836 2.00325C17.9089 1.78167 18.0215 1.50861 18.0215 1.17512C18.0236 1.02117 17.9948 0.868354 17.9368 0.725582C17.8789 0.582809 17.7928 0.452941 17.6838 0.343556C17.5747 0.234171 17.4449 0.147461 17.3017 0.088484C17.1586 0.0295073 17.0051 -0.00055384 16.8501 5.46693e-05C16.6914 0.000353811 16.5343 0.0317415 16.3878 0.0924222C16.2413 0.153103 16.1083 0.241886 15.9964 0.353692L9.0153 7.47121L2.03425 0.353692C1.80708 0.129527 1.50064 0.00259547 1.18048 5.46693e-05C1.02486 -0.00144545 0.870502 0.0279406 0.726459 0.0864898C0.582416 0.145039 0.451588 0.231573 0.341646 0.341018C0.231703 0.450462 0.14486 0.580615 0.0862068 0.723844C0.0275539 0.867073 -0.00172774 1.0205 7.8774e-05 1.17512C7.8774e-05 1.49742 0.121723 1.78167 0.346991 2.00325L8.10071 9.89295C8.36428 10.166 8.67064 10.2958 9.0153 10.2958Z"
 										fill="#F6CD14" />
 								</svg>
 							</button>
 
-							<ul class="dealers__city-list" id="dealers-city-list" role="listbox" aria-label="Выберите город">
+							<ul class="dealers__city-list dropdown__list" id="dealers-city-list" role="listbox"
+								aria-label="Выберите город">
 								<li>
-									<button class="dealers__city-option is-active" type="button" data-dropdown-option
+									<button class="dealers__city-option dropdown__option is-active" type="button" data-dropdown-option
 										data-dropdown-value="Москва" role="option" aria-selected="true">Москва</button>
 								</li>
 								<li>
-									<button class="dealers__city-option" type="button" data-dropdown-option
+									<button class="dealers__city-option dropdown__option" type="button" data-dropdown-option
 										data-dropdown-value="Санкт-Петербург" role="option" aria-selected="false">Санкт-Петербург</button>
 								</li>
 								<li>
-									<button class="dealers__city-option" type="button" data-dropdown-option data-dropdown-value="Казань"
-										role="option" aria-selected="false">Казань</button>
+									<button class="dealers__city-option dropdown__option" type="button" data-dropdown-option
+										data-dropdown-value="Казань" role="option" aria-selected="false">Казань</button>
 								</li>
 								<li>
-									<button class="dealers__city-option" type="button" data-dropdown-option
+									<button class="dealers__city-option dropdown__option" type="button" data-dropdown-option
 										data-dropdown-value="Екатеринбург" role="option" aria-selected="false">Екатеринбург</button>
 								</li>
 								<li>
-									<button class="dealers__city-option" type="button" data-dropdown-option
+									<button class="dealers__city-option dropdown__option" type="button" data-dropdown-option
 										data-dropdown-value="Новосибирск" role="option" aria-selected="false">Новосибирск</button>
 								</li>
 							</ul>

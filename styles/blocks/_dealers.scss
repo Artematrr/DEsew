@@ -144,34 +144,22 @@
 	}
 
 	&__city-dropdown {
-		position: relative;
-		z-index: var(--z-index-dropdown);
+		.dealers__city-list {
+			margin-right: 21px;
+
+			@include tablet {
+				margin-right: 0px;
+			}
+		}
 
 		&.is-open {
 			.dealers__city {
 				border-radius: var(--border-radius-sm) var(--border-radius-sm) 0 0;
-
-				svg {
-					transform: scaleY(-1);
-				}
-			}
-
-			.dealers__city-list {
-				visibility: visible;
-				opacity: 1;
-				transform: translateY(0);
-				pointer-events: auto;
-				margin-right: 21px;
-
-				@include tablet {
-					margin-right: 0px;
-				}
 			}
 		}
 	}
 
 	&__city {
-		@include reset-button;
 		@include fluid-text(7, 20);
 
 		display: flex;
@@ -206,39 +194,24 @@
 	}
 
 	&__city-list {
-		position: absolute;
-		top: 100%;
-		right: 0;
-		left: 0;
-		display: grid;
 		padding: 8px;
-		visibility: hidden;
-		opacity: 0;
 		background-color: var(--white);
 		border-top: 1px solid var(--gray-100);
 		border-radius: 0 0 var(--border-radius-sm) var(--border-radius-sm);
 		box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25);
-		transform: translateY(-6px);
-		pointer-events: none;
-		transition-property: visibility, opacity, transform;
 	}
 
 	&__city-option {
-		@include reset-button;
 		@include fluid-text(7, 20);
 
-		width: 100%;
 		padding: 7px 16px 7px 28px;
 		font-weight: 600;
 		line-height: 1.15;
-		text-align: left;
 		color: var(--gray-500);
 		border-radius: var(--border-radius-xs);
-		transition-property: color, background-color;
 
 		&.is-active {
 			color: var(--black);
-			background-color: var(--primary-100);
 		}
 
 		@include hover {

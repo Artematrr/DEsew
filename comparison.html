@@ -219,272 +219,293 @@
 	</header>
 
 	<main class="main comparison-page" id="main">
-		<div class="comparison-page__decor decor" aria-hidden="true">
-			<img
-				class="decor__item decor-stitch decor__item--mobile-hidden comparison-page__stitch comparison-page__stitch--left"
-				src="/images/21-comparison-page/comparison-page-stitch-01.svg" alt="">
-			<img
-				class="decor__item decor-stitch decor__item--mobile-hidden comparison-page__stitch comparison-page__stitch--right"
-				src="/images/21-comparison-page/comparison-page-stitch-02.svg" alt="">
-			<img
-				class="decor__item decor-stitch decor__item--mobile-hidden comparison-page__stitch comparison-page__stitch--bottom"
-				src="/images/21-comparison-page/comparison-page-stitch-03.svg" alt="">
-			<img
-				class="decor__item decor-button decor__item--mobile-hidden comparison-page__button comparison-page__button--left"
-				src="/images/07-support/support-button-01.png" alt="">
-			<img
-				class="decor__item decor-button decor__item--mobile-hidden comparison-page__button comparison-page__button--right"
-				src="/images/07-support/support-button-02.png" alt="">
-		</div>
+		<nav class="breadcrumbs container" aria-label="Хлебные крошки">
+			<ol class="breadcrumbs__list">
+				<li><a href="#">Главная</a></li>
+				<li><a href="#">Сравнение моделей DESEW</a></li>
+			</ol>
+		</nav>
 
 		<div class="comparison-page__container container">
-			<nav class="comparison-page__breadcrumbs breadcrumbs" aria-label="Хлебные крошки">
-				<ol class="breadcrumbs__list">
-					<li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Главная</a></li>
-					<li class="breadcrumbs__item"><span class="breadcrumbs__current">Сравнение моделей DESEW</span></li>
-				</ol>
-			</nav>
+			<div class="comparison-page__decor decor" aria-hidden="true">
+				<img class="decor__item comparison-page__stitch comparison-page__stitch--left"
+					src="/images/21-comparison-page/comparison-page-stitch-01.svg" alt="">
+				<img class="decor__item comparison-page__stitch comparison-page__stitch--right"
+					src="/images/21-comparison-page/comparison-page-stitch-02.svg" alt="">
+			</div>
+
+			<header class="comparison-page__hero">
+				<h1 class="comparison-page__title">Сравнение моделей DESEW</h1>
+				<p class="comparison-page__subtitle">Выберите модель и сравните ключевые характеристики</p>
+			</header>
+
+			<section class="comparison-products" aria-label="Сравниваемые модели">
+				<div class="comparison-products__grid">
+					<div class="comparison-products__item">
+						<article class="product-card">
+							<a class="product-card__image-link" href="#">
+								<img class="product-card__image" src="/images/products/sewing-machine-03.jpg"
+									alt="DESEW Embroidery E900">
+							</a>
+							<div class="product-card__content">
+								<p class="product-card__label">популярное</p>
+								<h2 class="product-card__title"><a href="#">DESEW Embroidery E900</a></h2>
+								<p class="product-card__price">₽ 112 000</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<div class="comparison-products__select dropdown" data-dropdown>
+							<button class="comparison-products__select-button dropdown__button" type="button" data-dropdown-toggle
+								aria-expanded="false">
+								<span class="dropdown__label" data-dropdown-label>DESEW Embroidery E900</span>
+								<svg class="comparison-products__select-arrow dropdown__arrow" width="22" height="10"
+									viewBox="0 0 22 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+									<path
+										d="M9.0153 10.2958C9.18816 10.2973 9.35934 10.2621 9.51744 10.1926C9.67553 10.1231 9.81691 10.021 9.93214 9.89295L17.6836 2.00325C17.9089 1.78167 18.0215 1.50861 18.0215 1.17512C18.0236 1.02117 17.9948 0.868354 17.9368 0.725582C17.8789 0.582809 17.7928 0.452941 17.6838 0.343556C17.5747 0.234171 17.4449 0.147461 17.3017 0.088484C17.1586 0.0295073 17.0051 -0.00055384 16.8501 5.46693e-05C16.6914 0.000353811 16.5343 0.0317415 16.3878 0.0924222C16.2413 0.153103 16.1083 0.241886 15.9964 0.353692L9.0153 7.47121L2.03425 0.353692C1.80708 0.129527 1.50064 0.00259547 1.18048 5.46693e-05C1.02486 -0.00144545 0.870502 0.0279406 0.726459 0.0864898C0.582416 0.145039 0.451588 0.231573 0.341646 0.341018C0.231703 0.450462 0.14486 0.580615 0.0862068 0.723844C0.0275539 0.867073 -0.00172774 1.0205 7.8774e-05 1.17512C7.8774e-05 1.49742 0.121723 1.78167 0.346991 2.00325L8.10071 9.89295C8.36428 10.166 8.67064 10.2958 9.0153 10.2958Z"
+										fill="currentColor" />
+								</svg>
+							</button>
+							<ul class="comparison-products__select-list dropdown__list" role="listbox">
+								<li><button class="comparison-products__select-option dropdown__option is-active" type="button"
+										data-dropdown-option data-dropdown-value="DESEW Embroidery E900" role="option"
+										aria-selected="true">DESEW Embroidery
+										E900</button></li>
+								<li><button class="comparison-products__select-option dropdown__option" type="button"
+										data-dropdown-option data-dropdown-value="DESEW Overlock X5" role="option"
+										aria-selected="false">DESEW Overlock
+										X5</button>
+								</li>
+								<li><button class="comparison-products__select-option dropdown__option" type="button"
+										data-dropdown-option data-dropdown-value="DESEW SmartStitch 500" role="option"
+										aria-selected="false">DESEW SmartStitch
+										500</button></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="comparison-products__item">
+						<article class="product-card">
+							<a class="product-card__image-link" href="#">
+								<img class="product-card__image" src="/images/products/sewing-machine-02.jpg" alt="DESEW Overlock X5">
+							</a>
+							<div class="product-card__content">
+								<p class="product-card__label">новинка</p>
+								<h2 class="product-card__title"><a href="#">DESEW Overlock X5</a></h2>
+								<p class="product-card__price">₽ 64 500</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<div class="comparison-products__select dropdown" data-dropdown>
+							<button class="comparison-products__select-button dropdown__button" type="button" data-dropdown-toggle
+								aria-expanded="false">
+								<span class="dropdown__label" data-dropdown-label>DESEW Overlock X5</span>
+								<svg class="comparison-products__select-arrow dropdown__arrow" width="19" height="11"
+									viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+									<path
+										d="M9.0153 10.2958C9.18816 10.2973 9.35934 10.2621 9.51744 10.1926C9.67553 10.1231 9.81691 10.021 9.93214 9.89295L17.6836 2.00325C17.9089 1.78167 18.0215 1.50861 18.0215 1.17512C18.0236 1.02117 17.9948 0.868354 17.9368 0.725582C17.8789 0.582809 17.7928 0.452941 17.6838 0.343556C17.5747 0.234171 17.4449 0.147461 17.3017 0.088484C17.1586 0.0295073 17.0051 -0.00055384 16.8501 5.46693e-05C16.6914 0.000353811 16.5343 0.0317415 16.3878 0.0924222C16.2413 0.153103 16.1083 0.241886 15.9964 0.353692L9.0153 7.47121L2.03425 0.353692C1.80708 0.129527 1.50064 0.00259547 1.18048 5.46693e-05C1.02486 -0.00144545 0.870502 0.0279406 0.726459 0.0864898C0.582416 0.145039 0.451588 0.231573 0.341646 0.341018C0.231703 0.450462 0.14486 0.580615 0.0862068 0.723844C0.0275539 0.867073 -0.00172774 1.0205 7.8774e-05 1.17512C7.8774e-05 1.49742 0.121723 1.78167 0.346991 2.00325L8.10071 9.89295C8.36428 10.166 8.67064 10.2958 9.0153 10.2958Z"
+										fill="currentColor" />
+								</svg>
+							</button>
+							<ul class="comparison-products__select-list dropdown__list" role="listbox">
+								<li><button class="comparison-products__select-option dropdown__option" type="button"
+										data-dropdown-option data-dropdown-value="DESEW Embroidery E900" role="option"
+										aria-selected="false">DESEW Embroidery
+										E900</button></li>
+								<li><button class="comparison-products__select-option dropdown__option is-active" type="button"
+										data-dropdown-option data-dropdown-value="DESEW Overlock X5" role="option"
+										aria-selected="true">DESEW Overlock
+										X5</button>
+								</li>
+								<li><button class="comparison-products__select-option dropdown__option" type="button"
+										data-dropdown-option data-dropdown-value="DESEW SmartStitch 500" role="option"
+										aria-selected="false">DESEW SmartStitch
+										500</button></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="comparison-products__item">
+						<article class="product-card">
+							<a class="product-card__image-link" href="#">
+								<img class="product-card__image" src="/images/products/sewing-machine-04.jpg"
+									alt="DESEW SmartStitch 500">
+							</a>
+							<div class="product-card__content">
+								<p class="product-card__label">в наличии</p>
+								<h2 class="product-card__title"><a href="#">DESEW SmartStitch 500</a></h2>
+								<p class="product-card__price">₽ 52 900</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<div class="comparison-products__select dropdown" data-dropdown>
+							<button class="comparison-products__select-button dropdown__button" type="button" data-dropdown-toggle
+								aria-expanded="false">
+								<span class="dropdown__label" data-dropdown-label>DESEW SmartStitch 500</span>
+								<svg class="comparison-products__select-arrow dropdown__arrow" width="19" height="11"
+									viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+									<path
+										d="M9.0153 10.2958C9.18816 10.2973 9.35934 10.2621 9.51744 10.1926C9.67553 10.1231 9.81691 10.021 9.93214 9.89295L17.6836 2.00325C17.9089 1.78167 18.0215 1.50861 18.0215 1.17512C18.0236 1.02117 17.9948 0.868354 17.9368 0.725582C17.8789 0.582809 17.7928 0.452941 17.6838 0.343556C17.5747 0.234171 17.4449 0.147461 17.3017 0.088484C17.1586 0.0295073 17.0051 -0.00055384 16.8501 5.46693e-05C16.6914 0.000353811 16.5343 0.0317415 16.3878 0.0924222C16.2413 0.153103 16.1083 0.241886 15.9964 0.353692L9.0153 7.47121L2.03425 0.353692C1.80708 0.129527 1.50064 0.00259547 1.18048 5.46693e-05C1.02486 -0.00144545 0.870502 0.0279406 0.726459 0.0864898C0.582416 0.145039 0.451588 0.231573 0.341646 0.341018C0.231703 0.450462 0.14486 0.580615 0.0862068 0.723844C0.0275539 0.867073 -0.00172774 1.0205 7.8774e-05 1.17512C7.8774e-05 1.49742 0.121723 1.78167 0.346991 2.00325L8.10071 9.89295C8.36428 10.166 8.67064 10.2958 9.0153 10.2958Z"
+										fill="currentColor" />
+								</svg>
+							</button>
+							<ul class="comparison-products__select-list dropdown__list" role="listbox">
+								<li><button class="comparison-products__select-option dropdown__option" type="button"
+										data-dropdown-option data-dropdown-value="DESEW Embroidery E900" role="option"
+										aria-selected="false">DESEW Embroidery
+										E900</button></li>
+								<li><button class="comparison-products__select-option dropdown__option" type="button"
+										data-dropdown-option data-dropdown-value="DESEW Overlock X5" role="option"
+										aria-selected="false">DESEW Overlock
+										X5</button>
+								</li>
+								<li><button class="comparison-products__select-option dropdown__option is-active" type="button"
+										data-dropdown-option data-dropdown-value="DESEW SmartStitch 500" role="option"
+										aria-selected="true">DESEW SmartStitch
+										500</button></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="comparison-section" aria-labelledby="comparison-main-title">
+				<div class="comparison-section__container">
+					<h2 class="comparison-section__title" id="comparison-main-title">Основные характеристики</h2>
+					<div class="comparison-table">
+						<div class="comparison-table__row">
+							<div class="comparison-table__cell">
+								<p class="comparison-table__feature">Автоматическая петля<img class="comparison-table__icon"
+										src="/images/icons/feature-good.svg" alt=""></p>
+								<p class="comparison-table__feature">Полуавтоматическая петля<img class="comparison-table__icon"
+										src="/images/icons/feature-good.svg" alt=""></p>
+								<p class="comparison-table__feature">Декоративные строчки<img class="comparison-table__icon"
+										src="/images/icons/feature-good.svg" alt=""></p>
+								<p class="comparison-table__feature">Оверлочные строчки<img class="comparison-table__icon"
+										src="/images/icons/feature-good.svg" alt=""></p>
+								<p class="comparison-table__feature">ЖК-дисплей<img class="comparison-table__icon"
+										src="/images/icons/feature-good.svg" alt=""></p>
+								<p class="comparison-table__feature">Регулировка скорости<img class="comparison-table__icon"
+										src="/images/icons/feature-good.svg" alt=""></p>
+							</div>
+							<div class="comparison-table__cell">
+								<p class="comparison-table__feature">Автоматическая петля<img class="comparison-table__icon"
+										src="/images/icons/feature-good.svg" alt=""></p>
+								<p class="comparison-table__feature">Полуавтоматическая петля<img class="comparison-table__icon"
+										src="/images/icons/feature-good.svg" alt=""></p>
+								<p class="comparison-table__feature">Декоративные строчки<img class="comparison-table__icon"
+										src="/images/icons/feature-good.svg" alt=""></p>
+								<p class="comparison-table__feature">Оверлочные строчки<img class="comparison-table__icon"
+										src="/images/icons/feature-good.svg" alt=""></p>
+								<p class="comparison-table__feature">ЖК-дисплей<img class="comparison-table__icon"
+										src="/images/icons/feature-cross.svg" alt=""></p>
+								<p class="comparison-table__feature">Регулировка скорости<img class="comparison-table__icon"
+										src="/images/icons/feature-good.svg" alt=""></p>
+							</div>
+							<div class="comparison-table__cell">
+								<p class="comparison-table__feature">Автоматическая петля<img class="comparison-table__icon"
+										src="/images/icons/feature-good.svg" alt=""></p>
+								<p class="comparison-table__feature">Полуавтоматическая петля<img class="comparison-table__icon"
+										src="/images/icons/feature-good.svg" alt=""></p>
+								<p class="comparison-table__feature">Декоративные строчки<img class="comparison-table__icon"
+										src="/images/icons/feature-cross.svg" alt=""></p>
+								<p class="comparison-table__feature">Оверлочные строчки<img class="comparison-table__icon"
+										src="/images/icons/feature-good.svg" alt=""></p>
+								<p class="comparison-table__feature">ЖК-дисплей<img class="comparison-table__icon"
+										src="/images/icons/feature-good.svg" alt=""></p>
+								<p class="comparison-table__feature">Регулировка скорости<img class="comparison-table__icon"
+										src="/images/icons/feature-good.svg" alt=""></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="comparison-section" aria-labelledby="comparison-extra-title">
+				<div class="comparison-section__container">
+					<h2 class="comparison-section__title" id="comparison-extra-title">Дополнительные функции</h2>
+					<div class="comparison-table">
+						<div class="comparison-table__row">
+							<div class="comparison-table__cell">
+								<p class="comparison-table__feature">Нитевдеватель<img class="comparison-table__icon"
+										src="/images/icons/feature-good.svg" alt=""></p>
+								<p class="comparison-table__feature">Автообрезка нити<img class="comparison-table__icon"
+										src="/images/icons/feature-good.svg" alt=""></p>
+							</div>
+							<div class="comparison-table__cell">
+								<p class="comparison-table__feature">Нитевдеватель<img class="comparison-table__icon"
+										src="/images/icons/feature-good.svg" alt=""></p>
+								<p class="comparison-table__feature">Автообрезка нити<img class="comparison-table__icon"
+										src="/images/icons/feature-cross.svg" alt=""></p>
+							</div>
+							<div class="comparison-table__cell">
+								<p class="comparison-table__feature">Нитевдеватель<img class="comparison-table__icon"
+										src="/images/icons/feature-cross.svg" alt=""></p>
+								<p class="comparison-table__feature">Автообрезка нити<img class="comparison-table__icon"
+										src="/images/icons/feature-cross.svg" alt=""></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="comparison-section" aria-labelledby="comparison-build-title">
+				<div class="comparison-section__container">
+					<h2 class="comparison-section__title" id="comparison-build-title">Конструкция</h2>
+					<div class="comparison-table">
+						<div class="comparison-table__row">
+							<div class="comparison-table__cell">
+								<p class="comparison-table__model">DESEW Embroidery E900</p>
+								<p>Металлическая конструкция</p>
+								<p>Усиленная рама</p>
+								<p>Стабильная работа</p>
+							</div>
+							<div class="comparison-table__cell">
+								<p class="comparison-table__model">DESEW Overlock X5</p>
+								<p>Усиленный корпус</p>
+								<p>Надежная механика</p>
+								<p>Универсальное применение</p>
+							</div>
+							<div class="comparison-table__cell">
+								<p class="comparison-table__model">DESEW SmartStitch 500</p>
+								<p>Лёгкий корпус</p>
+								<p>Компактная конструкция</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="comparison-section" aria-labelledby="comparison-size-title">
+				<div class="comparison-section__container">
+					<h2 class="comparison-section__title" id="comparison-size-title">Размеры и вес</h2>
+					<div class="comparison-table">
+						<div class="comparison-table__row">
+							<div class="comparison-table__cell">
+								<p class="comparison-table__model">DESEW Embroidery E900</p>
+								<p class="comparison-table__line"><span class="comparison-table__line-name">Вес</span><span
+										class="comparison-table__line-value">6 кг</span></p>
+								<p class="comparison-table__line"><span class="comparison-table__line-name">Рабочая зона</span><span
+										class="comparison-table__line-value">150 мм</span></p>
+							</div>
+							<div class="comparison-table__cell">
+								<p class="comparison-table__model">DESEW Overlock X5</p>
+								<p class="comparison-table__line"><span class="comparison-table__line-name">Вес</span><span
+										class="comparison-table__line-value">5.5 кг</span></p>
+								<p class="comparison-table__line"><span class="comparison-table__line-name">Рабочая зона</span><span
+										class="comparison-table__line-value">160 мм</span></p>
+							</div>
+							<div class="comparison-table__cell">
+								<p class="comparison-table__model">DESEW SmartStitch 500</p>
+								<p class="comparison-table__line"><span class="comparison-table__line-name">Вес</span><span
+										class="comparison-table__line-value">4.5 кг</span></p>
+								<p class="comparison-table__line"><span class="comparison-table__line-name">Рабочая зона</span><span
+										class="comparison-table__line-value">140 мм</span></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 		</div>
-
-		<header class="comparison-page__hero container">
-			<h1 class="comparison-page__title">Сравнение моделей DESEW</h1>
-			<p class="comparison-page__subtitle">Выберите модель и сравните ключевые характеристики</p>
-		</header>
-
-		<section class="comparison-products" aria-label="Сравниваемые модели">
-			<div class="comparison-products__grid container">
-				<div class="comparison-products__item">
-					<article class="product-card">
-						<a class="product-card__image-link" href="#">
-							<img class="product-card__image" src="/images/products/sewing-machine-03.jpg" alt="DESEW Embroidery E900">
-						</a>
-						<div class="product-card__content">
-							<p class="product-card__label">популярное</p>
-							<h2 class="product-card__title"><a href="#">DESEW Embroidery E900</a></h2>
-							<p class="product-card__price">₽ 112 000</p>
-							<a class="product-card__link" href="#">Подробнее →</a>
-						</div>
-					</article>
-					<div class="comparison-products__select" data-dropdown>
-						<button class="comparison-products__select-button" type="button" data-dropdown-toggle aria-expanded="false">
-							<span data-dropdown-label>DESEW Embroidery E900</span>
-							<span class="comparison-products__select-arrow" aria-hidden="true">⌄</span>
-						</button>
-						<ul class="comparison-products__select-list" role="listbox">
-							<li><button class="comparison-products__select-option is-active" type="button" data-dropdown-option
-									data-dropdown-value="DESEW Embroidery E900" role="option" aria-selected="true">DESEW Embroidery
-									E900</button></li>
-							<li><button class="comparison-products__select-option" type="button" data-dropdown-option
-									data-dropdown-value="DESEW Overlock X5" role="option" aria-selected="false">DESEW Overlock X5</button>
-							</li>
-							<li><button class="comparison-products__select-option" type="button" data-dropdown-option
-									data-dropdown-value="DESEW SmartStitch 500" role="option" aria-selected="false">DESEW SmartStitch
-									500</button></li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="comparison-products__item">
-					<article class="product-card">
-						<a class="product-card__image-link" href="#">
-							<img class="product-card__image" src="/images/products/sewing-machine-02.jpg" alt="DESEW Overlock X5">
-						</a>
-						<div class="product-card__content">
-							<p class="product-card__label">новинка</p>
-							<h2 class="product-card__title"><a href="#">DESEW Overlock X5</a></h2>
-							<p class="product-card__price">₽ 64 500</p>
-							<a class="product-card__link" href="#">Подробнее →</a>
-						</div>
-					</article>
-					<div class="comparison-products__select" data-dropdown>
-						<button class="comparison-products__select-button" type="button" data-dropdown-toggle aria-expanded="false">
-							<span data-dropdown-label>DESEW Overlock X5</span>
-							<span class="comparison-products__select-arrow" aria-hidden="true">⌄</span>
-						</button>
-						<ul class="comparison-products__select-list" role="listbox">
-							<li><button class="comparison-products__select-option" type="button" data-dropdown-option
-									data-dropdown-value="DESEW Embroidery E900" role="option" aria-selected="false">DESEW Embroidery
-									E900</button></li>
-							<li><button class="comparison-products__select-option is-active" type="button" data-dropdown-option
-									data-dropdown-value="DESEW Overlock X5" role="option" aria-selected="true">DESEW Overlock X5</button>
-							</li>
-							<li><button class="comparison-products__select-option" type="button" data-dropdown-option
-									data-dropdown-value="DESEW SmartStitch 500" role="option" aria-selected="false">DESEW SmartStitch
-									500</button></li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="comparison-products__item">
-					<article class="product-card">
-						<a class="product-card__image-link" href="#">
-							<img class="product-card__image" src="/images/products/sewing-machine-04.jpg" alt="DESEW SmartStitch 500">
-						</a>
-						<div class="product-card__content">
-							<p class="product-card__label">в наличии</p>
-							<h2 class="product-card__title"><a href="#">DESEW SmartStitch 500</a></h2>
-							<p class="product-card__price">₽ 52 900</p>
-							<a class="product-card__link" href="#">Подробнее →</a>
-						</div>
-					</article>
-					<div class="comparison-products__select" data-dropdown>
-						<button class="comparison-products__select-button" type="button" data-dropdown-toggle aria-expanded="false">
-							<span data-dropdown-label>DESEW SmartStitch 500</span>
-							<span class="comparison-products__select-arrow" aria-hidden="true">⌄</span>
-						</button>
-						<ul class="comparison-products__select-list" role="listbox">
-							<li><button class="comparison-products__select-option" type="button" data-dropdown-option
-									data-dropdown-value="DESEW Embroidery E900" role="option" aria-selected="false">DESEW Embroidery
-									E900</button></li>
-							<li><button class="comparison-products__select-option" type="button" data-dropdown-option
-									data-dropdown-value="DESEW Overlock X5" role="option" aria-selected="false">DESEW Overlock X5</button>
-							</li>
-							<li><button class="comparison-products__select-option is-active" type="button" data-dropdown-option
-									data-dropdown-value="DESEW SmartStitch 500" role="option" aria-selected="true">DESEW SmartStitch
-									500</button></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="comparison-section" aria-labelledby="comparison-main-title">
-			<div class="comparison-section__container container">
-				<h2 class="comparison-section__title" id="comparison-main-title">Основные характеристики</h2>
-				<div class="comparison-table">
-					<div class="comparison-table__row">
-						<div class="comparison-table__cell">
-							<p class="comparison-table__feature">Автоматическая петля<img class="comparison-table__icon"
-									src="/images/icons/feature-good.svg" alt=""></p>
-							<p class="comparison-table__feature">Полуавтоматическая петля<img class="comparison-table__icon"
-									src="/images/icons/feature-good.svg" alt=""></p>
-							<p class="comparison-table__feature">Декоративные строчки<img class="comparison-table__icon"
-									src="/images/icons/feature-good.svg" alt=""></p>
-							<p class="comparison-table__feature">Оверлочные строчки<img class="comparison-table__icon"
-									src="/images/icons/feature-good.svg" alt=""></p>
-							<p class="comparison-table__feature">ЖК-дисплей<img class="comparison-table__icon"
-									src="/images/icons/feature-good.svg" alt=""></p>
-							<p class="comparison-table__feature">Регулировка скорости<img class="comparison-table__icon"
-									src="/images/icons/feature-good.svg" alt=""></p>
-						</div>
-						<div class="comparison-table__cell">
-							<p class="comparison-table__feature">Автоматическая петля<img class="comparison-table__icon"
-									src="/images/icons/feature-good.svg" alt=""></p>
-							<p class="comparison-table__feature">Полуавтоматическая петля<img class="comparison-table__icon"
-									src="/images/icons/feature-good.svg" alt=""></p>
-							<p class="comparison-table__feature">Декоративные строчки<img class="comparison-table__icon"
-									src="/images/icons/feature-good.svg" alt=""></p>
-							<p class="comparison-table__feature">Оверлочные строчки<img class="comparison-table__icon"
-									src="/images/icons/feature-good.svg" alt=""></p>
-							<p class="comparison-table__feature">ЖК-дисплей<img class="comparison-table__icon"
-									src="/images/icons/feature-cross.svg" alt=""></p>
-							<p class="comparison-table__feature">Регулировка скорости<img class="comparison-table__icon"
-									src="/images/icons/feature-good.svg" alt=""></p>
-						</div>
-						<div class="comparison-table__cell">
-							<p class="comparison-table__feature">Автоматическая петля<img class="comparison-table__icon"
-									src="/images/icons/feature-good.svg" alt=""></p>
-							<p class="comparison-table__feature">Полуавтоматическая петля<img class="comparison-table__icon"
-									src="/images/icons/feature-good.svg" alt=""></p>
-							<p class="comparison-table__feature">Декоративные строчки<img class="comparison-table__icon"
-									src="/images/icons/feature-cross.svg" alt=""></p>
-							<p class="comparison-table__feature">Оверлочные строчки<img class="comparison-table__icon"
-									src="/images/icons/feature-good.svg" alt=""></p>
-							<p class="comparison-table__feature">ЖК-дисплей<img class="comparison-table__icon"
-									src="/images/icons/feature-good.svg" alt=""></p>
-							<p class="comparison-table__feature">Регулировка скорости<img class="comparison-table__icon"
-									src="/images/icons/feature-good.svg" alt=""></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="comparison-section" aria-labelledby="comparison-extra-title">
-			<div class="comparison-section__container container">
-				<h2 class="comparison-section__title" id="comparison-extra-title">Дополнительные функции</h2>
-				<div class="comparison-table">
-					<div class="comparison-table__row">
-						<div class="comparison-table__cell">
-							<p class="comparison-table__feature">Нитевдеватель<img class="comparison-table__icon"
-									src="/images/icons/feature-good.svg" alt=""></p>
-							<p class="comparison-table__feature">Автообрезка нити<img class="comparison-table__icon"
-									src="/images/icons/feature-good.svg" alt=""></p>
-						</div>
-						<div class="comparison-table__cell">
-							<p class="comparison-table__feature">Нитевдеватель<img class="comparison-table__icon"
-									src="/images/icons/feature-good.svg" alt=""></p>
-							<p class="comparison-table__feature">Автообрезка нити<img class="comparison-table__icon"
-									src="/images/icons/feature-cross.svg" alt=""></p>
-						</div>
-						<div class="comparison-table__cell">
-							<p class="comparison-table__feature">Нитевдеватель<img class="comparison-table__icon"
-									src="/images/icons/feature-cross.svg" alt=""></p>
-							<p class="comparison-table__feature">Автообрезка нити<img class="comparison-table__icon"
-									src="/images/icons/feature-cross.svg" alt=""></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="comparison-section" aria-labelledby="comparison-build-title">
-			<div class="comparison-section__container container">
-				<h2 class="comparison-section__title" id="comparison-build-title">Конструкция</h2>
-				<div class="comparison-table">
-					<div class="comparison-table__row">
-						<div class="comparison-table__cell">
-							<p class="comparison-table__model">DESEW Embroidery E900</p>
-							<p>Металлическая конструкция</p>
-							<p>Усиленная рама</p>
-							<p>Стабильная работа</p>
-						</div>
-						<div class="comparison-table__cell">
-							<p class="comparison-table__model">DESEW Overlock X5</p>
-							<p>Усиленный корпус</p>
-							<p>Надежная механика</p>
-							<p>Универсальное применение</p>
-						</div>
-						<div class="comparison-table__cell">
-							<p class="comparison-table__model">DESEW SmartStitch 500</p>
-							<p>Лёгкий корпус</p>
-							<p>Компактная конструкция</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="comparison-section" aria-labelledby="comparison-size-title">
-			<div class="comparison-section__container container">
-				<h2 class="comparison-section__title" id="comparison-size-title">Размеры и вес</h2>
-				<div class="comparison-table">
-					<div class="comparison-table__row">
-						<div class="comparison-table__cell">
-							<p class="comparison-table__model">DESEW Embroidery E900</p>
-							<p class="comparison-table__line"><span class="comparison-table__line-name">Вес</span><span
-									class="comparison-table__line-value">6 кг</span></p>
-							<p class="comparison-table__line"><span class="comparison-table__line-name">Рабочая зона</span><span
-									class="comparison-table__line-value">150 мм</span></p>
-						</div>
-						<div class="comparison-table__cell">
-							<p class="comparison-table__model">DESEW Overlock X5</p>
-							<p class="comparison-table__line"><span class="comparison-table__line-name">Вес</span><span
-									class="comparison-table__line-value">5.5 кг</span></p>
-							<p class="comparison-table__line"><span class="comparison-table__line-name">Рабочая зона</span><span
-									class="comparison-table__line-value">160 мм</span></p>
-						</div>
-						<div class="comparison-table__cell">
-							<p class="comparison-table__model">DESEW SmartStitch 500</p>
-							<p class="comparison-table__line"><span class="comparison-table__line-name">Вес</span><span
-									class="comparison-table__line-value">4.5 кг</span></p>
-							<p class="comparison-table__line"><span class="comparison-table__line-name">Рабочая зона</span><span
-									class="comparison-table__line-value">140 мм</span></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
 
 		<section class="question-feedback section" aria-labelledby="question-feedback-title">
 			<div class="question-feedback__decor decor" aria-hidden="true">
