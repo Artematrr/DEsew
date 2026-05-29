@@ -452,6 +452,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		const panels = tabs.querySelectorAll('.js-product-panel')
 
 		const activateTab = target => {
+			if (!target) {
+				return
+			}
+
+			tabs.dataset.activeTab = target
+
 			tabButtons.forEach(button => {
 				const isActive = button.dataset.tabTarget === target
 
@@ -470,6 +476,21 @@ document.addEventListener('DOMContentLoaded', () => {
 		tabButtons.forEach(button => {
 			button.addEventListener('click', () => {
 				activateTab(button.dataset.tabTarget)
+			})
+		})
+
+		document.querySelectorAll('.js-product-tab-link').forEach(link => {
+			link.addEventListener('click', event => {
+				const target = link.dataset.tabTarget
+				const panel = tabs.querySelector(`[data-tab-panel="${target}"]`)
+
+				if (!panel) {
+					return
+				}
+
+				event.preventDefault()
+				activateTab(target)
+				tabs.scrollIntoView({ behavior: 'smooth', block: 'start' })
 			})
 		})
 	})

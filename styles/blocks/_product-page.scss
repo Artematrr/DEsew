@@ -3,72 +3,27 @@
 	overflow: hidden;
 	background-color: var(--white);
 
-	&__decor {
-		@include visual-frame-layer;
-
-		z-index: 0;
-		pointer-events: none;
-	}
-
-	&__decor-stitch {
-		position: absolute;
-		opacity: 0.72;
-	}
-
-	&__decor-stitch--top {
-		top: 60px;
-		left: -120px;
-		width: 520px;
-	}
-
-	&__decor-stitch--middle {
-		top: 780px;
-		right: -180px;
-		width: 720px;
-	}
-
-	&__decor-button {
-		position: absolute;
-		top: 708px;
-		right: 76px;
-		width: 94px;
-		filter: drop-shadow(0 14px 22px rgba(246, 205, 20, 0.32));
-	}
-
 	&__container {
 		position: relative;
 		z-index: var(--z-index-base);
-		padding-block: 36px 0;
+		padding-block: 56px 0;
+
+		@include desktop {
+			padding-block-start: 42px;
+		}
+
+		@include mobile {
+			padding-block-start: 22px;
+		}
 	}
 
 	&__breadcrumbs {
+		@include fluid-text(11, 14);
+
 		margin-bottom: 26px;
-	}
 
-	@include tablet-s {
-		&__container {
-			padding-block: 24px 0;
-		}
-
-		&__decor-button {
-			display: none;
-		}
-	}
-
-	@include mobile {
-		&__decor-stitch--top {
-			top: 118px;
-			left: -96px;
-			width: 260px;
-		}
-
-		&__decor-stitch--middle {
-			display: none;
-		}
-
-		&__breadcrumbs {
+		@include mobile {
 			margin-bottom: 14px;
-			font-size: 11px;
 		}
 	}
 }
