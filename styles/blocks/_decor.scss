@@ -1,7 +1,6 @@
 .decor {
 	position: absolute;
 	inset: 0;
-	// z-index: 2;
 	overflow: hidden;
 	pointer-events: none;
 
@@ -13,23 +12,9 @@
 		user-select: none;
 	}
 
-	&__item--stitch {
-		// opacity: 0.9;
-	}
-
-	&__item--muted {
-		// opacity: 0.45;
-	}
-
 	&__item--mobile-hidden {
 		@include mobile {
 			display: none;
 		}
 	}
-}
-
-.decor-stitch {
-}
-
-.decor-button {
 }

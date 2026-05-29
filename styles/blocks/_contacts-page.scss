@@ -5,26 +5,23 @@
 		@include visual-frame-layer;
 
 		z-index: 0;
+		overflow: visible;
 	}
 
 	&__stitch {
-		position: absolute;
+		@include tablet {
+			display: none;
+		}
 	}
 
-	&__stitch--top {
-		top: 580px;
+	&__stitch--right {
+		top: 940px;
 		right: -190px;
 	}
 
-	&__stitch--bottom {
-		bottom: 360px;
-		left: -220px;
-	}
-
-	&__button-decor {
-		position: absolute;
-		right: 150px;
-		bottom: 560px;
+	&__stitch--left {
+		left: -290px;
+		top: 1050px;
 	}
 
 	&__container {
@@ -111,10 +108,112 @@
 		}
 	}
 
-	&__info {
+	&__card {
+		position: relative;
+		z-index: 2;
+		padding: 44px 58px 54px 57px;
+		background-color: var(--white);
+		border-radius: 20px;
+		box-shadow:
+			0 19px 41px 0 rgba(0, 0, 0, 0.1),
+			0 75px 75px 0 rgba(0, 0, 0, 0.09),
+			0 169px 102px 0 rgba(0, 0, 0, 0.05),
+			0 301px 120px 0 rgba(0, 0, 0, 0.01),
+			0 470px 132px 0 rgba(0, 0, 0, 0);
+
+		@include desktop {
+			padding: 13px 24px 20px 27px;
+		}
 	}
 
-	&__form-card {
+	&__card-title {
+		@include fluid-text(23, 30);
+
+		position: relative;
+		margin-bottom: 39px;
+		padding-bottom: 39px;
+		padding-left: 20px;
+		font-weight: 600;
+
+		@include tablet {
+			margin-bottom: 20px;
+			padding-bottom: 17px;
+			padding-left: 9px;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			height: 1px;
+			background-image: linear-gradient(
+				90deg,
+				var(--gray-400) 0 8px,
+				transparent 8px 16px
+			);
+			background-size: 16px 1px;
+		}
+	}
+
+	&__contact-list {
+		display: grid;
+		gap: 36px;
+		padding-inline: 20px;
+
+		@include tablet {
+			padding-inline: 0;
+		}
+	}
+
+	&__contact-item {
+		display: grid;
+		grid-template-columns: 38px minmax(0, 1fr);
+		gap: 17px;
+		align-items: start;
+
+		@include tablet {
+			grid-template-columns: 23px minmax(0, 1fr);
+			gap: 10px;
+		}
+	}
+
+	&__contact-icon {
+		@include square(37px);
+
+		object-fit: contain;
+
+		@include tablet {
+			@include square(23px);
+		}
+	}
+
+	&__contact-name {
+		@include fluid-text(23, 38);
+
+		font-weight: 900;
+		line-height: 1;
+	}
+
+	&__contact-value {
+		@include fluid-text(23, 38);
+
+		font-weight: 700;
+		line-height: 1.05;
+	}
+
+	&__contact-note {
+		@include fluid-text(14, 24);
+
+		font-weight: 300;
+		line-height: 1.2;
+	}
+
+	&__form-actions {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	&__form {
@@ -157,6 +256,9 @@
 	&__control--textarea {
 		min-height: 180px;
 		resize: vertical;
+		@include tablet {
+			min-height: 92px;
+		}
 	}
 
 	&__submit {
@@ -175,51 +277,4 @@
 		color: var(--gray-400);
 		text-align: center;
 	}
-
-	// @include mobile {
-	// 	&__container {
-	// 		padding-top: 22px;
-	// 	}
-
-	// 	&__breadcrumbs {
-	// 		margin-bottom: 10px;
-	// 		font-size: 11px;
-	// 	}
-
-	// 	&__hero {
-	// 		margin-bottom: 20px;
-	// 	}
-
-	// 	&__title {
-	// 		font-size: 44px;
-	// 	}
-
-	// 	&__subtitle {
-	// 		max-width: 240px;
-	// 		font-size: 18px;
-	// 	}
-
-	// 	&__grid {
-	// 		gap: 14px;
-	// 		margin-bottom: 42px;
-	// 	}
-
-	// 	&__form {
-	// 		gap: 14px;
-	// 	}
-
-	// 	&__control {
-	// 		min-height: 48px;
-	// 		font-size: 14px;
-	// 	}
-
-	// 	&__control--textarea {
-	// 		min-height: 92px;
-	// 	}
-
-	// 	&__stitch--top,
-	// 	&__button-decor {
-	// 		display: none;
-	// 	}
-	// }
 }

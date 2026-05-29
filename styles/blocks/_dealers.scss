@@ -1,57 +1,129 @@
 .dealers {
+	position: relative;
 	margin-bottom: 0;
-	padding-block: 58px 52px;
+	padding-block: 28px 47px;
 	background-color: var(--white);
 
+	@include tablet {
+		padding-block: 0px 20px;
+	}
+
 	&__container {
-		max-width: calc(1120px + var(--container-padding-x) * 2);
+		max-width: calc(1667px + var(--container-padding-x) * 2);
 	}
 
 	&__header {
 		margin-bottom: 24px;
 		text-align: center;
-	}
-
-	&__title {
-		margin-bottom: 2px;
-		font-size: 32px;
-		font-weight: 700;
-		line-height: 1.1;
-		color: var(--primary-500);
-	}
-
-	&__subtitle {
 		position: relative;
-		display: inline-block;
-		font-size: 14px;
-		color: var(--gray-500);
 
-		&::after {
+		@include tablet {
+			margin-bottom: 13px;
+		}
+
+		&::after,
+		&::before {
 			content: '';
 			position: absolute;
 			left: 50%;
 			bottom: -10px;
-			width: 78px;
+			width: 90px;
 			height: 3px;
 			background-color: var(--primary-500);
 			transform: translateX(-50%);
+			z-index: 0;
+			border-radius: 3px;
+			box-shadow:
+				0 1px 2px 0 rgba(0, 0, 0, 0.1),
+				0 3px 3px 0 rgba(0, 0, 0, 0.09),
+				0 6px 4px 0 rgba(0, 0, 0, 0.05),
+				0 11px 5px 0 rgba(0, 0, 0, 0.01),
+				0 18px 5px 0 rgba(0, 0, 0, 0);
+
+			@include tablet {
+				bottom: -3px;
+				width: 35px;
+				height: 2px;
+				box-shadow:
+					0 0px 1px 0 rgba(0, 0, 0, 0.1),
+					0 1px 1px 0 rgba(0, 0, 0, 0.09),
+					0 2px 2px 0 rgba(0, 0, 0, 0.05),
+					0 4px 2px 0 rgba(0, 0, 0, 0.01),
+					0 7px 2px 0 rgba(0, 0, 0, 0);
+			}
 		}
+
+		&::before {
+			left: calc(50% - 29px);
+			width: 32px;
+			background-color: #f68d14;
+			z-index: 1;
+			box-shadow:
+				0 0px 1px 0 rgba(0, 0, 0, 0.1),
+				0 1px 1px 0 rgba(0, 0, 0, 0.09),
+				0 2px 2px 0 rgba(0, 0, 0, 0.05),
+				0 4px 2px 0 rgba(0, 0, 0, 0.01),
+				0 7px 2px 0 rgba(0, 0, 0, 0);
+
+			@include tablet {
+				left: calc(50% - 11px);
+				width: 12px;
+			}
+		}
+	}
+
+	&__title {
+		@include fluid-text(12, 48);
+
+		font-weight: 700;
+		line-height: 1.1;
+		color: var(--primary-500);
+		margin-bottom: 14px;
+
+		@include tablet {
+			margin-bottom: 0px;
+		}
+	}
+
+	&__subtitle {
+		@include fluid-text(5, 16);
+
+		font-weight: 300;
+		color: var(--gray-500);
 	}
 
 	&__layout {
 		display: grid;
-		grid-template-columns: minmax(0, 650px) minmax(330px, 390px);
-		gap: 24px;
+		grid-template-columns: minmax(0, 1016px) minmax(330px, 584px);
+		gap: 40px;
 		align-items: start;
 		justify-content: center;
+		padding-block: 30px 0px;
+
+		@include desktop {
+			grid-template-columns: minmax(0, 540px) minmax(330px, 480px);
+			gap: 20px;
+		}
+
+		@include tablet {
+			grid-template-columns: 1fr;
+			width: min(100%, 807px);
+			margin-inline: auto;
+			padding-block: 0px 0px;
+		}
 	}
 
 	&__map {
 		position: relative;
-		min-height: 410px;
+		height: 633px;
 		overflow: hidden;
 		background-color: var(--gray-100);
-		box-shadow: var(--shadow-sm);
+		border-radius: 55px;
+
+		@include tablet {
+			border-radius: 16px;
+			height: 181px;
+		}
 	}
 
 	&__map-image {
@@ -61,53 +133,14 @@
 		object-fit: cover;
 	}
 
-	&__map-pin {
-		position: absolute;
-		display: grid;
-		place-items: center;
-		width: 38px;
-		aspect-ratio: 1;
-		font-size: 19px;
-		font-weight: 800;
-		line-height: 1;
-		color: var(--gray-700);
-		background: var(--gradient-01);
-		border: 3px solid rgba(255, 255, 255, 0.92);
-		border-radius: 50%;
-		box-shadow: 0 7px 14px rgba(0, 0, 0, 0.18);
-		transform: translate(-50%, -50%);
-		pointer-events: none;
-	}
-
-	&__map-pin--center {
-		left: 55%;
-		top: 48%;
-	}
-
-	&__map-pin--north {
-		left: 42%;
-		top: 34%;
-	}
-
-	&__map-pin--east {
-		left: 72%;
-		top: 56%;
-	}
-
-	&__map-pin--south {
-		left: 54%;
-		top: 69%;
-	}
-
-	&__map-pin--west {
-		left: 21%;
-		top: 78%;
-	}
-
 	&__panel {
 		position: relative;
 		display: grid;
-		gap: 12px;
+		gap: 23px;
+
+		@include tablet {
+			gap: 5px;
+		}
 	}
 
 	&__city-dropdown {
@@ -128,29 +161,47 @@
 				opacity: 1;
 				transform: translateY(0);
 				pointer-events: auto;
+				margin-right: 21px;
+
+				@include tablet {
+					margin-right: 0px;
+				}
 			}
 		}
 	}
 
 	&__city {
 		@include reset-button;
+		@include fluid-text(7, 20);
 
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		min-height: 36px;
-		padding: 5px 16px;
-		font-size: 20px;
-		font-weight: 700;
+		width: calc(100% - 21px);
+		min-height: 34px;
+		padding: 7px 16px 7px 28px;
+		font-weight: 600;
 		color: var(--gray-500);
 		background-color: var(--white);
 		border-radius: 0 0 var(--border-radius-sm) var(--border-radius-sm);
-		box-shadow: 0 5px 9px rgba(0, 0, 0, 0.18);
-		transition-property: border-radius, box-shadow;
+		box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25);
+		transition-property: box-shadow;
 
 		svg {
-			color: var(--primary-500);
+			fill: var(--primary-500);
 			transition-property: transform;
+
+			@include mobile {
+				width: 5px;
+			}
+		}
+
+		@include tablet {
+			width: 100%;
+			min-height: unset;
+			padding: 2px 10px 2px 9px;
+			border-radius: 4px;
+			box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
 		}
 	}
 
@@ -166,7 +217,7 @@
 		background-color: var(--white);
 		border-top: 1px solid var(--gray-100);
 		border-radius: 0 0 var(--border-radius-sm) var(--border-radius-sm);
-		box-shadow: 0 14px 24px rgba(0, 0, 0, 0.14);
+		box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25);
 		transform: translateY(-6px);
 		pointer-events: none;
 		transition-property: visibility, opacity, transform;
@@ -174,10 +225,10 @@
 
 	&__city-option {
 		@include reset-button;
+		@include fluid-text(7, 20);
 
 		width: 100%;
-		padding: 9px 10px;
-		font-size: 15px;
+		padding: 7px 16px 7px 28px;
 		font-weight: 600;
 		line-height: 1.15;
 		text-align: left;
@@ -194,343 +245,392 @@
 			color: var(--black);
 			background-color: var(--gray-100);
 		}
+
+		@include tablet {
+			padding: 2px 10px 2px 9px;
+		}
 	}
 
 	&__shops-scroll {
-		max-height: 410px;
-		padding-right: 18px;
+		max-height: 565px;
+		padding-right: 21px;
 		overflow-y: auto;
-	}
 
-	&__shops {
-		display: grid;
-		gap: 12px;
-	}
-
-	&__shop {
-		display: grid;
-		grid-template-columns: minmax(0, 1fr) 118px;
-		gap: 12px;
-		align-items: center;
-		min-height: 130px;
-		padding: 16px 16px 14px;
-		background-color: var(--white);
-		border: 1px solid transparent;
-		border-radius: var(--border-radius);
-		box-shadow: 0 15px 28px rgba(0, 0, 0, 0.08);
-
-		&.is-active {
-			border-color: var(--primary-500);
-		}
-	}
-
-	&__shop-content {
-	}
-
-	&__shop-title {
-		margin-bottom: 4px;
-		font-size: 15px;
-		font-weight: 700;
-		line-height: 1.2;
-	}
-
-	&__shop-address {
-		margin-bottom: 18px;
-		font-size: 12px;
-		font-weight: 600;
-		color: var(--gray-700);
-	}
-
-	&__shop-meta {
-		display: flex;
-		align-items: center;
-		gap: 14px;
-		margin-bottom: 8px;
-		font-size: 12px;
-	}
-
-	&__shop-phone,
-	&__shop-time {
-		position: relative;
-		padding-left: 18px;
-		white-space: nowrap;
-
-		&::before {
-			content: '';
-			position: absolute;
-			top: 50%;
-			left: 0;
-			width: 12px;
-			aspect-ratio: 1;
-			border: 2px solid currentColor;
-			border-radius: 50%;
-			transform: translateY(-50%);
-		}
-	}
-
-	&__shop-phone {
-		color: var(--black);
-
-		&::before {
-			border-color: var(--primary-500);
-		}
-	}
-
-	&__route {
-		position: relative;
-		display: inline-flex;
-		align-items: center;
-		min-height: 28px;
-		padding: 6px 36px 6px 14px;
-		font-size: 12px;
-		font-weight: 700;
-		color: var(--gray-500);
-		background:
-			linear-gradient(90deg, rgba(246, 205, 20, 0.25) 0%, rgba(254, 206, 106, 0.55) 100%);
-		border-radius: var(--border-radius-xs);
-
-		&::after {
-			content: '→';
-			position: absolute;
-			top: 50%;
-			right: -12px;
-			display: grid;
-			place-items: center;
-			width: 28px;
-			aspect-ratio: 1;
-			color: var(--white);
-			background: var(--gradient-01);
-			border-radius: 50%;
-			transform: translateY(-50%);
-		}
-	}
-
-	&__shop-image {
-		width: 118px;
-		height: 82px;
-		object-fit: cover;
-		border-radius: var(--border-radius-sm);
-	}
-
-	&__markets-wrap {
-		position: relative;
-		width: min(100%, 1040px);
-		margin: 12px auto 0;
-		padding-bottom: 24px;
-	}
-
-	&__markets-title {
-		margin-bottom: 8px;
-		font-size: 16px;
-		text-align: center;
-		color: var(--gray-500);
-	}
-
-	&__markets {
-		position: relative;
-		z-index: var(--z-index-base);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 28px;
-		min-height: 68px;
-		padding: 12px 42px;
-		background-color: var(--white);
-		border-radius: var(--border-radius-sm);
-		box-shadow: var(--shadow-sm);
-	}
-
-	&__markets img {
-		max-width: 172px;
-		max-height: 40px;
-		object-fit: contain;
-		filter: grayscale(1);
-		opacity: 0.72;
-	}
-
-	&__stitch {
-		position: absolute;
-		right: 24px;
-		bottom: 0;
-		left: 24px;
-		width: calc(100% - 48px);
-		height: 1px;
-		object-fit: cover;
-		pointer-events: none;
-	}
-
-	&--page {
-		padding-block: 42px 86px;
-
-		.dealers__header {
-			margin-bottom: 94px;
-		}
-
-		.dealers__title {
-			font-size: clamp(44px, 4.8vw, 64px);
-		}
-
-		.dealers__layout {
-			grid-template-columns: minmax(0, 820px) minmax(380px, 520px);
-			gap: 34px;
-		}
-
-		.dealers__map {
-			min-height: 520px;
-			border-radius: var(--border-radius-xl);
-		}
-
-		.dealers__city {
-			min-height: 56px;
-			padding-inline: 24px;
-			font-size: 28px;
-			border-radius: var(--border-radius-sm);
-		}
-	}
-
-	@include desktop {
-		&__layout {
-			grid-template-columns: minmax(0, 650px) minmax(330px, 390px);
-		}
-
-		&__shop {
-			grid-template-columns: minmax(0, 1fr) 112px;
-			padding-inline: 16px;
-		}
-
-		&__shop-meta {
-			gap: 12px;
-		}
-
-		&__shop-image {
-			width: 112px;
-		}
-	}
-
-	@include tablet-s {
-		&--page {
-			.dealers__header {
-				margin-bottom: 36px;
-			}
-
-			.dealers__layout {
-				grid-template-columns: 1fr;
-			}
-		}
-
-		&__layout {
-			grid-template-columns: 1fr;
-			width: min(100%, 807px);
-			margin-inline: auto;
-		}
-
-		&__map {
-			min-height: auto;
-			aspect-ratio: 807 / 510;
-			border-radius: var(--border-radius-xl);
-		}
-
-		&__city {
-			border-radius: 0 0 var(--border-radius-sm) var(--border-radius-sm);
-		}
-
-		&__city-list {
-			z-index: var(--z-index-dropdown);
-		}
-
-		&__shops-scroll {
+		@include tablet {
 			max-height: none;
 			padding: 12px 0 14px;
 			overflow-x: auto;
 			overflow-y: hidden;
 			scrollbar-color: var(--primary-500) transparent;
 		}
+	}
 
-		&__shops {
+	&__shops {
+		display: grid;
+		gap: 12px;
+
+		@include tablet {
 			display: flex;
 			width: max-content;
 			padding-inline: 24px;
 		}
+	}
 
-		&__shop {
+	&__shop {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 188px;
+		gap: 0px;
+		align-items: stretch;
+		min-height: 235px;
+		padding: 32px 30px 38px 30px;
+		background-color: var(--white);
+		border: 1px solid transparent;
+		border-radius: 19px;
+		box-shadow: 0 0 26px 0 rgba(0, 0, 0, 0.11);
+
+		@include hover {
+			border-color: var(--primary-500);
+		}
+
+		&.is-active {
+			border-color: var(--primary-500);
+			box-shadow:
+				0 1px 1px 0 rgba(255, 200, 0, 0.29),
+				0 3px 3px 0 rgba(255, 200, 0, 0.26),
+				0 6px 4px 0 rgba(255, 200, 0, 0.15),
+				0 12px 5px 0 rgba(255, 200, 0, 0.04),
+				0 18px 5px 0 rgba(255, 200, 0, 0.01);
+		}
+
+		@include tablet {
+			min-height: 135px;
 			width: 292px;
-			min-height: 108px;
 			grid-template-columns: minmax(0, 1fr) 88px;
 			gap: 10px;
 			padding: 12px;
+			box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.11);
 		}
 
-		&__shop-title {
-			font-size: 10px;
+		@include mobile {
+			min-height: 35px;
+			width: 208px;
 		}
 
-		&__shop-address,
-		&__shop-meta,
-		&__route {
-			font-size: 8px;
-		}
-
-		&__shop-address {
-			margin-bottom: 14px;
-		}
-
-		&__shop-meta {
-			gap: 8px;
-		}
-
-		&__shop-image {
-			width: 88px;
-			height: 68px;
-		}
-
-		&__markets {
-			gap: 18px;
-			padding-inline: 28px;
+		@include mobile-s {
+			width: 138px;
+			border-radius: 6px;
+			padding: 5px;
+			grid-template-columns: minmax(0, 1fr) 28px;
 		}
 	}
 
-	@include mobile {
-		padding-block: 40px 48px;
+	&__shop-content {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		justify-content: space-between;
 
-		&--page {
-			padding-block: 28px 54px;
-
-			.dealers__title {
-				font-size: 40px;
-			}
-
-			.dealers__subtitle {
-				font-size: 13px;
-			}
-
-			.dealers__city {
-				min-height: 44px;
-				font-size: 20px;
-			}
-		}
-
-		&__title {
-			font-size: 30px;
-		}
-
-		&__map {
-			border-radius: var(--border-radius-lg);
-		}
-
-		&__markets {
-			gap: 14px;
-			justify-content: flex-start;
-			overflow-x: auto;
-		}
-
-		&__markets img {
-			max-width: 126px;
+		@include tablet {
+			gap: 5px;
 		}
 	}
 
-	@include mobile-s {
-		&__shop {
-			width: 260px;
+	&__shop-header {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 8px;
+
+		@include tablet {
+			gap: 1px;
+		}
+	}
+
+	&__shop-title {
+		@include fluid-text(2, 18);
+
+		font-weight: 800;
+	}
+
+	&__shop-address {
+		@include fluid-text(2, 15);
+
+		font-weight: 800;
+		color: var(--gray-500);
+	}
+
+	&__shop-bottom {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	&__shop-meta {
+		@include fluid-text(2, 15);
+
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 71px;
+		font-weight: 500;
+
+		@include desktop {
+			gap: 10px;
+		}
+	}
+
+	&__shop-phone,
+	&__shop-time-row {
+		position: relative;
+		white-space: nowrap;
+		display: grid;
+		align-items: center;
+		grid-template-columns: 15px auto;
+		gap: 4px;
+
+		@include tablet {
+			grid-template-columns: 7px auto;
+		}
+
+		@include mobile {
+			grid-template-columns: 2px auto;
+			gap: 1px;
+		}
+	}
+
+	&__shop-time {
+		display: grid;
+		justify-items: start;
+	}
+
+	&__shop-time-row {
+		background-color: var(--white);
+		border-radius: 10px;
+		padding-right: 5px;
+	}
+
+	&__shop-phone-icon,
+	&__shop-time-icon {
+		@include square(15px);
+		@include flex-center;
+
+		@include tablet {
+			width: 7px;
+		}
+
+		@include mobile {
+			width: 2px;
+		}
+	}
+
+	&__shop-phone {
+		color: var(--black);
+	}
+
+	&__route {
+		--button-plate-arrow-size: 28px;
+
+		@include tablet {
+			--button-plate-arrow-size: 10px;
+			--button-plate-arrow-offset: 1px;
+		}
+
+		.button-plate__icon--active {
+			fill: linear-gradient(270deg, #f6cd14 0%, #fece6a 100%);
+			box-shadow:
+				0 1px 2px 0 rgba(194, 178, 0, 0.1),
+				0 2px 2px 0 rgba(194, 178, 0, 0.09),
+				0 5px 3px 0 rgba(194, 178, 0, 0.05),
+				0 9px 4px 0 rgba(194, 178, 0, 0.01),
+				0 14px 4px 0 rgba(194, 178, 0, 0);
+
+			@include tablet {
+				fill: linear-gradient(270deg, #f6cd14 0%, #fece6a 100%);
+				box-shadow:
+					0 0px 0px 0 rgba(194, 178, 0, 0.1),
+					0 0px 0px 0 rgba(194, 178, 0, 0.09),
+					0 1px 1px 0 rgba(194, 178, 0, 0.05),
+					0 2px 1px 0 rgba(194, 178, 0, 0.01),
+					0 3px 1px 0 rgba(194, 178, 0, 0);
+			}
+		}
+
+		.button-plate__icon--inactive {
+			fill: linear-gradient(270deg, #f6cd14 0%, #fece6a 100%);
+			box-shadow:
+				0 1px 2px 0 rgba(194, 178, 0, 0.1),
+				0 2px 2px 0 rgba(194, 178, 0, 0.09),
+				0 5px 3px 0 rgba(194, 178, 0, 0.05),
+				0 9px 4px 0 rgba(194, 178, 0, 0.01),
+				0 14px 4px 0 rgba(194, 178, 0, 0);
+
+			@include tablet {
+				fill: linear-gradient(270deg, #f6cd14 0%, #fece6a 100%);
+				box-shadow:
+					0 0px 0px 0 rgba(194, 178, 0, 0.1),
+					0 0px 0px 0 rgba(194, 178, 0, 0.09),
+					0 1px 1px 0 rgba(194, 178, 0, 0.05),
+					0 2px 1px 0 rgba(194, 178, 0, 0.01),
+					0 3px 1px 0 rgba(194, 178, 0, 0);
+			}
+		}
+
+		span {
+			@include fluid-text(2, 12);
+
+			min-height: 28px;
+			font-weight: 600;
+			color: var(--gray-500);
+			box-shadow:
+				0 2px 3px 0 rgba(194, 178, 0, 0.05),
+				0 5px 5px 0 rgba(194, 178, 0, 0.04),
+				0 11px 7px 0 rgba(194, 178, 0, 0.03),
+				0 21px 8px 0 rgba(194, 178, 0, 0.01),
+				0 32px 9px 0 rgba(194, 178, 0, 0);
+			background: linear-gradient(
+				90deg,
+				rgba(246, 205, 20, 0.25) 0%,
+				rgba(254, 206, 106, 0.25) 100%
+			);
+
+			@include tablet {
+				min-height: 10px;
+				padding: 1px 2px;
+				border-radius: 1px;
+				box-shadow:
+					0 0px 1px 0 rgba(194, 178, 0, 0.05),
+					0 1px 1px 0 rgba(194, 178, 0, 0.04),
+					0 2px 1px 0 rgba(194, 178, 0, 0.03),
+					0 4px 2px 0 rgba(194, 178, 0, 0.01),
+					0 6px 2px 0 rgba(194, 178, 0, 0);
+				background: linear-gradient(
+					90deg,
+					rgba(246, 205, 20, 0.25) 0%,
+					rgba(254, 206, 106, 0.25) 100%
+				);
+			}
+		}
+
+		@include hover {
+			span {
+				box-shadow:
+					0 2px 3px 0 rgba(194, 178, 0, 0.05),
+					0 5px 5px 0 rgba(194, 178, 0, 0.04),
+					0 11px 7px 0 rgba(194, 178, 0, 0.03),
+					0 21px 8px 0 rgba(194, 178, 0, 0.01),
+					0 32px 9px 0 rgba(194, 178, 0, 0);
+				background: linear-gradient(
+					90deg,
+					rgba(246, 205, 20, 0.6) 0%,
+					rgba(254, 206, 106, 0.6) 100%
+				);
+			}
+		}
+	}
+
+	&__shop-image {
+		width: 100%;
+		height: calc(100% - 28px);
+		object-fit: cover;
+		border-radius: var(--border-radius);
+
+		@include tablet {
+			border-radius: 6px;
+			height: calc(100% - 12px);
+		}
+	}
+
+	&__markets-wrap {
+		position: relative;
+		width: 100%;
+
+		@include tablet {
+			width: min(100%, 807px);
+			margin-inline: auto;
+		}
+	}
+
+	&__markets-title {
+		@include fluid-text(6, 16);
+
+		margin-bottom: 2px;
+		text-align: center;
+		color: var(--gray-500);
+	}
+
+	ul.dealers__markets {
+		width: 100%;
+		position: relative;
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 30px;
+		min-height: 68px;
+		padding: 25px 62px;
+		background-color: var(--white);
+		border-radius: 14px;
+		box-shadow:
+			0 2px 4px 0 rgba(0, 0, 0, 0.1),
+			0 6px 6px 0 rgba(0, 0, 0, 0.09),
+			0 14px 9px 0 rgba(0, 0, 0, 0.05),
+			0 25px 10px 0 rgba(0, 0, 0, 0.01),
+			0 40px 11px 0 rgba(0, 0, 0, 0);
+
+		@include tablet {
+			gap: 6px;
+			padding: 6px 14px;
+			min-height: unset;
+		}
+	}
+
+	&__markets img {
+		height: 40px;
+		object-fit: contain;
+
+		@include tablet {
+			height: 9px;
+		}
+	}
+
+	&__decor {
+		@include visual-frame-layer;
+
+		@include tablet {
+			display: none;
+		}
+	}
+
+	&__stitch {
+		position: absolute;
+		bottom: 34px;
+		left: 50%;
+		transform: translateX(-50%);
+		object-fit: cover;
+		pointer-events: none;
+	}
+
+	&--compact {
+		.dealers {
+			&__container {
+				max-width: calc(1274px + var(--container-padding-x) * 2);
+			}
+
+			&__shop-address {
+				@include fluid-text(2, 12);
+			}
+
+			&__shop-meta {
+				gap: 56px;
+
+				@include tablet {
+					gap: 10px;
+				}
+
+				@include mobile {
+					gap: 5px;
+				}
+			}
 		}
 	}
 }

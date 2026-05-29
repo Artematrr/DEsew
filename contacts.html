@@ -224,14 +224,12 @@
 		</nav>
 
 		<div class="contacts-page__container container">
-			<!-- <div class="contacts-page__decor decor" aria-hidden="true">
-				<img class="decor__item decor-stitch contacts-page__stitch contacts-page__stitch--top"
+			<div class="contacts-page__decor decor" aria-hidden="true">
+				<img class="decor__item contacts-page__stitch contacts-page__stitch--right"
 					src="/images/14-contacts-page/contacts-page-stitch-01.svg" alt="">
-				<img class="decor__item decor-stitch contacts-page__stitch contacts-page__stitch--bottom"
+				<img class="decor__item contacts-page__stitch contacts-page__stitch--left"
 					src="/images/14-contacts-page/contacts-page-stitch-02.svg" alt="">
-				<img class="decor__item decor-button contacts-page__button-decor"
-					src="/images/12-product-page/product-page-button.png" alt="">
-			</div> -->
+			</div>
 
 			<header class="contacts-page__hero">
 				<div>
@@ -243,37 +241,38 @@
 			</header>
 
 			<div class="contacts-page__grid">
-				<section class="contact-card contacts-page__info" aria-labelledby="contacts-info-title">
-					<h2 class="contact-card__title" id="contacts-info-title">Мы на связи</h2>
-					<ul class="contact-card__list">
-						<li class="contact-card__item">
-							<img class="contact-card__icon" src="/images/icons/phone-small-primary.svg" alt="" aria-hidden="true">
+				<section class="contacts-page__card contacts-page__info" aria-labelledby="contacts-info-title">
+					<h2 class="contacts-page__card-title" id="contacts-info-title">Мы на связи</h2>
+					<ul class="contacts-page__contact-list">
+						<li class="contacts-page__contact-item">
+							<img class="contacts-page__contact-icon" src="/images/icons/phone-small-primary.svg" alt=""
+								aria-hidden="true">
 							<div>
-								<h3 class="contact-card__name">Телефон</h3>
-								<a class="contact-card__value" href="tel:+74952236659">+7 (495) 223-66-59</a>
-								<p class="contact-card__note">Бесплатно по России</p>
+								<h3 class="contacts-page__contact-name">Телефон</h3>
+								<a class="contacts-page__contact-value" href="tel:+74952236659">+7 (495) 223-66-59</a>
+								<p class="contacts-page__contact-note">Бесплатно по России</p>
 							</div>
 						</li>
-						<li class="contact-card__item">
-							<img class="contact-card__icon" src="/images/icons/mail.svg" alt="" aria-hidden="true">
+						<li class="contacts-page__contact-item">
+							<img class="contacts-page__contact-icon" src="/images/icons/mail.svg" alt="" aria-hidden="true">
 							<div>
-								<h3 class="contact-card__name">Email</h3>
-								<a class="contact-card__value" href="mailto:info@desew.ru">info@desew.ru</a>
+								<h3 class="contacts-page__contact-name">Email</h3>
+								<a class="contacts-page__contact-value" href="mailto:info@desew.ru">info@desew.ru</a>
 							</div>
 						</li>
-						<li class="contact-card__item">
-							<img class="contact-card__icon" src="/images/icons/time.svg" alt="" aria-hidden="true">
+						<li class="contacts-page__contact-item">
+							<img class="contacts-page__contact-icon" src="/images/icons/time.svg" alt="" aria-hidden="true">
 							<div>
-								<h3 class="contact-card__name">Время работы</h3>
-								<p class="contact-card__value">Пн–Пт: 9:00–18:00</p>
-								<p class="contact-card__note">по московскому времени</p>
+								<h3 class="contacts-page__contact-name">Время работы</h3>
+								<p class="contacts-page__contact-value">Пн–Пт: 9:00–18:00</p>
+								<p class="contacts-page__contact-note">по московскому времени</p>
 							</div>
 						</li>
 					</ul>
 				</section>
 
-				<section class="contact-card contacts-page__form-card" aria-labelledby="contacts-form-title">
-					<h2 class="contact-card__title" id="contacts-form-title">Напишите нам</h2>
+				<section class="contacts-page__card contacts-page__form-card" aria-labelledby="contacts-form-title">
+					<h2 class="contacts-page__card-title" id="contacts-form-title">Напишите нам</h2>
 					<form class="contacts-page__form js-static-form" action="/">
 						<label class="visually-hidden" for="contacts-name">Имя</label>
 						<input class="contacts-page__control" id="contacts-name" type="text" name="name" placeholder="Имя"
@@ -288,35 +287,73 @@
 						<textarea class="contacts-page__control contacts-page__control--textarea" id="contacts-message"
 							name="message" placeholder="Сообщение"></textarea>
 
-						<div class="contact-card__actions">
-						<button class="contacts-page__submit button" type="submit">Отправить</button>
-						<p class="contacts-page__form-note">Мы ответим в ближайшее время</p></div>
+						<div class="contacts-page__form-actions">
+							<button class="contacts-page__submit button" type="submit">Отправить</button>
+							<p class="contacts-page__form-note">Мы ответим в ближайшее время</p>
+						</div>
 					</form>
 				</section>
 			</div>
-		</div>
 
-		<section class="info-panel container" aria-label="Телефон сервиса">
-			<div class="info-panel__container">
-				<div class="info-panel__right">
-					<div class="info-panel__icon" aria-hidden="true">
-						<img src="/images/icons/cart.svg" alt="">
+			<section class="info-panel" aria-label="Телефон сервиса">
+				<div class="info-panel__container">
+					<div class="info-panel__right">
+						<div class="info-panel__icon" aria-hidden="true">
+							<img src="/images/icons/cart.svg" alt="">
+						</div>
+						<div class="info-panel__content">
+							<p class="info-panel__subtitle">DESEW не осуществляет прямые продажи</p>
+							<p class="info-panel__label">Приобрести оборудование можно у официальных партнёров и на маркетплейсах.</p>
+						</div>
 					</div>
-					<div class="info-panel__content">
-						<p class="info-panel__subtitle">DESEW не осуществляет прямые продажи</p>
-						<p class="info-panel__label">Приобрести оборудование можно у официальных партнёров и на маркетплейсах.</p>
-					</div>
+					<a class="info-panel__link button-plate" href="#">
+						<span>Где купить?</span>
+						<svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd"
+								d="M22.0469 0C34.245 9.68955e-05 44.1338 9.88881 44.1338 22.0869C44.1337 34.2849 34.2449 44.1737 22.0469 44.1738C10.2937 44.1738 0.685458 34.9932 0 23.4121H0.601562C1.33337 23.4121 1.92663 22.8187 1.92676 22.0869C1.92676 21.355 1.33345 20.7617 0.601562 20.7617H0C0.685281 9.18048 10.2936 0 22.0469 0ZM19.6279 12.7158C19.1106 12.1985 18.2714 12.1988 17.7539 12.7158C17.2365 13.2334 17.2364 14.0733 17.7539 14.5908L24.083 20.9209C23.669 21.1451 23.3877 21.5831 23.3877 22.0869C23.3878 22.5907 23.6691 23.0288 24.083 23.2529L17.7539 29.583C17.2365 30.1005 17.2364 30.9405 17.7539 31.458C18.2714 31.9749 19.1106 31.9751 19.6279 31.458L28.0615 23.0244C28.579 22.5069 28.5789 21.6669 28.0615 21.1494L19.6279 12.7158ZM5.42383 20.7617C4.69194 20.7617 4.09863 21.355 4.09863 22.0869C4.09876 22.8187 4.69202 23.4121 5.42383 23.4121H10.2461C10.9779 23.4121 11.5712 22.8187 11.5713 22.0869C11.5713 21.355 10.978 20.7617 10.2461 20.7617H5.42383ZM15.0684 20.7617C14.3365 20.7617 13.7432 21.355 13.7432 22.0869C13.7433 22.8187 14.3366 23.4121 15.0684 23.4121H19.8906C20.6224 23.4121 21.2157 22.8187 21.2158 22.0869C21.2158 21.355 20.6225 20.7617 19.8906 20.7617H15.0684Z"
+								fill="white" fill-opacity="0.88" />
+						</svg>
+					</a>
 				</div>
-				<a class="info-panel__link button-plate" href="#">
-					<span>Где купить?</span>
-					<svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path fill-rule="evenodd" clip-rule="evenodd"
-							d="M22.0469 0C34.245 9.68955e-05 44.1338 9.88881 44.1338 22.0869C44.1337 34.2849 34.2449 44.1737 22.0469 44.1738C10.2937 44.1738 0.685458 34.9932 0 23.4121H0.601562C1.33337 23.4121 1.92663 22.8187 1.92676 22.0869C1.92676 21.355 1.33345 20.7617 0.601562 20.7617H0C0.685281 9.18048 10.2936 0 22.0469 0ZM19.6279 12.7158C19.1106 12.1985 18.2714 12.1988 17.7539 12.7158C17.2365 13.2334 17.2364 14.0733 17.7539 14.5908L24.083 20.9209C23.669 21.1451 23.3877 21.5831 23.3877 22.0869C23.3878 22.5907 23.6691 23.0288 24.083 23.2529L17.7539 29.583C17.2365 30.1005 17.2364 30.9405 17.7539 31.458C18.2714 31.9749 19.1106 31.9751 19.6279 31.458L28.0615 23.0244C28.579 22.5069 28.5789 21.6669 28.0615 21.1494L19.6279 12.7158ZM5.42383 20.7617C4.69194 20.7617 4.09863 21.355 4.09863 22.0869C4.09876 22.8187 4.69202 23.4121 5.42383 23.4121H10.2461C10.9779 23.4121 11.5712 22.8187 11.5713 22.0869C11.5713 21.355 10.978 20.7617 10.2461 20.7617H5.42383ZM15.0684 20.7617C14.3365 20.7617 13.7432 21.355 13.7432 22.0869C13.7433 22.8187 14.3366 23.4121 15.0684 23.4121H19.8906C20.6224 23.4121 21.2157 22.8187 21.2158 22.0869C21.2158 21.355 20.6225 20.7617 19.8906 20.7617H15.0684Z"
-							fill="white" fill-opacity="0.88" />
-					</svg>
-				</a>
-			</div>
-		</section>
+			</section>
+
+			<section class="marketplaces" aria-labelledby="contacts-marketplaces-title">
+				<div class="marketplaces__container">
+					<header class="marketplaces__header">
+						<h2 class="marketplaces__title" id="contacts-marketplaces-title">Доступно на</h2>
+						<p class="marketplaces__subtitle">Покупайте оборудование DESEW на популярных маркетплейсах</p>
+					</header>
+
+					<ul class="marketplaces__grid" aria-label="Маркетплейсы">
+						<li class="marketplaces__item">
+							<a class="marketplaces__link" href="#" aria-label="Купить на Ozon">
+								<img src="/images/16-marketplaces/ozon.png" alt="Ozon">
+							</a>
+						</li>
+						<li class="marketplaces__item">
+							<a class="marketplaces__link" href="#" aria-label="Купить на Wildberries">
+								<img src="/images/16-marketplaces/wildberries.png" alt="Wildberries">
+							</a>
+						</li>
+						<li class="marketplaces__item">
+							<a class="marketplaces__link" href="#" aria-label="Купить в DNS">
+								<img src="/images/16-marketplaces/dns.png" alt="DNS">
+							</a>
+						</li>
+						<li class="marketplaces__item">
+							<a class="marketplaces__link" href="#" aria-label="Купить на Яндекс Маркете">
+								<img src="/images/16-marketplaces/yandex-market.png" alt="Яндекс Маркет">
+							</a>
+						</li>
+						<li class="marketplaces__item">
+							<a class="marketplaces__link" href="#" aria-label="Купить в Ситилинке">
+								<img src="/images/16-marketplaces/citilink.png" alt="Ситилинк">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</div>
 
 		<section class="question-feedback section" aria-labelledby="question-feedback-title">
 			<div class="question-feedback__decor decor" aria-hidden="true">

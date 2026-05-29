@@ -51,6 +51,10 @@
 		min-height: inherit;
 		padding-block-start: 40px;
 		max-width: 1240px;
+
+		@include tablet {
+			padding-block-start: 11px;
+		}
 	}
 
 	&__header {
@@ -105,6 +109,10 @@
 			left: calc(50% - 10px);
 			transform: scale(0.4) translateX(-50%) translateY(-50%);
 		}
+
+		@include mobile {
+			top: calc(50% + 10px);
+		}
 	}
 
 	&__item {
@@ -119,6 +127,10 @@
 
 		@include mobile {
 			width: 120px;
+		}
+
+		@include mobile-s {
+			width: 80px;
 		}
 	}
 
@@ -164,6 +176,28 @@
 		}
 	}
 
+	@include mobile {
+		&__item--top-left,
+		&__item--bottom-left {
+			left: 20px;
+		}
+
+		&__item--top-right,
+		&__item--bottom-right {
+			right: 20px;
+		}
+
+		&__item--top-left,
+		&__item--top-right {
+			top: 60px;
+		}
+
+		&__item--bottom-left,
+		&__item--bottom-right {
+			top: 190px;
+		}
+	}
+
 	&__icon {
 		@include square(97px);
 
@@ -177,7 +211,7 @@
 	}
 
 	&__item-title {
-		@include fluid-text(8, 16);
+		@include fluid-text(6, 16);
 
 		font-weight: 700;
 		line-height: 1.2;
@@ -190,7 +224,7 @@
 	}
 
 	&__item-text {
-		@include fluid-text(8, 15);
+		@include fluid-text(6, 15);
 
 		line-height: 1.25;
 		font-weight: 300;

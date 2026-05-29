@@ -1,98 +1,113 @@
 .marketplaces {
 	position: relative;
-	margin-bottom: 0px;
-	background-color: var(--white);
+	z-index: 3;
+	padding-block: 72px 20px;
+	background-color: transparent;
+
+	@include tablet {
+		padding-block: 18px 36px;
+	}
+
+	&__decor {
+		@include visual-frame-layer;
+
+		z-index: 0;
+	}
+
+	&__stitch {
+		left: 0;
+		bottom: 0px;
+
+		@include tablet {
+			display: none;
+		}
+	}
 
 	&__container {
-		display: grid;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
 		gap: 28px;
+
+		@include tablet {
+			gap: 12px;
+		}
 	}
 
 	&__header {
 		text-align: left;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+		z-index: 1;
 	}
 
 	&__title {
-		margin-bottom: 6px;
-		font-size: clamp(28px, 2.7vw, 38px);
-		font-weight: 800;
+		@include fluid-text(7, 32);
+
+		font-weight: 700;
 	}
 
 	&__subtitle {
-		font-size: 18px;
-		color: var(--gray-500);
+		@include fluid-text(7, 20);
+
+		font-weight: 300;
 	}
 
 	&__grid {
-		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 28px;
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 42px 70px;
 		align-items: center;
+		z-index: 1;
+
+		@include tablet {
+			gap: 12px 21px;
+		}
 	}
 
 	&__item {
 		@include flex-center;
 
-		min-height: 114px;
-		padding: 18px 34px;
+		flex: 0 1 calc((100% - 140px) / 3);
+		padding: 22px 30px;
 		background-color: var(--white);
 		border: 1px solid rgba(0, 0, 0, 0.03);
-		border-radius: var(--border-radius-sm);
-		box-shadow: var(--shadow-sm);
-	}
+		border-radius: var(--border-radius);
+		box-shadow: 0 4px 11px 0 rgba(0, 0, 0, 0.04);
 
-	&__item img {
-		max-width: 100%;
-		max-height: 70px;
-		object-fit: contain;
-	}
-
-	&__item:nth-child(4) {
-		margin-left: 24%;
-	}
-
-	&__item:nth-child(5) {
-		margin-right: 24%;
-	}
-
-	@include tablet-s {
-		&__grid {
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-			gap: 18px;
+		@include tablet {
+			flex-basis: calc((100% - 21px) / 2);
+			padding: 3px 5px;
 		}
 
-		&__item:nth-child(4),
-		&__item:nth-child(5) {
-			margin: 0;
+		@include mobile-s {
+			flex-basis: 100%;
 		}
 	}
 
-	@include mobile {
-		&__container {
-			gap: 18px;
+	&__link {
+		@include flex-center;
+
+		height: 58px;
+
+		@include tablet {
+			height: 21px;
 		}
 
-		&__subtitle {
-			font-size: 14px;
-		}
-
-		&__grid {
-			gap: 12px;
-		}
-
-		&__item {
-			min-height: 66px;
-			padding: 12px 16px;
-		}
-
-		&__item img {
-			max-height: 40px;
+		img {
+			height: 100%;
+			object-fit: contain;
 		}
 	}
 
-	@include mobile-s {
-		&__grid {
-			grid-template-columns: 1fr;
+	&--center {
+		.marketplaces__header {
+			align-items: center;
+			text-align: center;
 		}
 	}
 }
