@@ -60,9 +60,8 @@
 									</div>
 								</div>
 
-								<img class="header__catalog-stitch" src="/images/00-header/header-stitch-02.svg"
-								width="570" height="172" alt=""
-									aria-hidden="true">
+								<img class="header__catalog-stitch" src="/images/00-header/header-stitch-02.svg" width="570"
+									height="172" alt="" aria-hidden="true">
 							</div>
 						</div>
 					</li>
@@ -87,36 +86,60 @@
 			<div class="header__actions">
 				<form class="header__search js-search" action="/" role="search">
 					<button class="header__search-button js-search-toggle" type="button" aria-label="Открыть поиск">
-						<img class="header__search-icon" src="/images/icons/search.svg" alt="" width="22" height="21">
+						<img class="header__search-icon" src="/images/icons/search.svg" alt="" width="22" height="22">
 					</button>
 					<input class="header__search-input js-search-input" type="search" name="search" placeholder="Поиск"
 						aria-label="Поиск по сайту">
 				</form>
 
-				<a class="header__icon-button header__icon-button--mail" href="mailto:info@desew.ru" aria-label="Написать">
-					<img class="header__icon" src="/images/icons/mail.svg" alt="" width="32" height="24">
-				</a>
+				<div class="header__actions-inner">
+					<a class="header__icon-button header__icon-button--mail" href="mailto:info@desew.ru" aria-label="Написать">
+						<svg class="header__icon" width="30" height="24" viewBox="0 0 30 24" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M27.75 5.4375L15.9493 12.9542C15.5489 13.1868 15.094 13.3093 14.6309 13.3093C14.1678 13.3093 13.713 13.1868 13.3125 12.9542L1.5 5.4375"
+								stroke="#F6CD14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+							<path
+								d="M25.125 1.5H4.125C2.67525 1.5 1.5 2.67525 1.5 4.125V19.875C1.5 21.3247 2.67525 22.5 4.125 22.5H25.125C26.5747 22.5 27.75 21.3247 27.75 19.875V4.125C27.75 2.67525 26.5747 1.5 25.125 1.5Z"
+								stroke="#F6CD14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
 
-				<a class="header__icon-button header__icon-button--compare" href="#compare" aria-label="Сравнение">
-					<img class="header__icon" src="/images/icons/compare.svg" alt="" width="28" height="21">
-				</a>
+					</a>
 
-				<span class="header__divider" aria-hidden="true"></span>
+					<a class="header__icon-button header__icon-button--compare" href="#compare" aria-label="Сравнение">
+						<svg class="header__icon" width="28" height="21" viewBox="0 0 28 21" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M10.045 16.0344H1.4C1.00334 16.0344 0.671071 15.9016 0.403205 15.6359C0.135338 15.3702 0.000938161 15.0418 4.82758e-06 14.6507C-0.000928505 14.2595 0.133472 13.9311 0.403205 13.6654C0.672938 13.3997 1.0052 13.2669 1.4 13.2669H10.045L7.42 10.6723C7.16334 10.4186 7.035 10.1018 7.035 9.72169C7.035 9.34161 7.16334 9.01274 7.42 8.73506C7.7 8.45831 8.03273 8.31993 8.4182 8.31993C8.80367 8.31993 9.13593 8.45831 9.415 8.73506L14.42 13.682C14.56 13.8204 14.6594 13.9703 14.7182 14.1317C14.777 14.2932 14.8059 14.4662 14.805 14.6507C14.8041 14.8352 14.7751 15.0081 14.7182 15.1696C14.6613 15.331 14.5619 15.4809 14.42 15.6193L9.38 20.6008C9.1 20.8776 8.77333 21.0104 8.4 20.9994C8.02667 20.9883 7.7 20.8439 7.42 20.5662C7.16334 20.2895 7.0294 19.9666 7.0182 19.5976C7.007 19.2286 7.14094 18.9057 7.42 18.629L10.045 16.0344ZM17.955 7.73183L20.58 10.3264C20.8367 10.5801 20.965 10.8974 20.965 11.2784C20.965 11.6594 20.8367 11.9878 20.58 12.2637C20.3 12.5404 19.9677 12.6788 19.5832 12.6788C19.1987 12.6788 18.8659 12.5404 18.585 12.2637L13.58 7.31671C13.44 7.17833 13.3411 7.02842 13.2832 6.86698C13.2253 6.70554 13.1959 6.53257 13.195 6.34807C13.1941 6.16357 13.2235 5.9906 13.2832 5.82916C13.3429 5.66772 13.4419 5.51781 13.58 5.37944L18.62 0.397887C18.9 0.121134 19.2267 -0.0112455 19.6 0.000747146C19.9733 0.0127398 20.3 0.156651 20.58 0.432481C20.8367 0.709234 20.9711 1.03211 20.9832 1.40112C20.9953 1.77012 20.8609 2.093 20.58 2.36975L17.955 4.96431H26.6C26.9967 4.96431 27.3294 5.09715 27.5982 5.36283C27.867 5.62851 28.0009 5.95693 28 6.34807C27.9991 6.73922 27.8647 7.06809 27.5968 7.3347C27.3289 7.6013 26.9967 7.73368 26.6 7.73183H17.955Z"
+								fill="#F6CD14" />
+						</svg>
+					</a>
 
-				<a class="header__icon-button header__icon-button--phone" href="tel:+74952236659" aria-label="Позвонить">
-					<img class="header__icon" src="/images/icons/phone.svg" alt="" width="23" height="23">
-				</a>
+					<span class="header__divider">
+						<img src="images/00-header/header-stitch-01.svg" alt="">
+					</span>
 
-				<a class="header__phone" href="tel:+74952236659">+7 (495) 223-66-59</a>
+					<a class="header__phone" href="tel:+74952236659" aria-label="Позвонить">
+						<svg class="header__icon" width="23" height="23" viewBox="0 0 23 23" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M6.28777 1C6.89209 1 9.30935 6.43885 9.30935 7.04317C9.30935 8.2518 7.4964 9.46043 6.89209 10.6691C6.28777 11.8777 7.4964 13.0863 8.70504 14.295C9.1764 14.7663 11.1223 16.7122 12.3309 16.1079C13.5396 15.5036 14.7482 13.6906 15.9568 13.6906C16.5612 13.6906 22 16.1079 22 16.7122C22 19.1295 20.187 20.9424 18.3741 21.5468C16.5612 22.1511 15.3525 22.1511 12.9353 21.5468C10.518 20.9424 8.70504 20.3381 5.68345 17.3165C2.66187 14.295 2.05755 12.482 1.45324 10.0647C0.848921 7.64748 0.848921 6.43885 1.45324 4.6259C2.05755 2.81295 3.8705 1 6.28777 1Z"
+								stroke="#040404" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+						<span class="header__phone-text">
+							+7 (495) 223-66-59
+						</span>
+					</a>
 
-				<button class="header__burger js-menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false"
-					aria-label="Открыть меню">
-					<span></span>
-				</button>
+					<button class="header__burger js-menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false"
+						aria-label="Открыть меню">
+						<span></span>
+					</button>
+				</div>
 			</div>
 		</div>
 
-		<div class="header__mobile js-mobile-menu" id="mobile-menu" aria-hidden="true">
+		<div class="header__mobile js-mobile-menu" id="mobile-menu">
 			<div class="header__mobile-panel">
 				<nav class="header__mobile-nav js-mobile-menu-view" aria-label="Мобильная навигация">
 					<ul class="header__mobile-list">
@@ -188,30 +211,32 @@
 					</div>
 				</div>
 
-				<img class="header__mobile-banner" src="/images/icons/logo-banner.svg" alt="" aria-hidden="true">
+				<div class="header__mobile-banner-wrapper">
+					<img class="header__mobile-banner" src="/images/icons/logo-transparent.svg" alt="" aria-hidden="true">
+				</div>
 			</div>
 		</div>
 	</header>
 
 	<main class="main product-page" id="main">
-		<div class="product-page__decor decor" aria-hidden="true">
-			<img class="decor__item decor-stitch product-page__decor-stitch product-page__decor-stitch--top"
-				src="/images/12-product-page/product-page-stitch-01.svg" alt="">
-			<img class="decor__item decor-stitch product-page__decor-stitch product-page__decor-stitch--middle"
-				src="/images/12-product-page/product-page-stitch-02.svg" alt="">
-			<img class="decor__item decor-button product-page__decor-button"
-				src="/images/12-product-page/product-page-button.png" alt="">
-		</div>
+		<nav class="breadcrumbs container" aria-label="Хлебные крошки">
+			<ol class="">
+				<li><a href="#">Главная</a></li>
+				<li><a href="#">Каталог</a></li>
+				<li><a href="#">Швейные машины</a></li>
+				<li><a href="#">DESEW SmartStitch 500</a></li>
+			</ol>
+		</nav>
 
 		<div class="product-page__container container">
-			<nav class="product-page__breadcrumbs breadcrumbs" aria-label="Хлебные крошки">
-				<ol class="breadcrumbs__list">
-					<li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Главная</a></li>
-					<li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Каталог</a></li>
-					<li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Швейные машины</a></li>
-					<li class="breadcrumbs__item"><span class="breadcrumbs__current">DESEW SmartStitch 500</span></li>
-				</ol>
-			</nav>
+			<div class="product-page__decor decor" aria-hidden="true">
+				<img class="decor__item decor-stitch product-page__decor-stitch product-page__decor-stitch--top"
+					src="/images/12-product-page/product-page-stitch-01.svg" alt="">
+				<img class="decor__item decor-stitch product-page__decor-stitch product-page__decor-stitch--middle"
+					src="/images/12-product-page/product-page-stitch-02.svg" alt="">
+				<img class="decor__item decor-button product-page__decor-button"
+					src="/images/12-product-page/product-page-button.png" alt="">
+			</div>
 
 			<section class="product-hero" aria-labelledby="product-title">
 				<div class="product-hero__gallery product-gallery js-product-gallery">
@@ -401,14 +426,13 @@
 			</section>
 		</div>
 
-		<section class="related-products" aria-labelledby="related-products-title">
-			<div class="related-products__container container">
-				<div class="related-products__header">
-					<h2 class="related-products__title" id="related-products-title">Похожие товары</h2>
-					<a class="button-plate" href="#">Смотреть все</a>
+		<section class="products" aria-labelledby="related-products-title">
+			<div class="products__container container">
+				<div class="products__header">
+					<h2 class="products__title" id="related-products-title">Похожие товары</h2>
+					<a class="products__more button-plate" href="#"><span>Смотреть все</span></a>
 				</div>
-
-				<div class="related-products__grid">
+				<div class="products__grid">
 					<article class="product-card">
 						<a class="product-card__image-link" href="#"><img class="product-card__image"
 								src="/images/products/sewing-machine-01.jpg" alt="DESEW ProLine 8700"></a>
@@ -423,7 +447,7 @@
 						<a class="product-card__image-link" href="#"><img class="product-card__image"
 								src="/images/products/sewing-machine-02.jpg" alt="DESEW Overlock X5"></a>
 						<div class="product-card__content">
-							<p class="product-card__label">новое</p>
+							<p class="product-card__label product-card__label--brown">новое</p>
 							<h3 class="product-card__title"><a href="#">DESEW Overlock X5</a></h3>
 							<p class="product-card__price">₽ 64 500</p>
 							<a class="product-card__link" href="#">Подробнее →</a>
@@ -443,7 +467,7 @@
 						<a class="product-card__image-link" href="#"><img class="product-card__image"
 								src="/images/products/sewing-machine-04.jpg" alt="DESEW SmartStitch 501"></a>
 						<div class="product-card__content">
-							<p class="product-card__label">скидка</p>
+							<p class="product-card__label product-card__label--orange">скидка</p>
 							<h3 class="product-card__title"><a href="#">DESEW SmartStitch 501</a></h3>
 							<p class="product-card__price">₽ 52 900</p>
 							<a class="product-card__link" href="#">Подробнее →</a>
@@ -456,11 +480,9 @@
 		<section class="question-feedback section" aria-labelledby="question-feedback-title">
 			<div class="question-feedback__decor decor" aria-hidden="true">
 				<img class="decor__item question-feedback__stitch question-feedback__stitch--left"
-					src="/images/08-article/article-stitch-02.svg" alt="">
+					src="/images/09-question-feedback/question-feedback-stitch-01.svg" alt="">
 				<img class="decor__item question-feedback__stitch question-feedback__stitch--right"
-					src="/images/09-feedback/feedback-stitch-01.svg" alt="">
-				<img class="decor__item question-feedback__stitch question-feedback__stitch--bottom"
-					src="/images/09-feedback/feedback-stitch-02.svg" alt="">
+					src="/images/09-question-feedback/question-feedback-stitch-02.svg" alt="">
 			</div>
 
 			<div class="question-feedback__container container">
@@ -495,18 +517,25 @@
 						<div class="question-feedback__field question-feedback__field--full">
 							<label class="visually-hidden" for="question-message">Сообщение</label>
 							<textarea class="question-feedback__control question-feedback__control--textarea" id="question-message"
-								name="message" placeholder="Сообщение"></textarea>
+								name="message" placeholder="Сообщение" rows="3"></textarea>
 						</div>
 
 						<button class="question-feedback__submit button" type="submit">Отправить</button>
 
-						<p class="question-feedback__privacy">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
+						<p class="question-feedback__privacy">
+							<img class="question-feedback__privacy-icon" src="/images/icons/time-gray.svg" alt="">
+							Нажимая кнопку, вы соглашаетесь с обработкой персональных данных
+						</p>
 					</form>
 				</div>
 
 				<div class="question-feedback__media" aria-hidden="true">
-					<img class="question-feedback__object" src="/images/09-feedback/feedback-object.png" alt="">
-					<img class="question-feedback__brand" src="/images/09-feedback/feedback-bg-01.png" alt="">
+					<img class="question-feedback__object" src="/images/09-question-feedback/question-feedback-object.png" alt=""
+						width="644" height="429">
+					<img class="question-feedback__brand question-feedback__brand--desctop hidden-mobile"
+						src="/images/09-question-feedback/question-feedback-bg-01.png" alt="" width="953" height="204">
+					<img class="question-feedback__brand question-feedback__brand--mobile visible-mobile"
+						src="/images/09-question-feedback/question-feedback-bg-02.png" alt="" width="397" height="85">
 				</div>
 			</div>
 		</section>
@@ -546,21 +575,19 @@
 	</main>
 
 	<footer class="footer" id="contacts">
-		<img class="footer__decor footer__decor--left" src="/images/99-footer/footer-stitch-01.svg" alt=""
-			aria-hidden="true">
-		<img class="footer__decor footer__decor--right" src="/images/99-footer/footer-stitch-02.svg" alt=""
-			aria-hidden="true">
+		<div class="footer__decor decor">
+			<img class=" footer__decor--bottom" src="/images/99-footer/footer-stitch-02.svg" alt="" aria-hidden="true">
+		</div>
 
 		<div class="footer__container container">
 			<div class="footer__brand">
 				<a class="footer__logo" href="#" aria-label="DEsew">
-					<img class="footer__logo-image" src="/images/icons/logo-footer.svg" alt="" width="283" height="61">
+					<img class="footer__logo-image" src="/images/icons/logo-footer.svg" alt="DEsew" width="283" height="61">
 				</a>
-
 				<p class="footer__text">Швейное оборудование<br>для производства и мастерских</p>
 				<span class="footer__divider" aria-hidden="true"></span>
-
-				<button class="footer__callback" type="button" data-micromodal-trigger="feedback-modal">Заказать звонок</button>
+				<button class="footer__callback button" type="button" data-micromodal-trigger="feedback-modal">Заказать
+					звонок</button>
 
 				<div class="footer__bottom">
 					<p class="footer__copyright">© DESEW 2026</p>
@@ -610,14 +637,7 @@
 							</li>
 							<li>
 								<span class="footer__contact footer__contact--location">
-									<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"
-										aria-hidden="true">
-										<path
-											d="M8.5 15.2C8.5 15.2 3.2 10.7 3.2 6.9C3.2 4 5.6 1.7 8.5 1.7C11.4 1.7 13.8 4 13.8 6.9C13.8 10.7 8.5 15.2 8.5 15.2Z"
-											stroke="#F6CD14" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-										<path d="M8.5 8.65C9.4665 8.65 10.25 7.8665 10.25 6.9C10.25 5.9335 9.4665 5.15 8.5 5.15C7.5335 5.15 6.75 5.9335 6.75 6.9C6.75 7.8665 7.5335 8.65 8.5 8.65Z"
-											stroke="#F6CD14" stroke-width="1.8" />
-									</svg>
+									<img src="/images/icons/location-city.svg" alt="" aria-hidden="true">
 									<span>Москва</span>
 								</span>
 							</li>
@@ -633,7 +653,7 @@
 						<label class="visually-hidden" for="footer-email">Ваш email</label>
 						<input class="footer__subscribe-input" id="footer-email" type="email" name="email" placeholder="Ваш email"
 							autocomplete="email">
-						<button class="footer__subscribe-button" type="submit">Подписаться</button>
+						<button class="footer__subscribe-button button" type="submit">Подписаться</button>
 					</div>
 				</form>
 			</div>
@@ -646,41 +666,56 @@
 		<div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="feedback-modal-title">
 			<button class="modal__close" type="button" data-micromodal-close aria-label="Закрыть окно"></button>
 
-			<h2 class="modal__title h3" id="feedback-modal-title">Обратная связь</h2>
-			<p class="modal__text">Оставьте сообщение, и команда DEsew свяжется с вами.</p>
+			<h2 class="modal__title" id="feedback-modal-title">Связаться с сервисом</h2>
+			<p class="modal__text">Выберите, с чем мы можем помочь:</p>
 
-			<form class="form" action="/">
-				<div class="form__field">
-					<label class="form__label" for="feedback-name">Имя</label>
-					<input class="form__control" id="feedback-name" type="text" name="name" autocomplete="name">
+			<form class="modal__form js-static-form" action="/">
+				<fieldset class="modal__options">
+					<legend class="visually-hidden">Тип обращения</legend>
+					<label class="modal__option">
+						<input class="modal__option-input" type="radio" name="request-type" value="question" checked>
+						<span class="modal__option-control" aria-hidden="true"></span>
+						<span>Есть вопрос</span>
+					</label>
+					<label class="modal__option">
+						<input class="modal__option-input" type="radio" name="request-type" value="review">
+						<span class="modal__option-control" aria-hidden="true"></span>
+						<span>Оставить отзыв</span>
+					</label>
+					<label class="modal__option">
+						<input class="modal__option-input" type="radio" name="request-type" value="problem">
+						<span class="modal__option-control" aria-hidden="true"></span>
+						<span>Сообщить о проблеме</span>
+					</label>
+					<label class="modal__option">
+						<input class="modal__option-input" type="radio" name="request-type" value="call">
+						<span class="modal__option-control" aria-hidden="true"></span>
+						<span>Заказать звонок</span>
+					</label>
+				</fieldset>
+
+				<div class="modal__divider" aria-hidden="true"></div>
+
+				<div class="modal__field">
+					<label class="modal__label" for="feedback-name">Имя</label>
+					<input class="modal__control" id="feedback-name" type="text" name="name" placeholder="Введите ваше имя"
+						autocomplete="name">
 				</div>
 
-				<div class="form__row">
-					<div class="form__field">
-						<label class="form__label" for="feedback-phone">Телефон</label>
-						<input class="form__control" id="feedback-phone" type="tel" name="phone" autocomplete="tel">
-					</div>
-
-					<div class="form__field">
-						<label class="form__label" for="feedback-email">Email</label>
-						<input class="form__control" id="feedback-email" type="email" name="email" autocomplete="email">
-					</div>
+				<div class="modal__field">
+					<label class="modal__label" for="feedback-phone">Телефон</label>
+					<input class="modal__control" id="feedback-phone" type="tel" name="phone" placeholder="Введите номер телефона"
+						autocomplete="tel">
 				</div>
 
-				<div class="form__field">
-					<label class="form__label" for="feedback-message">Сообщение</label>
-					<textarea class="form__control form__control--textarea" id="feedback-message" name="message"></textarea>
+				<div class="modal__field">
+					<label class="modal__label" for="feedback-message">Комментарий</label>
+					<textarea class="modal__control modal__control--textarea" id="feedback-message" name="message"
+						placeholder="Опишите ваш вопрос"></textarea>
 				</div>
 
-				<label class="form__checkbox">
-					<input class="form__checkbox-input" type="checkbox" name="privacy" checked>
-					<span class="form__checkbox-control" aria-hidden="true"></span>
-					<span>Согласен на обработку персональных данных</span>
-				</label>
-
-				<div class="form__actions">
-					<button class="button" type="submit">Отправить</button>
-				</div>
+				<button class="modal__submit button" type="submit">Отправить</button>
+				<p class="modal__caption">Мы свяжемся с вами в ближайшее время</p>
 			</form>
 		</div>
 	</div>

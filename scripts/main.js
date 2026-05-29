@@ -660,7 +660,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				speed: 500,
 				loop: true,
 				pagination: {
-					el: slider.querySelector('.popular-products__pagination'),
+					el: slider.querySelector('.products__pagination'),
 					clickable: true,
 				},
 			})
