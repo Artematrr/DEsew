@@ -68,7 +68,8 @@
 			overflow-x: auto;
 			padding-bottom: 10px;
 			scrollbar-width: thin;
-			justify-content: center;
+			justify-content: flex-start;
+			-webkit-overflow-scrolling: touch;
 		}
 
 		@include mobile {
@@ -120,7 +121,6 @@
 
 		@include hover {
 			border-color: var(--primary-500);
-			transform: translateY(-1px);
 		}
 
 		img {
@@ -453,7 +453,6 @@
 
 		@include hover {
 			color: var(--primary-600);
-			transform: translateY(-1px);
 		}
 	}
 }
@@ -606,7 +605,6 @@
 
 		@include hover {
 			border-color: var(--primary-500);
-			transform: translateY(-1px);
 		}
 	}
 

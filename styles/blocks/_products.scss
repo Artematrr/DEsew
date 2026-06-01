@@ -4,7 +4,7 @@
 	background-color: var(--white);
 
 	@include tablet {
-		padding-block: 0px;
+		padding-block: 0px 30px;
 	}
 
 	&__container {
