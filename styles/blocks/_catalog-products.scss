@@ -10,7 +10,7 @@
 		display: grid;
 		grid-template-columns: repeat(4, minmax(0, 1fr));
 		gap: 64px 54px;
-		z-index: 4;
+		z-index: 2;
 
 		@include desktop {
 			grid-template-columns: repeat(3, minmax(0, 1fr));

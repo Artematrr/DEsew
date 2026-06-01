@@ -424,7 +424,7 @@ svg * {
 
 html {
   min-height: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
   scroll-padding-top: var(--header-height);
   scroll-behavior: smooth;
 }
@@ -5456,7 +5456,7 @@ h4,
     width: 100%;
     margin-bottom: 32px;
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     top: 100px;
     width: 90%;
   }
@@ -5766,7 +5766,7 @@ h4,
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 64px 54px;
-  z-index: 4;
+  z-index: 2;
 }
 @media (max-width: 1280px) {
   .catalog-products__grid {
