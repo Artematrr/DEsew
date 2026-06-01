@@ -424,7 +424,6 @@ svg * {
 
 html {
   min-height: 100%;
-  overflow-x: clip;
   scroll-padding-top: var(--header-height);
   scroll-behavior: smooth;
 }
@@ -461,6 +460,10 @@ body::-webkit-scrollbar-thumb {
 }
 body::-webkit-scrollbar-thumb:hover {
   background-color: var(--primary-300);
+}
+
+.main {
+  overflow-x: clip;
 }
 
 a,
