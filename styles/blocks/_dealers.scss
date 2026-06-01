@@ -287,11 +287,11 @@
 		@include mobile {
 			min-height: 35px;
 			width: 208px;
+			border-radius: 6px;
 		}
 
 		@include mobile-s {
 			width: 138px;
-			border-radius: 6px;
 			padding: 5px;
 			grid-template-columns: minmax(0, 1fr) 28px;
 		}
@@ -589,12 +589,40 @@
 				max-width: calc(1274px + var(--container-padding-x) * 2);
 			}
 
+			&__layout {
+				grid-template-columns: minmax(260px, 1016px) minmax(230px, 534px);
+
+				@include desktop {
+					grid-template-columns: minmax(260px, 660px) minmax(230px, 580px);
+				}
+
+				@include tablet {
+					grid-template-columns: 1fr;
+				}
+			}
+
+			&__map {
+				height: 492px;
+
+				@include tablet {
+					height: 181px;
+				}
+			}
+
+			&__shops-scroll {
+				max-height: 425px;
+
+				@include tablet {
+					max-height: none;
+				}
+			}
+
 			&__shop-address {
 				@include fluid-text(2, 12);
 			}
 
 			&__shop-meta {
-				gap: 56px;
+				gap: 26px;
 
 				@include tablet {
 					gap: 10px;

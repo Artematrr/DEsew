@@ -7264,12 +7264,12 @@ h4,
   .dealers__shop {
     min-height: 35px;
     width: 208px;
+    border-radius: 6px;
   }
 }
 @media (max-width: 375px) {
   .dealers__shop {
     width: 138px;
-    border-radius: 6px;
     padding: 5px;
     grid-template-columns: minmax(0, 1fr) 28px;
   }
@@ -7514,11 +7514,40 @@ h4,
 .dealers--compact .dealers__container {
   max-width: calc(1274px + var(--container-padding-x) * 2);
 }
+.dealers--compact .dealers__layout {
+  grid-template-columns: minmax(260px, 1016px) minmax(230px, 534px);
+}
+@media (max-width: 1280px) {
+  .dealers--compact .dealers__layout {
+    grid-template-columns: minmax(260px, 660px) minmax(230px, 580px);
+  }
+}
+@media (max-width: 1023px) {
+  .dealers--compact .dealers__layout {
+    grid-template-columns: 1fr;
+  }
+}
+.dealers--compact .dealers__map {
+  height: 492px;
+}
+@media (max-width: 1023px) {
+  .dealers--compact .dealers__map {
+    height: 181px;
+  }
+}
+.dealers--compact .dealers__shops-scroll {
+  max-height: 425px;
+}
+@media (max-width: 1023px) {
+  .dealers--compact .dealers__shops-scroll {
+    max-height: none;
+  }
+}
 .dealers--compact .dealers__shop-address {
   font-size: clamp(2px, 0.8333333333vw, 12px);
 }
 .dealers--compact .dealers__shop-meta {
-  gap: 56px;
+  gap: 26px;
 }
 @media (max-width: 1023px) {
   .dealers--compact .dealers__shop-meta {
