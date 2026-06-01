@@ -1,5 +1,6 @@
 html {
 	min-height: 100%;
+	overflow-x: hidden;
 	scroll-padding-top: var(--header-height);
 	scroll-behavior: smooth;
 }
