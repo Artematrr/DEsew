@@ -423,12 +423,20 @@
 		height: 100%;
 		padding-inline: 2px;
 
+		// @include hover {
+		// 	img {
+		// 		filter: grayscale(0);
+		// 	}
+		// }
+
 		img {
 			max-width: 100%;
 			max-height: clamp(24px, 2.569vw, 37px);
 			width: auto;
 			height: auto;
 			object-fit: contain;
+			// filter: grayscale(1);
+			// transition: filter var(--transition-duration) var(--transition-timing-function);
 		}
 
 		@include mobile {

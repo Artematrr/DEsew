@@ -729,6 +729,40 @@ document.addEventListener('DOMContentLoaded', () => {
 			})
 		})
 
+		document.querySelectorAll('.js-dealers-markets-slider').forEach(slider => {
+			const swiperElement = slider.querySelector('.dealers__markets-slider')
+			const list = slider.querySelector('.dealers__markets')
+			const slides = list ? Array.from(list.children) : []
+
+			if (!swiperElement || !list || slides.length <= 5 || swiperElement.dataset.swiperInitialized) {
+				return
+			}
+
+			swiperElement.dataset.swiperInitialized = 'true'
+			swiperElement.classList.add('swiper')
+			list.classList.add('swiper-wrapper')
+			slides.forEach(slide => slide.classList.add('swiper-slide'))
+
+			new Swiper(swiperElement, {
+				slidesPerView: 3,
+				spaceBetween: 12,
+				speed: 450,
+				freeMode: true,
+				watchOverflow: true,
+				a11y: false,
+				breakpoints: {
+					768: {
+						slidesPerView: 4,
+						spaceBetween: 18,
+					},
+					1024: {
+						slidesPerView: 5,
+						spaceBetween: 30,
+					},
+				},
+			})
+		})
+
 		document.querySelectorAll('.js-slider').forEach(slider => {
 			const swiperElement = slider.querySelector('.swiper')
 
