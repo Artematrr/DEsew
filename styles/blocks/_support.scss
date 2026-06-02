@@ -188,7 +188,7 @@
 	}
 
 	&__card-text {
-		@include fluid-text(6, 16);
+		@include fluid-text(7, 16);
 
 		max-width: 350px;
 		font-weight: 400;
@@ -370,6 +370,11 @@
 					width: 70px;
 					height: 64px;
 				}
+
+				@include mobile {
+					width: 45px;
+					height: 45px;
+				}
 			}
 			&__card-title {
 				@include fluid-text(21, 35);
@@ -416,4 +421,3 @@
 		}
 	}
 }
-

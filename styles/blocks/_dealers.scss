@@ -86,7 +86,7 @@
 	}
 
 	&__subtitle {
-		@include fluid-text(5, 16);
+		@include fluid-text(7, 16);
 
 		font-weight: 300;
 		color: var(--gray-500);
@@ -286,12 +286,12 @@
 
 		@include mobile {
 			min-height: 35px;
-			width: 208px;
+			width: 238px;
 			border-radius: 6px;
 		}
 
 		@include mobile-s {
-			width: 138px;
+			width: 168px;
 			padding: 5px;
 			grid-template-columns: minmax(0, 1fr) 28px;
 		}
@@ -320,13 +320,13 @@
 	}
 
 	&__shop-title {
-		@include fluid-text(2, 18);
+		@include fluid-text(7, 18);
 
 		font-weight: 800;
 	}
 
 	&__shop-address {
-		@include fluid-text(2, 15);
+		@include fluid-text(7, 15);
 
 		font-weight: 800;
 		color: var(--gray-500);
@@ -339,7 +339,7 @@
 	}
 
 	&__shop-meta {
-		@include fluid-text(2, 15);
+		@include fluid-text(7, 15);
 
 		display: flex;
 		align-items: flex-start;
@@ -449,7 +449,7 @@
 		}
 
 		span {
-			@include fluid-text(2, 12);
+			@include fluid-text(7, 12);
 
 			min-height: 28px;
 			font-weight: 600;
@@ -524,7 +524,7 @@
 	}
 
 	&__markets-title {
-		@include fluid-text(6, 16);
+		@include fluid-text(7, 16);
 
 		margin-bottom: 2px;
 		text-align: center;
@@ -601,7 +601,8 @@
 		height: 40px;
 		object-fit: contain;
 		filter: grayscale(1);
-		transition: filter var(--transition-duration) var(--transition-timing-function);
+		transition: filter var(--transition-duration)
+			var(--transition-timing-function);
 
 		@include tablet {
 			height: 9px;
@@ -660,7 +661,7 @@
 			}
 
 			&__shop-address {
-				@include fluid-text(2, 12);
+				@include fluid-text(7, 12);
 			}
 
 			&__shop-meta {

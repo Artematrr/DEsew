@@ -737,6 +737,10 @@
 		@include tablet {
 			padding: 27px 36px;
 		}
+
+		@include tablet {
+			padding: 15px 10px;
+		}
 	}
 
 	&__list {
@@ -751,7 +755,7 @@
 	}
 
 	&__row {
-		@include fluid-text(12, 16);
+		@include fluid-text(10, 16);
 
 		display: grid;
 		grid-template-columns: auto minmax(18px, 1fr) auto;
@@ -779,7 +783,7 @@
 	}
 
 	&__options {
-		@include fluid-text(22, 25);
+		@include fluid-text(15, 25);
 
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -951,7 +955,7 @@
 			padding: 9px 29px;
 
 			@include mobile {
-				padding: 7px 20px;
+				padding: 9px 10px;
 			}
 		}
 

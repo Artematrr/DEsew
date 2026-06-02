@@ -3243,6 +3243,11 @@ h4,
     padding: 27px 36px;
   }
 }
+@media (max-width: 1023px) {
+  .product-specs__panel {
+    padding: 15px 10px;
+  }
+}
 .product-specs__list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3256,7 +3261,7 @@ h4,
   }
 }
 .product-specs__row {
-  font-size: clamp(12px, 1.1111111111vw, 16px);
+  font-size: clamp(10px, 1.1111111111vw, 16px);
   display: grid;
   grid-template-columns: auto minmax(18px, 1fr) auto;
   align-items: end;
@@ -3279,7 +3284,7 @@ h4,
   text-align: right;
 }
 .product-specs__options {
-  font-size: clamp(22px, 1.7361111111vw, 25px);
+  font-size: clamp(15px, 1.7361111111vw, 25px);
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   -moz-column-gap: 36px;
@@ -3464,7 +3469,7 @@ h4,
 }
 @media (max-width: 767px) {
   .product-video__more span {
-    padding: 7px 20px;
+    padding: 9px 10px;
   }
 }
 @media (max-width: 767px) {
@@ -4232,7 +4237,7 @@ h4,
   }
 }
 .comparison-page__subtitle {
-  font-size: clamp(6px, 1.1111111111vw, 16px);
+  font-size: clamp(7px, 1.1111111111vw, 16px);
   font-weight: 300;
   color: var(--gray-500);
 }
@@ -4313,7 +4318,7 @@ h4,
   display: none;
 }
 .comparison-products .product-card__title {
-  font-size: clamp(5px, 1.3888888889vw, 20px);
+  font-size: clamp(7px, 1.3888888889vw, 20px);
   order: -1;
   max-width: 100%;
   margin-bottom: 4px;
@@ -4389,7 +4394,7 @@ h4,
   }
 }
 .comparison-products .product-card__link {
-  font-size: clamp(6px, 1.1805555556vw, 17px);
+  font-size: clamp(7px, 1.1805555556vw, 17px);
   text-align: left;
   width: 100%;
   color: var(--gray-900);
@@ -4417,7 +4422,7 @@ h4,
   border-top-right-radius: 0;
 }
 .comparison-products__select-button {
-  font-size: clamp(5px, 1.25vw, 18px);
+  font-size: clamp(7px, 1.25vw, 18px);
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
@@ -4510,7 +4515,7 @@ h4,
   min-width: 0;
 }
 .comparison-section__title {
-  font-size: clamp(6px, 2.2222222222vw, 32px);
+  font-size: clamp(7px, 2.2222222222vw, 32px);
   position: relative;
   padding-bottom: 25px;
   margin-bottom: 25px;
@@ -4573,7 +4578,7 @@ h4,
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .comparison-table__cell {
-  font-size: clamp(6px, 1.6666666667vw, 24px);
+  font-size: clamp(7px, 1.6666666667vw, 24px);
   display: grid;
   align-content: start;
   gap: 24px;
@@ -4598,7 +4603,7 @@ h4,
   }
 }
 .comparison-table__model {
-  font-size: clamp(5px, 1.3888888889vw, 20px);
+  font-size: clamp(7px, 1.3888888889vw, 20px);
   font-weight: 700;
   line-height: 1.2;
 }
@@ -5026,7 +5031,7 @@ h4,
   z-index: 1;
 }
 .marketplaces__title {
-  font-size: clamp(7px, 2.2222222222vw, 32px);
+  font-size: clamp(10px, 2.2222222222vw, 32px);
   font-weight: 700;
 }
 .marketplaces__subtitle {
@@ -5075,16 +5080,6 @@ h4,
   align-items: center;
   height: 58px;
 }
-@media (hover: hover) {
-  .marketplaces__link:hover img {
-    filter: grayscale(0);
-  }
-}
-@media (hover: none) {
-  .marketplaces__link:active img {
-    filter: grayscale(0);
-  }
-}
 @media (max-width: 1023px) {
   .marketplaces__link {
     height: 21px;
@@ -5094,8 +5089,6 @@ h4,
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
-  filter: grayscale(1);
-  transition: filter var(--transition-duration) var(--transition-timing-function);
 }
 .marketplaces--center .marketplaces__header {
   align-items: center;
@@ -5218,6 +5211,11 @@ h4,
     z-index: 0;
   }
 }
+@media (max-width: 767px) {
+  .work-steps__grid {
+    gap: 5px;
+  }
+}
 .work-steps__card {
   display: grid;
   grid-template-rows: 240px 1fr 70px;
@@ -5312,6 +5310,12 @@ h4,
     box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.11);
   }
 }
+@media (max-width: 767px) {
+  .brand-values__card {
+    padding: 10px 15px;
+    min-height: 110px;
+  }
+}
 .brand-values__card-header {
   display: flex;
   align-items: flex-start;
@@ -5320,12 +5324,12 @@ h4,
 }
 @media (max-width: 1023px) {
   .brand-values__card-header {
-    gap: 4px;
+    gap: 9px;
     margin-bottom: 20px;
   }
 }
 .brand-values__icon {
-  width: 120;
+  width: 120px;
   aspect-ratio: 1;
   -o-object-fit: contain;
      object-fit: contain;
@@ -5333,6 +5337,11 @@ h4,
 @media (max-width: 1023px) {
   .brand-values__icon {
     width: 72px;
+  }
+}
+@media (max-width: 767px) {
+  .brand-values__icon {
+    width: 45px;
   }
 }
 .brand-values__title {
@@ -6985,7 +6994,7 @@ h4,
   }
 }
 .equipment-features__item-title {
-  font-size: clamp(6px, 1.1111111111vw, 16px);
+  font-size: clamp(7px, 1.1111111111vw, 16px);
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 10px;
@@ -6997,7 +7006,7 @@ h4,
   }
 }
 .equipment-features__item-text {
-  font-size: clamp(6px, 1.0416666667vw, 15px);
+  font-size: clamp(7px, 1.0416666667vw, 15px);
   line-height: 1.25;
   font-weight: 300;
   color: var(--white);
@@ -7074,7 +7083,7 @@ h4,
   }
 }
 .dealers__subtitle {
-  font-size: clamp(5px, 1.1111111111vw, 16px);
+  font-size: clamp(7px, 1.1111111111vw, 16px);
   font-weight: 300;
   color: var(--gray-500);
 }
@@ -7274,13 +7283,13 @@ h4,
 @media (max-width: 767px) {
   .dealers__shop {
     min-height: 35px;
-    width: 208px;
+    width: 238px;
     border-radius: 6px;
   }
 }
 @media (max-width: 375px) {
   .dealers__shop {
-    width: 138px;
+    width: 168px;
     padding: 5px;
     grid-template-columns: minmax(0, 1fr) 28px;
   }
@@ -7308,11 +7317,11 @@ h4,
   }
 }
 .dealers__shop-title {
-  font-size: clamp(2px, 1.25vw, 18px);
+  font-size: clamp(7px, 1.25vw, 18px);
   font-weight: 800;
 }
 .dealers__shop-address {
-  font-size: clamp(2px, 1.0416666667vw, 15px);
+  font-size: clamp(7px, 1.0416666667vw, 15px);
   font-weight: 800;
   color: var(--gray-500);
 }
@@ -7322,7 +7331,7 @@ h4,
   align-items: flex-start;
 }
 .dealers__shop-meta {
-  font-size: clamp(2px, 1.0416666667vw, 15px);
+  font-size: clamp(7px, 1.0416666667vw, 15px);
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -7412,7 +7421,7 @@ h4,
   }
 }
 .dealers__route span {
-  font-size: clamp(2px, 0.8333333333vw, 12px);
+  font-size: clamp(7px, 0.8333333333vw, 12px);
   min-height: 28px;
   font-weight: 600;
   color: var(--gray-500);
@@ -7464,7 +7473,7 @@ h4,
   }
 }
 .dealers__markets-title {
-  font-size: clamp(6px, 1.1111111111vw, 16px);
+  font-size: clamp(7px, 1.1111111111vw, 16px);
   margin-bottom: 2px;
   text-align: center;
   color: var(--gray-500);
@@ -7596,7 +7605,7 @@ h4,
   }
 }
 .dealers--compact .dealers__shop-address {
-  font-size: clamp(2px, 0.8333333333vw, 12px);
+  font-size: clamp(7px, 0.8333333333vw, 12px);
 }
 .dealers--compact .dealers__shop-meta {
   gap: 26px;
@@ -7799,7 +7808,7 @@ h4,
   line-height: 1.15;
 }
 .support__card-text {
-  font-size: clamp(6px, 1.1111111111vw, 16px);
+  font-size: clamp(7px, 1.1111111111vw, 16px);
   max-width: 350px;
   font-weight: 400;
   line-height: 1.25;
@@ -7979,6 +7988,12 @@ h4,
     height: 64px;
   }
 }
+@media (max-width: 767px) {
+  .support--support-page .support__card-icon {
+    width: 45px;
+    height: 45px;
+  }
+}
 .support--support-page .support__card-title {
   font-size: clamp(21px, 2.4305555556vw, 35px);
 }
@@ -8072,7 +8087,7 @@ h4,
   color: var(--primary-500);
 }
 .article-preview__subtitle {
-  font-size: clamp(6px, 1.1111111111vw, 16px);
+  font-size: clamp(7px, 1.1111111111vw, 16px);
   color: var(--gray-500);
 }
 .article-preview__more {

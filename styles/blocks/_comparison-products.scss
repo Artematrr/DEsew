@@ -66,7 +66,7 @@
 	}
 
 	.product-card__title {
-		@include fluid-text(5, 20);
+		@include fluid-text(7, 20);
 
 		order: -1;
 		max-width: 100%;
@@ -139,7 +139,7 @@
 	}
 
 	.product-card__link {
-		@include fluid-text(6, 17);
+		@include fluid-text(7, 17);
 
 		text-align: left;
 		width: 100%;
@@ -172,7 +172,7 @@
 	}
 
 	&__select-button {
-		@include fluid-text(5, 18);
+		@include fluid-text(7, 18);
 
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) auto;

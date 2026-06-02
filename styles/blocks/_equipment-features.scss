@@ -211,7 +211,7 @@
 	}
 
 	&__item-title {
-		@include fluid-text(6, 16);
+		@include fluid-text(7, 16);
 
 		font-weight: 700;
 		line-height: 1.2;
@@ -224,7 +224,7 @@
 	}
 
 	&__item-text {
-		@include fluid-text(6, 15);
+		@include fluid-text(7, 15);
 
 		line-height: 1.25;
 		font-weight: 300;

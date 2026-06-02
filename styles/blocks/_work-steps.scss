@@ -111,6 +111,10 @@
 			gap: 20px;
 			z-index: 0;
 		}
+
+		@include mobile {
+			gap: 5px;
+		}
 	}
 
 	&__card {
