@@ -16,7 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Page scroll lock
 	const syncBodyLock = () => {
 		const hasOpenMenu = Boolean(menu?.classList.contains('is-open'))
-		const hasOpenModal = Boolean(document.querySelector('.modal.is-open'))
+		const hasOpenModal = Boolean(
+			document.querySelector('.modal.is-open, .video-modal.is-open')
+		)
 
 		body.classList.toggle('is-fixed', hasOpenMenu || hasOpenModal)
 	}
@@ -168,6 +170,68 @@ document.addEventListener('DOMContentLoaded', () => {
 		lightbox.setAttribute('aria-hidden', 'true')
 		body.classList.remove('is-lock')
 	}
+
+	// Video modal
+	const videoModal = document.querySelector('.js-video-modal')
+	const videoIframe = videoModal?.querySelector('.js-video-iframe')
+	const videoTitle = videoModal?.querySelector('.js-video-title')
+	const videoProvider = videoModal?.querySelector('.js-video-provider')
+	let activeVideoTrigger = null
+
+	const closeVideoModal = () => {
+		if (!videoModal) {
+			return
+		}
+
+		videoModal.classList.remove('is-open')
+		videoModal.setAttribute('aria-hidden', 'true')
+
+		if (videoIframe) {
+			videoIframe.src = ''
+		}
+
+		requestAnimationFrame(syncBodyLock)
+		activeVideoTrigger?.focus()
+		activeVideoTrigger = null
+	}
+
+	document.querySelectorAll('.js-video-open').forEach(button => {
+		button.addEventListener('click', () => {
+			const source = button.dataset.videoSrc
+
+			if (!videoModal || !videoIframe || !source) {
+				return
+			}
+
+			const title = button.dataset.videoTitle || 'Видеообзор DESEW'
+			const provider = button.dataset.videoProvider || 'Видео'
+
+			activeVideoTrigger = button
+			videoIframe.src = source
+			videoIframe.title = title
+			if (videoTitle) {
+				videoTitle.textContent = title
+			}
+			if (videoProvider) {
+				videoProvider.textContent = provider
+			}
+
+			closeProductLightbox()
+			videoModal.classList.add('is-open')
+			videoModal.setAttribute('aria-hidden', 'false')
+			syncBodyLock()
+		})
+	})
+
+	videoModal?.querySelectorAll('.js-video-close').forEach(button => {
+		button.addEventListener('click', closeVideoModal)
+	})
+
+	document.addEventListener('keydown', event => {
+		if (event.key === 'Escape' && videoModal?.classList.contains('is-open')) {
+			closeVideoModal()
+		}
+	})
 
 	// Dropdowns
 	document.querySelectorAll('[data-dropdown]').forEach(dropdown => {
