@@ -88,12 +88,19 @@
 		--button-plate-arrow-to: rgba(254, 206, 106, 0.74);
 
 		justify-content: space-between;
-		
+
 		span {
 			min-width: 226px;
 			min-height: 36px;
 		}
-		
+
+		@include mobile {
+			span {
+				padding: 5px 15px;
+				min-width: unset;
+			}
+		}
+
 		@include hover {
 			color: var(--black);
 			--button-plate-arrow-from: rgba(246, 205, 20, 1);
