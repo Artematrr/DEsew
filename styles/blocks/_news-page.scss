@@ -21,13 +21,12 @@
 	&__eyebrow {
 		@include fluid-text(10, 16);
 
-		margin-bottom: 6px;
 		font-weight: 800;
-		color: var(--primary-500);
 		text-transform: uppercase;
 	}
 
 	&__title {
+		color: var(--primary-500);
 		@include fluid-text(32, 64);
 
 		margin-bottom: 14px;
@@ -67,7 +66,7 @@
 
 .news-card {
 	display: grid;
-	grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+	grid-template-columns: minmax(0, 260px) minmax(200px, 1fr);
 	gap: 22px;
 	padding: 20px;
 	background-color: var(--white);
@@ -75,18 +74,21 @@
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 
 	@include tablet {
-		grid-template-columns: 1fr;
 		gap: 12px;
 		padding: 14px;
 		border-radius: 10px;
 	}
 
+	@include mobile {
+		grid-template-columns: 1fr;
+	}
+
 	&--large {
-		grid-template-columns: minmax(280px, 0.95fr) minmax(0, 1fr);
+		grid-template-columns: minmax(180px, 0.95fr) minmax(200px, 1fr);
 		align-items: center;
 		padding: 26px;
 
-		@include tablet {
+		@include mobile {
 			grid-template-columns: 1fr;
 			padding: 14px;
 		}

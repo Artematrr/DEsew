@@ -32,15 +32,14 @@
 	}
 
 	&__eyebrow {
-		margin-bottom: 8px;
 		font-weight: 800;
-		color: var(--primary-500);
 		text-transform: uppercase;
 	}
-
+	
 	&__title {
 		@include fluid-text(32, 64);
-
+		
+		color: var(--primary-500);
 		margin-bottom: 16px;
 		font-weight: 800;
 		line-height: 1.02;

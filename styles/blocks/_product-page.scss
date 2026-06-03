@@ -898,10 +898,6 @@
 		backdrop-filter: blur(4px);
 		transition-property: transform, box-shadow;
 
-		@include tablet {
-			width: 45px;
-		}
-
 		@include mobile {
 			width: 22px;
 		}

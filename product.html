@@ -539,7 +539,10 @@
 		<section class="product-video container" aria-label="Видеообзор DESEW SmartStitch 500">
 			<img class="product-video__image" src="/images/13-product-video/product-video-placeholder.jpg"
 				alt="Видеообзор DESEW SmartStitch 500">
-			<button class="product-video__play" type="button" aria-label="Смотреть видеообзор">
+			<button class="product-video__play js-video-open" type="button"
+				data-video-src="https://vkvideo.ru/video_ext.php?oid=-26360451&id=456239421&hd=2"
+				data-video-title="Видеообзор DESEW SmartStitch 500" data-video-provider="VK Video"
+				aria-label="Смотреть видеообзор DESEW SmartStitch 500">
 				<span aria-hidden="true"></span>
 			</button>
 			<a class="product-video__more button-plate" href="#">
@@ -706,6 +709,19 @@
 			</div>
 		</div>
 	</main>
+
+	<div class="video-modal js-video-modal" aria-hidden="true">
+		<button class="video-modal__overlay js-video-close" type="button" aria-label="Закрыть видео"></button>
+		<div class="video-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="video-modal-title">
+			<button class="video-modal__close js-video-close" type="button" aria-label="Закрыть видео"></button>
+			<p class="video-modal__provider js-video-provider">Видео</p>
+			<h2 class="video-modal__title js-video-title" id="video-modal-title">Видеообзор DESEW</h2>
+			<div class="video-modal__frame">
+				<iframe class="video-modal__iframe js-video-iframe" title="Видеообзор DESEW" src="" loading="lazy"
+					allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
 
 	<footer class="footer" id="contacts">
 		<div class="footer__decor decor">
