@@ -11,12 +11,12 @@
 		grid-template-columns: minmax(300px, 520px) minmax(0, 1fr);
 		align-items: center;
 		gap: 48px;
-		padding-block: 72px 44px;
+		padding-block: 0px 44px;
 
 		@include tablet {
 			grid-template-columns: 1fr;
 			gap: 22px;
-			padding-block: 26px 18px;
+			padding-block: 0px 18px;
 		}
 	}
 

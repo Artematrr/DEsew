@@ -10,11 +10,11 @@
 		display: grid;
 		justify-items: center;
 		max-width: calc(1040px + var(--container-padding-x) * 2);
-		padding-block: 74px 38px;
+		padding-block: 0px 38px;
 		text-align: center;
 
 		@include tablet {
-			padding-block: 28px 18px;
+			padding-block: 0px 18px;
 		}
 	}
 
