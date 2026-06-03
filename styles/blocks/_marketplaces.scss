@@ -94,11 +94,11 @@
 
 		height: 58px;
 
-		// @include hover {
-		// 	img {
-		// 		filter: grayscale(0);
-		// 	}
-		// }
+		@include hover {
+			img {
+				filter: grayscale(0);
+			}
+		}
 
 		@include tablet {
 			height: 21px;
@@ -107,8 +107,8 @@
 		img {
 			height: 100%;
 			object-fit: contain;
-			// filter: grayscale(1);
-			// transition: filter var(--transition-duration) var(--transition-timing-function);
+			filter: grayscale(1);
+			transition: filter var(--transition-duration) var(--transition-timing-function);
 		}
 	}
 
