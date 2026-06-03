@@ -688,6 +688,38 @@ document.addEventListener('DOMContentLoaded', () => {
 			return '04'
 		}
 
+		const createHeroPaginationButton = index => {
+			const button = document.createElement('button')
+			const image = document.createElement('img')
+
+			button.className = 'hero-pagination__button'
+			button.type = 'button'
+			button.dataset.slideIndex = String(index)
+			button.dataset.paginationSize = '04'
+			button.setAttribute('aria-label', `Слайд ${index + 1}`)
+
+			image.src = '/images/icons/slider-pagination-button-size-04.svg'
+			image.alt = ''
+
+			button.append(image)
+
+			return button
+		}
+
+		const renderHeroPagination = (pagination, slidesCount) => {
+			if (!pagination) {
+				return []
+			}
+
+			const fragment = document.createDocumentFragment()
+			const buttons = Array.from({ length: slidesCount }, (_, index) => createHeroPaginationButton(index))
+
+			buttons.forEach(button => fragment.append(button))
+			pagination.replaceChildren(fragment)
+
+			return buttons
+		}
+
 		const updateHeroPagination = (pagination, activeIndex) => {
 			pagination?.querySelectorAll('.hero-pagination__button').forEach(button => {
 				const buttonIndex = Number(button.dataset.slideIndex)
@@ -697,7 +729,13 @@ document.addEventListener('DOMContentLoaded', () => {
 				const isActive = buttonIndex === activeIndex
 
 				button.classList.toggle('is-active', isActive)
-				button.toggleAttribute('aria-current', isActive)
+				button.dataset.paginationSize = size
+
+				if (isActive) {
+					button.setAttribute('aria-current', 'true')
+				} else {
+					button.removeAttribute('aria-current')
+				}
 
 				if (image) {
 					image.src = `/images/icons/slider-pagination-button-size-${size}.svg`
@@ -708,31 +746,53 @@ document.addEventListener('DOMContentLoaded', () => {
 		document.querySelectorAll('.js-hero-slider').forEach(hero => {
 			const swiperElement = hero.querySelector('.swiper')
 			const pagination = hero.querySelector('.js-hero-pagination')
-			const buttons = pagination?.querySelectorAll('.hero-pagination__button') || []
+			const slidesCount = swiperElement?.querySelectorAll('.swiper-slide').length || 0
+			const heroAutoplayMedia = window.matchMedia('(max-width: 992px)')
 
 			if (!swiperElement || swiperElement.dataset.swiperInitialized) {
 				return
 			}
 
 			swiperElement.dataset.swiperInitialized = 'true'
+			const buttons = renderHeroPagination(pagination, slidesCount)
+			const syncHeroAutoplay = swiper => {
+				if (!swiper.autoplay) {
+					return
+				}
+
+				if (heroAutoplayMedia.matches && slidesCount > 1) {
+					swiper.autoplay.start()
+				} else {
+					swiper.autoplay.stop()
+				}
+			}
 
 			const heroSwiper = new Swiper(swiperElement, {
 				slidesPerView: 1,
 				effect: 'fade',
 				speed: 550,
+				rewind: slidesCount > 1,
 				allowTouchMove: true,
+				autoplay: {
+					delay: 4200,
+					disableOnInteraction: false,
+					pauseOnMouseEnter: true,
+				},
 				fadeEffect: {
 					crossFade: true,
 				},
 				on: {
 					init(swiper) {
 						updateHeroPagination(pagination, swiper.activeIndex)
+						syncHeroAutoplay(swiper)
 					},
 					slideChange(swiper) {
 						updateHeroPagination(pagination, swiper.activeIndex)
 					},
 				},
 			})
+
+			heroAutoplayMedia.addEventListener('change', () => syncHeroAutoplay(heroSwiper))
 
 			buttons.forEach(button => {
 				button.addEventListener('click', () => {

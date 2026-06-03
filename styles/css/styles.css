@@ -6455,9 +6455,19 @@ h4,
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 21px;
+  --hero-pagination-button-width: 21px;
+  width: var(--hero-pagination-button-width);
   height: 21px;
   transition-property: transform, opacity;
+}
+.hero-pagination__button[data-pagination-size="02"] {
+  --hero-pagination-button-width: 18px;
+}
+.hero-pagination__button[data-pagination-size="03"] {
+  --hero-pagination-button-width: 15px;
+}
+.hero-pagination__button[data-pagination-size="04"] {
+  --hero-pagination-button-width: 12px;
 }
 @media (hover: hover) {
   .hero-pagination__button:hover {
