@@ -2512,7 +2512,7 @@ h4,
   align-items: start;
   gap: 90px;
   padding-block: 40px 0px;
-  margin-bottom: 2px;
+  margin-bottom: 10px;
 }
 @media (max-width: 1023px) {
   .product-hero {
@@ -2541,9 +2541,11 @@ h4,
   top: 320px;
   left: -40px;
 }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .product-hero__decor-stitch--top {
-    display: none;
+    scale: 0.3;
+    left: calc(50% - 457px);
+    top: 216px;
   }
 }
 
@@ -2682,9 +2684,21 @@ h4,
 }
 
 .product-summary {
-  padding: 23px 31px 26px 31px;
-  border: 1px dashed var(--black);
+  position: relative;
+  border: 1px solid transparent;
   border-radius: 16px;
+  --product-dashed-frame-color: var(--black);
+}
+.product-summary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--product-dashed-frame-color) 0 11px, transparent 11px 22px) left top/22px 1px repeat-x, linear-gradient(90deg, var(--product-dashed-frame-color) 0 11px, transparent 11px 22px) left bottom/22px 1px repeat-x, linear-gradient(0deg, var(--product-dashed-frame-color) 0 11px, transparent 11px 22px) left top/1px 22px repeat-y, linear-gradient(0deg, var(--product-dashed-frame-color) 0 11px, transparent 11px 22px) right top/1px 22px repeat-y;
+}
+.product-summary {
+  padding: 23px 31px 26px 31px;
 }
 @media (max-width: 1023px) {
   .product-summary {
@@ -2703,6 +2717,12 @@ h4,
   position: absolute;
   top: -40px;
   right: -40px;
+  z-index: 1;
+}
+@media (max-width: 1023px) {
+  .product-summary__button {
+    scale: 0.5;
+  }
 }
 .product-summary__category, .product-summary__title, .product-summary__rating, .product-summary__price, .product-summary__article, .product-summary__params, .product-summary__specs-link {
   padding-left: 18px;
@@ -4698,18 +4718,30 @@ h4,
   z-index: 0;
   overflow: visible;
 }
-@media (max-width: 1023px) {
-  .contacts-page__stitch {
-    display: none;
-  }
-}
 .contacts-page__stitch--right {
   top: 940px;
   right: -190px;
 }
+@media (max-width: 1023px) {
+  .contacts-page__stitch--right {
+    scale: 0.3;
+    top: unset;
+    right: unset;
+    left: calc(50% - 170px);
+    bottom: 180px;
+  }
+}
 .contacts-page__stitch--left {
   left: -290px;
   top: 1050px;
+}
+@media (max-width: 1023px) {
+  .contacts-page__stitch--left {
+    scale: 0.3;
+    top: unset;
+    left: calc(50% - 650px);
+    bottom: 60px;
+  }
 }
 .contacts-page__container {
   position: relative;
@@ -6968,7 +7000,7 @@ h4,
 }
 @media (max-width: 375px) {
   .equipment-features__item {
-    width: 80px;
+    width: 90px;
   }
 }
 .equipment-features__item--top-left {
@@ -7529,8 +7561,8 @@ h4,
 }
 @media (max-width: 767px) {
   .dealers__shop-image::after {
-    width: 30px;
-    height: 16px;
+    width: 20px;
+    height: 10px;
   }
 }
 .dealers__markets-wrap {
@@ -7723,29 +7755,52 @@ h4,
 .support__decor--front {
   z-index: 3;
 }
-@media (max-width: 1023px) {
-  .support__decor {
-    display: none;
-  }
-}
 .support__stitch--right {
   top: 24px;
   right: 0;
   width: 383px;
 }
+@media (max-width: 1023px) {
+  .support__stitch--right {
+    scale: 0.3;
+    right: calc(50% - 330px);
+    top: -160px;
+  }
+}
 .support__stitch--bottom {
   left: 0;
   bottom: 30px;
+}
+@media (max-width: 1023px) {
+  .support__stitch--bottom {
+    scale: 0.3;
+    left: calc(50% - 240px);
+    bottom: -10px;
+  }
 }
 .support__button--large {
   left: calc(50% - 650px);
   bottom: 115px;
   width: 106px;
 }
+@media (max-width: 1023px) {
+  .support__button--large {
+    scale: 0.3;
+    left: calc(50% - 250px);
+    bottom: -10px;
+  }
+}
 .support__button--small {
   left: calc(50% - 556px);
   bottom: 140px;
   width: 64px;
+}
+@media (max-width: 1023px) {
+  .support__button--small {
+    scale: 0.4;
+    left: calc(50% - 200px);
+    bottom: 15px;
+  }
 }
 .support__container {
   position: relative;
@@ -7984,6 +8039,30 @@ h4,
     padding-block: 0px 26px;
   }
 }
+.support--support-page .support__decor {
+  overflow: visible;
+}
+@media (max-width: 1023px) {
+  .support--support-page .support__stitch--bottom {
+    scale: 0.3;
+    left: calc(50% - 700px);
+    bottom: 0px;
+  }
+}
+.support--support-page .support__stitch--right {
+  transform: rotate(90deg);
+  top: -86px;
+  right: -60px;
+  width: 383px;
+}
+@media (max-width: 1023px) {
+  .support--support-page .support__stitch--right {
+    transform: rotate(0);
+    scale: 0.3;
+    right: calc(50% - 350px);
+    top: -146px;
+  }
+}
 .support--support-page .support__container {
   max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
 }
@@ -8121,18 +8200,27 @@ h4,
   z-index: 0;
   overflow: visible;
 }
-@media (max-width: 1023px) {
-  .article-preview__decor {
-    display: none;
-  }
-}
 .article-preview__stitch--left {
   top: 100px;
   left: 10px;
 }
+@media (max-width: 1023px) {
+  .article-preview__stitch--left {
+    scale: 0.5;
+    left: calc(50% - 550px);
+    top: -10px;
+  }
+}
 .article-preview__stitch--right {
   right: 160px;
   bottom: 0;
+}
+@media (max-width: 1023px) {
+  .article-preview__stitch--right {
+    scale: 0.4;
+    right: calc(50% - 480px);
+    bottom: 410px;
+  }
 }
 .article-preview__container {
   position: relative;

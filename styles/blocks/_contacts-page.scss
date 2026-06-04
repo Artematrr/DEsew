@@ -9,19 +9,31 @@
 	}
 
 	&__stitch {
-		@include tablet {
-			display: none;
-		}
 	}
 
 	&__stitch--right {
 		top: 940px;
 		right: -190px;
+
+		@include tablet {
+			scale: 0.3;
+			top: unset;
+			right: unset;
+			left: calc(50% - 170px);
+			bottom: 180px;
+		}
 	}
 
 	&__stitch--left {
 		left: -290px;
 		top: 1050px;
+
+		@include tablet {
+			scale: 0.3;
+			top: unset;
+			left: calc(50% - 650px);
+			bottom: 60px;
+		}
 	}
 
 	&__container {

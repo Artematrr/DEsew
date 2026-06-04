@@ -1,3 +1,51 @@
+@mixin product-dashed-frame(
+	$color: currentColor,
+	$radius: 16px,
+	$dash: 11px,
+	$gap: 11px,
+	$stroke: 1px
+) {
+	$period: $dash + $gap;
+
+	position: relative;
+	border: $stroke solid transparent;
+	border-radius: $radius;
+	--product-dashed-frame-color: #{$color};
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border-radius: inherit;
+		pointer-events: none;
+		background:
+			linear-gradient(
+					90deg,
+					var(--product-dashed-frame-color) 0 #{$dash},
+					transparent #{$dash} #{$period}
+				)
+				left top / #{$period} #{$stroke} repeat-x,
+			linear-gradient(
+					90deg,
+					var(--product-dashed-frame-color) 0 #{$dash},
+					transparent #{$dash} #{$period}
+				)
+				left bottom / #{$period} #{$stroke} repeat-x,
+			linear-gradient(
+					0deg,
+					var(--product-dashed-frame-color) 0 #{$dash},
+					transparent #{$dash} #{$period}
+				)
+				left top / #{$stroke} #{$period} repeat-y,
+			linear-gradient(
+					0deg,
+					var(--product-dashed-frame-color) 0 #{$dash},
+					transparent #{$dash} #{$period}
+				)
+				right top / #{$stroke} #{$period} repeat-y;
+	}
+}
+
 .product-page {
 }
 
@@ -8,7 +56,7 @@
 	align-items: start;
 	gap: 90px;
 	padding-block: 40px 0px;
-	margin-bottom: 2px;
+	margin-bottom: 10px;
 
 	@include tablet {
 		grid-template-columns: 1fr;
@@ -38,8 +86,10 @@
 		top: 320px;
 		left: -40px;
 
-		@include mobile {
-			display: none;
+		@include tablet {
+			scale: 0.3;
+			left: calc(50% - 457px);
+			top: 216px;
 		}
 	}
 }
@@ -169,9 +219,9 @@
 }
 
 .product-summary {
+	@include product-dashed-frame(var(--black));
+
 	padding: 23px 31px 26px 31px;
-	border: 1px dashed var(--black);
-	border-radius: 16px;
 
 	@include tablet {
 		width: min(100%, 620px);
@@ -188,6 +238,11 @@
 		position: absolute;
 		top: -40px;
 		right: -40px;
+		z-index: 1;
+
+		@include tablet {
+			scale: 0.5;
+		}
 	}
 
 	&__category,
@@ -436,7 +491,8 @@
 			height: auto;
 			object-fit: contain;
 			filter: grayscale(1);
-			transition: filter var(--transition-duration) var(--transition-timing-function);
+			transition: filter var(--transition-duration)
+				var(--transition-timing-function);
 		}
 
 		@include mobile {

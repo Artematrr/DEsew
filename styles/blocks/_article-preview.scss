@@ -14,10 +14,6 @@
 
 		z-index: 0;
 		overflow: visible;
-
-		@include tablet {
-			display: none;
-		}
 	}
 
 	&__stitch {
@@ -26,11 +22,24 @@
 	&__stitch--left {
 		top: 100px;
 		left: 10px;
+
+		@include tablet {
+			scale: 0.5;
+			left: calc(50% - 550px);
+			top: -10px;
+			
+		}
 	}
 
 	&__stitch--right {
 		right: 160px;
 		bottom: 0;
+
+		@include tablet {
+			scale: 0.4;
+			right: calc(50% - 480px);
+			bottom: 410px;
+		}
 	}
 
 	&__container {
