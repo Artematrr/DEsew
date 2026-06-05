@@ -357,7 +357,6 @@
 		@include fluid-text(11, 24);
 
 		display: grid;
-		gap: 4px;
 		margin-bottom: 7px;
 		font-weight: 400;
 		padding-left: 25px;
@@ -382,6 +381,10 @@
 		font-weight: 700;
 		color: var(--primary-500);
 
+		@include tablet {
+			gap: 4px;
+		}
+
 		&::after {
 			content: '';
 			width: 10px;
@@ -389,6 +392,13 @@
 			border-top: 2px solid currentColor;
 			border-right: 2px solid currentColor;
 			rotate: 45deg;
+
+			@include tablet {
+				width: 6px;
+				height: 6px;
+				border-top: 1px solid currentColor;
+				border-right: 1px solid currentColor;
+			}
 		}
 
 		@include hover {
@@ -664,7 +674,7 @@
 				var(--primary-500),
 				var(--primary-300)
 			);
-			border-color: var(--primary-500);
+			// border-color: var(--primary-500);
 		}
 
 		@include hover {
@@ -675,44 +685,63 @@
 	&__decor {
 		@include visual-frame-layer;
 
-		z-index: 0;
+		overflow: visible;
 	}
 
 	&__decor-stitch,
 	&__decor-button {
 		position: absolute;
 		opacity: 0;
-		transition: opacity var(--transition-duration)
-			var(--transition-timing-function);
+		// transition: opacity var(--transition-duration) var(--transition-timing-function);
 	}
 
+	&__decor-stitch--specs-bottom,
 	&__decor-stitch--overview {
-		left: -260px;
-		top: 120px;
+		right: -180px;
+		bottom: -60px;
 
 		@include tablet {
-			left: -360px;
-			top: 180px;
+			scale: 0.4;
+			right: calc(50% - 650px);
+			bottom: -70px;
 		}
 	}
 
-	&__decor-stitch--specs {
-		left: -230px;
-		top: 170px;
+	&__decor-stitch--specs-bottom {
+		display: none;
+
+		@include tablet {
+			display: block;
+		}
+	}
+
+	&__decor-stitch--specs-left {
+		left: -330px;
+		top: 480px;
+
+		@include tablet {
+			display: none;
+		}
 	}
 
 	&__decor-stitch--reviews {
-		right: 0px;
-		bottom: 0px;
+		right: -110px;
+		bottom: -55px;
+
+		@include tablet {
+			scale: 0.4;
+			right: calc(50% - 560px);
+			bottom: -90px;
+		}
 	}
 
 	&__decor-stitch--overview,
 	&__decor-stitch--specs,
 	&__decor-stitch--reviews {
-		@include mobile {
-			left: -180px;
-			top: 310px;
-		}
+		// @include mobile {
+		// 	left: -180px;
+		// 	top: 310px;
+		// }
 	}
 
 	&[data-active-tab='overview'] &__decor-stitch--overview,
@@ -763,12 +792,15 @@
 .product-specs {
 	display: grid;
 	gap: 42px;
+	overflow: visible;
 
 	@include mobile {
 		gap: 30px;
 	}
 
 	&__section {
+		position: relative;
+
 		padding: 63px 24px;
 		background: linear-gradient(
 			180deg,
@@ -780,6 +812,44 @@
 		@include mobile {
 			padding: 35px 12px;
 			border-radius: 6px;
+		}
+
+		> .decor {
+			overflow: visible;
+
+			.decor__button-top {
+				top: -25px;
+				right:  -25px;
+				display: none;
+
+				@include tablet {
+					scale: 0.5;
+					display: block;
+				}
+			}
+
+			.decor__button {
+				bottom: -25px;
+				left: -25px;
+
+				@include tablet {
+					scale: 0.5;
+					top: -25px;
+					bottom: unset;
+				}
+			}
+
+			.decor__stitch {
+				right: -220px;
+				bottom: -55px;
+
+				@include tablet {
+					scale: 0.3;
+					right: calc(50% - 620px);
+					top: -70px;
+					bottom: unset;
+				}
+			}
 		}
 	}
 
@@ -807,6 +877,7 @@
 
 		@include tablet {
 			grid-template-columns: 1fr;
+			row-gap: 8px;
 		}
 	}
 
