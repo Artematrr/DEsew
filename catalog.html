@@ -243,14 +243,15 @@
 			</header>
 
 			<div class="catalog-page__layout">
-				<button class="catalog-page__mobile-filter-button button js-catalog-filter-toggle" type="button"
-					aria-controls="catalog-filter" aria-expanded="false">
-					<img class="catalog-filter__icon" src="/images/icons/filter.svg" alt="">
-					Фильтр
-				</button>
+				<aside class="catalog-page__aside" aria-label="Фильтры каталога">
+					<button class="catalog-page__mobile-filter-button button js-catalog-filter-toggle" type="button"
+						aria-controls="catalog-filter" aria-expanded="false">
+						<img class="catalog-filter__icon" src="/images/icons/filter.svg" alt="">
+						Фильтр
+					</button>
 
-				<form class="catalog-page__filter catalog-filter js-catalog-filter js-catalog-filter-form" id="catalog-filter"
-					action="/" data-catalog-filter-form>
+					<form class="catalog-page__filter catalog-filter js-catalog-filter js-catalog-filter-form" id="catalog-filter"
+						action="/" data-catalog-filter-form>
 
 					<fieldset class="catalog-filter__group">
 						<legend class="catalog-filter__legend">Тип машины</legend>
@@ -477,12 +478,13 @@
 						</div>
 					</fieldset>
 
-					<div class="catalog-filter__actions">
-						<button class="button catalog-filter__actions-submit js-catalog-filter-close"
-							type="submit">Применить</button>
-						<button class="button catalog-filter__actions-reset js-catalog-filter-reset" type="reset">Сбросить</button>
-					</div>
-				</form>
+						<div class="catalog-filter__actions">
+							<button class="button catalog-filter__actions-submit js-catalog-filter-close"
+								type="submit">Применить</button>
+							<button class="button catalog-filter__actions-reset js-catalog-filter-reset" type="reset">Сбросить</button>
+						</div>
+					</form>
+				</aside>
 
 				<section class="catalog-products" aria-labelledby="catalog-products-title">
 					<h2 class="visually-hidden" id="catalog-products-title">Список швейных машин</h2>

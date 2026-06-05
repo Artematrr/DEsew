@@ -77,7 +77,6 @@
 		display: inline-flex;
 		flex-shrink: 0;
 		width: auto;
-		max-width: 90%;
 		width: 100%;
 		font-size: 20px;
 		font-weight: 600;
@@ -110,14 +109,32 @@
 	}
 
 	&__layout {
+		position: relative;
 		display: grid;
-		grid-template-columns: 264px minmax(0, 1fr);
+		grid-template-columns: minmax(220px, 264px) minmax(0, 1fr);
+		grid-template-areas: 'aside content';
 		align-items: start;
-		gap: 20px;
+		column-gap: 20px;
 
 		@include tablet {
 			grid-template-columns: 1fr;
-			justify-items: center;
+			grid-template-areas:
+				'aside'
+				'content';
+			row-gap: 24px;
+			justify-items: stretch;
+		}
+	}
+
+	&__aside {
+		position: relative;
+		grid-area: aside;
+		z-index: 1;
+		min-width: 0;
+
+		@include tablet {
+			width: 100%;
+			z-index: 3;
 		}
 	}
 
@@ -132,8 +149,7 @@
 			margin-bottom: 32px;
 			position: absolute;
 			z-index: 3;
-			top: 100px;
-			width: 90%;
+			top: 60px;
 		}
 	}
 
@@ -144,6 +160,9 @@
 	}
 
 	.catalog-products {
+		grid-area: content;
+		min-width: 0;
+
 		@include tablet {
 			width: 100%;
 		}
