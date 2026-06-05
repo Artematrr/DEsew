@@ -887,8 +887,54 @@ document.addEventListener('DOMContentLoaded', () => {
 			})
 		})
 
+		const prepareTextImageSlider = slider => {
+			if (!slider.classList.contains('text-image-slider')) {
+				return
+			}
+
+			const slides = Array.from(slider.children).filter(child => child.matches('img'))
+
+			if (!slides.length) {
+				return
+			}
+
+			slider.classList.add('slider')
+
+			const swiperElement = document.createElement('div')
+			swiperElement.className = 'text-image-slider__swiper slider__swiper swiper'
+
+			const wrapper = document.createElement('div')
+			wrapper.className = 'swiper-wrapper'
+
+			slides.forEach(slide => {
+				slide.classList.add('text-image-slider__image', 'swiper-slide')
+				wrapper.append(slide)
+			})
+
+			swiperElement.append(wrapper)
+			slider.prepend(swiperElement)
+			slider.classList.toggle('is-single-slide', slides.length < 2)
+
+			const controls = document.createElement('div')
+			controls.className = 'text-image-slider__controls slider__controls'
+			controls.innerHTML = `
+				<div class="slider__buttons">
+					<button class="slider__button slider__button--prev" type="button" aria-label="Предыдущее фото">
+						<img src="/images/icons/prev.svg" alt="" aria-hidden="true">
+					</button>
+					<button class="slider__button slider__button--next" type="button" aria-label="Следующее фото">
+						<img src="/images/icons/next.svg" alt="" aria-hidden="true">
+					</button>
+				</div>
+			`
+			slider.append(controls)
+		}
+
 		document.querySelectorAll('.js-slider').forEach(slider => {
+			prepareTextImageSlider(slider)
+
 			const swiperElement = slider.querySelector('.swiper')
+			const isSingleSlider = slider.hasAttribute('data-slider-single')
 
 			if (!swiperElement || swiperElement.dataset.swiperInitialized) {
 				return
@@ -896,26 +942,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			swiperElement.dataset.swiperInitialized = 'true'
 
-			new Swiper(swiperElement, {
+			const sliderOptions = {
 				slidesPerView: 1,
 				spaceBetween: 24,
-				pagination: {
-					el: slider.querySelector('.slider__pagination'),
-					clickable: true,
-				},
+				watchOverflow: true,
 				navigation: {
 					prevEl: slider.querySelector('.slider__button--prev'),
 					nextEl: slider.querySelector('.slider__button--next'),
 				},
-				breakpoints: {
+			}
+
+			const paginationElement = slider.querySelector('.slider__pagination')
+
+			if (paginationElement) {
+				sliderOptions.pagination = {
+					el: paginationElement,
+					clickable: true,
+				}
+			}
+
+			if (!isSingleSlider) {
+				sliderOptions.breakpoints = {
 					768: {
 						slidesPerView: 2,
 					},
 					1024: {
 						slidesPerView: 3,
 					},
-				},
-			})
+				}
+			}
+
+			new Swiper(swiperElement, sliderOptions)
 		})
 	}
 
