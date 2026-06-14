@@ -13,3 +13,4 @@
 9. [Информация для клиентов](https://desew.vercel.app/text-page.html)
 10. [Видеообзоры](https://desew.vercel.app/video.html)
 11. [Новости](https://desew.vercel.app/news.html)
+12. [Каталог с фильтром](https://desew.vercel.app/catalog-ocf.html)
