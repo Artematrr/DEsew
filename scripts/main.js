@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const catalogFilter = document.querySelector('.js-catalog-filter')
 	const catalogFilterToggle = document.querySelector('.js-catalog-filter-toggle')
 	const catalogFilterCloseButtons = document.querySelectorAll('.js-catalog-filter-close')
-	const catalogFilterMedia = window.matchMedia('(max-width: 992px)')
+	const catalogFilterMedia = window.matchMedia('(max-width: 1023px)')
 
 	// Page scroll lock
 	const syncBodyLock = () => {
@@ -483,9 +483,440 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
+	// OCF UI: keep popover positioning, group accordions, and "show more" controls during integration.
+	document.querySelectorAll('.ocf-container').forEach(filter => {
+		const popover = filter.querySelector('.ocf-popover')
+		const popoverHome = popover?.parentElement
+		const mobileFilterMedia = window.matchMedia('(max-width: 1023px)')
+		let popoverTimer = null
+
+		const hideOcfPopover = () => {
+			clearTimeout(popoverTimer)
+			popover?.classList.remove('ocf-in')
+			popover?.setAttribute('aria-hidden', 'true')
+		}
+
+		const showOcfPopover = source => {
+			if (!popover) {
+				return
+			}
+
+			if (mobileFilterMedia.matches) {
+				if (popover.parentElement !== popoverHome) {
+					popoverHome?.append(popover)
+				}
+
+				popover.classList.remove('ocf-popover--portal')
+				popover.style.removeProperty('top')
+				popover.style.removeProperty('left')
+			} else {
+				const filterRect = filter.getBoundingClientRect()
+				const sourceRect = source.getBoundingClientRect()
+
+				if (popover.parentElement !== document.body) {
+					document.body.append(popover)
+				}
+
+				popover.classList.add('ocf-popover--portal')
+				popover.classList.add('ocf-in')
+
+				const popoverRect = popover.getBoundingClientRect()
+				const viewportTop = sourceRect.top + sourceRect.height / 2 - popoverRect.height / 2
+				const maxViewportTop = Math.max(12, window.innerHeight - popoverRect.height - 12)
+				const maxViewportLeft = Math.max(12, window.innerWidth - popoverRect.width - 12)
+				const popoverTop = clampRangeValue(viewportTop, 12, maxViewportTop) + window.scrollY
+				const popoverLeft =
+					Math.min(filterRect.right + 14, maxViewportLeft) + window.scrollX
+
+				popover.style.top = `${popoverTop}px`
+				popover.style.left = `${popoverLeft}px`
+			}
+
+			clearTimeout(popoverTimer)
+			popover.classList.add('ocf-in')
+			popover.setAttribute('aria-hidden', 'false')
+			popoverTimer = window.setTimeout(hideOcfPopover, 5000)
+		}
+
+		filter.querySelectorAll('.js-ocf-filter-toggle[data-target]').forEach(toggle => {
+			const group = toggle.closest('.catalog-filter__group')
+
+			toggle.dataset.defaultExpanded = toggle.getAttribute('aria-expanded') || 'false'
+
+			toggle.addEventListener('click', () => {
+				if (!group) {
+					return
+				}
+
+				const isExpanded = group.classList.toggle('is-expanded')
+
+				toggle.setAttribute('aria-expanded', String(isExpanded))
+			})
+		})
+
+		const groupsToggle = filter.querySelector('.js-ocf-groups-toggle')
+		const groupsList = groupsToggle
+			? filter.querySelector(`#${groupsToggle.getAttribute('aria-controls')}`)
+			: null
+		const valuesToggleControllers = []
+
+		const getCountLabel = (count, forms) => {
+			const lastTwoDigits = count % 100
+			const lastDigit = count % 10
+
+			if (lastTwoDigits >= 11 && lastTwoDigits <= 19) {
+				return forms[2]
+			}
+
+			if (lastDigit === 1) {
+				return forms[0]
+			}
+
+			if (lastDigit >= 2 && lastDigit <= 4) {
+				return forms[1]
+			}
+
+			return forms[2]
+		}
+
+		if (groupsList && groupsToggle) {
+			const groupsCount = Array.from(groupsList.children).filter(group =>
+				group.classList.contains('catalog-filter__group')
+			).length
+			const hiddenGroupsCount = Math.max(0, groupsCount - 3)
+			const showLabel = groupsToggle.querySelector('.js-ocf-groups-show-label')
+
+			groupsToggle.hidden = hiddenGroupsCount === 0
+
+			if (showLabel) {
+				showLabel.textContent = `Показать ещё ${hiddenGroupsCount} ${getCountLabel(
+					hiddenGroupsCount,
+					['фильтр', 'фильтра', 'фильтров']
+				)}`
+			}
+		}
+
+		groupsToggle?.addEventListener('click', () => {
+			if (!groupsList) {
+				return
+			}
+
+			const isExpanded = groupsList.classList.toggle('is-expanded')
+
+			groupsToggle.setAttribute('aria-expanded', String(isExpanded))
+		})
+
+		filter
+			.querySelectorAll('.ocf-value-list-body.catalog-filter__body')
+			.forEach((valuesList, listIndex) => {
+				const values = Array.from(valuesList.children).filter(value =>
+					value.classList.contains('ocf-value')
+				)
+				const hiddenValuesCount = values.length - 6
+
+				if (hiddenValuesCount <= 0) {
+					return
+				}
+
+				if (!valuesList.id) {
+					valuesList.id = `${filter.id || 'ocf-filter'}-values-${listIndex + 1}`
+				}
+
+				valuesList.classList.add('catalog-filter__values-list')
+
+				const valuesToggle = document.createElement('button')
+				const showLabel = document.createElement('span')
+				const hideLabel = document.createElement('span')
+
+				valuesToggle.className =
+					'ocf-btn ocf-btn-link ocf-btn-show-values catalog-filter__values-toggle'
+				valuesToggle.type = 'button'
+				valuesToggle.setAttribute('aria-controls', valuesList.id)
+				valuesToggle.setAttribute('aria-expanded', 'false')
+
+				showLabel.className = 'ocf-hide-expand-1'
+				showLabel.textContent = `Показать ещё ${hiddenValuesCount}`
+				hideLabel.className = 'ocf-hide-expand-0'
+				hideLabel.textContent = 'Скрыть'
+
+				valuesToggle.append(showLabel, hideLabel)
+				valuesList.after(valuesToggle)
+
+				valuesToggle.addEventListener('click', () => {
+					const isExpanded = valuesList.classList.toggle('is-expanded')
+
+					valuesToggle.setAttribute('aria-expanded', String(isExpanded))
+				})
+
+				valuesToggleControllers.push({
+					reset: () => {
+						valuesList.classList.remove('is-expanded')
+						valuesToggle.setAttribute('aria-expanded', 'false')
+					},
+				})
+			})
+
+		filter.addEventListener('reset', () => {
+			requestAnimationFrame(() => {
+				filter.querySelectorAll('.js-ocf-filter-toggle[data-target]').forEach(toggle => {
+					const isExpanded = toggle.dataset.defaultExpanded === 'true'
+
+					toggle.setAttribute('aria-expanded', String(isExpanded))
+					toggle.closest('.catalog-filter__group')?.classList.toggle('is-expanded', isExpanded)
+				})
+				groupsList?.classList.remove('is-expanded')
+				groupsToggle?.setAttribute('aria-expanded', 'false')
+				valuesToggleControllers.forEach(controller => controller.reset())
+				hideOcfPopover()
+			})
+		})
+
+		// OCF STATIC DEMO ONLY: remove checkbox, slider, submit, and value reset logic after connecting OCFilter.
+		const rangeControllers = []
+
+		filter.addEventListener('submit', event => {
+			event.preventDefault()
+		})
+
+		filter.querySelectorAll('.ocf-value').forEach(value => {
+			value.addEventListener('click', () => {
+				if (value.disabled || value.classList.contains('ocf-disabled')) {
+					return
+				}
+
+				const isSelected = value.classList.toggle('ocf-selected')
+				const filterGroup = value.closest('.ocf-filter')
+
+				value.setAttribute('aria-pressed', String(isSelected))
+				filterGroup?.classList.toggle(
+					'ocf-active',
+					Boolean(filterGroup.querySelector('.ocf-selected'))
+				)
+				showOcfPopover(value)
+			})
+		})
+
+		filter.querySelectorAll('.js-ocf-range').forEach(slider => {
+			const min = Number(slider.dataset.min)
+			const max = Number(slider.dataset.max)
+			const step = Number(slider.dataset.step || 1)
+			const defaultValues = [
+				Number(slider.dataset.minStart || min),
+				Number(slider.dataset.maxStart || max),
+			]
+			const base = slider.querySelector('.ocf-noUi-base')
+			const connect = slider.querySelector('.ocf-noUi-connect')
+			const origins = Array.from(slider.querySelectorAll('.ocf-noUi-origin'))
+			const handles = Array.from(slider.querySelectorAll('.ocf-noUi-handle'))
+			const handleLabels = Array.from(slider.querySelectorAll('.js-ocf-handle-value'))
+			const inputMin = filter.querySelector(slider.dataset.inputMin)
+			const inputMax = filter.querySelector(slider.dataset.inputMax)
+			const textMin = slider.dataset.textMin ? filter.querySelector(slider.dataset.textMin) : null
+			const textMax = slider.dataset.textMax ? filter.querySelector(slider.dataset.textMax) : null
+			const precision = getStepPrecision(step)
+			let values = [...defaultValues]
+
+			if (!base || !connect || origins.length < 2 || handles.length < 2) {
+				return
+			}
+
+			const normalizeValue = value => {
+				const clampedValue = clampRangeValue(value, min, max)
+
+				return snapRangeValue(clampedValue, min, step)
+			}
+
+			const getPercent = value => ((value - min) / (max - min)) * 100
+
+			const formatTextValue = value => {
+				if (slider.dataset.filterKey === '2.0') {
+					return Number(value).toLocaleString('ru-RU')
+				}
+
+				return formatRangeValue(value)
+			}
+
+			const updateSlider = (nextValues, showPopover = false) => {
+				let lower = normalizeValue(nextValues[0])
+				let upper = normalizeValue(nextValues[1])
+
+				if (lower > upper) {
+					;[lower, upper] = [upper, lower]
+				}
+
+				values = [lower, upper]
+
+				const lowerPercent = getPercent(lower)
+				const upperPercent = getPercent(upper)
+
+				origins[0].style.left = `${lowerPercent}%`
+				origins[1].style.left = `${upperPercent}%`
+				connect.style.left = `${lowerPercent}%`
+				connect.style.width = `${upperPercent - lowerPercent}%`
+
+				handles[0].setAttribute('aria-valuemin', formatRangeValue(min))
+				handles[0].setAttribute('aria-valuemax', formatRangeValue(upper))
+				handles[0].setAttribute('aria-valuenow', formatRangeValue(lower))
+				handles[0].setAttribute('aria-valuetext', formatTextValue(lower))
+				handles[1].setAttribute('aria-valuemin', formatRangeValue(lower))
+				handles[1].setAttribute('aria-valuemax', formatRangeValue(max))
+				handles[1].setAttribute('aria-valuenow', formatRangeValue(upper))
+				handles[1].setAttribute('aria-valuetext', formatTextValue(upper))
+
+				if (inputMin) {
+					inputMin.value = formatRangeValue(lower)
+				}
+				if (inputMax) {
+					inputMax.value = formatRangeValue(upper)
+				}
+				if (textMin) {
+					textMin.textContent = formatTextValue(lower)
+				}
+				if (textMax) {
+					textMax.textContent = formatTextValue(upper)
+				}
+				if (handleLabels[0]) {
+					handleLabels[0].textContent = formatRangeValue(lower)
+				}
+				if (handleLabels[1]) {
+					handleLabels[1].textContent = formatRangeValue(upper)
+				}
+
+				slider.closest('.ocf-slider')?.classList.toggle(
+					'ocf-active',
+					lower !== defaultValues[0] || upper !== defaultValues[1]
+				)
+
+				if (showPopover) {
+					showOcfPopover(slider)
+				}
+			}
+
+			const getPointerValue = clientX => {
+				const rect = base.getBoundingClientRect()
+				const ratio = clampRangeValue((clientX - rect.left) / rect.width, 0, 1)
+
+				return normalizeValue(min + ratio * (max - min))
+			}
+
+			const moveHandle = (handleIndex, nextValue, showPopover = true) => {
+				const nextValues = [...values]
+
+				nextValues[handleIndex] =
+					handleIndex === 0
+						? Math.min(nextValue, nextValues[1])
+						: Math.max(nextValue, nextValues[0])
+				updateSlider(nextValues, showPopover)
+			}
+
+			handles.forEach((handle, handleIndex) => {
+				handle.addEventListener('pointerdown', event => {
+					event.preventDefault()
+					handle.setPointerCapture?.(event.pointerId)
+
+					const onPointerMove = pointerEvent => {
+						moveHandle(handleIndex, getPointerValue(pointerEvent.clientX))
+					}
+
+					const onPointerUp = pointerEvent => {
+						handle.releasePointerCapture?.(pointerEvent.pointerId)
+						window.removeEventListener('pointermove', onPointerMove)
+						window.removeEventListener('pointerup', onPointerUp)
+						window.removeEventListener('pointercancel', onPointerUp)
+					}
+
+					window.addEventListener('pointermove', onPointerMove)
+					window.addEventListener('pointerup', onPointerUp)
+					window.addEventListener('pointercancel', onPointerUp)
+				})
+
+				handle.addEventListener('keydown', event => {
+					let nextValue = values[handleIndex]
+
+					switch (event.key) {
+						case 'ArrowLeft':
+						case 'ArrowDown':
+							nextValue -= step
+							break
+						case 'ArrowRight':
+						case 'ArrowUp':
+							nextValue += step
+							break
+						case 'Home':
+							nextValue = min
+							break
+						case 'End':
+							nextValue = max
+							break
+						default:
+							return
+					}
+
+					event.preventDefault()
+					moveHandle(handleIndex, Number(nextValue.toFixed(precision)))
+				})
+			})
+
+			base.addEventListener('pointerdown', event => {
+				if (event.target.closest('.ocf-noUi-handle')) {
+					return
+				}
+
+				const nextValue = getPointerValue(event.clientX)
+				const handleIndex =
+					Math.abs(nextValue - values[0]) <= Math.abs(nextValue - values[1]) ? 0 : 1
+
+				moveHandle(handleIndex, nextValue)
+			})
+
+			;[inputMin, inputMax].forEach((input, handleIndex) => {
+				if (!input) {
+					return
+				}
+
+				const applyInputValue = showPopover => {
+					const nextValue = parseRangeValue(input.value)
+
+					if (nextValue === null) {
+						return
+					}
+
+					moveHandle(handleIndex, nextValue, showPopover)
+				}
+
+				input.addEventListener('input', () => applyInputValue(true))
+				input.addEventListener('change', () => applyInputValue(true))
+				input.addEventListener('blur', () => updateSlider(values))
+			})
+
+			updateSlider(defaultValues)
+			rangeControllers.push({
+				reset: () => updateSlider(defaultValues),
+			})
+		})
+
+		filter.addEventListener('reset', () => {
+			requestAnimationFrame(() => {
+				filter.querySelectorAll('.ocf-value').forEach(value => {
+					const isSelected = value.dataset.defaultSelected === 'true'
+
+					value.classList.toggle('ocf-selected', isSelected)
+					value.setAttribute('aria-pressed', String(isSelected))
+				})
+				filter.querySelectorAll('.ocf-filter.ocf-active').forEach(group => {
+					group.classList.remove('ocf-active')
+				})
+				rangeControllers.forEach(controller => controller.reset())
+			})
+		})
+	})
+
 	document.querySelectorAll('[data-catalog-filter-form]').forEach(form => {
 		form.addEventListener('submit', event => {
-			event.preventDefault()
+			if (!form.classList.contains('ocf-container')) {
+				event.preventDefault()
+			}
+
 			closeCatalogFilter()
 		})
 

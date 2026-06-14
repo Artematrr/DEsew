@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="DEsew — Швейное оборудование для производства и мастерских">
+	<title>Каталог — DEsew</title>
+
+	<link rel="stylesheet" href="/styles/css/jquery-ui.min.css">
+	<link rel="stylesheet" href="/styles/css/swiper-bundle.min.css">
+	<link rel="stylesheet" href="/styles/css/styles.css">
+</head>
+
+<body>
+	<header class="header js-header">
+		<div class="header__container container">
+			<a class="header__logo" href="#" aria-label="DEsew">
+				<img class="header__logo-image" src="/images/icons/logo-main.svg" alt="DEsew" width="77" height="17">
+			</a>
+
+			<nav class="header__nav" aria-label="Основная навигация">
+				<ul class="header__nav-list">
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="#">Главная</a>
+					</li>
+					<li class="header__nav-item header__nav-item--catalog" data-dropdown>
+						<button class="header__nav-link header__nav-link--button" type="button" data-dropdown-toggle
+							aria-expanded="false">
+							Каталог
+							<svg class="header__nav-arrow" width="8" height="5" viewBox="0 0 8 5" fill="none"
+								xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+								<path
+									d="M4.00203 4.60002C4.07877 4.60066 4.15476 4.58494 4.22494 4.5539C4.29512 4.52286 4.35788 4.47722 4.40903 4.42002L7.85003 0.895024C7.95003 0.796024 8.00004 0.674024 8.00004 0.525024C8.00097 0.456244 7.98819 0.387968 7.96245 0.324179C7.93671 0.26039 7.89852 0.202367 7.85011 0.153496C7.80171 0.104624 7.74405 0.0658832 7.68051 0.0395333C7.61697 0.0131834 7.54882 -0.000247447 7.48003 2.44254e-05C7.40958 0.000158078 7.33984 0.0141816 7.27481 0.0412929C7.20977 0.0684041 7.15072 0.108071 7.10103 0.158024L4.00203 3.33802L0.903035 0.158024C0.802192 0.0578706 0.666157 0.00115962 0.524035 2.44254e-05C0.454951 -0.000645805 0.386429 0.0124835 0.322487 0.0386424C0.258544 0.0648013 0.200467 0.103463 0.151662 0.152362C0.102857 0.20126 0.0643055 0.25941 0.0382686 0.323403C0.0122316 0.387395 -0.000766973 0.455942 3.4969e-05 0.525024C3.4969e-05 0.669024 0.054035 0.796024 0.154035 0.895024L3.59604 4.42002C3.71304 4.54202 3.84903 4.60002 4.00203 4.60002Z"
+									fill="currentColor" />
+							</svg>
+						</button>
+
+						<div class="header__catalog" aria-label="Каталог">
+							<div class="header__catalog-inner container">
+								<div class="header__catalog-content">
+									<h2 class="header__catalog-title">Каталог</h2>
+									<div class="header__catalog-grid">
+										<div class="header__catalog-column">
+											<h3 class="header__catalog-subtitle">Основные категории:</h3>
+											<ul class="header__catalog-list">
+												<li><a href="#">Швейные машины</a></li>
+												<li><a href="#">Оверлоки</a></li>
+												<li><a href="#">Коверлоки</a></li>
+												<li><a href="#">Швейно - вышивальные машины</a></li>
+												<li><a href="#">Распошивальные машины</a></li>
+											</ul>
+										</div>
+										<div class="header__catalog-column">
+											<h3 class="header__catalog-subtitle">Дополнительные:</h3>
+											<ul class="header__catalog-list">
+												<li><a href="#">Аксессуары</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<img class="header__catalog-stitch" src="/images/00-header/header-stitch-02.svg" width="570"
+									height="172" alt="" aria-hidden="true">
+							</div>
+						</div>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="#">О бренде</a>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="#">Где купить</a>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="#">Сервис</a>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="#">Блог</a>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="#">Контакты</a>
+					</li>
+				</ul>
+			</nav>
+
+			<div class="header__actions">
+				<form class="header__search js-search" action="/" role="search">
+					<button class="header__search-button js-search-toggle" type="button" aria-label="Открыть поиск">
+						<img class="header__search-icon" src="/images/icons/search.svg" alt="" width="22" height="22">
+					</button>
+					<input class="header__search-input js-search-input" type="search" name="search" placeholder="Поиск"
+						aria-label="Поиск по сайту">
+				</form>
+
+				<div class="header__actions-inner">
+					<a class="header__icon-button header__icon-button--mail" href="mailto:info@desew.ru" aria-label="Написать">
+						<svg class="header__icon" width="30" height="24" viewBox="0 0 30 24" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M27.75 5.4375L15.9493 12.9542C15.5489 13.1868 15.094 13.3093 14.6309 13.3093C14.1678 13.3093 13.713 13.1868 13.3125 12.9542L1.5 5.4375"
+								stroke="#F6CD14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+							<path
+								d="M25.125 1.5H4.125C2.67525 1.5 1.5 2.67525 1.5 4.125V19.875C1.5 21.3247 2.67525 22.5 4.125 22.5H25.125C26.5747 22.5 27.75 21.3247 27.75 19.875V4.125C27.75 2.67525 26.5747 1.5 25.125 1.5Z"
+								stroke="#F6CD14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+
+					</a>
+
+					<a class="header__icon-button header__icon-button--compare" href="#compare" aria-label="Сравнение">
+						<svg class="header__icon" width="28" height="21" viewBox="0 0 28 21" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M10.045 16.0344H1.4C1.00334 16.0344 0.671071 15.9016 0.403205 15.6359C0.135338 15.3702 0.000938161 15.0418 4.82758e-06 14.6507C-0.000928505 14.2595 0.133472 13.9311 0.403205 13.6654C0.672938 13.3997 1.0052 13.2669 1.4 13.2669H10.045L7.42 10.6723C7.16334 10.4186 7.035 10.1018 7.035 9.72169C7.035 9.34161 7.16334 9.01274 7.42 8.73506C7.7 8.45831 8.03273 8.31993 8.4182 8.31993C8.80367 8.31993 9.13593 8.45831 9.415 8.73506L14.42 13.682C14.56 13.8204 14.6594 13.9703 14.7182 14.1317C14.777 14.2932 14.8059 14.4662 14.805 14.6507C14.8041 14.8352 14.7751 15.0081 14.7182 15.1696C14.6613 15.331 14.5619 15.4809 14.42 15.6193L9.38 20.6008C9.1 20.8776 8.77333 21.0104 8.4 20.9994C8.02667 20.9883 7.7 20.8439 7.42 20.5662C7.16334 20.2895 7.0294 19.9666 7.0182 19.5976C7.007 19.2286 7.14094 18.9057 7.42 18.629L10.045 16.0344ZM17.955 7.73183L20.58 10.3264C20.8367 10.5801 20.965 10.8974 20.965 11.2784C20.965 11.6594 20.8367 11.9878 20.58 12.2637C20.3 12.5404 19.9677 12.6788 19.5832 12.6788C19.1987 12.6788 18.8659 12.5404 18.585 12.2637L13.58 7.31671C13.44 7.17833 13.3411 7.02842 13.2832 6.86698C13.2253 6.70554 13.1959 6.53257 13.195 6.34807C13.1941 6.16357 13.2235 5.9906 13.2832 5.82916C13.3429 5.66772 13.4419 5.51781 13.58 5.37944L18.62 0.397887C18.9 0.121134 19.2267 -0.0112455 19.6 0.000747146C19.9733 0.0127398 20.3 0.156651 20.58 0.432481C20.8367 0.709234 20.9711 1.03211 20.9832 1.40112C20.9953 1.77012 20.8609 2.093 20.58 2.36975L17.955 4.96431H26.6C26.9967 4.96431 27.3294 5.09715 27.5982 5.36283C27.867 5.62851 28.0009 5.95693 28 6.34807C27.9991 6.73922 27.8647 7.06809 27.5968 7.3347C27.3289 7.6013 26.9967 7.73368 26.6 7.73183H17.955Z"
+								fill="#F6CD14" />
+						</svg>
+					</a>
+
+					<span class="header__divider">
+						<img src="images/00-header/header-stitch-01.svg" alt="">
+					</span>
+
+					<a class="header__phone" href="tel:+74952236659" aria-label="Позвонить">
+						<svg class="header__icon" width="23" height="23" viewBox="0 0 23 23" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M6.28777 1C6.89209 1 9.30935 6.43885 9.30935 7.04317C9.30935 8.2518 7.4964 9.46043 6.89209 10.6691C6.28777 11.8777 7.4964 13.0863 8.70504 14.295C9.1764 14.7663 11.1223 16.7122 12.3309 16.1079C13.5396 15.5036 14.7482 13.6906 15.9568 13.6906C16.5612 13.6906 22 16.1079 22 16.7122C22 19.1295 20.187 20.9424 18.3741 21.5468C16.5612 22.1511 15.3525 22.1511 12.9353 21.5468C10.518 20.9424 8.70504 20.3381 5.68345 17.3165C2.66187 14.295 2.05755 12.482 1.45324 10.0647C0.848921 7.64748 0.848921 6.43885 1.45324 4.6259C2.05755 2.81295 3.8705 1 6.28777 1Z"
+								stroke="#040404" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+						<span class="header__phone-text">
+							+7 (495) 223-66-59
+						</span>
+					</a>
+
+					<button class="header__burger js-menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false"
+						aria-label="Открыть меню">
+						<span></span>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="header__mobile js-mobile-menu" id="mobile-menu">
+			<div class="header__mobile-panel">
+				<nav class="header__mobile-nav js-mobile-menu-view" aria-label="Мобильная навигация">
+					<ul class="header__mobile-list">
+						<li>
+							<a class="header__mobile-link js-menu-close" href="#">
+								<span>Главная</span>
+								<span class="header__mobile-chevron" aria-hidden="true"></span>
+							</a>
+						</li>
+						<li>
+							<button class="header__mobile-link js-mobile-catalog-open" type="button">
+								<span>Каталог</span>
+								<span class="header__mobile-chevron" aria-hidden="true"></span>
+							</button>
+						</li>
+						<li>
+							<a class="header__mobile-link js-menu-close" href="#">
+								<span>О бренде</span>
+								<span class="header__mobile-chevron" aria-hidden="true"></span>
+							</a>
+						</li>
+						<li>
+							<a class="header__mobile-link js-menu-close" href="#">
+								<span>Где купить</span>
+								<span class="header__mobile-chevron" aria-hidden="true"></span>
+							</a>
+						</li>
+						<li>
+							<a class="header__mobile-link js-menu-close" href="#">
+								<span>Сервис</span>
+								<span class="header__mobile-chevron" aria-hidden="true"></span>
+							</a>
+						</li>
+						<li>
+							<a class="header__mobile-link js-menu-close" href="#">
+								<span>Блог</span>
+								<span class="header__mobile-chevron" aria-hidden="true"></span>
+							</a>
+						</li>
+						<li>
+							<a class="header__mobile-link js-menu-close" href="#">
+								<span>Контакты</span>
+								<span class="header__mobile-chevron" aria-hidden="true"></span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+
+				<div class="header__mobile-catalog js-mobile-catalog-view" aria-hidden="true">
+					<button class="header__mobile-back js-mobile-catalog-close" type="button">Назад</button>
+					<h2 class="header__mobile-title">Каталог</h2>
+
+					<div class="header__mobile-catalog-group">
+						<h3 class="header__mobile-subtitle">Основные категории:</h3>
+						<ul class="header__mobile-catalog-list">
+							<li><a class="js-menu-close" href="#">Швейные машины</a></li>
+							<li><a class="js-menu-close" href="#">Оверлоки</a></li>
+							<li><a class="js-menu-close" href="#">Коверлоки</a></li>
+							<li><a class="js-menu-close" href="#">Швейно - вышивальные машины</a></li>
+							<li><a class="js-menu-close" href="#">Распошивальные машины</a></li>
+						</ul>
+					</div>
+
+					<div class="header__mobile-catalog-group">
+						<h3 class="header__mobile-subtitle">Дополнительные:</h3>
+						<ul class="header__mobile-catalog-list">
+							<li><a class="js-menu-close" href="#">Аксессуары</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="header__mobile-banner-wrapper">
+					<img class="header__mobile-banner" src="/images/icons/logo-transparent.svg" alt="" aria-hidden="true">
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main class="main catalog-page" id="main">
+		<nav class="breadcrumbs container" aria-label="Хлебные крошки">
+			<ol class="">
+				<li><a href="#">Главная</a></li>
+				<li><a href="#">Каталог</a></li>
+				<li><a href="#">Швейные машины</a></li>
+			</ol>
+		</nav>
+
+		<div class="catalog-page__container container">
+			<div class="catalog-page__decor decor" aria-hidden="true">
+				<img class="decor__item decor-stitch catalog-page__decor-stitch catalog-page__decor-stitch--left"
+					src="/images/10-catalog-page/catalog-page-stitch-01.svg" alt="">
+				<img class="decor__item decor-stitch catalog-page__decor-stitch catalog-page__decor-stitch--right"
+					src="/images/10-catalog-page/catalog-page-stitch-02.svg" alt="">
+				<img class="decor__item decor-stitch catalog-page__decor-stitch catalog-page__decor-stitch--middle"
+					src="/images/10-catalog-page/catalog-page-stitch-03.svg" alt="">
+				<img class="decor__item decor-stitch catalog-page__decor-stitch catalog-page__decor-stitch--bottom"
+					src="/images/10-catalog-page/catalog-page-stitch-04.svg" alt="">
+			</div>
+			<header class="catalog-page__header">
+				<h1 class="catalog-page__title">Швейные машины</h1>
+			</header>
+
+			<div class="catalog-page__layout">
+				<aside class="catalog-page__aside" aria-label="Фильтры каталога">
+					<button class="catalog-page__mobile-filter-button button js-catalog-filter-toggle" type="button"
+						aria-controls="catalog-filter" aria-expanded="false">
+						<img class="ocf-mobile-filter-icon" src="/images/icons/filter.svg" alt="">
+						Фильтр
+					</button>
+
+					<form
+						class="catalog-page__filter catalog-filter ocf-container ocf-theme-light ocf-vertical ocf-left js-catalog-filter"
+						id="catalog-filter" action="/" data-catalog-filter-form data-ocf="filter">
+						<div class="ocf-content">
+							<div class="ocf-header">
+								<i class="ocf-icon ocf-icon-16 ocf-brand ocf-sliders" aria-hidden="true"></i>
+								<span>Фильтр</span>
+								<button class="ocf-btn ocf-btn-link ocf-mobile ocf-close-mobile js-catalog-filter-close"
+									type="button" data-ocf="mobile" aria-label="Закрыть фильтр"></button>
+							</div>
+
+							<div class="ocf-body">
+								<div class="ocf-filter-list ocf-clearfix catalog-filter__groups-list"
+									id="catalog-filter-groups">
+									<div class="ocf-filter ocf-slider ocf-has-input catalog-filter__group" id="ocf-filter-2-0-1">
+										<div class="ocf-filter-body">
+											<div class="ocf-filter-header catalog-filter__legend" data-ocf="expand">
+												<span class="ocf-active-label">
+													<span id="ocf-text-min-2-0-1">15 000</span> -
+													<span id="ocf-text-max-2-0-1">120 000</span> руб.
+												</span>
+												<span class="ocf-filter-name">Цена</span>
+												<span class="ocf-filter-header-append">
+													<span class="ocf-filter-discard ocf-icon ocf-icon-16 ocf-minus-circle"
+														data-ocf-discard="2.0"></span>
+												</span>
+											</div>
+
+											<div class="ocf-value-list catalog-filter__range">
+												<div class="ocf-input-group ocf-slider-input-group catalog-filter__values">
+													<input class="ocf-form-control catalog-filter__value-input" id="ocf-input-min-2-0-1"
+														type="text" name="ocf[2-0-1][min]" value="15000" inputmode="numeric"
+														autocomplete="off" aria-label="Минимальная цена">
+													<span class="ocf-input-group-addon">-</span>
+													<input class="ocf-form-control catalog-filter__value-input" id="ocf-input-max-2-0-1"
+														type="text" name="ocf[2-0-1][max]" value="120000" inputmode="numeric"
+														autocomplete="off" aria-label="Максимальная цена">
+													<span class="ocf-input-group-addon">руб.</span>
+												</div>
+
+												<div class="ocf-value-slider">
+													<div
+														class="ocf-value-scale ocf-noUi-target ocf-noUi-ltr ocf-noUi-horizontal ocf-noUi-txt-dir-ltr js-ocf-range"
+														id="ocf-s-2-0-1" data-filter-key="2.0" data-min="15000" data-max="120000"
+														data-step="1000" data-range="true" data-min-start="15000" data-max-start="120000"
+														data-input-min="#ocf-input-min-2-0-1" data-input-max="#ocf-input-max-2-0-1"
+														data-text-min="#ocf-text-min-2-0-1" data-text-max="#ocf-text-max-2-0-1"
+														data-prefix="" data-suffix=" руб.">
+														<div class="ocf-noUi-base">
+															<div class="ocf-noUi-connects">
+																<div class="ocf-noUi-connect"></div>
+															</div>
+															<div class="ocf-noUi-origin">
+																<div class="ocf-noUi-handle ocf-noUi-handle-lower" data-handle="0" tabindex="0"
+																	role="slider" aria-label="Минимальная цена" aria-orientation="horizontal">
+																	<div class="ocf-noUi-touch-area"></div>
+																</div>
+															</div>
+															<div class="ocf-noUi-origin">
+																<div class="ocf-noUi-handle ocf-noUi-handle-upper" data-handle="1" tabindex="0"
+																	role="slider" aria-label="Максимальная цена" aria-orientation="horizontal">
+																	<div class="ocf-noUi-touch-area"></div>
+																</div>
+															</div>
+														</div>
+														<div class="ocf-noUi-pips ocf-noUi-pips-horizontal">
+															<div class="ocf-noUi-marker ocf-noUi-marker-horizontal ocf-noUi-marker-large"
+																style="left: 0%;"></div>
+															<div class="ocf-noUi-value ocf-noUi-value-horizontal ocf-noUi-value-large"
+																data-value="15000" style="left: 0%;">15 тыс.</div>
+															<div class="ocf-noUi-marker ocf-noUi-marker-horizontal" style="left: 25%;"></div>
+															<div class="ocf-noUi-value ocf-noUi-value-horizontal" data-value="41000"
+																style="left: 25%;">41 тыс.</div>
+															<div class="ocf-noUi-marker ocf-noUi-marker-horizontal" style="left: 50%;"></div>
+															<div class="ocf-noUi-value ocf-noUi-value-horizontal" data-value="68000"
+																style="left: 50%;">68 тыс.</div>
+															<div class="ocf-noUi-marker ocf-noUi-marker-horizontal" style="left: 75%;"></div>
+															<div class="ocf-noUi-value ocf-noUi-value-horizontal" data-value="94000"
+																style="left: 75%;">94 тыс.</div>
+															<div class="ocf-noUi-marker ocf-noUi-marker-horizontal ocf-noUi-marker-large"
+																style="left: 100%;"></div>
+															<div class="ocf-noUi-value ocf-noUi-value-horizontal ocf-noUi-value-large"
+																data-value="120000" style="left: 100%;">120 тыс.</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="ocf-filter catalog-filter__group" id="ocf-filter-14-2-1">
+										<div class="ocf-filter-body">
+											<div class="ocf-filter-header catalog-filter__legend" data-ocf="expand">
+												<span class="ocf-active-label"></span>
+												<span class="ocf-filter-name">Тип машины</span>
+												<span class="ocf-filter-header-append">
+													<span class="ocf-filter-discard ocf-icon ocf-icon-16 ocf-minus-circle"
+														data-ocf-discard="14.2"></span>
+												</span>
+											</div>
+											<div class="ocf-value-list">
+												<div class="ocf-value-list-body catalog-filter__body">
+													<button
+														class="ocf-value ocf-checkbox ocf-selected catalog-filter__checkbox"
+														id="ocf-v-14-2-893929293-1" type="button" data-filter-key="14.2"
+														data-value-id="893929293" aria-pressed="true" data-default-selected="true">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Электромеханическая</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">18</span></span>
+													</button>
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-14-2-1532558385-1" type="button" data-filter-key="14.2"
+														data-value-id="1532558385" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Электронная</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">9</span></span>
+													</button>
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-14-2-4288283001-1" type="button" data-filter-key="14.2"
+														data-value-id="4288283001" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Компьютерная</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">12</span></span>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="ocf-filter catalog-filter__group" id="ocf-filter-16-2-1">
+										<div class="ocf-filter-body">
+											<div class="ocf-filter-header catalog-filter__legend" data-ocf="expand">
+												<span class="ocf-active-label"></span>
+												<span class="ocf-filter-name">Тип челнока</span>
+												<span class="ocf-filter-header-append">
+													<span class="ocf-filter-discard ocf-icon ocf-icon-16 ocf-minus-circle"
+														data-ocf-discard="16.2"></span>
+												</span>
+											</div>
+											<div class="ocf-value-list">
+												<div class="ocf-value-list-body catalog-filter__body">
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-16-2-1030376371-1" type="button" data-filter-key="16.2"
+														data-value-id="1030376371" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Вертикальный</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">11</span></span>
+													</button>
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-16-2-3687864530-1" type="button" data-filter-key="16.2"
+														data-value-id="3687864530" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Горизонтальный</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">22</span></span>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="ocf-filter catalog-filter__group" id="ocf-filter-22-2-1">
+										<div class="ocf-filter-body">
+											<div class="ocf-filter-header catalog-filter__legend" data-ocf="expand">
+												<span class="ocf-active-label"></span>
+												<span class="ocf-filter-name">Тип петли</span>
+												<span class="ocf-filter-header-append">
+													<span class="ocf-filter-discard ocf-icon ocf-icon-16 ocf-minus-circle"
+														data-ocf-discard="22.2"></span>
+												</span>
+											</div>
+											<div class="ocf-value-list">
+												<div class="ocf-value-list-body catalog-filter__body">
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-22-2-1588507841-1" type="button" data-filter-key="22.2"
+														data-value-id="1588507841" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Автомат</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">19</span></span>
+													</button>
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-22-2-1077981318-1" type="button" data-filter-key="22.2"
+														data-value-id="1077981318" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Полуавтомат</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">8</span></span>
+													</button>
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-22-2-4288283019-1" type="button" data-filter-key="22.2"
+														data-value-id="4288283019" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Программируемая</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">6</span></span>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="ocf-filter catalog-filter__group is-expanded" id="ocf-filter-30-2-1">
+										<div class="ocf-filter-body">
+											<button
+												class="ocf-filter-header catalog-filter__group-toggle js-ocf-filter-toggle"
+												type="button" data-ocf="expand" data-target="#ocf-main-functions-1"
+												aria-expanded="true">
+												<span class="ocf-filter-name">Основные функции</span>
+											</button>
+
+											<div
+												class="ocf-value-list catalog-filter__body catalog-filter__body--collapsed"
+												id="ocf-main-functions-1">
+												<div class="catalog-filter__ranges">
+													<div class="ocf-slider ocf-has-input catalog-filter__range">
+														<p class="catalog-filter__range-title">Количество швейных операций</p>
+														<div class="ocf-value-slider">
+															<div
+																class="ocf-value-scale ocf-noUi-target ocf-noUi-ltr ocf-noUi-horizontal js-ocf-range"
+																id="ocf-s-30-2-1" data-filter-key="30.2" data-min="15" data-max="402"
+																data-step="1" data-range="true" data-min-start="15" data-max-start="402"
+																data-input-min="#ocf-input-min-30-2-1"
+																data-input-max="#ocf-input-max-30-2-1">
+																<div class="ocf-noUi-base">
+																	<div class="ocf-noUi-connects"><div class="ocf-noUi-connect"></div></div>
+																	<div class="ocf-noUi-origin">
+																		<div class="ocf-noUi-handle ocf-noUi-handle-lower" data-handle="0"
+																			tabindex="0" role="slider" aria-label="Минимум швейных операций"
+																			aria-orientation="horizontal">
+																			<div class="ocf-noUi-touch-area"></div>
+																			<span class="catalog-filter__scale-value js-ocf-handle-value"></span>
+																		</div>
+																	</div>
+																	<div class="ocf-noUi-origin">
+																		<div class="ocf-noUi-handle ocf-noUi-handle-upper" data-handle="1"
+																			tabindex="0" role="slider" aria-label="Максимум швейных операций"
+																			aria-orientation="horizontal">
+																			<div class="ocf-noUi-touch-area"></div>
+																			<span class="catalog-filter__scale-value js-ocf-handle-value"></span>
+																		</div>
+																	</div>
+																</div>
+																<div class="ocf-noUi-pips" aria-hidden="true"></div>
+															</div>
+														</div>
+														<div class="ocf-input-group ocf-slider-input-group catalog-filter__values">
+															<input class="ocf-form-control catalog-filter__value-input"
+																id="ocf-input-min-30-2-1" type="text" name="ocf[30-2-1][min]"
+																value="15" inputmode="numeric" aria-label="Минимум швейных операций">
+															<input class="ocf-form-control catalog-filter__value-input"
+																id="ocf-input-max-30-2-1" type="text" name="ocf[30-2-1][max]"
+																value="402" inputmode="numeric" aria-label="Максимум швейных операций">
+														</div>
+													</div>
+
+													<div class="ocf-slider ocf-has-input catalog-filter__range">
+														<p class="catalog-filter__range-title">Количество петель</p>
+														<div class="ocf-value-slider">
+															<div
+																class="ocf-value-scale ocf-noUi-target ocf-noUi-ltr ocf-noUi-horizontal js-ocf-range"
+																id="ocf-s-31-2-1" data-filter-key="31.2" data-min="1" data-max="12"
+																data-step="1" data-range="true" data-min-start="1" data-max-start="12"
+																data-input-min="#ocf-input-min-31-2-1"
+																data-input-max="#ocf-input-max-31-2-1">
+																<div class="ocf-noUi-base">
+																	<div class="ocf-noUi-connects"><div class="ocf-noUi-connect"></div></div>
+																	<div class="ocf-noUi-origin">
+																		<div class="ocf-noUi-handle ocf-noUi-handle-lower" data-handle="0"
+																			tabindex="0" role="slider" aria-label="Минимум количества петель"
+																			aria-orientation="horizontal">
+																			<div class="ocf-noUi-touch-area"></div>
+																			<span class="catalog-filter__scale-value js-ocf-handle-value"></span>
+																		</div>
+																	</div>
+																	<div class="ocf-noUi-origin">
+																		<div class="ocf-noUi-handle ocf-noUi-handle-upper" data-handle="1"
+																			tabindex="0" role="slider" aria-label="Максимум количества петель"
+																			aria-orientation="horizontal">
+																			<div class="ocf-noUi-touch-area"></div>
+																			<span class="catalog-filter__scale-value js-ocf-handle-value"></span>
+																		</div>
+																	</div>
+																</div>
+																<div class="ocf-noUi-pips" aria-hidden="true"></div>
+															</div>
+														</div>
+														<div class="ocf-input-group ocf-slider-input-group catalog-filter__values">
+															<input class="ocf-form-control catalog-filter__value-input"
+																id="ocf-input-min-31-2-1" type="text" name="ocf[31-2-1][min]"
+																value="1" inputmode="numeric" aria-label="Минимум количества петель">
+															<input class="ocf-form-control catalog-filter__value-input"
+																id="ocf-input-max-31-2-1" type="text" name="ocf[31-2-1][max]"
+																value="12" inputmode="numeric" aria-label="Максимум количества петель">
+														</div>
+													</div>
+
+													<div class="ocf-slider ocf-has-input catalog-filter__range">
+														<p class="catalog-filter__range-title">Максимальная длина стежка, мм</p>
+														<div class="ocf-value-slider">
+															<div
+																class="ocf-value-scale ocf-noUi-target ocf-noUi-ltr ocf-noUi-horizontal js-ocf-range"
+																id="ocf-s-32-2-1" data-filter-key="32.2" data-min="4" data-max="5"
+																data-step="0.1" data-range="true" data-min-start="4" data-max-start="5"
+																data-input-min="#ocf-input-min-32-2-1"
+																data-input-max="#ocf-input-max-32-2-1">
+																<div class="ocf-noUi-base">
+																	<div class="ocf-noUi-connects"><div class="ocf-noUi-connect"></div></div>
+																	<div class="ocf-noUi-origin">
+																		<div class="ocf-noUi-handle ocf-noUi-handle-lower" data-handle="0"
+																			tabindex="0" role="slider" aria-label="Минимальная длина стежка"
+																			aria-orientation="horizontal">
+																			<div class="ocf-noUi-touch-area"></div>
+																			<span class="catalog-filter__scale-value js-ocf-handle-value"></span>
+																		</div>
+																	</div>
+																	<div class="ocf-noUi-origin">
+																		<div class="ocf-noUi-handle ocf-noUi-handle-upper" data-handle="1"
+																			tabindex="0" role="slider" aria-label="Максимальная длина стежка"
+																			aria-orientation="horizontal">
+																			<div class="ocf-noUi-touch-area"></div>
+																			<span class="catalog-filter__scale-value js-ocf-handle-value"></span>
+																		</div>
+																	</div>
+																</div>
+																<div class="ocf-noUi-pips" aria-hidden="true"></div>
+															</div>
+														</div>
+														<div class="ocf-input-group ocf-slider-input-group catalog-filter__values">
+															<input class="ocf-form-control catalog-filter__value-input"
+																id="ocf-input-min-32-2-1" type="text" name="ocf[32-2-1][min]"
+																value="4" inputmode="decimal" aria-label="Минимальная длина стежка">
+															<input class="ocf-form-control catalog-filter__value-input"
+																id="ocf-input-max-32-2-1" type="text" name="ocf[32-2-1][max]"
+																value="5" inputmode="decimal" aria-label="Максимальная длина стежка">
+														</div>
+													</div>
+
+													<div class="ocf-slider ocf-has-input catalog-filter__range">
+														<p class="catalog-filter__range-title">Максимальная ширина зигзага, мм</p>
+														<div class="ocf-value-slider">
+															<div
+																class="ocf-value-scale ocf-noUi-target ocf-noUi-ltr ocf-noUi-horizontal js-ocf-range"
+																id="ocf-s-33-2-1" data-filter-key="33.2" data-min="5" data-max="7"
+																data-step="0.1" data-range="true" data-min-start="5" data-max-start="7"
+																data-input-min="#ocf-input-min-33-2-1"
+																data-input-max="#ocf-input-max-33-2-1">
+																<div class="ocf-noUi-base">
+																	<div class="ocf-noUi-connects"><div class="ocf-noUi-connect"></div></div>
+																	<div class="ocf-noUi-origin">
+																		<div class="ocf-noUi-handle ocf-noUi-handle-lower" data-handle="0"
+																			tabindex="0" role="slider" aria-label="Минимальная ширина зигзага"
+																			aria-orientation="horizontal">
+																			<div class="ocf-noUi-touch-area"></div>
+																			<span class="catalog-filter__scale-value js-ocf-handle-value"></span>
+																		</div>
+																	</div>
+																	<div class="ocf-noUi-origin">
+																		<div class="ocf-noUi-handle ocf-noUi-handle-upper" data-handle="1"
+																			tabindex="0" role="slider" aria-label="Максимальная ширина зигзага"
+																			aria-orientation="horizontal">
+																			<div class="ocf-noUi-touch-area"></div>
+																			<span class="catalog-filter__scale-value js-ocf-handle-value"></span>
+																		</div>
+																	</div>
+																</div>
+																<div class="ocf-noUi-pips" aria-hidden="true"></div>
+															</div>
+														</div>
+														<div class="ocf-input-group ocf-slider-input-group catalog-filter__values">
+															<input class="ocf-form-control catalog-filter__value-input"
+																id="ocf-input-min-33-2-1" type="text" name="ocf[33-2-1][min]"
+																value="5" inputmode="decimal" aria-label="Минимальная ширина зигзага">
+															<input class="ocf-form-control catalog-filter__value-input"
+																id="ocf-input-max-33-2-1" type="text" name="ocf[33-2-1][max]"
+																value="7" inputmode="decimal" aria-label="Максимальная ширина зигзага">
+														</div>
+													</div>
+												</div>
+
+												<div class="ocf-value-list-body catalog-filter__body">
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-30-2-1001-1" type="button" data-filter-key="30.2"
+														data-value-id="1001" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Регулировка длины стежка</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">25</span></span>
+													</button>
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-30-2-1002-1" type="button" data-filter-key="30.2"
+														data-value-id="1002" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Регулировка ширины зигзага</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">21</span></span>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="ocf-filter catalog-filter__group" id="ocf-filter-42-2-1">
+										<div class="ocf-filter-body">
+											<div class="ocf-filter-header catalog-filter__legend" data-ocf="expand">
+												<span class="ocf-active-label"></span>
+												<span class="ocf-filter-name">Расположение катушечных стержней</span>
+												<span class="ocf-filter-header-append">
+													<span class="ocf-filter-discard ocf-icon ocf-icon-16 ocf-minus-circle"
+														data-ocf-discard="42.2"></span>
+												</span>
+											</div>
+											<div class="ocf-value-list">
+												<div class="ocf-value-list-body catalog-filter__body">
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-42-2-2001-1" type="button" data-filter-key="42.2"
+														data-value-id="2001" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Вертикальный</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">17</span></span>
+													</button>
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-42-2-2002-1" type="button" data-filter-key="42.2"
+														data-value-id="2002" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Горизонтальный</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">16</span></span>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="ocf-filter catalog-filter__group" id="ocf-filter-50-2-1">
+										<div class="ocf-filter-body">
+											<div class="ocf-filter-header catalog-filter__legend" data-ocf="expand">
+												<span class="ocf-active-label"></span>
+												<span class="ocf-filter-name">Опции</span>
+												<span class="ocf-filter-header-append">
+													<span class="ocf-filter-discard ocf-icon ocf-icon-16 ocf-minus-circle"
+														data-ocf-discard="50.2"></span>
+												</span>
+											</div>
+											<div class="ocf-value-list">
+												<div class="ocf-value-list-body catalog-filter__body">
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-50-2-3001-1" type="button" data-filter-key="50.2"
+														data-value-id="3001" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Декоративные строчки</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">27</span></span>
+													</button>
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-50-2-3002-1" type="button" data-filter-key="50.2"
+														data-value-id="3002" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Регулятор давления лапки на ткань</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">16</span></span>
+													</button>
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-50-2-3003-1" type="button" data-filter-key="50.2"
+														data-value-id="3003" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Встроенный нитевдеватель</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">20</span></span>
+													</button>
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-50-2-3004-1" type="button" data-filter-key="50.2"
+														data-value-id="3004" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Переключатель нижнего транспортёра ткани</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">15</span></span>
+													</button>
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-50-2-3005-1" type="button" data-filter-key="50.2"
+														data-value-id="3005" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Верхний транспортер</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">8</span></span>
+													</button>
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-50-2-3006-1" type="button" data-filter-key="50.2"
+														data-value-id="3006" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Регулятор скорости шитья</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">14</span></span>
+													</button>
+
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-50-2-3007-1" type="button" data-filter-key="50.2"
+														data-value-id="3007" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Кнопка позиционирования иглы</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">13</span></span>
+													</button>
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-50-2-3008-1" type="button" data-filter-key="50.2"
+														data-value-id="3008" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Автоматическая обрезка нити</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">9</span></span>
+													</button>
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-50-2-3009-1" type="button" data-filter-key="50.2"
+														data-value-id="3009" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Автоматическая закрепка</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">10</span></span>
+													</button>
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-50-2-3010-1" type="button" data-filter-key="50.2"
+														data-value-id="3010" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Алфавит</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">5</span></span>
+													</button>
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-50-2-3011-1" type="button" data-filter-key="50.2"
+														data-value-id="3011" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Коленный рычаг</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">6</span></span>
+													</button>
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-50-2-3012-1" type="button" data-filter-key="50.2"
+														data-value-id="3012" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">ЖК-дисплей</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">11</span></span>
+													</button>
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-50-2-3013-1" type="button" data-filter-key="50.2"
+														data-value-id="3013" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Расширительный столик</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">7</span></span>
+													</button>
+													<button class="ocf-value ocf-checkbox catalog-filter__checkbox"
+														id="ocf-v-50-2-3014-1" type="button" data-filter-key="50.2"
+														data-value-id="3014" aria-pressed="false">
+														<span
+															class="ocf-value-input ocf-value-input-checkbox catalog-filter__checkbox-control"></span>
+														<span class="ocf-value-name">Чехол</span>
+														<span class="ocf-value-append"><span class="ocf-value-count">24</span></span>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<button
+									class="ocf-btn ocf-btn-link ocf-btn-show-values catalog-filter__groups-toggle js-ocf-groups-toggle"
+									type="button" aria-controls="catalog-filter-groups" aria-expanded="false">
+									<span class="ocf-hide-expand-1 js-ocf-groups-show-label">Показать ещё 4 фильтра</span>
+									<span class="ocf-hide-expand-0">Скрыть</span>
+								</button>
+							</div>
+						</div>
+
+						<div class="ocf-footer catalog-filter__actions">
+							<button
+								class="button ocf-btn ocf-search-btn-static catalog-filter__actions-submit js-catalog-filter-close"
+								type="submit" data-ocf="button">Применить</button>
+							<button class="ocf-btn ocf-btn-link catalog-filter__actions-reset" type="reset"
+								data-ocf-discard="*">Сбросить</button>
+						</div>
+
+						<div class="ocf-popover ocf-right" role="status" aria-live="polite" aria-hidden="true">
+							<span class="ocf-arrow" aria-hidden="true"></span>
+							<div class="ocf-popover-content">
+								<button class="ocf-btn ocf-search-btn-popover js-catalog-filter-close" type="submit"
+									form="catalog-filter" data-ocf="button">
+									<span>Показать</span>
+									<b class="ocf-btn-label">33</b>
+									<span>товара</span>
+								</button>
+							</div>
+						</div>
+					</form>
+				</aside>
+
+				<section class="catalog-products" aria-labelledby="catalog-products-title">
+					<h2 class="visually-hidden" id="catalog-products-title">Список швейных машин</h2>
+					<div class="catalog-products__grid">
+						<article class="product-card">
+							<a class="product-card__image-link" href="#"><img class="product-card__image"
+									src="/images/23-products/sewing-machine-01.jpg" alt="DESEW Lite 200"></a>
+							<div class="product-card__content">
+								<p class="product-card__label">популярное</p>
+								<h3 class="product-card__title"><a href="#">DESEW Lite 200</a></h3>
+								<p class="product-card__price">₽ 29 900</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<article class="product-card">
+							<a class="product-card__image-link" href="#"><img class="product-card__image"
+									src="/images/23-products/sewing-machine-02.jpg" alt="DESEW ProLine 8700"></a>
+							<div class="product-card__content">
+								<p class="product-card__label product-card__label--yellow">Новинка</p>
+								<h3 class="product-card__title"><a href="#">DESEW ProLine 8700</a></h3>
+								<p class="product-card__price">₽ 89 900</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<article class="product-card">
+							<a class="product-card__image-link" href="#"><img class="product-card__image"
+									src="/images/23-products/sewing-machine-03.jpg" alt="DESEW SmartStitch 500"></a>
+							<div class="product-card__content">
+								<p class="product-card__label product-card__label--gray">Рекомендуем</p>
+								<h3 class="product-card__title"><a href="#">DESEW SmartStitch 500</a></h3>
+								<p class="product-card__price">₽ 52 900</p>
+								<a class="product-card__link" href="#">Подробнее →ё</a>
+							</div>
+						</article>
+						<article class="product-card">
+							<a class="product-card__image-link" href="#"><img class="product-card__image"
+									src="/images/23-products/sewing-machine-04.jpg" alt="DESEW HomeLine 420"></a>
+							<div class="product-card__content">
+								<p class="product-card__label product-card__label--brown">Хит продаж</p>
+								<h3 class="product-card__title"><a href="#">DESEW Industrial ProMax</a></h3>
+								<p class="product-card__price">₽ 46 500</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<article class="product-card">
+							<a class="product-card__image-link" href="#"><img class="product-card__image"
+									src="/images/23-products/sewing-machine-05.jpg" alt="DESEW Elite Pro"></a>
+							<div class="product-card__content">
+								<p class="product-card__label">популярное</p>
+								<h3 class="product-card__title"><a href="#">DESEW Elite Pro</a></h3>
+								<p class="product-card__price">₽ 96 500</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<article class="product-card">
+							<a class="product-card__image-link" href="#"><img class="product-card__image"
+									src="/images/23-products/sewing-machine-01.jpg" alt="DESEW Linea 320"></a>
+							<div class="product-card__content">
+								<p class="product-card__label">в наличии</p>
+								<h3 class="product-card__title"><a href="#">DESEW Linea 320</a></h3>
+								<p class="product-card__price">₽ 39 900</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<article class="product-card">
+							<a class="product-card__image-link" href="#"><img class="product-card__image"
+									src="/images/23-products/sewing-machine-02.jpg" alt="DESEW Studio 610"></a>
+							<div class="product-card__content">
+								<p class="product-card__label">новинка</p>
+								<h3 class="product-card__title"><a href="#">DESEW Studio 610</a></h3>
+								<p class="product-card__price">₽ 74 900</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<article class="product-card">
+							<a class="product-card__image-link" href="#"><img class="product-card__image"
+									src="/images/23-products/sewing-machine-03.jpg" alt="DESEW Comfort 35"></a>
+							<div class="product-card__content">
+								<p class="product-card__label">в наличии</p>
+								<h3 class="product-card__title"><a href="#">DESEW Comfort 35</a></h3>
+								<p class="product-card__price">₽ 34 900</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<article class="product-card">
+							<a class="product-card__image-link" href="#"><img class="product-card__image"
+									src="/images/23-products/sewing-machine-04.jpg" alt="DESEW ProLine 8703"></a>
+							<div class="product-card__content">
+								<p class="product-card__label">популярное</p>
+								<h3 class="product-card__title"><a href="#">DESEW ProLine 8703</a></h3>
+								<p class="product-card__price">₽ 92 900</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<article class="product-card">
+							<a class="product-card__image-link" href="#"><img class="product-card__image"
+									src="/images/23-products/sewing-machine-05.jpg" alt="DESEW ProLine 8705"></a>
+							<div class="product-card__content">
+								<p class="product-card__label">популярное</p>
+								<h3 class="product-card__title"><a href="#">DESEW ProLine 8705</a></h3>
+								<p class="product-card__price">₽ 99 900</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<article class="product-card">
+							<a class="product-card__image-link" href="#"><img class="product-card__image"
+									src="/images/23-products/sewing-machine-01.jpg" alt="DESEW Atelier 90"></a>
+							<div class="product-card__content">
+								<p class="product-card__label">в наличии</p>
+								<h3 class="product-card__title"><a href="#">DESEW Atelier 90</a></h3>
+								<p class="product-card__price">₽ 58 900</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<article class="product-card">
+							<a class="product-card__image-link" href="#"><img class="product-card__image"
+									src="/images/23-products/sewing-machine-02.jpg" alt="DESEW Master 402"></a>
+							<div class="product-card__content">
+								<p class="product-card__label">новинка</p>
+								<h3 class="product-card__title"><a href="#">DESEW Master 402</a></h3>
+								<p class="product-card__price">₽ 84 500</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<article class="product-card">
+							<a class="product-card__image-link" href="#"><img class="product-card__image"
+									src="/images/23-products/sewing-machine-05.jpg" alt="DESEW Elite Pro"></a>
+							<div class="product-card__content">
+								<p class="product-card__label">популярное</p>
+								<h3 class="product-card__title"><a href="#">DESEW Elite Pro</a></h3>
+								<p class="product-card__price">₽ 96 500</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<article class="product-card">
+							<a class="product-card__image-link" href="#"><img class="product-card__image"
+									src="/images/23-products/sewing-machine-01.jpg" alt="DESEW Linea 320"></a>
+							<div class="product-card__content">
+								<p class="product-card__label">в наличии</p>
+								<h3 class="product-card__title"><a href="#">DESEW Linea 320</a></h3>
+								<p class="product-card__price">₽ 39 900</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<article class="product-card">
+							<a class="product-card__image-link" href="#"><img class="product-card__image"
+									src="/images/23-products/sewing-machine-02.jpg" alt="DESEW Studio 610"></a>
+							<div class="product-card__content">
+								<p class="product-card__label">новинка</p>
+								<h3 class="product-card__title"><a href="#">DESEW Studio 610</a></h3>
+								<p class="product-card__price">₽ 74 900</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<article class="product-card">
+							<a class="product-card__image-link" href="#"><img class="product-card__image"
+									src="/images/23-products/sewing-machine-03.jpg" alt="DESEW Comfort 35"></a>
+							<div class="product-card__content">
+								<p class="product-card__label">в наличии</p>
+								<h3 class="product-card__title"><a href="#">DESEW Comfort 35</a></h3>
+								<p class="product-card__price">₽ 34 900</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<article class="product-card">
+							<a class="product-card__image-link" href="#"><img class="product-card__image"
+									src="/images/23-products/sewing-machine-04.jpg" alt="DESEW ProLine 8703"></a>
+							<div class="product-card__content">
+								<p class="product-card__label">популярное</p>
+								<h3 class="product-card__title"><a href="#">DESEW ProLine 8703</a></h3>
+								<p class="product-card__price">₽ 92 900</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<article class="product-card">
+							<a class="product-card__image-link" href="#"><img class="product-card__image"
+									src="/images/23-products/sewing-machine-05.jpg" alt="DESEW ProLine 8705"></a>
+							<div class="product-card__content">
+								<p class="product-card__label">популярное</p>
+								<h3 class="product-card__title"><a href="#">DESEW ProLine 8705</a></h3>
+								<p class="product-card__price">₽ 99 900</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<article class="product-card">
+							<a class="product-card__image-link" href="#"><img class="product-card__image"
+									src="/images/23-products/sewing-machine-01.jpg" alt="DESEW Atelier 90"></a>
+							<div class="product-card__content">
+								<p class="product-card__label">в наличии</p>
+								<h3 class="product-card__title"><a href="#">DESEW Atelier 90</a></h3>
+								<p class="product-card__price">₽ 58 900</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<article class="product-card">
+							<a class="product-card__image-link" href="#"><img class="product-card__image"
+									src="/images/23-products/sewing-machine-02.jpg" alt="DESEW Master 402"></a>
+							<div class="product-card__content">
+								<p class="product-card__label">новинка</p>
+								<h3 class="product-card__title"><a href="#">DESEW Master 402</a></h3>
+								<p class="product-card__price">₽ 84 500</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<article class="product-card">
+							<a class="product-card__image-link" href="#"><img class="product-card__image"
+									src="/images/23-products/sewing-machine-04.jpg" alt="DESEW ProLine 8703"></a>
+							<div class="product-card__content">
+								<p class="product-card__label">популярное</p>
+								<h3 class="product-card__title"><a href="#">DESEW ProLine 8703</a></h3>
+								<p class="product-card__price">₽ 92 900</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<article class="product-card">
+							<a class="product-card__image-link" href="#"><img class="product-card__image"
+									src="/images/23-products/sewing-machine-05.jpg" alt="DESEW ProLine 8705"></a>
+							<div class="product-card__content">
+								<p class="product-card__label">популярное</p>
+								<h3 class="product-card__title"><a href="#">DESEW ProLine 8705</a></h3>
+								<p class="product-card__price">₽ 99 900</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<article class="product-card">
+							<a class="product-card__image-link" href="#"><img class="product-card__image"
+									src="/images/23-products/sewing-machine-01.jpg" alt="DESEW Atelier 90"></a>
+							<div class="product-card__content">
+								<p class="product-card__label">в наличии</p>
+								<h3 class="product-card__title"><a href="#">DESEW Atelier 90</a></h3>
+								<p class="product-card__price">₽ 58 900</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+						<article class="product-card">
+							<a class="product-card__image-link" href="#"><img class="product-card__image"
+									src="/images/23-products/sewing-machine-02.jpg" alt="DESEW Master 402"></a>
+							<div class="product-card__content">
+								<p class="product-card__label">новинка</p>
+								<h3 class="product-card__title"><a href="#">DESEW Master 402</a></h3>
+								<p class="product-card__price">₽ 84 500</p>
+								<a class="product-card__link" href="#">Подробнее →</a>
+							</div>
+						</article>
+					</div>
+
+					<nav class="catalog-products__pagination pagination" aria-label="Пагинация каталога">
+						<a class="pagination__button pagination__button--prev" href="#" aria-label="Предыдущая страница"></a>
+						<a class="pagination__link is-active" href="#" aria-current="page">1</a>
+						<a class="pagination__link" href="#">2</a>
+						<a class="pagination__link" href="#">3</a>
+						<a class="pagination__button pagination__button--next" href="#" aria-label="Следующая страница"></a>
+					</nav>
+				</section>
+			</div>
+		</div>
+
+		<section class="info-block">
+			<div class="info-block__container container">
+				<div class="info-block__content">
+					<div class="info-block__logo">
+						<img src="/images/icons/logo-main.svg" alt="DEsew" width="317" height="68">
+					</div>
+					<div class="info-block__text">
+						<p>
+							<b>DESEW</b> — бренд высокоточного швейного оборудования, созданный для стабильной работы
+							и высокой точности.
+						</p>
+						<p>
+							Мы разрабатываем технику для производства и мастерских, где важны надежность, скорость
+							и качество результата. Оборудование DESEW сочетает современные технологии, продуманную
+							конструкцию и длительный срок службы.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="info-block__visual" aria-hidden="true">
+				<img class="info-block__image hidden-mobile" src="/images/22-info-block/info-block-bg-01.png" alt="">
+				<img class="info-block__image visible-mobile" style="--offset-right-mob: 70px;"
+					src="/images/22-info-block/info-block-bg-01-mob.png" alt="">
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer" id="contacts">
+		<div class="footer__decor decor">
+			<img class=" footer__decor--bottom" src="/images/99-footer/footer-stitch-02.svg" alt="" aria-hidden="true">
+		</div>
+
+		<div class="footer__container container">
+			<div class="footer__brand">
+				<a class="footer__logo" href="#" aria-label="DEsew">
+					<img class="footer__logo-image" src="/images/icons/logo-footer.svg" alt="DEsew" width="283" height="61">
+				</a>
+				<p class="footer__text">Швейное оборудование<br>для производства и мастерских</p>
+				<span class="footer__divider" aria-hidden="true"></span>
+				<button class="footer__callback button" type="button" data-micromodal-trigger="feedback-modal">Заказать звонок</button>
+
+				<div class="footer__bottom">
+					<p class="footer__copyright">© DESEW 2026</p>
+					<a class="footer__policy" href="#">Политика конфиденциальности</a>
+				</div>
+			</div>
+
+			<div class="footer__content">
+				<nav class="footer__columns" aria-label="Навигация в подвале">
+					<div class="footer__column">
+						<h2 class="footer__column-title">Продукция</h2>
+						<ul class="footer__list">
+							<li><a class="footer__nav-link" href="#">Швейные машины</a></li>
+							<li><a class="footer__nav-link" href="#">Оверлоки</a></li>
+							<li><a class="footer__nav-link" href="#">Вышивальные машины</a></li>
+							<li><a class="footer__nav-link" href="#">Аксессуары</a></li>
+						</ul>
+					</div>
+
+					<div class="footer__column">
+						<h2 class="footer__column-title">Компания</h2>
+						<ul class="footer__list">
+							<li><a class="footer__nav-link" href="#">О компании</a></li>
+							<li><a class="footer__nav-link" href="#">Где купить</a></li>
+							<li><a class="footer__nav-link" href="#">Новости</a></li>
+							<li><a class="footer__nav-link" href="#">Контакты</a></li>
+						</ul>
+					</div>
+
+					<div class="footer__column">
+						<h2 class="footer__column-title">Поддержка</h2>
+						<ul class="footer__list">
+							<li><a class="footer__nav-link" href="#">Поддержка и сервис</a></li>
+							<li><a class="footer__nav-link" href="#">Гарантия</a></li>
+							<li><a class="footer__nav-link" href="#">Сравнение товаров</a></li>
+						</ul>
+					</div>
+
+					<div class="footer__column footer__column--contacts">
+						<h2 class="footer__column-title">Контакты</h2>
+						<ul class="footer__list footer__list--contacts">
+							<li>
+								<a class="footer__contact footer__contact--phone" href="tel:+74952236659">
+									<img src="/images/icons/phone-small-primary.svg" alt="" aria-hidden="true">
+									<span>+7 (495) 223-66-59</span>
+								</a>
+							</li>
+							<li>
+								<span class="footer__contact footer__contact--location">
+									<img src="/images/icons/location-city.svg" alt="" aria-hidden="true">
+									<span>Москва</span>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</nav>
+
+				<form class="footer__subscribe" action="/">
+					<h2 class="footer__subscribe-title">Будьте в курсе новинок и обновлений</h2>
+					<p class="footer__subscribe-text">Рассказываем о новых моделях, технологиях и обзорах</p>
+
+					<div class="footer__subscribe-row">
+						<label class="visually-hidden" for="footer-email">Ваш email</label>
+						<input class="footer__subscribe-input" id="footer-email" type="email" name="email" placeholder="Ваш email"
+							autocomplete="email">
+						<button class="footer__subscribe-button button" type="submit">Подписаться</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</footer>
+
+	<div class="modal" id="feedback-modal" aria-hidden="true">
+		<button class="modal__overlay" type="button" data-micromodal-close aria-label="Закрыть окно"></button>
+
+		<div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="feedback-modal-title">
+			<button class="modal__close" type="button" data-micromodal-close aria-label="Закрыть окно"></button>
+
+			<h2 class="modal__title" id="feedback-modal-title">Связаться с сервисом</h2>
+			<p class="modal__text">Выберите, с чем мы можем помочь:</p>
+
+			<form class="modal__form js-static-form" action="/">
+				<fieldset class="modal__options">
+					<legend class="visually-hidden">Тип обращения</legend>
+					<label class="modal__option">
+						<input class="modal__option-input" type="radio" name="request-type" value="question" checked>
+						<span class="modal__option-control" aria-hidden="true"></span>
+						<span>Есть вопрос</span>
+					</label>
+					<label class="modal__option">
+						<input class="modal__option-input" type="radio" name="request-type" value="review">
+						<span class="modal__option-control" aria-hidden="true"></span>
+						<span>Оставить отзыв</span>
+					</label>
+					<label class="modal__option">
+						<input class="modal__option-input" type="radio" name="request-type" value="problem">
+						<span class="modal__option-control" aria-hidden="true"></span>
+						<span>Сообщить о проблеме</span>
+					</label>
+					<label class="modal__option">
+						<input class="modal__option-input" type="radio" name="request-type" value="call">
+						<span class="modal__option-control" aria-hidden="true"></span>
+						<span>Заказать звонок</span>
+					</label>
+				</fieldset>
+
+				<div class="modal__divider" aria-hidden="true"></div>
+
+				<div class="modal__field">
+					<label class="modal__label" for="feedback-name">Имя</label>
+					<input class="modal__control" id="feedback-name" type="text" name="name" placeholder="Введите ваше имя"
+						autocomplete="name">
+				</div>
+
+				<div class="modal__field">
+					<label class="modal__label" for="feedback-phone">Телефон</label>
+					<input class="modal__control" id="feedback-phone" type="tel" name="phone"
+						placeholder="Введите номер телефона" autocomplete="tel">
+				</div>
+
+				<div class="modal__field">
+					<label class="modal__label" for="feedback-message">Комментарий</label>
+					<textarea class="modal__control modal__control--textarea" id="feedback-message" name="message"
+						placeholder="Опишите ваш вопрос"></textarea>
+				</div>
+
+				<button class="modal__submit button" type="submit">Отправить</button>
+				<p class="modal__caption">Мы свяжемся с вами в ближайшее время</p>
+			</form>
+		</div>
+	</div>
+
+	<script src="/scripts/jquery-3.7.1.min.js"></script>
+	<script src="/scripts/jquery-ui.min.js"></script>
+	<script src="/scripts/jquery.mask.min.js"></script>
+	<script src="/scripts/micromodal.min.js"></script>
+	<script src="/scripts/swiper-bundle.min.js"></script>
+	<script src="/scripts/main.js"></script>
+</body>
+
+</html>
