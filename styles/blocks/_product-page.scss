@@ -265,6 +265,16 @@
 				fill: var(--primary-500);
 			}
 		}
+
+		@include mobile {
+			width: 18px;
+			height: 18px;
+
+			svg {
+				width: 18px;
+				height: 18px;
+			}
+		}
 	}
 
 	&__category {

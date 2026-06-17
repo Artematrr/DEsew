@@ -2359,6 +2359,31 @@ h4,
     color: var(--primary-600);
   }
 }
+.product-card__compare {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+@media (hover: hover) {
+  .product-card__compare:hover * {
+    fill: var(--primary-500);
+  }
+}
+@media (hover: none) {
+  .product-card__compare:active * {
+    fill: var(--primary-500);
+  }
+}
+@media (max-width: 767px) {
+  .product-card__compare {
+    width: 18px;
+    height: 18px;
+  }
+  .product-card__compare svg {
+    width: 18px;
+    height: 18px;
+  }
+}
 
 .slider {
   position: relative;
@@ -2735,6 +2760,16 @@ h4,
 @media (hover: none) {
   .product-summary__compare:active * {
     fill: var(--primary-500);
+  }
+}
+@media (max-width: 767px) {
+  .product-summary__compare {
+    width: 18px;
+    height: 18px;
+  }
+  .product-summary__compare svg {
+    width: 18px;
+    height: 18px;
   }
 }
 .product-summary__category {

@@ -253,235 +253,238 @@
 					<form class="catalog-page__filter catalog-filter js-catalog-filter js-catalog-filter-form" id="catalog-filter"
 						action="/" data-catalog-filter-form>
 
-					<fieldset class="catalog-filter__group">
-						<legend class="catalog-filter__legend">Тип машины</legend>
-						<div class="catalog-filter__body">
-							<label class="catalog-filter__checkbox">
-								<input class="catalog-filter__checkbox-input" type="checkbox" name="machine-type"
-									value="electromechanical" checked>
-								<span class="catalog-filter__checkbox-control" aria-hidden="true"></span>
-								<span>Электромеханическая</span>
-							</label>
-							<label class="catalog-filter__checkbox">
-								<input class="catalog-filter__checkbox-input" type="checkbox" name="machine-type" value="electronic">
-								<span class="catalog-filter__checkbox-control" aria-hidden="true"></span>
-								<span>Электронная</span>
-							</label>
-							<label class="catalog-filter__checkbox">
-								<input class="catalog-filter__checkbox-input" type="checkbox" name="machine-type" value="computer">
-								<span class="catalog-filter__checkbox-control" aria-hidden="true"></span>
-								<span>Компьютерная</span>
-							</label>
-						</div>
-					</fieldset>
-
-					<fieldset class="catalog-filter__group">
-						<legend class="catalog-filter__legend">Тип челнока</legend>
-						<div class="catalog-filter__body">
-							<label class="catalog-filter__checkbox">
-								<input class="catalog-filter__checkbox-input" type="checkbox" name="shuttle-type" value="vertical">
-								<span class="catalog-filter__checkbox-control" aria-hidden="true"></span>
-								<span>Вертикальный</span>
-							</label>
-							<label class="catalog-filter__checkbox">
-								<input class="catalog-filter__checkbox-input" type="checkbox" name="shuttle-type" value="horizontal">
-								<span class="catalog-filter__checkbox-control" aria-hidden="true"></span>
-								<span>Горизонтальный</span>
-							</label>
-						</div>
-					</fieldset>
-
-					<fieldset class="catalog-filter__group">
-						<legend class="catalog-filter__legend">Тип петли</legend>
-						<div class="catalog-filter__body">
-							<label class="catalog-filter__checkbox">
-								<input class="catalog-filter__checkbox-input" type="checkbox" name="buttonhole-type" value="auto">
-								<span class="catalog-filter__checkbox-control" aria-hidden="true"></span>
-								<span>Автомат</span>
-							</label>
-							<label class="catalog-filter__checkbox">
-								<input class="catalog-filter__checkbox-input" type="checkbox" name="buttonhole-type" value="semi-auto">
-								<span class="catalog-filter__checkbox-control" aria-hidden="true"></span>
-								<span>Полуавтомат</span>
-							</label>
-							<label class="catalog-filter__checkbox">
-								<input class="catalog-filter__checkbox-input" type="checkbox" name="buttonhole-type"
-									value="programmable">
-								<span class="catalog-filter__checkbox-control" aria-hidden="true"></span>
-								<span>Программируемая</span>
-							</label>
-						</div>
-					</fieldset>
-
-					<div class="catalog-filter__group is-expanded">
-						<button class="catalog-filter__group-toggle js-filter-group-toggle" type="button"
-							aria-expanded="true">Основные функции</button>
-						<div class="catalog-filter__body catalog-filter__body--collapsed">
-							<div class="catalog-filter__ranges">
-								<div class="catalog-filter__range">
-									<p class="catalog-filter__range-title">Количество швейных операций</p>
-									<div class="catalog-filter__range-slider js-range-slider" data-min="15" data-max="402" data-from="15"
-										data-to="402" data-step="1">
-										<div class="catalog-filter__scale">
-											<span>15</span>
-											<span>402</span>
-										</div>
-									</div>
-									<div class="catalog-filter__values">
-										<label class="catalog-filter__value">
-											<input class="catalog-filter__value-input js-range-from" type="text" name="operations-from"
-												inputmode="numeric">
-										</label>
-										<label class="catalog-filter__value">
-											<input class="catalog-filter__value-input js-range-to" type="text" name="operations-to"
-												inputmode="numeric">
-										</label>
-									</div>
-								</div>
-								<div class="catalog-filter__range">
-									<p class="catalog-filter__range-title">Количество петель</p>
-									<div class="catalog-filter__range-slider js-range-slider" data-min="1" data-max="12" data-from="1"
-										data-to="12" data-step="1">
-										<div class="catalog-filter__scale">
-											<span>1</span>
-											<span>12</span>
-										</div>
-									</div>
-									<div class="catalog-filter__values">
-										<label class="catalog-filter__value">
-											<input class="catalog-filter__value-input js-range-from" type="text" name="buttonholes-from"
-												inputmode="numeric">
-										</label>
-										<label class="catalog-filter__value">
-											<input class="catalog-filter__value-input js-range-to" type="text" name="buttonholes-to"
-												inputmode="numeric">
-										</label>
-									</div>
-								</div>
-								<div class="catalog-filter__range">
-									<p class="catalog-filter__range-title">Максимальная длина стежка, мм</p>
-									<div class="catalog-filter__range-slider js-range-slider" data-min="4" data-max="5" data-from="4"
-										data-to="5" data-step="0.1">
-										<div class="catalog-filter__scale">
-											<span>4</span>
-											<span>5</span>
-										</div>
-									</div>
-									<div class="catalog-filter__values">
-										<label class="catalog-filter__value">
-											<input class="catalog-filter__value-input js-range-from" type="text" name="stitch-length-from"
-												inputmode="decimal">
-										</label>
-										<label class="catalog-filter__value">
-											<input class="catalog-filter__value-input js-range-to" type="text" name="stitch-length-to"
-												inputmode="decimal">
-										</label>
-									</div>
-								</div>
-								<div class="catalog-filter__range">
-									<p class="catalog-filter__range-title">Максимальная ширина зигзага, мм</p>
-									<div class="catalog-filter__range-slider js-range-slider" data-min="5" data-max="7" data-from="5"
-										data-to="7" data-step="0.1">
-										<div class="catalog-filter__scale">
-											<span>5</span>
-											<span>7</span>
-										</div>
-									</div>
-									<div class="catalog-filter__values">
-										<label class="catalog-filter__value">
-											<input class="catalog-filter__value-input js-range-from" type="text" name="zigzag-width-from"
-												inputmode="decimal">
-										</label>
-										<label class="catalog-filter__value">
-											<input class="catalog-filter__value-input js-range-to" type="text" name="zigzag-width-to"
-												inputmode="decimal">
-										</label>
-									</div>
-								</div>
+						<fieldset class="catalog-filter__group">
+							<legend class="catalog-filter__legend">Тип машины</legend>
+							<div class="catalog-filter__body">
+								<label class="catalog-filter__checkbox">
+									<input class="catalog-filter__checkbox-input" type="checkbox" name="machine-type"
+										value="electromechanical" checked>
+									<span class="catalog-filter__checkbox-control" aria-hidden="true"></span>
+									<span>Электромеханическая</span>
+								</label>
+								<label class="catalog-filter__checkbox">
+									<input class="catalog-filter__checkbox-input" type="checkbox" name="machine-type" value="electronic">
+									<span class="catalog-filter__checkbox-control" aria-hidden="true"></span>
+									<span>Электронная</span>
+								</label>
+								<label class="catalog-filter__checkbox">
+									<input class="catalog-filter__checkbox-input" type="checkbox" name="machine-type" value="computer">
+									<span class="catalog-filter__checkbox-control" aria-hidden="true"></span>
+									<span>Компьютерная</span>
+								</label>
 							</div>
-							<label class="catalog-filter__checkbox">
-								<input class="catalog-filter__checkbox-input" type="checkbox" name="main-functions"
-									value="stitch-length-adjustment">
-								<span class="catalog-filter__checkbox-control" aria-hidden="true"></span>
-								<span>Регулировка длины стежка</span>
-							</label>
-							<label class="catalog-filter__checkbox">
-								<input class="catalog-filter__checkbox-input" type="checkbox" name="main-functions"
-									value="zigzag-width-adjustment">
-								<span class="catalog-filter__checkbox-control" aria-hidden="true"></span>
-								<span>Регулировка ширины зигзага</span>
-							</label>
-						</div>
-					</div>
+						</fieldset>
 
-					<fieldset class="catalog-filter__group">
-						<legend class="catalog-filter__legend">Расположение катушечных стержней</legend>
-						<div class="catalog-filter__body">
-							<label class="catalog-filter__checkbox">
-								<input class="catalog-filter__checkbox-input" type="checkbox" name="spool-position" value="vertical">
-								<span class="catalog-filter__checkbox-control" aria-hidden="true"></span>
-								<span>Вертикальный</span>
-							</label>
-							<label class="catalog-filter__checkbox">
-								<input class="catalog-filter__checkbox-input" type="checkbox" name="spool-position" value="horizontal">
-								<span class="catalog-filter__checkbox-control" aria-hidden="true"></span>
-								<span>Горизонтальный</span>
-							</label>
-						</div>
-					</fieldset>
+						<fieldset class="catalog-filter__group">
+							<legend class="catalog-filter__legend">Тип челнока</legend>
+							<div class="catalog-filter__body">
+								<label class="catalog-filter__checkbox">
+									<input class="catalog-filter__checkbox-input" type="checkbox" name="shuttle-type" value="vertical">
+									<span class="catalog-filter__checkbox-control" aria-hidden="true"></span>
+									<span>Вертикальный</span>
+								</label>
+								<label class="catalog-filter__checkbox">
+									<input class="catalog-filter__checkbox-input" type="checkbox" name="shuttle-type" value="horizontal">
+									<span class="catalog-filter__checkbox-control" aria-hidden="true"></span>
+									<span>Горизонтальный</span>
+								</label>
+							</div>
+						</fieldset>
 
-					<fieldset class="catalog-filter__group">
-						<legend class="catalog-filter__legend">Опции</legend>
-						<div class="catalog-filter__body">
-							<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
-									name="options" value="decorative-stitches"><span class="catalog-filter__checkbox-control"
-									aria-hidden="true"></span><span>Декоративные строчки</span></label>
-							<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
-									name="options" value="presser-foot-pressure"><span class="catalog-filter__checkbox-control"
-									aria-hidden="true"></span><span>Регулятор давления лапки на ткань</span></label>
-							<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
-									name="options" value="needle-threader"><span class="catalog-filter__checkbox-control"
-									aria-hidden="true"></span><span>Встроенный нитевдеватель</span></label>
-							<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
-									name="options" value="feed-dog-switch"><span class="catalog-filter__checkbox-control"
-									aria-hidden="true"></span><span>Переключатель нижнего транспортёра ткани</span></label>
-							<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
-									name="options" value="top-feed"><span class="catalog-filter__checkbox-control"
-									aria-hidden="true"></span><span>Верхний транспортер</span></label>
-							<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
-									name="options" value="speed-control"><span class="catalog-filter__checkbox-control"
-									aria-hidden="true"></span><span>Регулятор скорости шитья</span></label>
-							<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
-									name="options" value="needle-position"><span class="catalog-filter__checkbox-control"
-									aria-hidden="true"></span><span>Кнопка позиционирования иглы</span></label>
-							<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
-									name="options" value="thread-cut"><span class="catalog-filter__checkbox-control"
-									aria-hidden="true"></span><span>Автоматическая обрезка нити</span></label>
-							<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
-									name="options" value="bartack"><span class="catalog-filter__checkbox-control"
-									aria-hidden="true"></span><span>Автоматическая закрепка</span></label>
-							<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
-									name="options" value="alphabet"><span class="catalog-filter__checkbox-control"
-									aria-hidden="true"></span><span>Алфавит</span></label>
-							<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
-									name="options" value="knee-lifter"><span class="catalog-filter__checkbox-control"
-									aria-hidden="true"></span><span>Коленный рычаг</span></label>
-							<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
-									name="options" value="lcd"><span class="catalog-filter__checkbox-control"
-									aria-hidden="true"></span><span>ЖК-дисплей</span></label>
-							<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
-									name="options" value="extension-table"><span class="catalog-filter__checkbox-control"
-									aria-hidden="true"></span><span>Расширительный столик</span></label>
-							<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
-									name="options" value="case"><span class="catalog-filter__checkbox-control"
-									aria-hidden="true"></span><span>Чехол</span></label>
+						<fieldset class="catalog-filter__group">
+							<legend class="catalog-filter__legend">Тип петли</legend>
+							<div class="catalog-filter__body">
+								<label class="catalog-filter__checkbox">
+									<input class="catalog-filter__checkbox-input" type="checkbox" name="buttonhole-type" value="auto">
+									<span class="catalog-filter__checkbox-control" aria-hidden="true"></span>
+									<span>Автомат</span>
+								</label>
+								<label class="catalog-filter__checkbox">
+									<input class="catalog-filter__checkbox-input" type="checkbox" name="buttonhole-type"
+										value="semi-auto">
+									<span class="catalog-filter__checkbox-control" aria-hidden="true"></span>
+									<span>Полуавтомат</span>
+								</label>
+								<label class="catalog-filter__checkbox">
+									<input class="catalog-filter__checkbox-input" type="checkbox" name="buttonhole-type"
+										value="programmable">
+									<span class="catalog-filter__checkbox-control" aria-hidden="true"></span>
+									<span>Программируемая</span>
+								</label>
+							</div>
+						</fieldset>
+
+						<div class="catalog-filter__group is-expanded">
+							<button class="catalog-filter__group-toggle js-filter-group-toggle" type="button"
+								aria-expanded="true">Основные функции</button>
+							<div class="catalog-filter__body catalog-filter__body--collapsed">
+								<div class="catalog-filter__ranges">
+									<div class="catalog-filter__range">
+										<p class="catalog-filter__range-title">Количество швейных операций</p>
+										<div class="catalog-filter__range-slider js-range-slider" data-min="15" data-max="402"
+											data-from="15" data-to="402" data-step="1">
+											<div class="catalog-filter__scale">
+												<span>15</span>
+												<span>402</span>
+											</div>
+										</div>
+										<div class="catalog-filter__values">
+											<label class="catalog-filter__value">
+												<input class="catalog-filter__value-input js-range-from" type="text" name="operations-from"
+													inputmode="numeric">
+											</label>
+											<label class="catalog-filter__value">
+												<input class="catalog-filter__value-input js-range-to" type="text" name="operations-to"
+													inputmode="numeric">
+											</label>
+										</div>
+									</div>
+									<div class="catalog-filter__range">
+										<p class="catalog-filter__range-title">Количество петель</p>
+										<div class="catalog-filter__range-slider js-range-slider" data-min="1" data-max="12" data-from="1"
+											data-to="12" data-step="1">
+											<div class="catalog-filter__scale">
+												<span>1</span>
+												<span>12</span>
+											</div>
+										</div>
+										<div class="catalog-filter__values">
+											<label class="catalog-filter__value">
+												<input class="catalog-filter__value-input js-range-from" type="text" name="buttonholes-from"
+													inputmode="numeric">
+											</label>
+											<label class="catalog-filter__value">
+												<input class="catalog-filter__value-input js-range-to" type="text" name="buttonholes-to"
+													inputmode="numeric">
+											</label>
+										</div>
+									</div>
+									<div class="catalog-filter__range">
+										<p class="catalog-filter__range-title">Максимальная длина стежка, мм</p>
+										<div class="catalog-filter__range-slider js-range-slider" data-min="4" data-max="5" data-from="4"
+											data-to="5" data-step="0.1">
+											<div class="catalog-filter__scale">
+												<span>4</span>
+												<span>5</span>
+											</div>
+										</div>
+										<div class="catalog-filter__values">
+											<label class="catalog-filter__value">
+												<input class="catalog-filter__value-input js-range-from" type="text" name="stitch-length-from"
+													inputmode="decimal">
+											</label>
+											<label class="catalog-filter__value">
+												<input class="catalog-filter__value-input js-range-to" type="text" name="stitch-length-to"
+													inputmode="decimal">
+											</label>
+										</div>
+									</div>
+									<div class="catalog-filter__range">
+										<p class="catalog-filter__range-title">Максимальная ширина зигзага, мм</p>
+										<div class="catalog-filter__range-slider js-range-slider" data-min="5" data-max="7" data-from="5"
+											data-to="7" data-step="0.1">
+											<div class="catalog-filter__scale">
+												<span>5</span>
+												<span>7</span>
+											</div>
+										</div>
+										<div class="catalog-filter__values">
+											<label class="catalog-filter__value">
+												<input class="catalog-filter__value-input js-range-from" type="text" name="zigzag-width-from"
+													inputmode="decimal">
+											</label>
+											<label class="catalog-filter__value">
+												<input class="catalog-filter__value-input js-range-to" type="text" name="zigzag-width-to"
+													inputmode="decimal">
+											</label>
+										</div>
+									</div>
+								</div>
+								<label class="catalog-filter__checkbox">
+									<input class="catalog-filter__checkbox-input" type="checkbox" name="main-functions"
+										value="stitch-length-adjustment">
+									<span class="catalog-filter__checkbox-control" aria-hidden="true"></span>
+									<span>Регулировка длины стежка</span>
+								</label>
+								<label class="catalog-filter__checkbox">
+									<input class="catalog-filter__checkbox-input" type="checkbox" name="main-functions"
+										value="zigzag-width-adjustment">
+									<span class="catalog-filter__checkbox-control" aria-hidden="true"></span>
+									<span>Регулировка ширины зигзага</span>
+								</label>
+							</div>
 						</div>
-					</fieldset>
+
+						<fieldset class="catalog-filter__group">
+							<legend class="catalog-filter__legend">Расположение катушечных стержней</legend>
+							<div class="catalog-filter__body">
+								<label class="catalog-filter__checkbox">
+									<input class="catalog-filter__checkbox-input" type="checkbox" name="spool-position" value="vertical">
+									<span class="catalog-filter__checkbox-control" aria-hidden="true"></span>
+									<span>Вертикальный</span>
+								</label>
+								<label class="catalog-filter__checkbox">
+									<input class="catalog-filter__checkbox-input" type="checkbox" name="spool-position"
+										value="horizontal">
+									<span class="catalog-filter__checkbox-control" aria-hidden="true"></span>
+									<span>Горизонтальный</span>
+								</label>
+							</div>
+						</fieldset>
+
+						<fieldset class="catalog-filter__group">
+							<legend class="catalog-filter__legend">Опции</legend>
+							<div class="catalog-filter__body">
+								<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
+										name="options" value="decorative-stitches"><span class="catalog-filter__checkbox-control"
+										aria-hidden="true"></span><span>Декоративные строчки</span></label>
+								<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
+										name="options" value="presser-foot-pressure"><span class="catalog-filter__checkbox-control"
+										aria-hidden="true"></span><span>Регулятор давления лапки на ткань</span></label>
+								<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
+										name="options" value="needle-threader"><span class="catalog-filter__checkbox-control"
+										aria-hidden="true"></span><span>Встроенный нитевдеватель</span></label>
+								<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
+										name="options" value="feed-dog-switch"><span class="catalog-filter__checkbox-control"
+										aria-hidden="true"></span><span>Переключатель нижнего транспортёра ткани</span></label>
+								<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
+										name="options" value="top-feed"><span class="catalog-filter__checkbox-control"
+										aria-hidden="true"></span><span>Верхний транспортер</span></label>
+								<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
+										name="options" value="speed-control"><span class="catalog-filter__checkbox-control"
+										aria-hidden="true"></span><span>Регулятор скорости шитья</span></label>
+								<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
+										name="options" value="needle-position"><span class="catalog-filter__checkbox-control"
+										aria-hidden="true"></span><span>Кнопка позиционирования иглы</span></label>
+								<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
+										name="options" value="thread-cut"><span class="catalog-filter__checkbox-control"
+										aria-hidden="true"></span><span>Автоматическая обрезка нити</span></label>
+								<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
+										name="options" value="bartack"><span class="catalog-filter__checkbox-control"
+										aria-hidden="true"></span><span>Автоматическая закрепка</span></label>
+								<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
+										name="options" value="alphabet"><span class="catalog-filter__checkbox-control"
+										aria-hidden="true"></span><span>Алфавит</span></label>
+								<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
+										name="options" value="knee-lifter"><span class="catalog-filter__checkbox-control"
+										aria-hidden="true"></span><span>Коленный рычаг</span></label>
+								<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
+										name="options" value="lcd"><span class="catalog-filter__checkbox-control"
+										aria-hidden="true"></span><span>ЖК-дисплей</span></label>
+								<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
+										name="options" value="extension-table"><span class="catalog-filter__checkbox-control"
+										aria-hidden="true"></span><span>Расширительный столик</span></label>
+								<label class="catalog-filter__checkbox"><input class="catalog-filter__checkbox-input" type="checkbox"
+										name="options" value="case"><span class="catalog-filter__checkbox-control"
+										aria-hidden="true"></span><span>Чехол</span></label>
+							</div>
+						</fieldset>
 
 						<div class="catalog-filter__actions">
 							<button class="button catalog-filter__actions-submit js-catalog-filter-close"
 								type="submit">Применить</button>
-							<button class="button catalog-filter__actions-reset js-catalog-filter-reset" type="reset">Сбросить</button>
+							<button class="button catalog-filter__actions-reset js-catalog-filter-reset"
+								type="reset">Сбросить</button>
 						</div>
 					</form>
 				</aside>
@@ -497,6 +500,13 @@
 								<h3 class="product-card__title"><a href="#">DESEW Lite 200</a></h3>
 								<p class="product-card__price">₽ 29 900</p>
 								<a class="product-card__link" href="#">Подробнее →</a>
+								<a class="product-card__compare" href="#" aria-label="Добавить к сравнению">
+									<svg width="28" height="21" viewBox="0 0 28 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M10.045 16.0344H1.4C1.00334 16.0344 0.671071 15.9016 0.403205 15.6359C0.135338 15.3702 0.000938161 15.0418 4.82758e-06 14.6507C-0.000928505 14.2595 0.133472 13.9311 0.403205 13.6654C0.672938 13.3997 1.0052 13.2669 1.4 13.2669H10.045L7.42 10.6723C7.16334 10.4186 7.035 10.1018 7.035 9.72169C7.035 9.34161 7.16334 9.01274 7.42 8.73506C7.7 8.45831 8.03273 8.31993 8.4182 8.31993C8.80367 8.31993 9.13593 8.45831 9.415 8.73506L14.42 13.682C14.56 13.8204 14.6594 13.9703 14.7182 14.1317C14.777 14.2932 14.8059 14.4662 14.805 14.6507C14.8041 14.8352 14.7751 15.0081 14.7182 15.1696C14.6613 15.331 14.5619 15.4809 14.42 15.6193L9.38 20.6008C9.1 20.8776 8.77333 21.0104 8.4 20.9994C8.02667 20.9883 7.7 20.8439 7.42 20.5662C7.16334 20.2895 7.0294 19.9666 7.0182 19.5976C7.007 19.2286 7.14094 18.9057 7.42 18.629L10.045 16.0344ZM17.955 7.73183L20.58 10.3264C20.8367 10.5801 20.965 10.8974 20.965 11.2784C20.965 11.6594 20.8367 11.9878 20.58 12.2637C20.3 12.5404 19.9677 12.6788 19.5832 12.6788C19.1987 12.6788 18.8659 12.5404 18.585 12.2637L13.58 7.31671C13.44 7.17833 13.3411 7.02842 13.2832 6.86698C13.2253 6.70554 13.1959 6.53257 13.195 6.34807C13.1941 6.16357 13.2235 5.9906 13.2832 5.82916C13.3429 5.66772 13.4419 5.51781 13.58 5.37944L18.62 0.397887C18.9 0.121134 19.2267 -0.0112455 19.6 0.000747146C19.9733 0.0127398 20.3 0.156651 20.58 0.432481C20.8367 0.709234 20.9711 1.03211 20.9832 1.40112C20.9953 1.77012 20.8609 2.093 20.58 2.36975L17.955 4.96431H26.6C26.9967 4.96431 27.3294 5.09715 27.5982 5.36283C27.867 5.62851 28.0009 5.95693 28 6.34807C27.9991 6.73922 27.8647 7.06809 27.5968 7.3347C27.3289 7.6013 26.9967 7.73368 26.6 7.73183H17.955Z"
+											fill="#535359"></path>
+									</svg>
+								</a>
 							</div>
 						</article>
 						<article class="product-card">
@@ -781,7 +791,8 @@
 				</a>
 				<p class="footer__text">Швейное оборудование<br>для производства и мастерских</p>
 				<span class="footer__divider" aria-hidden="true"></span>
-				<button class="footer__callback button" type="button" data-micromodal-trigger="feedback-modal">Заказать звонок</button>
+				<button class="footer__callback button" type="button" data-micromodal-trigger="feedback-modal">Заказать
+					звонок</button>
 
 				<div class="footer__bottom">
 					<p class="footer__copyright">© DESEW 2026</p>
@@ -898,8 +909,8 @@
 
 				<div class="modal__field">
 					<label class="modal__label" for="feedback-phone">Телефон</label>
-					<input class="modal__control" id="feedback-phone" type="tel" name="phone"
-						placeholder="Введите номер телефона" autocomplete="tel">
+					<input class="modal__control" id="feedback-phone" type="tel" name="phone" placeholder="Введите номер телефона"
+						autocomplete="tel">
 				</div>
 
 				<div class="modal__field">

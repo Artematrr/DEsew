@@ -110,4 +110,26 @@
 			color: var(--primary-600);
 		}
 	}
+
+	&__compare {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+
+		@include hover {
+			* {
+				fill: var(--primary-500);
+			}
+		}
+
+		@include mobile {
+			width: 18px;
+			height: 18px;
+
+			svg {
+				width: 18px;
+				height: 18px;
+			}
+		}
+	}
 }
