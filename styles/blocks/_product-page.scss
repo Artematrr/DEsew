@@ -259,6 +259,14 @@
 		}
 	}
 
+	&__compare {
+		@include hover {
+			* {
+				fill: var(--primary-500);
+			}
+		}
+	}
+
 	&__category {
 		@include fluid-text(11, 12);
 
@@ -819,7 +827,7 @@
 
 			.decor__button-top {
 				top: -25px;
-				right:  -25px;
+				right: -25px;
 				display: none;
 
 				@include tablet {
