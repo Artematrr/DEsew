@@ -34,6 +34,7 @@
 	}
 
 	.product-card {
+		position: relative;
 		align-items: center;
 		justify-content: space-between;
 		min-height: unset;
@@ -57,6 +58,86 @@
 		}
 	}
 
+	&__remove {
+		@include reset-button;
+		@include square(32px);
+
+		position: absolute;
+		z-index: 2;
+		top: 12px;
+		right: 12px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--gray-500);
+		background-color: var(--white);
+		border-radius: 50%;
+		box-shadow:
+			0 1px 1px 0 rgba(0, 0, 0, 0.1),
+			0 2px 2px 0 rgba(0, 0, 0, 0.08),
+			0 6px 8px 0 rgba(0, 0, 0, 0.08);
+		transition-duration: var(--transition-duration);
+		transition-property: color, background-color, box-shadow;
+
+		@include hover {
+			color: var(--black);
+			background-color: var(--primary-100);
+		}
+
+		&:active {
+			background-color: var(--primary-300);
+			box-shadow: none;
+		}
+
+		&:focus-visible {
+			outline: 2px solid var(--primary-500);
+			outline-offset: 3px;
+		}
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			width: 16px;
+			height: 2px;
+			background-color: currentColor;
+			border-radius: 2px;
+		}
+
+		&::before {
+			transform: rotate(45deg);
+		}
+
+		&::after {
+			transform: rotate(-45deg);
+		}
+
+		@include tablet {
+			@include square(24px);
+
+			top: 10px;
+			right: 10px;
+
+			&::before,
+			&::after {
+				width: 12px;
+			}
+		}
+
+		@include mobile {
+			@include square(12px);
+
+			top: 4px;
+			right: 4px;
+
+			&::before,
+			&::after {
+				height: 1px;
+				width: 4px;
+			}
+		}
+	}
+
 	.product-card__content {
 		display: contents;
 	}
@@ -76,6 +157,7 @@
 
 		@include mobile {
 			margin-bottom: 0px;
+			padding-right: 8px;
 		}
 	}
 
